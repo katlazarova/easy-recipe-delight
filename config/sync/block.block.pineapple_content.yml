@@ -1,0 +1,22 @@
+uuid: e0744d85-c362-4853-8839-393a9f3a68a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pineapple
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: pineapple_content
+theme: pineapple
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

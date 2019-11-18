@@ -7,4 +7,4 @@ libraries:
   - pineapple/global-css
   - pineapple/global-js
 
-base theme: stable
+base theme: classy
