@@ -31,6 +31,7 @@
 .idea/vcs.xml
 .idea/jsLinters/jshint.xml
 .idea/php-test-framework.xml
+.phpunit.xml.dist
 
 # Generated files
 .idea/**/contentModel.xml

@@ -1,0 +1,11 @@
+global-css:
+  css:
+    theme:
+      css/pineapple.styles.min.css: {}
+
+global-js:
+  js:
+    js/pineapple.behavior.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

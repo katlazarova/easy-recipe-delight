@@ -4,6 +4,7 @@ description: 'My Awesome theme'
 package: Other
 core: 8.x
 libraries:
-  - pineapple/global-styling
- 
+  - pineapple/global-css
+  - pineapple/global-js
+
 base theme: stable

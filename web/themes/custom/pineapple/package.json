@@ -1,0 +1,21 @@
+{
+  "name": "pineapple",
+  "version": "1.0.0",
+  "description": "custom drupal base theme ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "katarina lazarova",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.0.2",
+    "grunt-sass-globbing": "^1.5.1",
+    "load-grunt-tasks": "^5.0.0",
+    "node-sass": "^4.12.0"
+  }
+}
