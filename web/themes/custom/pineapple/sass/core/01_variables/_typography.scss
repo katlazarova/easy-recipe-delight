@@ -24,7 +24,6 @@ $ms-base: 1rem;
 /// Modular scale ratio.
 /// @link https://github.com/modularscale/modularscale-sass
 $ms-ratio: 1.25;
-@import "modularscale-sass/stylesheets/modular-scale";
 
 // Typesetting setup for vertical rhythm (see core/04_typesettings).
 // To turn on debugging us @include debug-vertical-alignment;

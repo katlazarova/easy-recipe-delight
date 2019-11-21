@@ -1,0 +1,29 @@
+.js-form-submit.form-submit {
+
+  &#edit-submit--2 {
+    padding: 0 15px;
+    line-height: 33px;
+    height: 35px;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle;
+    background: #573c81;
+    color: white;
+  }
+
+  &#edit-button--2 {
+    cursor: pointer;
+    display: block;
+    height: 46px;
+    padding: 0 16px 0 16px;
+    font-size: 14px;
+    line-height: 46px;
+    border: 0;
+    background-color: #0bbe5f;
+    color: white;
+
+    &:hover {
+      background-color: #0B7C3E;
+    }
+  }
+}
