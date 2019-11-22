@@ -1,58 +1,18 @@
-////
-/// @group Colours
-////
+  $black: #000;
+  $white: #fff;
+  $grey: #ccc;
+  $primary: #78d635;
+  $secondary: #573c81;
+  $light-green: #0bbe5f;
+  $dark-green: #0B7038;
+  $dark-purple: #2F2851;
 
-/// Palette Map.
-/// Define the color scheme used on the site.
-///
-/// All colours should be defined within this Sass map, and always must include a
-/// "base" tone. Additionally the following tones can be used:
-/// - x-dark
-/// - dark (should be defined first to allow for adding intermediate tones later)
-/// - mid-dark
-/// - base (default colour - required)
-/// - mid-light
-/// - light (should defined first to allow for adding intermediate tones later)
-/// - x-light
-///
-/// @link http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
-$palettes: (
-  // Theme Palette colours.
-  mono: (
-    dark: #000,
-    base: #666,
-    light: #fff
-  ),
-  blue: (
-    dark: #2a9ab7, // Eastern blue.
-    mid-dark: #1fa9cb, // Curious blue.
-    base: #3bb9d7, // Scooter.
-    mid-light: #61c4dd, // Viking.
-    light: #85d3e6 // Seagull.
-  ),
   // For social icons.
   // For hover/focus state colours, do darken($color, 12.5%).
-  social: (
-    twitter: #55acee,
-    linkedin: #0077b5,
-    facebook: #3b5999,
-    pinterest: #bd081c,
-    googleplus: #dd4b39,
-    youtube: #cd201f,
-    instagram: #e4405f,
-  ),
-  // Status colours.
-  positive: (
-    base: #1a9750
-  ),
-  warning: (
-    base: #ffd800
-  ),
-  negative: (
-    base: #cf1f3d
-  ),
-  lcf: (
-    /* Main green used throughout site. */
-    green: #76be43,
-  ),
-);
+  $twitter: #55acee;
+  $linkedin: #0077b5;
+  $facebook: #3b5999;
+  $pinterest: #bd081c;
+  $googleplus: #dd4b39;
+  $youtube: #cd201f;
+  $instagram: #e4405f;
