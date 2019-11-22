@@ -1,28 +1,28 @@
-.button {
+.btn {
   cursor: pointer;
-  color: $light;
+  color: $white;
+  display: block;
+  padding: 0.8rem 1rem;
+  border: 0;
+  vertical-align: middle;
+  border-radius: 3px;
+  transition: 0.5s;
+}
 
+.btn-primary {
+  background-color: $light-green;
 
-  .submit-button-primary {
-    padding: 0 15px;
-    line-height: 33px;
-    height: 35px;
-    border-radius: 3px;
-    vertical-align: middle;
-    background: $secondary-color;
+  &:hover,
+  &:focus {
+    background-color: $dark-green;
   }
+}
 
-  .submit-button-secondary {
-    display: block;
-    height: 46px;
-    padding: 0 16px 0 16px;
-    font-size: 14px;
-    line-height: 46px;
-    border: 0;
-    background-color: $secondary-green;
+.btn-secondary {
+  background-color: $secondary;
 
-    &:hover {
-      background-color: $hover-green;
-    }
+  &:hover,
+  &:focus {
+    background-color: $dark-purple;
   }
 }
