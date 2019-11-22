@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         implementation: sass,
         // Generate CSS sourcemap from sass files.
         sourceMap: true,
+        includePaths: ['node_modules']
       },
       dist: {
         options: {

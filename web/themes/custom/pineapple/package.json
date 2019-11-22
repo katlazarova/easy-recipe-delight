@@ -17,5 +17,8 @@
     "grunt-sass-globbing": "^1.5.1",
     "load-grunt-tasks": "^5.0.0",
     "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1"
   }
 }

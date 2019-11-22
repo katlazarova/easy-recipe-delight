@@ -1,3 +1,7 @@
+@import "breakpoint-sass/stylesheets/breakpoint";
+// Import external libraries. Grunt-sass has been configured to have the
+// theme's npm node_modules and Bower libraries directory as an include path.
+
 @charset "UTF-8";
 
 @import "core/__core.scss";
