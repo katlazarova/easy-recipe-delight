@@ -1,0 +1,51 @@
+table {
+  border: $white 1px solid;
+  border-radius: 3px;
+  caption {
+    font-size: 22px;
+    line-height: 39px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    text-decoration: none;
+    text-transform: none;
+    font-family: $header-font-family;
+    color: $primary;
+  }
+  thead {
+    background-color: $primary;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: $base-font-family;
+
+    th {
+      vertical-align: baseline;
+      padding: 18px;
+    }
+  }
+  tbody {
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: $base-font-family;
+    vertical-align: baseline;
+
+    tr {
+      text-align: center;
+      padding-left: 20px;
+
+      &.even {
+        background-color: $primary;
+      }
+
+      &.odd {
+        background-color: $light-green;
+      }
+
+      td {
+        padding: 18px;
+        vertical-align: inherit;
+      }
+    }
+  }
+}
