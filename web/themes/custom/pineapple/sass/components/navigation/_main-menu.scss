@@ -1,20 +1,2 @@
-ul.menu {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  line-height: 24px;
-  background: #76be43;
 
-  li.menu-item {
-    list-style: none;
-    display: inline-block;
-
-
-    ul {
-      .menu-item--expanded {
-        display: none;
-      }
-    }
-  }
-}
 

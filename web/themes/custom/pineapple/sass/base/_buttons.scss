@@ -1,29 +1,28 @@
-.js-form-submit.form-submit {
+.button {
+  cursor: pointer;
+  color: $light;
 
-  &#edit-submit--2 {
+
+  .submit-button-primary {
     padding: 0 15px;
     line-height: 33px;
     height: 35px;
     border-radius: 3px;
-    cursor: pointer;
     vertical-align: middle;
-    background: #573c81;
-    color: white;
+    background: $secondary-color;
   }
 
-  &#edit-button--2 {
-    cursor: pointer;
+  .submit-button-secondary {
     display: block;
     height: 46px;
     padding: 0 16px 0 16px;
     font-size: 14px;
     line-height: 46px;
     border: 0;
-    background-color: #0bbe5f;
-    color: white;
+    background-color: $secondary-green;
 
     &:hover {
-      background-color: #0B7C3E;
+      background-color: $hover-green;
     }
   }
 }
