@@ -1,0 +1,36 @@
+ul.pager__items {
+  padding-top: 20px;
+  text-align: center;
+
+  .pager__item {
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 5px 9px 4px;
+    line-height: 1.25;
+    margin: 0 7px 0 0;
+    display: inline-block;
+    background-color: $light-grey;
+
+    a {
+      color: $dark-grey;
+    }
+
+    &.pager__item--first,
+    &.pager__item--next,
+    &.pager__item--last {
+      background: none;
+
+      span {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+
+    &.is-active {
+      background-color: $primary;
+      a {
+        color: $white;
+      }
+    }
+  }
+}
