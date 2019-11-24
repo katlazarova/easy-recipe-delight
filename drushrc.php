@@ -1,3 +1,3 @@
 <?php
 
-$options['uri'] = 'http://domain.com';
+$options['uri'] = 'http://localhost:8888';
