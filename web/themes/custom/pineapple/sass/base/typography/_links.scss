@@ -1,12 +1,10 @@
-.links {
-  a {
-    text-decoration: none;
-    color: $primary;
+a {
+  text-decoration: none;
+  color: $primary;
 
-    &:hover {
-      color: $dark-grey;
-      cursor: pointer;
-    }
+  &:hover {
+    color: $dark-grey;
+    cursor: pointer;
   }
 }
 
@@ -24,14 +22,3 @@
   }
 }
 
-span {
-  a {
-    text-decoration: none;
-    color: $light-grey;
-
-    &:hover {
-      color: $dark-grey;
-      cursor: pointer;
-    }
-  }
-}
