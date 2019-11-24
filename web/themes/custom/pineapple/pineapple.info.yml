@@ -8,3 +8,8 @@ libraries:
   - pineapple/global-js
 
 base theme: classy
+regions:
+  header: Header
+  content: Content
+  social_banner: 'Social banner'
+  footer: Footer

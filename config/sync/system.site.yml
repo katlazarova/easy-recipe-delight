@@ -1,11 +1,11 @@
 uuid: 4b28933e-0ccf-4828-887d-689ecc9620e5
-name: 'Love Canned Food'
+name: 'Easy Recipe Delight'
 mail: katarinaalazarova@gmail.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

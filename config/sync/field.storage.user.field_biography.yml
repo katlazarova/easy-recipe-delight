@@ -1,0 +1,21 @@
+uuid: 4de387c7-2736-4818-b50f-8101c562fd20
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_biography
+field_name: field_biography
+entity_type: user
+type: string
+settings:
+  max_length: 500
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
