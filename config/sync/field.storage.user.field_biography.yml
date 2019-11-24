@@ -1,4 +1,4 @@
-uuid: 4de387c7-2736-4818-b50f-8101c562fd20
+uuid: 780392f0-7d5e-40ba-ba2e-ce6a70569645
 langcode: en
 status: true
 dependencies:
@@ -7,10 +7,8 @@ dependencies:
 id: user.field_biography
 field_name: field_biography
 entity_type: user
-type: string
+type: string_long
 settings:
-  max_length: 500
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

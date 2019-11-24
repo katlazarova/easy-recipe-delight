@@ -20,25 +20,25 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 5
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_biography:
-    weight: 10
+    weight: 7
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: string_textarea
     region: content
   field_first_name:
-    weight: 7
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -46,7 +46,7 @@ content:
     type: string_textfield
     region: content
   field_surname:
-    weight: 8
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -54,7 +54,7 @@ content:
     type: string_textfield
     region: content
   field_tagline:
-    weight: 9
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -62,12 +62,12 @@ content:
     type: string_textfield
     region: content
   language:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 6
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -77,6 +77,6 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-    weight: -1
+    weight: 8
     region: content
 hidden: {  }

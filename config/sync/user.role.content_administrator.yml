@@ -7,4 +7,7 @@ label: 'Content Administrator'
 weight: 3
 is_admin: null
 permissions:
-  - 'access user profiles'
+  - 'access toolbar'
+  - 'administer account settings'
+  - 'administer users'
+  - 'view the administration theme'
