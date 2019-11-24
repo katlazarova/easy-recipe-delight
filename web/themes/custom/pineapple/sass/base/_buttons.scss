@@ -26,3 +26,13 @@
     background-color: $dark-purple;
   }
 }
+
+.btn-tertiary {
+  background-color: $dark-grey;
+  color: white;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
