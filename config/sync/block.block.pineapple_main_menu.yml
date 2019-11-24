@@ -1,6 +1,6 @@
 uuid: 2f3c4f5d-ad7d-4212-9a60-64744fe79b48
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,7 +12,7 @@ _core:
   default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
 id: pineapple_main_menu
 theme: pineapple
-region: primary_menu
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'

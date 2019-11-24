@@ -46,3 +46,6 @@
 .idea/**/dbnavigator.xml
 # Ignore .env files as they are personal
 /.env
+
+.DS_Store
+**/.DS_Store

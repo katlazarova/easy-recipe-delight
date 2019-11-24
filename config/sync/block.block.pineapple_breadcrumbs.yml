@@ -1,6 +1,6 @@
 uuid: ded259e6-f080-487d-9264-80b2bcf51b92
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: pineapple_breadcrumbs
 theme: pineapple
-region: breadcrumb
+region: header
 weight: 0
 provider: null
 plugin: system_breadcrumb_block

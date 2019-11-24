@@ -1,0 +1,13 @@
+uuid: 7592a5b0-d188-4a75-8c42-b890da623c3e
+langcode: en
+status: true
+dependencies: {  }
+id: content_administrator
+label: 'Content Administrator'
+weight: 3
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'administer account settings'
+  - 'administer users'
+  - 'view the administration theme'
