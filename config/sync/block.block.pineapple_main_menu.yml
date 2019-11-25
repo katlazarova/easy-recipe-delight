@@ -1,11 +1,13 @@
 uuid: 2f3c4f5d-ad7d-4212-9a60-64744fe79b48
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
   module:
+    - node
     - system
+    - user
   theme:
     - pineapple
 _core:
@@ -24,4 +26,22 @@ settings:
   level: 1
   depth: 1
   expand_all_items: false
-visibility: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      administrator: administrator
+      content_administrator: content_administrator
+      content_editor: content_editor
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

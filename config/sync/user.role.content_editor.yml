@@ -8,5 +8,5 @@ weight: 4
 is_admin: null
 permissions:
   - 'access toolbar'
-  - 'view the administration theme'
   - 'access user profiles'
+  - 'view the administration theme'
