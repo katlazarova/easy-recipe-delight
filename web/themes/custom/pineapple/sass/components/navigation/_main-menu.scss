@@ -8,7 +8,14 @@ ul.menu {
     margin: 20px;
     position: relative;
 
+    &:hover ul {
+        display: block;
+        outline: 2px solid hotpink;
+        position: absolute;
+      }
+
     a {
+      display: block;
       &.is-active {
         color: $white;
       }
@@ -16,29 +23,16 @@ ul.menu {
 
     ul {
       display: none;
-      position: absolute;
-      background-color: $accent-green;
-      margin: 0;
-      padding: 0;
       left: 0;
-      top: 1.5em;
 
       li {
+        display: block;
         position: relative;
         text-align: left;
         width: 200px;
         margin: 0;
         padding: 15px 10px;
-      }
-
-      &:hover {
-        display: inline-block;
-      }
-    }
-
-    &:hover {
-      ul {
-        display: inline-block;
+        background-color: $accent-green;
       }
     }
   }
