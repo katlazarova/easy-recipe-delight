@@ -1,6 +1,6 @@
 node_modules
 css
-js
+/js/*.min.js
 libraries
 .idea
 *.idea/*

@@ -1,39 +1,119 @@
-ul.menu {
+.menu {
+  overflow: hidden;
   background-color: $primary;
   text-align: center;
-  margin: 0;
 
-  li.menu-item {
-    display: inline-block;
-    margin: 20px;
-    position: relative;
+  .hamburger {
+    color: $white;
+    float: left;
+    display: block;
 
-    &:hover ul {
-        display: block;
-        outline: 2px solid hotpink;
-        position: absolute;
-      }
-
-    a {
-      display: block;
-      &.is-active {
-        color: $white;
-      }
-    }
-
-    ul {
+    @include breakpoint($lap) {
       display: none;
-      left: 0;
+    }
+  }
 
-      li {
+  .menu-item {
+    float: left;
+    display: none;
+    color: $white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    @include breakpoint($lap) {
+      display: block;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.is-active {
+      color: white;
+    }
+  }
+
+  .expanded-container {
+    float: left;
+    overflow: hidden;
+
+    &:hover .sub-menu {
+      display: block;
+    }
+
+    .menu-item {
+      font-size: 17px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+      text-align: center;
+      display: none;
+
+      @include breakpoint($lap) {
         display: block;
-        position: relative;
-        text-align: left;
-        width: 200px;
-        margin: 0;
-        padding: 15px 10px;
-        background-color: $accent-green;
       }
     }
+
+    .sub-menu {
+      display: none;
+      position: absolute;
+      background-color: $accent-green;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 2.5em;
+
+      .menu-item {
+        float: none;
+        color: $white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $lap) {
+  .menu .hamburger {
+    float: left;
+    display: block;
+  }
+}
+
+@media screen and (max-width: $lap) {
+  .menu.responsive {position: relative;}
+  .menu.responsive .hamburger {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  .menu.responsive .expanded-container {
+    float: none;
+  }
+  .menu.responsive .sub-menu {
+    position: relative;
+    top: 0;
+  }
+  .menu.responsive .expanded-container .menu-item {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
