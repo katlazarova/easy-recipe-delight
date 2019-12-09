@@ -9,13 +9,7 @@
   }
 
   &.responsive {
-    position: relative;
     display: block;
-
-    .hamburger {
-      right: 0;
-      top: 0;
-    }
 
     .menu-content {
       flex-direction: column;
@@ -91,7 +85,7 @@
     }
 
     &.is-active {
-      color: white;
+      color: $white;
     }
   }
 
@@ -106,7 +100,7 @@
       font-size: $base-font-size;
       border: none;
       outline: none;
-      color: white;
+      color: $white;
       padding: 14px 16px;
       background-color: inherit;
       font-family: inherit;
@@ -121,7 +115,7 @@
     .sub-menu {
       display: none;
       position: absolute;
-      background-color: $accent-green;
+      background-color: lighten($primary, 10%);
       min-width: 160px;
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
       z-index: 1;
