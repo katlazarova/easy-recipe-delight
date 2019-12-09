@@ -12,6 +12,8 @@
     }
 
     .menu-content {
+      flex-direction: column;
+
       @include breakpoint($lap) {
         display: flex;
         flex-direction: row;
@@ -19,7 +21,6 @@
     }
 
     .menu-item {
-      float: none;
       display: block;
     }
 
@@ -60,8 +61,11 @@
     }
   }
 
+  .menu-content {
+    display: flex;
+  }
+
   .menu-item {
-    float: left;
     display: none;
     color: $white;
     padding: 14px 16px;

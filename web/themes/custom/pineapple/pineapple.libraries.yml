@@ -10,6 +10,7 @@ global-js:
     - core/jquery
     - core/drupal
     - core/jquery.once
+    - pineapple/jquery-smartresize
 vue:
   header: true
   # We have a hook that uses the non-minified version on environments where JS processing is turned off.
@@ -19,3 +20,6 @@ vue:
 lodash:
   js:
     node_modules/lodash/lodash.min.js: {}
+jquery-smartresize:
+  js:
+    libraries/jquery-smartresize/jquery.debouncedresize.js: {}

@@ -29,7 +29,7 @@
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
-    {# At the highest level of the menu, add div with class menu, else add a div with class sub-menu.#}
+    {# At the highest level of the menu, add div with class menu, else add a div with class sub-menu. #}
     {% if menu_level == 0 %}
       <div{{ attributes.addClass('menu') }}>
         <button class="hamburger">☰</button>
@@ -37,7 +37,7 @@
     {% else %}
       <div class="sub-menu">
     {% endif %}
-      {# For each item in items, set the following classes.#}
+      {# For each item in items, set the following classes. #}
       {% for item in items %}
         {% set classes = [
           'menu-item',
@@ -47,7 +47,7 @@
         ] %}
         {# Set a variable link_attributes to equal the classes defined above. #}
         {% set link_attributes = item.attributes.addClass(classes) %}
-        {#If item has class of menu-item--expanded, add a div with a class of expanded-container.#}
+        {# If item has class of menu-item--expanded, add a div with a class of expanded-container. #}
         {% if item.attributes.hasClass('menu-item--expanded') %}
           <div class="expanded-container">
             <a {{ link_attributes }} href="{{ item.url }}">{{ item.title }}</a>
@@ -60,11 +60,11 @@
           <a {{ link_attributes }} href="{{ item.url }}">{{ item.title }}</a>
         {% endif %}
       {% endfor %}
-    {#If at the highest menu level, add the closing menu-content tag. #}
+    {# If at the highest menu level, add the closing menu-content tag. #}
     {% if menu_level == 0 %}
       </div>
     {% endif %}
-      {#Menu closing tag. #}
+      {# Menu closing tag. #}
       </div>
   {% endif %}
 {% endmacro %}
