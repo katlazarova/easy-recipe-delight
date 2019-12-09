@@ -32,7 +32,10 @@
     {# At the highest level of the menu, add div with class menu, else add a div with class sub-menu. #}
     {% if menu_level == 0 %}
       <div{{ attributes.addClass('menu') }}>
-        <button class="hamburger">☰</button>
+        <div class="hamburger-container">
+          <button class="hamburger">☰</button>
+        {# End of hamburger container. #}
+        </div>
         <div class="menu-content">
     {% else %}
       <div class="sub-menu">

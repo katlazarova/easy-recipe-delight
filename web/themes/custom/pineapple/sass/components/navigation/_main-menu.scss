@@ -1,12 +1,18 @@
 .menu {
   overflow: hidden;
   background-color: $primary;
+  display: flex;
+  justify-content: flex-end;
+
+  @include breakpoint($lap) {
+    display: block;
+  }
 
   &.responsive {
     position: relative;
+    display: block;
 
     .hamburger {
-      position: absolute;
       right: 0;
       top: 0;
     }
@@ -25,7 +31,6 @@
     }
 
     .expanded-container {
-      float: none;
 
       &:hover .sub-menu {
         display: block;
@@ -50,14 +55,18 @@
     }
   }
 
-  .hamburger {
-    color: $white;
-    float: right;
-    display: block;
-    font-size: $large-font;
+  .hamburger-container {
+    display:flex;
+    justify-content: flex-end;
 
-    @include breakpoint($lap) {
-      display: none;
+    .hamburger {
+      color: $white;
+      display: block;
+      font-size: $large-font;
+
+      @include breakpoint($lap) {
+        display: none;
+      }
     }
   }
 
@@ -70,7 +79,7 @@
     color: $white;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: $base-font-size;
 
     @include breakpoint($lap) {
       display: block;
@@ -87,7 +96,6 @@
   }
 
   .expanded-container {
-    float: left;
     overflow: hidden;
 
     &:hover .sub-menu {
@@ -95,7 +103,7 @@
     }
 
     .menu-item {
-      font-size: 17px;
+      font-size: $base-font-size;
       border: none;
       outline: none;
       color: white;
@@ -120,7 +128,6 @@
       top: 2.5em;
 
       .menu-item {
-        float: none;
         color: $white;
         padding: 12px 16px;
         text-decoration: none;
