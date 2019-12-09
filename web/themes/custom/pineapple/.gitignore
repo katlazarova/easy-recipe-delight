@@ -1,7 +1,6 @@
 node_modules
 css
-js
-libraries
+/js/*.min.js
 .idea
 *.idea/*
 .DS_store

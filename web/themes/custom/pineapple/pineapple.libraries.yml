@@ -9,3 +9,17 @@ global-js:
   dependencies:
     - core/jquery
     - core/drupal
+    - core/jquery.once
+    - pineapple/jquery-smartresize
+vue:
+  header: true
+  # We have a hook that uses the non-minified version on environments where JS processing is turned off.
+  # This allows access to the Vue devtools browser extension.
+  js:
+    node_modules/vue/dist/vue.min.js: {}
+lodash:
+  js:
+    node_modules/lodash/lodash.min.js: {}
+jquery-smartresize:
+  js:
+    libraries/jquery-smartresize/jquery.debouncedresize.js: {}
