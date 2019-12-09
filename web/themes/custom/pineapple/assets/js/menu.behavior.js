@@ -4,10 +4,8 @@
 
   Drupal.behaviors.menu = {
     attach: function (context, settings) {
-      $('.menu .hamburger').once('menu-functionality').each(function() {
-        $(this).click(function() {
+      $('.menu .hamburger').click(function() {
           $('.menu').toggleClass('responsive');
-        });
       });
     }
   }

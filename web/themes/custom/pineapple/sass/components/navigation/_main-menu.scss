@@ -1,12 +1,59 @@
 .menu {
   overflow: hidden;
   background-color: $primary;
-  text-align: center;
+
+  &.responsive {
+    position: relative;
+
+    .hamburger {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .menu-content {
+      @include breakpoint($lap) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .menu-item {
+      float: none;
+      display: block;
+    }
+
+    .expanded-container {
+      float: none;
+
+      &:hover .sub-menu {
+        display: block;
+      }
+
+      .sub-menu {
+        position: relative;
+        top: 0;
+        display: block;
+        text-indent: 10px;
+
+        @include breakpoint($lap) {
+          display: none;
+          text-indent: 0;
+        }
+      }
+
+      .menu-item {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
 
   .hamburger {
     color: $white;
-    float: left;
+    float: right;
     display: block;
+    font-size: $large-font;
 
     @include breakpoint($lap) {
       display: none;
@@ -17,7 +64,6 @@
     float: left;
     display: none;
     color: $white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -26,7 +72,8 @@
       display: block;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
 
@@ -52,7 +99,6 @@
       background-color: inherit;
       font-family: inherit;
       margin: 0;
-      text-align: center;
       display: none;
 
       @include breakpoint($lap) {
@@ -77,43 +123,11 @@
         display: block;
         text-align: left;
 
-        &:hover {
+        &:hover,
+        &:focus {
           text-decoration: underline;
         }
       }
     }
-  }
-}
-
-@media screen and (max-width: $lap) {
-  .menu .hamburger {
-    float: left;
-    display: block;
-  }
-}
-
-@media screen and (max-width: $lap) {
-  .menu.responsive {position: relative;}
-  .menu.responsive .hamburger {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .menu.responsive a {
-    float: none;
-    display: block;
-    text-align: center;
-  }
-  .menu.responsive .expanded-container {
-    float: none;
-  }
-  .menu.responsive .sub-menu {
-    position: relative;
-    top: 0;
-  }
-  .menu.responsive .expanded-container .menu-item {
-    display: block;
-    width: 100%;
-    text-align: center;
   }
 }
