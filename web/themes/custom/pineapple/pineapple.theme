@@ -152,7 +152,7 @@ function pineapple_library_info_alter(&$libraries, $extension) {
 
   if ($extension === 'pineapple' && isset($libraries['vue']) && !$js_preprocessing_enabled) {
     /* As we are likely on a dev environment, use the unminified version of vue, which will enable vue's dev tools. */
-    unset($libraries["vue"]["js"]["node_modules/vue/dist/vue.min.js"]);
-    $libraries["vue"]["js"]["node_modules/vue/dist/vue.js"] = [];
+    unset($libraries['vue']['js']['node_modules/vue/dist/vue.min.js']);
+    $libraries['vue']['js']['node_modules/vue/dist/vue.js'] = [];
   }
 }
