@@ -1,11 +1,11 @@
-uuid: 9418339f-0dc6-4eb9-956f-c11feddd8209
+uuid: e8f6af56-e306-406b-a679-0a25cea630de
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_summary
-field_name: field_summary
+id: node.field_bp_summary
+field_name: field_bp_summary
 entity_type: node
 type: string_long
 settings:

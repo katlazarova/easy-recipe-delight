@@ -1,14 +1,15 @@
-uuid: ac4b2fcb-af7e-4e89-8e53-7961d3209ea1
+uuid: 9440c6c9-e7a5-4460-ae5b-dae5cfb63ee2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_body
+    - field.storage.node.field_bp_body
     - node.type.page
+    - paragraphs.paragraphs_type.components
   module:
     - entity_reference_revisions
-id: node.page.field_body
-field_name: field_body
+id: node.page.field_bp_body
+field_name: field_bp_body
 entity_type: node
 bundle: page
 label: Body
@@ -21,9 +22,10 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      components: components
     target_bundles_drag_drop:
       components:
+        enabled: true
         weight: 2
-        enabled: false
 field_type: entity_reference_revisions
