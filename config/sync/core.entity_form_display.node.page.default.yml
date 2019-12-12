@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_hero_image
     - field.field.node.page.field_summary
     - field.field.node.page.field_teaser_image
-    - field.field.node.page.field_title
     - image.style.thumbnail
     - node.type.page
   module:
@@ -62,14 +61,6 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
-    region: content
-  field_title:
-    weight: 121
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   path:
     type: path

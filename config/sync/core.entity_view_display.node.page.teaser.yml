@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_body
     - field.field.node.page.field_hero_image
     - field.field.node.page.field_summary
     - field.field.node.page.field_teaser_image
-    - field.field.node.page.field_title
     - node.type.page
   module:
     - user
@@ -22,7 +22,7 @@ content:
     weight: 101
     region: content
 hidden:
+  field_body: true
   field_hero_image: true
   field_summary: true
   field_teaser_image: true
-  field_title: true
