@@ -1,0 +1,19 @@
+uuid: 951a75b4-0ac0-46eb-8cdb-b2e8f56b8b5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_p_rt_copy
+field_name: field_p_rt_copy
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

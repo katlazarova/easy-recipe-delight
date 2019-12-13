@@ -1,0 +1,21 @@
+uuid: ec488b16-fdd7-43d2-9405-ba1dcf872ac5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_rt_copy
+    - paragraphs.paragraphs_type.rich_text
+  module:
+    - text
+id: paragraph.rich_text.field_p_rt_copy
+field_name: field_p_rt_copy
+entity_type: paragraph
+bundle: rich_text
+label: Copy
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

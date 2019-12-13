@@ -19,6 +19,8 @@ $desk-wide:  1200px;
 
 $hdpi:      min-resolution 1.5dppx; // Min 1.5dppx for higher resolution displays.
 
+$gutter-size: 80%;
+
 /// For use when the site has a constrained region - sets the maximum width
 /// this region should be.
 $max-container-width: 74em;
