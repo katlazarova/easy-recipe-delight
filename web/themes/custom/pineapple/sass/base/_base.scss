@@ -1,3 +1,17 @@
+.block-system-main-block {
+ width: $gutter-size;
+  margin: 0 auto;
+
+  .breakout {
+    margin-right: -50vw;
+    margin-left: -50vw;
+    right: 50%;
+    left: 50%;
+    position: relative;
+    width: 100vw;
+  }
+}
+
 blockquote {
   font-size: 22px;
   line-height: 39px;
