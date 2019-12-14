@@ -15,7 +15,7 @@
   left: 0;
   position: absolute;
   display:flex;
-  align-items: center;
+  align-items: flex-end;
 
   .article-title {
     padding: 15px;
@@ -35,7 +35,7 @@
     text-transform: uppercase;
     position: absolute;
     text-align: left;
-    margin-top: 64px;
+    margin-top: 42px;
 
     p {
       display: inline;
