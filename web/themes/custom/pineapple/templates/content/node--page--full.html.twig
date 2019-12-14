@@ -104,15 +104,19 @@
   <div{{ content_attributes.addClass('node__content') }}>
     {% if content.field_bp_hero_image|field_value %}
       {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
-      <div class="hero-image-container breakout" style="background-image: url({{ hero_url }})">
-      </div>
-      <div class="hero-image-text container">
-        <h1 class="article-title">
-          {{ label }}
-        </h1>
-        <div class="author-name">
-          <p>by: {{ node.Owner.name.value }}</p>
+      <div class="hero-container breakout">
+        <div class="hero-image-container" style="background-image: url({{ hero_url }})">
         </div>
+        <div class="hero-image-text container">
+          <div class="article-title">
+            <h1>
+              {{ label }}
+            </h1>
+          </div>
+          <div class="author-name">
+            <p>by: {{ node.Owner.name.value }}</p>
+          </div>
+        </div>>
       </div>
     {% endif %}
     {{ content.field_bp_summary }}
