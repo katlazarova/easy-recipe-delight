@@ -1,0 +1,54 @@
+.hero-container {
+  height: 527px;
+  overflow: hidden;
+
+
+  .hero-image-container {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  .hero-image-text {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 100px;
+
+    .article-title {
+      padding: 15px;
+      background-color: transparentize($primary, 0.4);
+      font-size: $xlarge-font;
+      font-weight: 600;
+      position: absolute;
+      text-align: left;
+      color: $white;
+      max-width: 90%;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .author-name {
+      padding: 10px;
+      background-color: transparentize($primary, 0.4);
+      color: $white;
+      text-transform: uppercase;
+      text-align: left;
+      position: absolute;
+      margin-top: 45px;
+
+      p {
+        display: inline;
+      }
+    }
+  }
+}

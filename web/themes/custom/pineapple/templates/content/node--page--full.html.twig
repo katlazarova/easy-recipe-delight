@@ -85,7 +85,7 @@
   {% if not content.field_bp_hero_image|field_value %}
     {{ title_prefix }}
     {% if label %}
-     <h1{{ title_attributes }}>
+     <h1{{ title_attributes.addClass('page-title') }}>
       {{ label }}
       </h1>
     {% endif %}
@@ -116,10 +116,11 @@
           <div class="author-name">
             <p>by: {{ node.Owner.name.value }}</p>
           </div>
-        </div>>
+        </div>
       </div>
     {% endif %}
-    {{ content.field_bp_summary }}
-    {{ content.field_bp_body }}
+    <div class="top-spacer">
+      {{ content.field_bp_summary }}
+      {{ content.field_bp_body }}
   </div>
 </article>
