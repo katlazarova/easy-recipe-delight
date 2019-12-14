@@ -5,31 +5,40 @@
 .hero-image-container {
   height: 527px;
   margin-bottom: 30px;
+  background-repeat: no-repeat;
+}
 
+.hero-image-text {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display:flex;
+  align-items: center;
 
   .article-title {
     padding: 15px;
     background-color: transparentize($primary, 0.4);
-    margin: 2px;
     font-size: $xlarge-font;
     font-weight: 600;
     position: absolute;
-    left: 5vw;
-    bottom: 5vw;
     text-align: left;
     color: $white;
+    max-width: 90%;
   }
 
   .author-name {
     padding: 10px;
     background-color: transparentize($primary, 0.4);
-    margin: 2px;
     color: $white;
     text-transform: uppercase;
-    width: auto;
     position: absolute;
-    left: 5vw;
-    bottom: 1.5vw;
     text-align: left;
+    margin-top: 64px;
+
+    p {
+      display: inline;
+    }
   }
 }

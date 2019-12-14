@@ -82,15 +82,15 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+  {% if not content.field_bp_hero_image|field_value %}
+    {{ title_prefix }}
+    {% if label %}
+     <h1{{ title_attributes }}>
+      {{ label }}
+      </h1>
+    {% endif %}
+    {{ title_suffix }}
   {% endif %}
-  {{ title_suffix }}
-
   {% if display_submitted %}
     <footer class="node__meta">
       {{ author_picture }}
@@ -102,20 +102,20 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content') }}>
-    {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
-    <div class="hero-image-container breakout" style="background-image: url({{ hero_url }})">
-      <div class="hero-image-text">
-        <div class="article-title">
+    {% if content.field_bp_hero_image|field_value %}
+      {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
+      <div class="hero-image-container breakout" style="background-image: url({{ hero_url }})">
+      </div>
+      <div class="hero-image-text container">
+        <h1 class="article-title">
           {{ label }}
-        </div>
+        </h1>
         <div class="author-name">
-          {{ author_name }}
+          <p>by: {{ node.Owner.name.value }}</p>
         </div>
       </div>
-    </div>
+    {% endif %}
     {{ content.field_bp_summary }}
     {{ content.field_bp_body }}
-    {{ content.field_bp_teaser_image }}
   </div>
-
 </article>

@@ -1,15 +1,32 @@
-.block-system-main-block {
- width: $gutter-size;
-  margin: 0 auto;
+.main,
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 
-  .breakout {
-    margin-right: -50vw;
-    margin-left: -50vw;
-    right: 50%;
-    left: 50%;
-    position: relative;
-    width: 100vw;
+  @include breakpoint($palm) {
+     max-width: 460px;
   }
+  @include breakpoint($lap) {
+    max-width: 615px;
+  }
+  @include breakpoint($desk) {
+    max-width: 810px;
+  }
+  @include breakpoint($desk-wide) {
+    max-width: 996px;
+  }
+}
+
+.breakout {
+  margin-right: -50vw;
+  margin-left: -50vw;
+  right: 50%;
+  left: 50%;
+  position: relative;
+  width: 100vw;
 }
 
 blockquote {
