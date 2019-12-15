@@ -1,6 +1,6 @@
 uuid: 3b4e5ba4-5642-4b17-9db8-1db620060276
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -11,7 +11,7 @@ _core:
 id: pineapple_branding
 theme: pineapple
 region: header
-weight: 0
+weight: -6
 provider: null
 plugin: system_branding_block
 settings:

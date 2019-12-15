@@ -1,0 +1,15 @@
+uuid: c1773074-d4e6-49ef-928a-4273721ed357
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_1265_x_527
+label: 'Hero Image (1265 x 527)'
+effects:
+  c45dff2f-eb12-487f-a603-6b9da0c9a297:
+    uuid: c45dff2f-eb12-487f-a603-6b9da0c9a297
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1265
+      height: 527
+      anchor: center-center
