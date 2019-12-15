@@ -6,6 +6,10 @@ h1 {
   text-transform: none;
   margin: 0 0 30px;
   font-family: $header-font-family;
+
+  &.page-title {
+    color: $primary;
+  }
 }
 
 h2 {

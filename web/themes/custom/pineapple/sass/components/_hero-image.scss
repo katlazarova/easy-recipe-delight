@@ -3,7 +3,7 @@
   overflow: hidden;
 
 
-  .hero-image-container {
+  .hero-image {
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -22,7 +22,7 @@
     align-items: flex-end;
     margin-bottom: 100px;
 
-    .article-title {
+    .page-title {
       padding: 15px;
       background-color: transparentize($primary, 0.4);
       font-size: $xlarge-font;

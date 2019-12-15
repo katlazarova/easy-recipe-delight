@@ -105,10 +105,10 @@
     {% if content.field_bp_hero_image|field_value %}
       {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
       <div class="hero-container breakout">
-        <div class="hero-image-container" style="background-image: url({{ hero_url }})">
+        <div class="hero-image" style="background-image: url({{ hero_url }})">
         </div>
         <div class="hero-image-text container">
-          <div class="article-title">
+          <div class="page-title">
             <h1>
               {{ label }}
             </h1>
@@ -119,8 +119,9 @@
         </div>
       </div>
     {% endif %}
-    <div class="top-spacer">
+    <div class="inner-content">
       {{ content.field_bp_summary }}
       {{ content.field_bp_body }}
+    </div>
   </div>
 </article>
