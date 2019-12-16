@@ -1,22 +1,22 @@
-uuid: 0934137b-367b-49a8-b83d-1377b6962e1b
+uuid: d35309c0-4f47-4064-81f2-f7217a8e9bc9
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: title_
-label: 'Title '
+id: recipe_pattern
+label: 'Recipe pattern'
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '[node:content-type:name]/[node:title]'
 selection_criteria:
-  e53edf55-fde4-4680-8e90-fc5eba8e0652:
+  2b66c156-8367-4c5d-a83f-68882884ed6e:
     id: node_type
     bundles:
-      page: page
+      recipe: recipe
     negate: false
     context_mapping:
       node: node
-    uuid: e53edf55-fde4-4680-8e90-fc5eba8e0652
+    uuid: 2b66c156-8367-4c5d-a83f-68882884ed6e
 selection_logic: and
 weight: -5
 relationships: {  }
