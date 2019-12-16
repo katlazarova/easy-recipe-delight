@@ -1,0 +1,19 @@
+uuid: 271f1805-e37c-4e3d-bd95-80fb3f1afd83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_r_author_quote
+    - node.type.recipe
+id: node.recipe.field_r_author_quote
+field_name: field_r_author_quote
+entity_type: node
+bundle: recipe
+label: 'Author quote'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
