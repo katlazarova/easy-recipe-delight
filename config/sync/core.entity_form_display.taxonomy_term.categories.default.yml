@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.categories.field_name
     - taxonomy.vocabulary.categories
   module:
     - path
@@ -21,14 +20,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_name:
-    weight: 31
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   name:
     type: string_textfield
     weight: -5
