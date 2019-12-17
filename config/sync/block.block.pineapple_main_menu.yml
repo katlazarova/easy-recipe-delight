@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - ctools
     - node
     - system
     - user
@@ -31,6 +32,7 @@ visibility:
     id: node_type
     bundles:
       page: page
+      recipe: recipe
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
@@ -45,3 +47,11 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      page: page
+      recipe: recipe
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

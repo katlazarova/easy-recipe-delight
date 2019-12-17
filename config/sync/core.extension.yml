@@ -19,6 +19,7 @@ module:
   dblog: 0
   devel: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   entity_reference_revisions: 0
   field: 0
@@ -36,6 +37,7 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  pineapple_recipe: 0
   quickedit: 0
   rdf: 0
   search: 0

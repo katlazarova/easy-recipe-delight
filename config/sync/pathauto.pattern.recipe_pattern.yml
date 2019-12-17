@@ -7,16 +7,16 @@ dependencies:
 id: recipe_pattern
 label: 'Recipe pattern'
 type: 'canonical_entities:node'
-pattern: '[node:content-type:name]/[node:title]'
+pattern: 'recipes/[node:title]'
 selection_criteria:
-  2b66c156-8367-4c5d-a83f-68882884ed6e:
+  c5a7c052-16df-4174-9104-3b801a5748c6:
     id: node_type
     bundles:
       recipe: recipe
     negate: false
     context_mapping:
       node: node
-    uuid: 2b66c156-8367-4c5d-a83f-68882884ed6e
+    uuid: c5a7c052-16df-4174-9104-3b801a5748c6
 selection_logic: and
 weight: -5
 relationships: {  }

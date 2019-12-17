@@ -1,8 +1,9 @@
 uuid: ded259e6-f080-487d-9264-80b2bcf51b92
 langcode: en
-status: false
+status: true
 dependencies:
   module:
+    - ctools
     - system
   theme:
     - pineapple
@@ -19,4 +20,11 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      recipe: recipe
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

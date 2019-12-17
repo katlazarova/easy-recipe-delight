@@ -13,4 +13,4 @@ regions:
   content: Content
   social_banner: 'Social banner'
   footer: Footer
-  sidebar: First
+  sidebar_first: 'Sidebar First'
