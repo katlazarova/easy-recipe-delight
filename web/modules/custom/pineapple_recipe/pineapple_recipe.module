@@ -7,6 +7,8 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Implements hook_help().
@@ -27,35 +29,42 @@ function pineapple_recipe_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_form_alter().
  */
-function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
-{
-  $currentUser = \Drupal::currentUser();
-  $currentAuthor = $currentUser->getDisplayName();
-  $currentAuthorId = $currentUser->id();
-  if ($form_id == 'node_recipe_form') {
+function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_recipe_form' || $form_id == 'node_recipe_edit_form') {
     if (isset($form['field_r_content_author'])) {
-      $form['field_r_content_author']['widget']['#options'] = array('Author' => $currentAuthor);
+      // Creator value is added from content_author_allowed_values_function.
+      $form['field_r_content_author']['widget']['#default_value'] = 'content_creator';
     }
   }
+}
 
-  if ($form_id == 'node_recipe_edit_form') {
-    if (\Drupal::routeMatch()->getParameter('node')) {
-      $node = \Drupal::routeMatch()->getParameter('node');
-      if (isset($node)) {
-        $creatorId = $node->getOwnerId();
-        $creator = $node->getOwner()->getDisplayName();
-
-        if (isset($form['field_r_content_author'])) {
-          if ($creatorId === $currentAuthorId){
-            $form['field_r_content_author']['widget']['#options'] = array('Author' => $creator);
-          } else {
-            $form['field_r_content_author']['widget']['#options'] = array(
-              'Creator' => $creator,
-              'Current Author' => $currentAuthor
-            );
-          }
-        }
-      }
-    }
+/**
+ * Set dynamic allowed values for the content author field(s).
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ */
+function content_author_allowed_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $creatorId = $entity->getOwnerId();
+  $currentUser = \Drupal::currentUser();
+  if ($creatorId === $currentUser->id()) {
+    $options = [
+      'content_creator' => $entity->getOwner()->getDisplayName()
+    ];
+  } else {
+    $options = [
+      'current_user' => $currentUser->getDisplayName(),
+      'content_creator' => $entity->getOwner()->getDisplayName()
+    ];
   }
+  return $options;
 }
