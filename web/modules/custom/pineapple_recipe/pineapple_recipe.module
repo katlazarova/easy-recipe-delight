@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_help().
@@ -24,13 +25,37 @@ function pineapple_recipe_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_alter().
  */
-function pineapple_recipe_form_node_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
 {
-  if (isset($form['field_r_content_author'])) {
-    $currentUser = \Drupal::currentUser();
-    $author = $currentUser->getDisplayName();
-    $form['field_r_content_author']['widget']['#options'] = array('Author' => $author);
+  $currentUser = \Drupal::currentUser();
+  $currentAuthor = $currentUser->getDisplayName();
+  $currentAuthorId = $currentUser->id();
+  if ($form_id == 'node_recipe_form') {
+    if (isset($form['field_r_content_author'])) {
+      $form['field_r_content_author']['widget']['#options'] = array('Author' => $currentAuthor);
+    }
+  }
+
+  if ($form_id == 'node_recipe_edit_form') {
+    if (\Drupal::routeMatch()->getParameter('node')) {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if (isset($node)) {
+        $creatorId = $node->getOwnerId();
+        $creator = $node->getOwner()->getDisplayName();
+
+        if (isset($form['field_r_content_author'])) {
+          if ($creatorId === $currentAuthorId){
+            $form['field_r_content_author']['widget']['#options'] = array('Author' => $creator);
+          } else {
+            $form['field_r_content_author']['widget']['#options'] = array(
+              'Creator' => $creator,
+              'Current Author' => $currentAuthor
+            );
+          }
+        }
+      }
+    }
   }
 }
