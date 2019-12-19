@@ -70,16 +70,14 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
-%}
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
 
@@ -90,22 +88,35 @@
     </h1>
   {% endif %}
   {{ title_suffix }}
-
-  <div{{ content_attributes.addClass('node__content', 'inner-content') }}>
+  <div class="row">
+    <div{{ content_attributes.addClass('node__content', 'inner-content') }}>
       {{ content.field_r_hero_image }}
-    <div class="textbox-container">
-      <p>Cooking time: {{ content.field_r_cooking_time }}</p>
+      <div class="textbox-container">
+        <p>Cooking time: {{ content.field_r_cooking_time }}</p>
+      </div>
+      <div class="textbox-container">
+        {{ content.field_r_serves }}
+      </div>
+      <div class="textbox-container">
+        {{ content.field_r_cost }}
+      </div>
+      <div class="inner-content">
+        {{ content.field_r_summary }}
+      </div>
+      {{ content.field_r_body }}
+      {{ content.field_r_categories }}
     </div>
-    <div class="textbox-container">
-      {{ content.field_r_serves }}
-    </div>
-    {{ content.field_r_summary }}
-    {{ content.field_r_author_quote }}
-    {{ content.field_r_body }}
-    {{ content.field_r_categories }}
-    {{ content.field_r_content_author }}
-    {{ content.field_r_cost }}
-    {{ content.field_r_featured }}
-    {{ content.field_r_highlighted }}
+    <aside class="recipe-sidebar">
+      <div class="recipe-author-container">
+        <div class="recipe-author-text-container">
+          <div class="author-name">
+            <p>by {{ content.field_r_content_author }}</p>
+          </div>
+          <div class="author-quote">
+            {{ content.field_r_author_quote }}
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
 </article>
