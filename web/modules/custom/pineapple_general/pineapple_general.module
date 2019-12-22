@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains pineapple_recipe.module.
+ * Contains pineapple_general.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -13,13 +13,13 @@ use Drupal\field\Entity\FieldStorageConfig;
 /**
  * Implements hook_help().
  */
-function pineapple_recipe_help($route_name, RouteMatchInterface $route_match) {
+function pineapple_general_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the pineapple_recipe module.
-    case 'help.page.pineapple_recipe':
+    // Main module help for the pineapple_general module.
+    case 'help.page.pineapple_general':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Module for the recipe content type') . '</p>';
+      $output .= '<p>' . t('Module for general site-wide functions.') . '</p>';
       return $output;
 
     default:
@@ -29,12 +29,21 @@ function pineapple_recipe_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_form_alter().
  */
-function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'node_recipe_form' || $form_id == 'node_recipe_edit_form') {
-    if (isset($form['field_r_content_author'])) {
-      // Creator value is added from content_author_allowed_values_function.
-      $form['field_r_content_author']['widget']['#default_value'] = 'content_creator';
+function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'node_recipe_form':
+    case 'node_recipe_edit_form':
+      if (isset($form['field_r_content_author'])) {
+        // Creator value is added from content_author_allowed_values_function.
+        $form['field_r_content_author']['widget']['#default_value'] = 'content_creator';
+      }
+      break;
+    case 'node_article_edit_form':
+    case 'node_article_form':
+    if (isset($form['field_a_content_author'])) {
+      $form['field_a_content_author']['widget']['#default_value'] = 'content_creator';
     }
+    break;
   }
 }
 

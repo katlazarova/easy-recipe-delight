@@ -31,6 +31,7 @@ visibility:
   node_type:
     id: node_type
     bundles:
+      article: article
       page: page
       recipe: recipe
     negate: false
@@ -50,6 +51,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      article: article
       page: page
       recipe: recipe
     negate: false
