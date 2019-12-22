@@ -62,7 +62,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  *
  * @see options_allowed_values()
  */
-function content_author_allowed_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+function content_author_allowed_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
   $creator_first_name = $entity->getOwner()->get('field_first_name')->value;
   $creator_surname = $entity->getOwner()->get('field_surname')->value;
 

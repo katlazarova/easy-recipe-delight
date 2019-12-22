@@ -20,7 +20,7 @@ mode: default
 content:
   field_a_body:
     type: entity_reference_revisions_entity_view
-    weight: 107
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -28,7 +28,7 @@ content:
     third_party_settings: {  }
     region: content
   field_a_content_author:
-    weight: 108
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -36,7 +36,7 @@ content:
     region: content
   field_a_hero_image:
     type: entity_reference_entity_view
-    weight: 103
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -44,7 +44,7 @@ content:
     third_party_settings: {  }
     region: content
   field_a_summary:
-    weight: 106
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -52,7 +52,7 @@ content:
     region: content
   field_a_teaser_image:
     type: entity_reference_entity_view
-    weight: 104
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -60,7 +60,7 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 100
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
