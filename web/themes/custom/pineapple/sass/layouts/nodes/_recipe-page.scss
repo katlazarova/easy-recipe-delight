@@ -15,7 +15,9 @@
       background-repeat: no-repeat;
     }
 
-    .textbox-container {
+    .field--name-field-r-cooking-time,
+    .field--name-field-r-serves,
+    .field--name-field-r-cost {
       background-color: $light-grey;
       color: $primary;
       text-transform: uppercase;
@@ -29,21 +31,17 @@
         display: inline;
       }
 
-      .field--name-field-r-cooking-time,
-      .field--name-field-r-serves,
-      .field--name-field-r-cost, {
-        .field__label {
-          display: inline;
-        }
-
-        .field__item {
-          display: inline;
-        }
+      .field__label {
+        display: inline;
       }
 
-      .field--name-field-r-summary {
-        font-size: $medium-font;
+      .field__item {
+        display: inline;
       }
+    }
+
+    .field--name-field-r-summary {
+      font-size: $medium-font;
     }
   }
 

@@ -90,15 +90,9 @@
     <div{{ content_attributes.addClass('node__content', 'inner-content') }}>
       {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
       <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
-      <div class="textbox-container">
         {{ content.field_r_cooking_time }}
-      </div>
-      <div class="textbox-container">
         {{ content.field_r_serves }}
-      </div>
-      <div class="textbox-container">
         {{ content.field_r_cost }}
-      </div>
       <div class="inner-content">
         {{ content.field_r_summary }}
       </div>
@@ -108,7 +102,9 @@
     <aside class="recipe-sidebar">
       <div class="recipe-author-container">
         <div class="author-image-container">
+          {% if owner.field_profile_image.value[0].target_id %}
           {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
+          {% endif %}
         </div>
         <div class="recipe-author-text-container">
           <div class="author-name">
