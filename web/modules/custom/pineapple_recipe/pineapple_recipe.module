@@ -54,16 +54,22 @@ function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
  * @see options_allowed_values()
  */
 function content_author_allowed_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
-  $creatorId = $entity->getOwnerId();
-  $currentUser = \Drupal::currentUser();
-  if ($creatorId === $currentUser->id()) {
+  $creator_id = $entity->getOwnerId();
+  $current_user = \Drupal::currentUser();
+  $creator_first_name = $entity->getOwner()->get('field_first_name')->value;
+  $creator_surname = $entity->getOwner()->get('field_surname')->value;
+  $current_user_entity = \Drupal\user\Entity\User::load($current_user->id());
+  $current_user_first_name = $current_user_entity->get('field_first_name')->value;
+  $current_user_surname = $current_user_entity->get('field_surname')->value;
+  $v = 0;
+  if ($creator_id === $current_user->id()) {
     $options = [
-      'content_creator' => $entity->getOwner()->getDisplayName()
+      'content_creator' => "{$creator_first_name} {$creator_surname}"
     ];
   } else {
     $options = [
-      'current_user' => $currentUser->getDisplayName(),
-      'content_creator' => $entity->getOwner()->getDisplayName()
+      'current_user' => "{$current_user_first_name} {$current_user_surname}",
+      'content_creator' => "{$creator_first_name} {$creator_surname}"
     ];
   }
   return $options;
