@@ -1,0 +1,5 @@
+name: 'pineapple_general'
+type: module
+description: 'Module for general site-wide form alters'
+core: 8.x
+package: 'Custom'
