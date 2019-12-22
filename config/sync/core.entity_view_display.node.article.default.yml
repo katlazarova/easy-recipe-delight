@@ -20,7 +20,7 @@ mode: default
 content:
   field_a_body:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -28,8 +28,8 @@ content:
     third_party_settings: {  }
     region: content
   field_a_content_author:
-    weight: 4
-    label: hidden
+    weight: 5
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
