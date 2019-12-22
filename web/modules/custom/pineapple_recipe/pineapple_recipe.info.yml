@@ -1,0 +1,5 @@
+name: 'pineapple_recipe'
+type: module
+description: 'Module for the recipe content type'
+core: 8.x
+package: 'Custom'

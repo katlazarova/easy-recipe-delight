@@ -26,6 +26,16 @@
   }
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @include breakpoint($desk) {
+    flex-direction: row;
+  }
+}
+
 .breakout {
   margin-right: -50vw;
   margin-left: -50vw;
@@ -40,4 +50,8 @@ blockquote {
   line-height: 39px;
   font-weight: 800;
   color: $primary;
+}
+
+.u-o-2 > * + * {
+    margin-top: 16px;
 }

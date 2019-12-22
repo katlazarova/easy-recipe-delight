@@ -1,0 +1,15 @@
+uuid: 503c57a8-6ecf-465a-8997-ae9f5d71767a
+langcode: en
+status: true
+dependencies: {  }
+name: recipe_image_680_x_350
+label: 'Recipe Image (680 x 350)'
+effects:
+  3f161481-af55-4775-b77b-e66a3fcdefc3:
+    uuid: 3f161481-af55-4775-b77b-e66a3fcdefc3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 680
+      height: 350
+      anchor: center-center

@@ -5,12 +5,11 @@ dependencies:
   config:
     - field.field.user.user.field_biography
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_profile_image
     - field.field.user.user.field_surname
     - field.field.user.user.field_tagline
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
+    - path
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -45,6 +44,15 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_profile_image:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_surname:
     weight: 5
     settings:
@@ -66,17 +74,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  user_picture:
-    type: image_image
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    weight: 8
-    region: content
 hidden: {  }

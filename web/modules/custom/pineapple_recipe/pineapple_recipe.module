@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Contains pineapple_recipe.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Implements hook_help().
+ */
+function pineapple_recipe_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the pineapple_recipe module.
+    case 'help.page.pineapple_recipe':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module for the recipe content type') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_recipe_form' || $form_id == 'node_recipe_edit_form') {
+    if (isset($form['field_r_content_author'])) {
+      // Creator value is added from content_author_allowed_values_function.
+      $form['field_r_content_author']['widget']['#default_value'] = 'content_creator';
+    }
+  }
+}
+
+/**
+ * Set dynamic allowed values for the content author field(s).
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ */
+function content_author_allowed_values_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $creator_first_name = $entity->getOwner()->get('field_first_name')->value;
+  $creator_surname = $entity->getOwner()->get('field_surname')->value;
+
+  $options = [
+      'content_creator' => "{$creator_first_name} {$creator_surname}"
+  ];
+
+  return $options;
+}

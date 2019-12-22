@@ -70,56 +70,51 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
-%}
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  {% if not content.field_bp_hero_image|field_value %}
-    {{ title_prefix }}
-    {% if label %}
-     <h1{{ title_attributes.addClass('page-title') }}>
-      {{ label }}
-      </h1>
-    {% endif %}
-    {{ title_suffix }}
-  {% endif %}
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
 
-  <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
-    {% if content.field_bp_hero_image|field_value %}
-      {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
-      <div class="hero-container breakout">
-        <div class="hero-image" style="background-image: url({{ hero_url }})">
+  {{ title_prefix }}
+  {% if label %}
+    <h1{{ title_attributes.addClass('page-title') }}>{{ label }}</h1>
+  {% endif %}
+  {{ title_suffix }}
+  <div class="row">
+    <div{{ content_attributes.addClass('node__content') }}>
+      {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
+      <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
+      <div class="u-o-2">
+        {{ content.field_r_cooking_time }}
+        {{ content.field_r_serves }}
+        {{ content.field_r_cost }}
+        {{ content.field_r_summary }}
+        {{ content.field_r_body }}
+        {{ content.field_r_categories }}
+      </div>
+    </div>
+    <aside class="recipe-sidebar">
+      <div class="recipe-author-container">
+        <div class="author-image-container">
+          {% if owner.field_profile_image.value[0].target_id %}
+            {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
+          {% endif %}
         </div>
-        <div class="hero-image-text container">
-          <div class="page-title">
-            <h1>
-              {{ label }}
-            </h1>
-          </div>
+        <div class="recipe-author-text-container">
           <div class="author-name">
-            <p>by: {{ node.Owner.name.value }}</p>
+            <p>by {{ content.field_r_content_author }}</p>
+          </div>
+          <div class="author-quote">
+            {{ content.field_r_author_quote }}
           </div>
         </div>
       </div>
-    {% endif %}
-      {{ content.field_bp_summary }}
-      {{ content.field_bp_body }}
+    </aside>
   </div>
 </article>
