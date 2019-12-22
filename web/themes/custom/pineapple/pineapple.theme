@@ -91,7 +91,7 @@ function pineapple_theme_suggestions_fieldset_alter(array &$suggestions, array $
 function pineapple_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
-  $node = $variables["node"];
+  $node = $variables['node'];
 
   if ($node->getType() == 'recipe') {
     $owner = $node->getOwner();
