@@ -87,23 +87,23 @@
   {% endif %}
   {{ title_suffix }}
   <div class="row">
-    <div{{ content_attributes.addClass('node__content', 'inner-content') }}>
+    <div{{ content_attributes.addClass('node__content') }}>
       {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
       <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
+      <div class="u-o-2">
         {{ content.field_r_cooking_time }}
         {{ content.field_r_serves }}
         {{ content.field_r_cost }}
-      <div class="inner-content">
         {{ content.field_r_summary }}
+        {{ content.field_r_body }}
+        {{ content.field_r_categories }}
       </div>
-      {{ content.field_r_body }}
-      {{ content.field_r_categories }}
     </div>
     <aside class="recipe-sidebar">
       <div class="recipe-author-container">
         <div class="author-image-container">
           {% if owner.field_profile_image.value[0].target_id %}
-          {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
+            {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
           {% endif %}
         </div>
         <div class="recipe-author-text-container">
@@ -116,5 +116,5 @@
         </div>
       </div>
     </aside>
-</div>
+  </div>
 </article>

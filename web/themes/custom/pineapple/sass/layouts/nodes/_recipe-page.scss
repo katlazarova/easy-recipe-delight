@@ -50,7 +50,6 @@
     padding-right: 15px;
     padding-left: 15px;
     overflow-y: auto;
-    padding-top: 16px;
     height: auto;
 
     @include breakpoint($desk) {
@@ -63,7 +62,6 @@
     .recipe-author-container {
       background-color: $light-grey;
       padding: 10px;
-      margin-top: 22px;
       margin-bottom: 10px;
 
       .author-image-container {

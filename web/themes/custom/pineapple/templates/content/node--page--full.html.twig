@@ -101,7 +101,7 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('node__content') }}>
+  <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
     {% if content.field_bp_hero_image|field_value %}
       {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
       <div class="hero-container breakout">
@@ -119,9 +119,7 @@
         </div>
       </div>
     {% endif %}
-    <div class="inner-content">
       {{ content.field_bp_summary }}
       {{ content.field_bp_body }}
-    </div>
   </div>
 </article>
