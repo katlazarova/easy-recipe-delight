@@ -5,13 +5,13 @@ dependencies:
   config:
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_content_author
-    - field.field.node.article.field_a_headline
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
     - node.type.article
   module:
     - entity_reference_revisions
+    - options
     - user
 id: node.article.default
 targetEntityType: node
@@ -21,32 +21,23 @@ content:
   field_a_body:
     type: entity_reference_revisions_entity_view
     weight: 107
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   field_a_content_author:
-    weight: 105
+    weight: 108
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
-    region: content
-  field_a_headline:
-    weight: 102
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
+    type: list_default
     region: content
   field_a_hero_image:
     type: entity_reference_entity_view
     weight: 103
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -54,7 +45,7 @@ content:
     region: content
   field_a_summary:
     weight: 106
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
@@ -62,7 +53,7 @@ content:
   field_a_teaser_image:
     type: entity_reference_entity_view
     weight: 104
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -70,7 +61,7 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

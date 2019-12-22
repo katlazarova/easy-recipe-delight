@@ -1,18 +1,17 @@
-uuid: 9fb62157-124c-4d60-b47b-0b56a5680229
+uuid: 6f640abc-f89b-4f0c-8731-9d6e21868083
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_a_headline
     - node.type.article
-id: node.article.field_a_headline
-field_name: field_a_headline
+id: node.article.title
+field_name: title
 entity_type: node
 bundle: article
 label: Headline
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

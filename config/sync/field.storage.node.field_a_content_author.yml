@@ -1,18 +1,18 @@
-uuid: a459546a-9290-48c7-a503-65c9e7552bf3
+uuid: e3d38563-8acf-4b2a-a525-5a3a9b69ab38
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - options
 id: node.field_a_content_author
 field_name: field_a_content_author
 entity_type: node
-type: string
+type: list_string
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+  allowed_values: {  }
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true

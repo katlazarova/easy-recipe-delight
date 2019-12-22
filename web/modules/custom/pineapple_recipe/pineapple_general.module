@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains pineapple_recipe.module.
+ * Contains pineapple_general.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -29,11 +29,17 @@ function pineapple_recipe_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_form_alter().
  */
-function pineapple_recipe_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function pineapple_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id == 'node_recipe_form' || $form_id == 'node_recipe_edit_form') {
     if (isset($form['field_r_content_author'])) {
       // Creator value is added from content_author_allowed_values_function.
       $form['field_r_content_author']['widget']['#default_value'] = 'content_creator';
+    }
+  }
+
+  if ($form_id == 'node_article_edit_form' || $form_id == 'node_article_form') {
+    if (isset($form['field_a_content_author'])) {
+      $form['field_a_content_author']['widget']['#default_value'] = 'content_creator';
     }
   }
 }
