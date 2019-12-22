@@ -83,16 +83,15 @@
 
   {{ title_prefix }}
   {% if label %}
-    <h1{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h1>
+    <h1{{ title_attributes.addClass('page-title') }}>{{ label }}</h1>
   {% endif %}
   {{ title_suffix }}
   <div class="row">
     <div{{ content_attributes.addClass('node__content', 'inner-content') }}>
-      {{ content.field_r_hero_image }}
+      {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
+      <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
       <div class="textbox-container">
-        <p>Cooking time: {{ content.field_r_cooking_time }}</p>
+        {{ content.field_r_cooking_time }}
       </div>
       <div class="textbox-container">
         {{ content.field_r_serves }}
@@ -108,6 +107,9 @@
     </div>
     <aside class="recipe-sidebar">
       <div class="recipe-author-container">
+        <div class="author-image-container">
+          {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
+        </div>
         <div class="recipe-author-text-container">
           <div class="author-name">
             <p>by {{ content.field_r_content_author }}</p>
@@ -118,5 +120,5 @@
         </div>
       </div>
     </aside>
-  </div>
+</div>
 </article>

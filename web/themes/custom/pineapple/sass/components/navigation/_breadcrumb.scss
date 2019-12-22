@@ -1,0 +1,22 @@
+.breadcrumb {
+  font-size: $small-font;
+  color: $dark-grey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+
+  a {
+    color: $dark-grey;
+
+    &:hover,
+    &:focus {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+hr {
+  border-bottom: 1px solid $light-grey;
+}
