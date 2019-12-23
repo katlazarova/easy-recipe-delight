@@ -82,18 +82,7 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  {% if not content.field_a_hero_image|field_value %}
-    {{ title_prefix }}
-    {% if label %}
-      <h1{{ title_attributes.addClass('page-title') }}>
-        {{ label }}
-      </h1>
-    {% endif %}
-    {{ title_suffix }}
-  {% endif %}
-
     <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
-      {% if content.field_a_hero_image|field_value %}
         {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
         <div class="hero-container breakout">
           <div class="hero-image" style="background-image: url({{ hero_url }})">
@@ -109,7 +98,6 @@
             </div>
           </div>
         </div>
-      {% endif %}
         {{ content.field_a_summary }}
         {{ content.field_a_body }}
     </div>
