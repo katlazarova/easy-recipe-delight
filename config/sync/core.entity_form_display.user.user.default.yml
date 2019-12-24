@@ -9,6 +9,7 @@ dependencies:
     - field.field.user.user.field_surname
     - field.field.user.user.field_tagline
   module:
+    - media_library
     - path
     - user
 _core:
@@ -47,11 +48,9 @@ content:
   field_profile_image:
     weight: 31
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_surname:
     weight: 5

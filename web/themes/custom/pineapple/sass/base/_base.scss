@@ -52,6 +52,10 @@ blockquote {
   color: $primary;
 }
 
+hr {
+  border: 0.5px solid #e0dfe3;
+}
+
 .u-o-2 > * + * {
     margin-top: 16px;
 }

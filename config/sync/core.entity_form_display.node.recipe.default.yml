@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.recipe.field_r_teaser_image
     - node.type.recipe
   module:
+    - media_library
     - paragraphs
     - path
 id: node.recipe.default
@@ -91,11 +92,9 @@ content:
   field_r_hero_image:
     weight: 121
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_r_highlighted:
     weight: 131
@@ -122,11 +121,9 @@ content:
   field_r_teaser_image:
     weight: 122
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   path:
     type: path

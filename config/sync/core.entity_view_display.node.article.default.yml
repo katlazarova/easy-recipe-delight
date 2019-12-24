@@ -28,18 +28,18 @@ content:
     third_party_settings: {  }
     region: content
   field_a_content_author:
-    weight: 5
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_a_hero_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
-      view_mode: default
+      view_mode: hero_image
       link: false
     third_party_settings: {  }
     region: content
@@ -52,7 +52,7 @@ content:
     region: content
   field_a_teaser_image:
     type: entity_reference_entity_view
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -60,7 +60,7 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 0
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,8 +1,9 @@
-uuid: 4e5bad89-3d30-4c3f-8b71-1aaa7b0fe411
+uuid: cd82602e-d738-42e5-923a-de75337cbbf7
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.profile_image
     - field.field.media.image.field_media_image
     - image.style.media_library
     - media.type.image
@@ -10,10 +11,10 @@ dependencies:
     - image
 _core:
   default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
-id: media.image.default
+id: media.image.profile_image
 targetEntityType: media
 bundle: image
-mode: default
+mode: profile_image
 content:
   field_media_image:
     label: visually_hidden

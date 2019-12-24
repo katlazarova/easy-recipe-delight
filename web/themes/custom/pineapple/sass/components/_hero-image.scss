@@ -1,6 +1,7 @@
 .hero-container {
   height: 527px;
   overflow: hidden;
+  margin-bottom: 32px;
 
   .hero-image {
     height: 100%;
@@ -46,6 +47,10 @@
       margin-top: 45px;
 
       p {
+        display: inline;
+      }
+
+      .field {
         display: inline;
       }
     }
