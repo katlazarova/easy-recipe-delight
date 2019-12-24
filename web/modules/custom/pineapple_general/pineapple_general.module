@@ -61,6 +61,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  *   An array of possible key and value options.
  *
  * @see options_allowed_values()
+ * This functions is called in the field.storage.node files for the content author fields for the nodes which use it.
  */
 function content_author_allowed_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
   $creator_first_name = $entity->getOwner()->get('field_first_name')->value;
