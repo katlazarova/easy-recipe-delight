@@ -23,6 +23,7 @@ content:
     region: content
 hidden:
   field_a_body: true
+  field_a_content_author: true
   field_a_hero_image: true
   field_a_summary: true
   field_a_teaser_image: true

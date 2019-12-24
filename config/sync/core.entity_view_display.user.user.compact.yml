@@ -20,6 +20,7 @@ content: {  }
 hidden:
   field_biography: true
   field_first_name: true
+  field_profile_image: true
   field_surname: true
   field_tagline: true
   member_for: true

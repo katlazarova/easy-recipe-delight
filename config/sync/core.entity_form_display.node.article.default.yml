@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_a_teaser_image
     - node.type.article
   module:
+    - media_library
     - paragraphs
     - path
 id: node.article.default
@@ -44,11 +45,9 @@ content:
   field_a_hero_image:
     weight: 1
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_a_summary:
     weight: 4
@@ -61,11 +60,9 @@ content:
   field_a_teaser_image:
     weight: 2
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   path:
     type: path
