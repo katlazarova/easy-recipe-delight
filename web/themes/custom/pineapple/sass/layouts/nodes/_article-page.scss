@@ -1,8 +1,4 @@
-.views-row {
-  margin-bottom: 16px;
-}
-
-.teaser-container {
+.node--type-article {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -14,27 +10,28 @@
 
   .teaser-content {
     background-color: #f1f0f4;
-    padding: 30px;
-    height: 400px;
+    padding: 0 30px 30px 30px;
     width: 100%;
 
-    .datetime {
+    @include breakpoint($desk) {
+      height: 400px;
+    }
+
+    p {
       color: $primary;
     }
 
     .field--name-field-a-summary {
       margin-top: 20px;
+      margin-bottom: 30px;
     }
 
-    .field--name-field-a-content-link {
+    .teaser-link {
       background-color: $primary;
       padding: 15px;
       margin-top: 20px;
       width: 150px;
-
-      a {
-        color: white;
-      }
+      color: white;
     }
   }
 

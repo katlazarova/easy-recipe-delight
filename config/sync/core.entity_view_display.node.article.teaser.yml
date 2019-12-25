@@ -17,9 +17,18 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
+  field_a_hero_image:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: article_teaser
+      link: false
+    third_party_settings: {  }
   field_a_summary:
     type: basic_string
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings: {  }
@@ -36,5 +45,4 @@ content:
 hidden:
   field_a_body: true
   field_a_content_author: true
-  field_a_hero_image: true
   links: true

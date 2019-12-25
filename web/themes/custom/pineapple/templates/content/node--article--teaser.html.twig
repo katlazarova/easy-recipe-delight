@@ -82,27 +82,20 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  <div class="teaser-container">
     <div class="teaser-image-container">
       {% if content.field_a_teaser_image|field_value %}
         {{ content.field_a_teaser_image }}
       {% endif %}
-      {{ kint(content.field_a_hero_image) }}
       {% if not content.field_a_teaser_image|field_value %}
         {{ content.field_a_hero_image }}
       {% endif %}
     </div>
     <div class="teaser-content">
-      {% if label and not page %}
-        <h2{{ title_attributes }}>
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
-      {% endif %}
+      <h2{{ title_attributes.addClass('page-title') }}>{{ label }}</h2>
       <div{{ content_attributes.addClass('node__content') }}>
-        {{ content.field_a_date_published }}
+        <p>{{ post.published_at|date('jS F Y') }}</p>
         {{ content.field_a_summary }}
-        {{ content.field_a_content_link }}
+        <a href="{{ url }}" class="teaser-link">Read Recipe ></a>
       </div>
     </div>
-  </div>
 </article>
