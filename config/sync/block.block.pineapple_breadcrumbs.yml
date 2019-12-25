@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
-    - node
     - system
   theme:
     - pineapple
@@ -22,19 +20,8 @@ settings:
   provider: system
   label_display: '0'
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-      recipe: recipe
+  request_path:
+    id: request_path
+    pages: "/articles\r\n/articles/*\r\n/recipes/*"
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-  node_type:
-    id: node_type
-    bundles:
-      article: article
-      recipe: recipe
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+    context_mapping: {  }

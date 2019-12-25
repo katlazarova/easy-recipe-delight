@@ -5,11 +5,15 @@ dependencies:
   config:
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_content_author
+    - field.field.node.article.field_a_content_link
+    - field.field.node.article.field_a_date_published
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
     - node.type.article
   module:
+    - datetime
+    - link
     - media_library
     - paragraphs
     - path
@@ -41,6 +45,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_a_content_link:
+    weight: 26
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_a_date_published:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_a_hero_image:
     weight: 1

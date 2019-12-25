@@ -5,11 +5,14 @@ dependencies:
   config:
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_content_author
+    - field.field.node.article.field_a_content_link
+    - field.field.node.article.field_a_date_published
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
     - node.type.article
   module:
+    - datetime
     - entity_reference_revisions
     - options
     - user
@@ -33,6 +36,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_a_date_published:
+    weight: 5
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_a_hero_image:
     type: entity_reference_entity_view
@@ -59,9 +71,6 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  links:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_a_content_link: true
+  links: true

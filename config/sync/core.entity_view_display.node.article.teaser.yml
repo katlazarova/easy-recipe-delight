@@ -5,25 +5,61 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.field_a_body
+    - field.field.node.article.field_a_content_author
+    - field.field.node.article.field_a_content_link
+    - field.field.node.article.field_a_date_published
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
     - node.type.article
   module:
+    - datetime
+    - link
     - user
 id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_a_content_link:
+    type: link
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_a_date_published:
+    type: datetime_default
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+  field_a_summary:
+    type: basic_string
+    weight: 2
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_a_teaser_image:
+    type: entity_reference_entity_view
+    weight: 0
     region: content
+    label: hidden
+    settings:
+      view_mode: article_teaser
+      link: false
+    third_party_settings: {  }
 hidden:
   field_a_body: true
   field_a_content_author: true
   field_a_hero_image: true
-  field_a_summary: true
-  field_a_teaser_image: true
+  links: true
