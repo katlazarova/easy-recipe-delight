@@ -1,0 +1,15 @@
+uuid: 47e26824-60c8-4be2-beae-6f4042d1df43
+langcode: en
+status: true
+dependencies: {  }
+name: article_teaser_image_300_x_500
+label: 'Article Teaser Image (300 x 500)'
+effects:
+  4ab9f2bc-34f0-48a7-813d-f466db76a361:
+    uuid: 4ab9f2bc-34f0-48a7-813d-f466db76a361
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 400
+      anchor: center-center

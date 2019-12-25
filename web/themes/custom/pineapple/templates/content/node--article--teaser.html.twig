@@ -84,7 +84,13 @@
 <article{{ attributes.addClass(classes) }}>
   <div class="teaser-container">
     <div class="teaser-image-container">
-      {{ content.field_a_teaser_image }}
+      {% if content.field_a_teaser_image|field_value %}
+        {{ content.field_a_teaser_image }}
+      {% endif %}
+      {{ kint(content.field_a_hero_image) }}
+      {% if not content.field_a_teaser_image|field_value %}
+        {{ content.field_a_hero_image }}
+      {% endif %}
     </div>
     <div class="teaser-content">
       {% if label and not page %}
