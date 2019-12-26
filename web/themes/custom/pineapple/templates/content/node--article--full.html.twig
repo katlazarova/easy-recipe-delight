@@ -88,13 +88,15 @@
           <div class="hero-image" style="background-image: url({{ hero_url }})">
           </div>
           <div class="hero-image-text container">
-            <div class="page-title">
-              <h1>
-                {{ label }}
-              </h1>
-            </div>
-            <div class="author-name">
-              <p>by {{ content.field_a_content_author }}</p>
+            <div class="hero-image-content">
+              <div class="page-title">
+                <h1>
+                  {{ label }}
+                </h1>
+              </div>
+              <div class="hero-subtext">
+                <p>by {{ content.field_a_content_author }}</p>
+              </div>
             </div>
           </div>
         </div>

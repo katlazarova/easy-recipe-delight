@@ -1,4 +1,4 @@
-.node--type-article {
+.article--teaser {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -32,6 +32,12 @@
       margin-top: 20px;
       width: 150px;
       color: white;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        background-color: $dark-grey;
+      }
     }
   }
 
@@ -41,7 +47,7 @@
       object-fit: cover;
 
       @include breakpoint($desk) {
-        width: 250px;
+        width: auto;
       }
     }
   }
