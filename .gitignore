@@ -31,6 +31,7 @@
 .idea/vcs.xml
 .idea/jsLinters/jshint.xml
 .idea/php-test-framework.xml
+.phpunit.xml.dist
 
 # Generated files
 .idea/**/contentModel.xml
@@ -45,3 +46,6 @@
 .idea/**/dbnavigator.xml
 # Ignore .env files as they are personal
 /.env
+
+.DS_Store
+**/.DS_Store

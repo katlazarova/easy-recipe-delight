@@ -1,0 +1,36 @@
+.article--teaser {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include breakpoint($desk) {
+    width: 75%;
+    flex-direction: row;
+  }
+
+  .teaser-content {
+    background-color: #f1f0f4;
+    padding: $unit * 4;
+    padding-top: 0;
+    width: 100%;
+
+    @include breakpoint($desk) {
+      height: 400px;
+    }
+
+    p {
+      color: $primary;
+    }
+  }
+
+  .teaser-image-container {
+    img {
+      width: 100%;
+      object-fit: cover;
+
+      @include breakpoint($desk) {
+        width: auto;
+      }
+    }
+  }
+}

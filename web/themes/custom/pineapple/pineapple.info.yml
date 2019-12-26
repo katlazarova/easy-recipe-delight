@@ -4,6 +4,12 @@ description: 'My Awesome theme'
 package: Other
 core: 8.x
 libraries:
-  - pineapple/global-styling
- 
-base theme: stable
+  - pineapple/global-css
+  - pineapple/global-js
+
+base theme: classy
+regions:
+  header: Header
+  content: Content
+  social_banner: 'Social banner'
+  footer: Footer

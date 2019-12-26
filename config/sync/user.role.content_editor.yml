@@ -1,0 +1,42 @@
+uuid: 7a6248bf-c233-47ef-bee6-323574fa06a8
+langcode: en
+status: true
+dependencies: {  }
+id: content_editor
+label: 'Content Editor'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'create article content'
+  - 'create page content'
+  - 'create recipe content'
+  - 'create terms in categories'
+  - 'create terms in tags'
+  - 'delete any article content'
+  - 'delete any page content'
+  - 'delete any recipe content'
+  - 'delete own article content'
+  - 'delete own page content'
+  - 'delete own recipe content'
+  - 'delete page revisions'
+  - 'delete terms in categories'
+  - 'delete terms in tags'
+  - 'edit any article content'
+  - 'edit any page content'
+  - 'edit any recipe content'
+  - 'edit own article content'
+  - 'edit own page content'
+  - 'edit own recipe content'
+  - 'edit terms in categories'
+  - 'edit terms in tags'
+  - 'view the administration theme'

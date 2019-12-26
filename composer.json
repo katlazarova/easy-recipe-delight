@@ -21,9 +21,15 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.0",
+        "drupal/bamboo_twig": "^4.1",
         "drupal/console": "^1.0.2",
-        "drupal/core": "^8.7.0",
+        "drupal/core": "8.7.0",
+        "drupal/devel": "^2.1",
+        "drupal/easy_breadcrumb": "^1.12",
+        "drupal/paragraphs": "^1.10",
+        "drupal/pathauto": "^1.6",
         "drupal/styleguide": "^1.0@alpha",
+        "drupal/twig_field_value": "^1.2",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -63,9 +69,7 @@
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
+        "enable-patching": true,
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
@@ -73,6 +77,8 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
         },
         "drupal-scaffold": {
             "initial": {

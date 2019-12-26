@@ -1,0 +1,20 @@
+uuid: d71763fb-ebc6-4aef-a5b5-31a0f69d26f6
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pineapple
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: pineapple_local_actions
+theme: pineapple
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

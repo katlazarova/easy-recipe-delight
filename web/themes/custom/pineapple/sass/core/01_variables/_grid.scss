@@ -1,0 +1,28 @@
+////
+/// @group Grid
+////
+
+// Set consistent vertical and horizontal spacing units.
+$spacing-unit-vertical    : 25px;
+$spacing-unit-horizontal  : 20px;
+
+// Define breakpoints for use with the breakpoint mixin.
+
+/// A breakpoint for devices that fit in the palm, e.g. phones, small tablets.
+$palm:       576px;
+/// A breakpoint for devices that fit in the lap, e.g. tablets, small laptops.
+$lap:        768px;
+/// A breakpoint for devices that fit on a desktop, e.g. small/medium monitors.
+$desk:       992px;
+/// A breakpoint for widescreen devices that would fit on a desktop.
+$desk-wide:  1200px;
+
+$hdpi:      min-resolution 1.5dppx; // Min 1.5dppx for higher resolution displays.
+
+$gutter-size: 80%;
+
+$unit: 8px;
+
+/// For use when the site has a constrained region - sets the maximum width
+/// this region should be.
+$max-container-width: 74em;

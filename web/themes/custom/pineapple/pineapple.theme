@@ -91,6 +91,12 @@ function pineapple_theme_suggestions_fieldset_alter(array &$suggestions, array $
 function pineapple_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
+  $node = $variables['node'];
+
+  if ($node->getType() == 'recipe') {
+    $owner = $node->getOwner();
+    $variables['owner'] = $owner;
+  }
 }
 
 /**
@@ -142,4 +148,17 @@ function pineapple_theme_suggestions_details_alter(array &$suggestions, array $v
  */
 function pineapple_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function pineapple_library_info_alter(&$libraries, $extension) {
+  $js_preprocessing_enabled = Drupal::config('system.performance')->get('js.preprocess');
+
+  if ($extension === 'pineapple' && isset($libraries['vue']) && !$js_preprocessing_enabled) {
+    /* As we are likely on a dev environment, use the unminified version of vue, which will enable vue's dev tools. */
+    unset($libraries['vue']['js']['node_modules/vue/dist/vue.min.js']);
+    $libraries['vue']['js']['node_modules/vue/dist/vue.js'] = [];
+  }
 }

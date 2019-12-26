@@ -1,0 +1,25 @@
+uuid: 9688db2c-2b99-4c05-b3d7-46a2934c2cce
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pineapple
+id: pagetitle
+theme: pineapple
+region: content
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /articles
+    negate: false
+    context_mapping: {  }

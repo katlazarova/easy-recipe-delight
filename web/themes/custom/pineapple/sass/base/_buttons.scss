@@ -1,0 +1,50 @@
+.btn {
+  cursor: pointer;
+  color: $white;
+  display: block;
+  padding: 0.8rem 1rem;
+  border: 0;
+  vertical-align: middle;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.btn-primary {
+  background-color: $light-green;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-green;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-purple;
+  }
+}
+
+.btn-tertiary {
+  background-color: $dark-grey;
+  color: white;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.btn-link {
+  background-color: $primary;
+  padding: $unit * 2;
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    background-color: $dark-grey;
+  }
+}

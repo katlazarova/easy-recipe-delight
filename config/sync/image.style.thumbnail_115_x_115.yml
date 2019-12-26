@@ -1,0 +1,15 @@
+uuid: 258a5080-10d7-4eac-a9b9-66d8519ba44c
+langcode: en
+status: true
+dependencies: {  }
+name: thumbnail_115_x_115
+label: 'Thumbnail (115×115)'
+effects:
+  5dfba2ce-b073-48f2-ab7f-c29e9de41131:
+    uuid: 5dfba2ce-b073-48f2-ab7f-c29e9de41131
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 115
+      height: 115
+      anchor: center-center

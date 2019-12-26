@@ -1,0 +1,19 @@
+uuid: 3431303f-cebf-4c6d-bdf7-855fdf8b1e8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_a_summary
+    - node.type.article
+id: node.article.field_a_summary
+field_name: field_a_summary
+entity_type: node
+bundle: article
+label: Summary
+description: 'Ensure the summary is brief. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

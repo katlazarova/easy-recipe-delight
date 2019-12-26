@@ -1,0 +1,10 @@
+// Layout related abstractions.
+%center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%constrain {
+  @extend %center;
+  max-width: $max-container-width;
+}

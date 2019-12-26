@@ -1,0 +1,10 @@
+uuid: f8b05699-2e29-423e-8182-c5966b8a8a31
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.profile_image
+label: 'Profile Image'
+targetEntityType: media
+cache: true

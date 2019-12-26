@@ -1,0 +1,32 @@
+uuid: c56874df-703c-4f9c-b86e-fa152714a091
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_r_body
+    - node.type.recipe
+  module:
+    - entity_reference_revisions
+id: node.recipe.field_r_body
+field_name: field_r_body
+entity_type: node
+bundle: recipe
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      components:
+        weight: 3
+        enabled: false
+      rich_text:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

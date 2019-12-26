@@ -1,0 +1,139 @@
+.menu {
+  overflow: hidden;
+  background-color: $primary;
+  display: flex;
+  justify-content: flex-end;
+
+  @include breakpoint($lap) {
+    display: block;
+  }
+
+  &.responsive {
+    display: block;
+
+    .menu-content {
+      flex-direction: column;
+
+      @include breakpoint($lap) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    .menu-item {
+      display: block;
+    }
+
+    .expanded-container {
+
+      &:hover .sub-menu {
+        display: block;
+      }
+
+      .sub-menu {
+        position: relative;
+        top: 0;
+        display: block;
+        text-indent: 10px;
+
+        @include breakpoint($lap) {
+          display: none;
+          text-indent: 0;
+        }
+      }
+
+      .menu-item {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .hamburger-container {
+    display:flex;
+    justify-content: flex-end;
+
+    .hamburger {
+      color: $white;
+      display: block;
+      font-size: $large-font;
+
+      @include breakpoint($lap) {
+        display: none;
+      }
+    }
+  }
+
+  .menu-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-item {
+    display: none;
+    color: $white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: $base-font-size;
+
+    @include breakpoint($lap) {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &.is-active {
+      color: $white;
+    }
+  }
+
+  .expanded-container {
+    overflow: hidden;
+
+    &:hover .sub-menu {
+      display: block;
+    }
+
+    .menu-item {
+      font-size: $base-font-size;
+      border: none;
+      outline: none;
+      color: $white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+      display: none;
+
+      @include breakpoint($lap) {
+        display: block;
+      }
+    }
+
+    .sub-menu {
+      display: none;
+      position: absolute;
+      background-color: lighten($primary, 10%);
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 2.5em;
+
+      .menu-item {
+        color: $white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

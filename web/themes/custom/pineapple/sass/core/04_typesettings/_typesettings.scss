@@ -1,0 +1,188 @@
+////
+/// @group Typesetting
+////
+@charset "UTF-8";
+
+// Vertical Rhythm {{ test }}
+//
+// Markup: ../../docs/kss-helpers/vertical-rhythm.hbs
+//
+// Styleguide 1.3.0
+
+// ==============================================================================
+// Typesettings
+// ==============================================================================
+// A toolkit that sets type in Rems, Ems or Px based on modular scale, vertical rhythm,
+// and responsive ratio based headlines. Oh, and pixel borders that maintain
+// rhythm.
+//
+// Based heavily on: https://github.com/ianrose/typesettings/releases
+
+//==============================================================================
+// Config Variables
+//==============================================================================
+// The config variables have default values that are just looking to be adjusted.
+// Use this variables to customize your Typesettings.
+
+// The vertical grid unit. Margin, padding, and line-height are set to multiples
+// of this value. This is the value that determines the baseline for our vertical
+// rhythm. The default value of 6px allows more fine tuned designs that still
+// obey vertical rhythm.
+$base-vertical-unit: 8px !default;
+
+// The value that multiplies the $base-vertical-unit to get the $base-line-height.
+// This gives type an ideal line-height.
+$base-line-multi: 3 !default;
+
+// Base font size in pixels.
+$base-font-size: 16px !default;
+
+// [1] Paragraph setting that you can turn on or off the indent of the first line
+// of a new paragraph.
+// [2] Paragraph setting that you can turn on or off to have your paragraphs ragged
+// right or justified.
+$paragraph-indent: true !default; // [1]
+$paragraph-justify: true !default; // [2]
+
+// You can optionally load type styles that use Typesettings.
+$load-typesetted: true !default;
+
+//==============================================================================
+// Internal Variables
+//==============================================================================
+// It's best not to adjust the internal variables directly.[Note]
+
+// Creates a handy variable for the 1em
+$base-em-font-size: 1em;
+
+// Warning text for when an integer is not used in rhythm functions
+$not-integer-txt: ' value breaks vertical rhythm. Use an integer (whole number) for $lines.';
+
+// Sets the font-size of the project as a percentage. Making it easy to
+// scale up/down the whole project for specific media queries
+html {
+  font-size: ($base-font-size / 16px) * 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+//==============================================================================
+// Default Type Styles
+//==============================================================================
+
+// Stops devices from scaling up text.
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, .alpha,
+h2, .beta,
+h3, .gamma,
+h4, .delta,
+h5, .epsilon,
+h6, .zeta {
+  margin-top: 0;
+}
+
+h1, .alpha {
+
+}
+
+h2, .beta {
+
+}
+
+h3, .gamma {
+
+}
+
+h4, .delta {
+
+}
+
+h5, .epsilon {
+
+}
+
+h6, .zeta {
+
+}
+
+p {
+
+}
+
+
+small,
+.font-small {
+
+}
+
+blockquote {
+
+
+  p {
+
+  }
+
+  footer {
+    cite {
+      &:before {
+        content: " – ";
+      }
+    }
+  }
+}
+
+time,
+.time {
+  text-transform: uppercase;
+}
+
+ol,
+ul,
+dl {
+
+}
+
+ul ul,
+ol ol,
+dl dl {
+  margin-left: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+// [1] https://developer.mozilla.org/en-US/docs/CSS/font-variant
+abbr {
+  font-variant: small-caps; // [1]
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+// Cursor changed to a question mark when it has a title
+abbr[title]:hover {
+  cursor: help;
+}
+
+// Creates horizontal rules that obey the baseline.
+// [1] Zero outs the user agent border
+hr {
+
+}
+
