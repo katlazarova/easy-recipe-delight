@@ -59,9 +59,5 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-  links:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  links: true

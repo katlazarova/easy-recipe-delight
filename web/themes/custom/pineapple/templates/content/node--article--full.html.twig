@@ -82,19 +82,21 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-    <div{{ content_attributes.addClass('node__content') }}>
+    <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
         {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
         <div class="hero-container breakout">
           <div class="hero-image" style="background-image: url({{ hero_url }})">
           </div>
           <div class="hero-image-text container">
-            <div class="page-title">
-              <h1>
-                {{ label }}
-              </h1>
-            </div>
-            <div class="author-name">
-              <p>by {{ content.field_a_content_author }}</p>
+            <div class="hero-image-content">
+              <div class="page-title">
+                <h1>
+                  {{ label }}
+                </h1>
+              </div>
+              <div class="hero-subtext">
+                <p>by {{ content.field_a_content_author }}</p>
+              </div>
             </div>
           </div>
         </div>

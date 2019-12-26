@@ -5,8 +5,6 @@ dependencies:
   config:
     - system.menu.main
   module:
-    - ctools
-    - node
     - system
     - user
   theme:
@@ -28,15 +26,6 @@ settings:
   depth: 0
   expand_all_items: false
 visibility:
-  node_type:
-    id: node_type
-    bundles:
-      article: article
-      page: page
-      recipe: recipe
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
   user_role:
     id: user_role
     roles:
@@ -48,12 +37,3 @@ visibility:
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-      page: page
-      recipe: recipe
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'

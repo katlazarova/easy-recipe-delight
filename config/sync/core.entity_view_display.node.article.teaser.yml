@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.field_a_body
+    - field.field.node.article.field_a_content_author
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
@@ -16,14 +17,32 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_a_hero_image:
+    type: entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: article_teaser
+      link: false
+    third_party_settings: {  }
+  field_a_summary:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_a_teaser_image:
+    type: entity_reference_entity_view
+    weight: 0
     region: content
+    label: hidden
+    settings:
+      view_mode: article_teaser
+      link: false
+    third_party_settings: {  }
 hidden:
   field_a_body: true
   field_a_content_author: true
-  field_a_hero_image: true
-  field_a_summary: true
-  field_a_teaser_image: true
+  links: true

@@ -70,51 +70,34 @@
  *   in different view modes.
  */
 #}
-{% set classes = [
-  'node',
-  'node--type-' ~ node.bundle|clean_class,
-  node.isPromoted() ? 'node--promoted',
-  node.isSticky() ? 'node--sticky',
-  not node.isPublished() ? 'node--unpublished',
-  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-] %}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-
-  {{ title_prefix }}
-  {% if label %}
-    <h1{{ title_attributes.addClass('page-title') }}>{{ label }}</h1>
-  {% endif %}
-  {{ title_suffix }}
-  <div class="row">
-    <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
-      {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
-      <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
-      <div class="u-o-2">
-        {{ content.field_r_cooking_time }}
-        {{ content.field_r_serves }}
-        {{ content.field_r_cost }}
-        {{ content.field_r_summary }}
-        {{ content.field_r_body }}
-        {{ content.field_r_categories }}
+    <div class="teaser-image-container">
+      {% if content.field_a_teaser_image|field_value %}
+        {{ content.field_a_teaser_image }}
+      {% else %}
+        {{ content.field_a_hero_image }}
+      {% endif %}
+    </div>
+    <div class="teaser-content">
+      <h2{{ title_attributes.addClass('page-title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+      <div{{ content_attributes.addClass('node__content', 'u-o-3') }}>
+        <p>{{ node.getCreatedTime()|date('jS F Y') }}</p>
+        {{ content.field_a_summary }}
+        <a href="{{ url }}" class="btn btn-link">Read Recipe ></a>
       </div>
     </div>
-    <aside class="recipe-sidebar">
-      <div class="recipe-author-container">
-        <div class="author-image-container">
-          {% if owner.field_profile_image.value[0].target_id %}
-            {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
-          {% endif %}
-        </div>
-        <div class="recipe-author-text-container">
-          <div class="author-name">
-            <p>by {{ content.field_r_content_author }}</p>
-          </div>
-          <div class="author-quote">
-            {{ content.field_r_author_quote }}
-          </div>
-        </div>
-      </div>
-    </aside>
-  </div>
 </article>

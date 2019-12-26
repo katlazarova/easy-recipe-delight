@@ -4,12 +4,12 @@ ul.pager__items {
 
   .pager__item {
     font-weight: bold;
-    border-radius: 3px;
     padding: 5px 9px 4px;
     line-height: 1.25;
     margin: 0 7px 0 0;
     display: inline-block;
     background-color: $light-grey;
+    border-radius: 50%;
 
     a {
       color: $dark-grey;
@@ -28,8 +28,14 @@ ul.pager__items {
 
     &.is-active {
       background-color: $primary;
+      color: $white;
       a {
         color: $white;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $dark-grey;
       }
     }
   }
