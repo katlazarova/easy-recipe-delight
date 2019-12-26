@@ -20,7 +20,7 @@ content:
     label: visually_hidden
     settings:
       image_style: hero_image_1265_x_527
-      image_link: file
+      image_link: ''
     third_party_settings: {  }
     type: image
     weight: 1

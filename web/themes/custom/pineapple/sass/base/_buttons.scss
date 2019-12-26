@@ -36,3 +36,15 @@
     cursor: pointer;
   }
 }
+
+.btn-link {
+  background-color: $primary;
+  padding: $unit * 2;
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    background-color: $dark-grey;
+  }
+}

@@ -20,7 +20,7 @@ content:
     label: visually_hidden
     settings:
       image_style: article_teaser_image_300_x_500
-      image_link: file
+      image_link: ''
     third_party_settings: {  }
     type: image
     weight: 1

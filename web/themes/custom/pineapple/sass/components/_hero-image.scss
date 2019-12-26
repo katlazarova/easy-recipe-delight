@@ -24,7 +24,7 @@
     .hero-image-content {
 
       .page-title {
-        padding: 15px;
+        padding: $unit * 2;
         background-color: transparentize($primary, 0.4);
         font-size: $xlarge-font;
         font-weight: 600;
@@ -38,7 +38,7 @@
       }
 
       .hero-subtext {
-        padding: 10px;
+        padding: $unit;
         background-color: transparentize($primary, 0.4);
         color: $white;
         text-transform: uppercase;
