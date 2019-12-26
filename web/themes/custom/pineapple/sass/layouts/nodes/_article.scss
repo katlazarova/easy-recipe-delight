@@ -10,7 +10,8 @@
 
   .teaser-content {
     background-color: #f1f0f4;
-    padding: 0 30px 30px 30px;
+    padding: $unit * 4;
+    padding-top: 0;
     width: 100%;
 
     @include breakpoint($desk) {
@@ -21,17 +22,11 @@
       color: $primary;
     }
 
-    .field--name-field-a-summary {
-      margin-top: 20px;
-      margin-bottom: 30px;
-    }
-
     .teaser-link {
       background-color: $primary;
-      padding: 15px;
-      margin-top: 20px;
-      width: 150px;
+      padding: $unit * 2;
       color: white;
+      display: inline-block;
 
       &:hover,
       &:focus {

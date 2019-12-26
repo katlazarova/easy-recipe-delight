@@ -1,7 +1,6 @@
 .hero-container {
   height: 527px;
   overflow: hidden;
-  margin-bottom: 32px;
 
   .hero-image {
     height: 100%;
@@ -44,7 +43,7 @@
         color: $white;
         text-transform: uppercase;
         text-align: left;
-        margin-top: 24px;
+        margin-top: $unit * 3;
         display: inline-block;
 
         p {

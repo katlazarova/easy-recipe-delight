@@ -87,7 +87,7 @@
   {% endif %}
   {{ title_suffix }}
   <div class="row">
-    <div{{ content_attributes.addClass('node__content') }}>
+    <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
       {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
       <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
       <div class="u-o-2">

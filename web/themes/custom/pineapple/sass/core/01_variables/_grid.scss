@@ -21,6 +21,8 @@ $hdpi:      min-resolution 1.5dppx; // Min 1.5dppx for higher resolution display
 
 $gutter-size: 80%;
 
+$unit: 8px;
+
 /// For use when the site has a constrained region - sets the maximum width
 /// this region should be.
 $max-container-width: 74em;
