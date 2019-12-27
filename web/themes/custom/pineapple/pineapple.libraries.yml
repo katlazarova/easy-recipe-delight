@@ -10,16 +10,15 @@ global-js:
     - core/jquery
     - core/drupal
     - core/jquery.once
-    - pineapple/jquery-smartresize
+    - pineapple/lodash
 vue:
   header: true
   # We have a hook that uses the non-minified version on environments where JS processing is turned off.
   # This allows access to the Vue devtools browser extension.
   js:
-    node_modules/vue/dist/vue.min.js: {}
+    libraries/vue/dist/vue.min.js: {}
 lodash:
+  # This custom lodash build is generated in a npm postinstall script based on
+  # http://simey.me/custom-lodash-builder-with-npm.
   js:
-    node_modules/lodash/lodash.min.js: {}
-jquery-smartresize:
-  js:
-    libraries/jquery-smartresize/jquery.debouncedresize.js: {}
+    dist/lodash.min.js: {}
