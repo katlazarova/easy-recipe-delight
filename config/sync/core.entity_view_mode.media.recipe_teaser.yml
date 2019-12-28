@@ -1,0 +1,10 @@
+uuid: 4e896e34-94cc-43fc-8587-5b5ac71e2cdf
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.recipe_teaser
+label: 'Recipe Teaser'
+targetEntityType: media
+cache: true

@@ -37,7 +37,8 @@
         }
       }
 
-      .hero-subtext {
+      .hero-subtext,
+      .hero-pretext {
         padding: $unit;
         background-color: transparentize($primary, 0.4);
         color: $white;
@@ -52,6 +53,33 @@
 
         .field {
           display: inline;
+        }
+      }
+
+      .hero-labels {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: $small-font;
+
+        .field--name-field-r-cooking-time,
+        .field--name-field-r-serves {
+          background-color: $light-grey;
+          color: $primary;
+          padding: $unit;
+          display: inline-block;
+          margin-right: $unit;
+
+          p {
+            display: inline;
+          }
+
+          .field__label {
+            display: inline;
+          }
+
+          .field__item {
+            display: inline;
+          }
         }
       }
     }

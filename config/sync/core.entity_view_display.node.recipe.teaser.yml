@@ -32,6 +32,25 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_r_hero_image:
+    type: entity_reference_entity_view
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      view_mode: recipe_teaser
+      link: false
+    third_party_settings: {  }
+  field_r_highlighted:
+    type: boolean
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   field_r_serves:
     type: number_integer
     weight: 3
@@ -49,12 +68,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_r_teaser_image:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 1
     region: content
     label: hidden
     settings:
-      link: true
+      view_mode: recipe_teaser
+      link: false
     third_party_settings: {  }
 hidden:
   field_r_author_quote: true
@@ -63,6 +83,4 @@ hidden:
   field_r_content_author: true
   field_r_cost: true
   field_r_featured: true
-  field_r_hero_image: true
-  field_r_highlighted: true
   links: true
