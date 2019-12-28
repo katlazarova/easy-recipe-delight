@@ -4,7 +4,11 @@
   "description": "custom drupal base theme ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lodash": "npx lodash-cli strict -o ./dist/lodash.js include=$( grep -roh \"_\\.[[:alpha:]]*\" ./assets/js ../../../core/assets/vendor/backbone/backbone.js --include=*.js | sort | uniq | cut -b 3- | tr \"\n\" \",\" )",
+    "postinstall": "npm-run-all postinstall:**",
+    "postinstall:composerinstall": "composer install",
+    "postinstall:lodash": "npm run lodash"
   },
   "author": "katarina lazarova",
   "license": "MIT",
@@ -21,6 +25,6 @@
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
     "lodash": "^4.17.15",
-    "vue": "^2.6.10"
+    "npm-run-all": "^4.1.5"
   }
 }

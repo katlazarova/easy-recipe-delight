@@ -22,6 +22,7 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.0",
         "drupal/bamboo_twig": "^4.1",
+        "drupal/components": "^1.1",
         "drupal/console": "^1.0.2",
         "drupal/core": "8.7.0",
         "drupal/devel": "^2.1",
@@ -61,7 +62,8 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "(cd ./web/themes/custom/pineapple && composer install) || true"
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"

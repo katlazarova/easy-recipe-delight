@@ -8,12 +8,13 @@
         $('.menu .hamburger').click(function () {
           $(menu).toggleClass('responsive');
         });
-        $(window).on('debouncedresize', function () {
+        function calculateLayout() {
           var win = $(window);
           if (win.width() > 768 && $(menu).hasClass('responsive')) {
             $(menu).removeClass('responsive');
           }
-        });
+        }
+        $(window).on('resize', _.debounce(calculateLayout, 150));
       }
     }
   }

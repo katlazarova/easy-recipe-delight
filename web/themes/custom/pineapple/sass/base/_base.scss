@@ -30,6 +30,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  margin-left: -15px;
+  margin-right: -15px;
 
   @include breakpoint($desk) {
     flex-direction: row;

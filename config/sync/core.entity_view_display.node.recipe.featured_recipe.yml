@@ -1,9 +1,9 @@
-uuid: 517d5a2a-75b9-4420-b0e4-2e217201d988
+uuid: 45f58435-f39f-42f9-8e5c-cf62160393dc
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.featured_recipe
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
     - field.field.node.recipe.field_r_content_author
@@ -18,67 +18,44 @@ dependencies:
     - node.type.recipe
   module:
     - user
-id: node.recipe.teaser
+id: node.recipe.featured_recipe
 targetEntityType: node
 bundle: recipe
-mode: teaser
+mode: featured_recipe
 content:
   field_r_cooking_time:
-    type: string
-    weight: 2
-    region: content
+    weight: 1
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    type: string
+    region: content
   field_r_hero_image:
     type: entity_reference_entity_view
-    weight: 4
-    region: content
+    weight: 0
     label: hidden
     settings:
-      view_mode: recipe_teaser
+      view_mode: hero_image
       link: false
     third_party_settings: {  }
-  field_r_highlighted:
-    type: boolean
-    weight: 5
     region: content
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
   field_r_serves:
-    type: number_integer
-    weight: 3
-    region: content
+    weight: 2
     label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-  field_r_summary:
-    type: basic_string
-    weight: 0
+    type: number_integer
     region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_r_teaser_image:
-    type: entity_reference_entity_view
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      view_mode: recipe_teaser
-      link: false
-    third_party_settings: {  }
 hidden:
   field_r_body: true
   field_r_categories: true
   field_r_content_author: true
   field_r_cost: true
   field_r_featured: true
+  field_r_highlighted: true
+  field_r_summary: true
+  field_r_teaser_image: true
   links: true

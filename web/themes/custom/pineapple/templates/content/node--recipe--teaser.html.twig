@@ -83,24 +83,32 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
+  <div class="recipe-card-wrapper">
     <div class="teaser-image-container">
-      {% if content.field_a_teaser_image|field_value %}
-        {{ content.field_a_teaser_image }}
+      {% if "Yes" in content.field_r_highlighted.0 %}
+        <div class="highlighted-label">
+          <p>{{ content.field_r_highlighted|field_label }}</p>
+        </div>
+      {% endif %}
+      {% if content.field_r_teaser_image|field_value %}
+        {{ content.field_r_teaser_image }}
       {% else %}
-        {{ content.field_a_hero_image }}
+        {{ content.field_r_hero_image }}
       {% endif %}
     </div>
-    <div class="teaser-content">
-      <h2{{ title_attributes.addClass('page-title') }}>
+    <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
+      <div class="recipe-labels">
+        {{ content.field_r_cooking_time }}
+        {{ content.field_r_serves }}
+      </div>
+      <h2{{ title_attributes }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
-      <div{{ content_attributes.addClass('node__content', 'u-o-3') }}>
-        <p>{{ node.getCreatedTime()|date('jS F Y') }}</p>
-        {{ content.field_a_summary }}
-        {% include "@components/_button.twig" with {
-          button_url: url,
-          button_text: 'Read article >'
-        } %}
-      </div>
+      {{ content.field_r_summary }}
+      {% include "@components/_button.twig" with {
+        button_url: url,
+        button_text: 'See Recipe >'
+      } %}
     </div>
+  </div>
 </article>
