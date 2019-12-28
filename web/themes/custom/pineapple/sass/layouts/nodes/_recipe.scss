@@ -1,5 +1,10 @@
 .recipe--full {
 
+  .row {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
   .node__content {
     margin-right: 0;
     width: 100%;
@@ -144,9 +149,7 @@
           background-color: $white;
           font-size: $xsmall-font;
           text-align: center;
-          margin: $unit;
-          margin-left: 0;
-          padding: $unit $unit * 2;
+          padding: 8px;
 
           .field__item {
             display: block;
@@ -158,9 +161,8 @@
           background-color: $white;
           font-size: $xsmall-font;
           text-align: center;
-          margin: $unit;
           margin-right: 0;
-          padding: $unit / 2 $unit * 2;
+          padding: 8px;
         }
       }
     }
@@ -178,7 +180,7 @@
 
   .views-row {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: $unit * 3;
     position: relative;
     width: 100%;
     padding-right: 15px;
