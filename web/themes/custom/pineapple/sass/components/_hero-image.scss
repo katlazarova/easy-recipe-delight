@@ -63,9 +63,9 @@
 
         .field--name-field-r-cooking-time,
         .field--name-field-r-serves {
-          background-color: transparentize($white, 0.1);
+          background-color: transparentize($light-grey, 0.1);
           font-weight: 600;
-          color: $primary;
+          color: $dark-green;
           padding: $unit;
           display: inline-block;
           margin-right: $unit;

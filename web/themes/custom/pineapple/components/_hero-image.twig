@@ -1,4 +1,8 @@
+{% set content_url = content_url|default('') %}
 <div class="hero-container breakout">
+  {% if content_url %}
+    <a href="{{ content_url }}">
+  {% endif %}
   <div class="hero-image" style="background-image: url({{ image_url }})">
   </div>
   <div class="hero-image-text container">
@@ -19,10 +23,13 @@
       {% if labels %}
         <div class="hero-labels">
           {% for item in labels %}
-              {{ item.value }}
+            {{ item.value }}
           {% endfor %}
         </div>
       {% endif %}
     </div>
   </div>
+  {% if content_url %}
+   </a>
+  {% endif %}
 </div>

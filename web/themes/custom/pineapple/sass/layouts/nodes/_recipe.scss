@@ -117,18 +117,17 @@
         color: $white;
         text-transform: uppercase;
         text-align: left;
-        margin-top: $unit * 3;
         float: right;
         position: absolute;
         right: 0;
-        top: 0;
+        top: $unit * 3;
         z-index: 1;
+        padding: 0 $unit;
       }
 
       img {
         width: 100%;
         object-fit: cover;
-        height: 220px;
       }
     }
 
@@ -138,17 +137,18 @@
 
       .recipe-labels {
         display: flex;
-        justify-content: center;
         align-content: center;
         text-transform: uppercase;
         color: $primary;
+        justify-content: space-between;
 
         .field--name-field-r-cooking-time {
           background-color: $white;
           font-size: $xsmall-font;
           text-align: center;
           margin: $unit;
-          padding: 0 $unit;
+          margin-left: 0;
+          padding: $unit $unit * 2;
 
           .field__item {
             display: block;
@@ -161,7 +161,8 @@
           font-size: $xsmall-font;
           text-align: center;
           margin: $unit;
-          padding: $unit / 2 $unit;
+          margin-right: 0;
+          padding: $unit / 2 $unit * 2;
         }
       }
     }
