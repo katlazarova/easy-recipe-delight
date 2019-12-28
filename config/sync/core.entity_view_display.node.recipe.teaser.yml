@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.recipe.field_r_author_quote
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
     - field.field.node.recipe.field_r_content_author
@@ -77,7 +76,6 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
-  field_r_author_quote: true
   field_r_body: true
   field_r_categories: true
   field_r_content_author: true

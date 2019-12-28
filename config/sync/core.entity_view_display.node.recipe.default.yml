@@ -26,11 +26,12 @@ bundle: recipe
 mode: default
 content:
   field_r_author_quote:
-    weight: 104
+    weight: 113
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: basic_string
+    type: string
     region: content
   field_r_body:
     type: entity_reference_revisions_entity_view
