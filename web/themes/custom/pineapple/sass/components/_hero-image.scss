@@ -63,11 +63,17 @@
 
         .field--name-field-r-cooking-time,
         .field--name-field-r-serves {
-          background-color: $light-grey;
+          background-color: transparentize($white, 0.1);
+          font-weight: 600;
           color: $primary;
           padding: $unit;
           display: inline-block;
           margin-right: $unit;
+          margin-top: $unit;
+
+          @include breakpoint($desk) {
+            margin-top: 0;
+          }
 
           p {
             display: inline;
