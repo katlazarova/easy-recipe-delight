@@ -138,48 +138,62 @@
   }
 }
 
-.menu--footer {
-  width: 100%;
-  max-width: 66.66666%;
-
+.region-footer {
+  display: flex;
+  flex: 0 0 33.33%;
 
   @include breakpoint($lap) {
-    max-width: 75%;
+    flex: 0 0 25%;
   }
 
-  .footer-menu {
-    margin-top: $unit * 2;
-    overflow: hidden;
-    background-color: $primary;
-    padding: $unit * 2;
-    text-align: center;
+  .menu--main {
+    width: 100%;
+    max-width: 66.66666%;
 
-    .menu-content {
-      display: flex;
-      justify-content: flex-end;
-      position: relative;
-      flex-direction: column;
-      text-align: right;
 
-      @include breakpoint($lap) {
-        flex-direction: row;
-        text-align: center;
+    @include breakpoint($lap) {
+      max-width: 75%;
+    }
+
+    .menu {
+      margin-top: $unit * 2;
+      overflow: hidden;
+      background-color: $primary;
+      padding: $unit * 2;
+      text-align: center;
+
+      .hamburger {
+        display: none;
       }
 
-      .menu-item {
-        color: $light-grey;
-        text-decoration: none;
-        font-size: $xsmall-font;
-        padding: $unit;
+      .menu-content {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        flex-direction: column;
+        text-align: right;
 
-        &:hover,
-        &:focus {
-          text-decoration: underline;
-          cursor: pointer;
+        @include breakpoint($lap) {
+          flex-direction: row;
+          text-align: center;
         }
 
-        &.is-active {
-          color: $white;
+        .menu-item {
+          color: $light-grey;
+          text-decoration: none;
+          font-size: $xsmall-font;
+          padding: $unit;
+          display: block;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          &.is-active {
+            color: $white;
+          }
         }
       }
     }
@@ -200,14 +214,5 @@
 
   @include breakpoint($lap) {
     max-width: 25%;
-  }
-}
-
-.region-footer {
-  display: flex;
-  flex: 0 0 33.33%;
-
-  @include breakpoint($lap) {
-    flex: 0 0 25%;
   }
 }
