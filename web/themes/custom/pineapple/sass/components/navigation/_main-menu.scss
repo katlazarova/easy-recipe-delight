@@ -153,7 +153,6 @@
     background-color: $primary;
     width: 100%;
     max-width: 33.33333%;
-    margin-top: $unit * 2;
     padding-left: $unit * 2;
     display: flex;
     justify-content: center;
@@ -173,7 +172,6 @@
     }
 
     .menu {
-      margin-top: $unit * 2;
       overflow: hidden;
       background-color: $primary;
       padding: $unit * 2;
