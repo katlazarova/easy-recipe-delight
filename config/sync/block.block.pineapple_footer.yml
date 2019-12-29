@@ -1,6 +1,6 @@
 uuid: 6d6123c8-d905-4b55-92ff-6c31f267dfe3
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.footer
@@ -13,7 +13,7 @@ _core:
 id: pineapple_footer
 theme: pineapple
 region: footer
-weight: -6
+weight: -3
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

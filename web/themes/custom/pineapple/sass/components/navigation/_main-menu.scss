@@ -137,3 +137,77 @@
     }
   }
 }
+
+.menu--footer {
+  width: 100%;
+  max-width: 66.66666%;
+
+
+  @include breakpoint($lap) {
+    max-width: 75%;
+  }
+
+  .footer-menu {
+    margin-top: $unit * 2;
+    overflow: hidden;
+    background-color: $primary;
+    padding: $unit * 2;
+    text-align: center;
+
+    .menu-content {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      flex-direction: column;
+      text-align: right;
+
+      @include breakpoint($lap) {
+        flex-direction: row;
+        text-align: center;
+      }
+
+      .menu-item {
+        color: $light-grey;
+        text-decoration: none;
+        font-size: $xsmall-font;
+        padding: $unit;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        &.is-active {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.block-copyright {
+  font-size: $xsmall-font;
+  color: $white;
+  background-color: $primary;
+  width: 100%;
+  max-width: 33.33333%;
+  margin-top: $unit * 2;
+  padding-left: $unit * 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint($lap) {
+    max-width: 25%;
+  }
+}
+
+.region-footer {
+  display: flex;
+  flex: 0 0 33.33%;
+
+  @include breakpoint($lap) {
+    flex: 0 0 25%;
+  }
+}
