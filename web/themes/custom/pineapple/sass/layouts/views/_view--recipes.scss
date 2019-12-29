@@ -1,9 +1,9 @@
-.article-teaser-container {
+.recipe-teaser-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 
-  @include breakpoint($palm) {
+  @include breakpoint($desk) {
     flex-direction: row;
   }
 
@@ -12,5 +12,12 @@
     margin-bottom: $unit * 3;
     position: relative;
     width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include breakpoint($desk) {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
   }
 }
