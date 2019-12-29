@@ -79,7 +79,12 @@
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer role="contentinfo" class="footer">
+      {% if site_settings.global.footer_information %}
+        <div class="footer-info">
+        <p>{{ site_settings.global.footer_information }}</p>
+        </div>
+      {% endif %}
       {{ page.footer }}
     </footer>
   {% endif %}
