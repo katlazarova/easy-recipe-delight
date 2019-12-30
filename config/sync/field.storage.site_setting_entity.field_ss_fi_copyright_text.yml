@@ -1,0 +1,21 @@
+uuid: 44874a0c-e3c5-462f-af0b-5c34537f4c39
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_ss_fi_copyright_text
+field_name: field_ss_fi_copyright_text
+entity_type: site_setting_entity
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -105,7 +105,7 @@
 .recipe--teaser {
   display: flex;
   flex-direction: column;
-  background-color: #f1f0f4;
+  background-color: $light-grey;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -165,30 +165,6 @@
           padding: 8px;
         }
       }
-    }
-  }
-}
-
-.recipe-teaser-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-
-  @include breakpoint($desk) {
-    flex-direction: row;
-  }
-
-  .views-row {
-    display: block;
-    margin-bottom: $unit * 3;
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-
-    @include breakpoint($desk) {
-      flex: 0 0 33.33333%;
-      max-width: 33.33333%;
     }
   }
 }

@@ -85,9 +85,11 @@
 <article{{ attributes.addClass(classes) }}>
     <div class="teaser-image-container">
       {% if content.field_a_teaser_image|field_value %}
-        {{ content.field_a_teaser_image }}
+        {% set teaser_url = bamboo_render_image_style(content.field_a_teaser_image|field_target_entity.field_media_image.entity.uri.value, 'article_teaser_image_300_x_500') %}
+        <img src="{{ teaser_url }}" alt="{{ content.field_a_teaser_image|field_target_entity.field_media_image.alt }}">
       {% else %}
-        {{ content.field_a_hero_image }}
+        {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'article_teaser_image_300_x_500') %}
+        <img src="{{ hero_url }}" alt="{{ content.field_a_hero_image|field_target_entity.field_media_image.alt }}">
       {% endif %}
     </div>
     <div class="teaser-content">

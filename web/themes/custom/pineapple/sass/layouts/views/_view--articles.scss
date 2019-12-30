@@ -1,0 +1,18 @@
+.view-articles {
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include breakpoint($palm) {
+      flex-direction: row;
+    }
+
+    .views-row {
+      display: block;
+      margin-bottom: $unit * 3;
+      position: relative;
+      width: 100%;
+    }
+  }
+}
