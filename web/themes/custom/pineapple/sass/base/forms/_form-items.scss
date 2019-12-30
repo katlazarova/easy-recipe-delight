@@ -1,0 +1,65 @@
+.user-register-form,
+.user-login-form {
+  background-color: $white;
+  color: $dark-gray;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  text-transform: capitalize;
+  padding: $unit * 2;
+  font-size: 12px;
+  width: 70%;
+  margin: 0 auto;
+
+  .form-item {
+
+    label {
+      font-size: 20px;
+    }
+
+    input,
+    textarea,
+    select {
+      display: block;
+      width: 100%;
+      margin: $unit auto;
+      color: $primary;
+      padding: $unit;
+      background-color: $white;
+      border: 0;
+      border-bottom: thin solid $dark-gray;
+      &:hover,
+      &:focus {
+        background-color: $light-gray;
+      }
+    }
+
+    textarea,
+    select {
+      border: thin solid $dark-gray;
+    }
+
+    .description {
+      text-align: left;
+      margin-top: $unit;
+    }
+  }
+
+  .fieldset-legend {
+    font-size: 20px;
+  }
+}
+
+.field--widget-media-library-widget {
+  .media-library-open-button.js-media-library-open-button,
+  .js-hide.form-submit {
+    border: thin solid $dark-gray;
+    margin: $unit;
+    display: block;
+    width: 60%;
+
+    @include breakpoint($lap) {
+      display: inline;
+      width: 30%;
+    }
+  }
+}

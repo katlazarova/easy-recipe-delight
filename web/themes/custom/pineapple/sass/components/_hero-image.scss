@@ -26,7 +26,7 @@
 
       .page-title {
         padding: $unit * 2;
-        background-color: transparentize($primary, 0.4);
+        background-color: transparentize($primary, 0.2);
         font-size: $xlarge-font;
         font-weight: 600;
         position: relative;
@@ -41,7 +41,7 @@
       .hero-subtext,
       .hero-pretext {
         padding: $unit;
-        background-color: transparentize($primary, 0.4);
+        background-color: transparentize($primary, 0.2);
         color: $white;
         text-transform: uppercase;
         text-align: left;
@@ -64,9 +64,9 @@
 
         .field--name-field-r-cooking-time,
         .field--name-field-r-serves {
-          background-color: transparentize($light-grey, 0.1);
+          background-color: transparentize($dark-gray, 0.1);
           font-weight: 600;
-          color: $dark-green;
+          color: $primary;
           padding: $unit;
           display: inline-block;
           margin-right: $unit;

@@ -8,11 +8,11 @@ ul.pager__items {
     line-height: 1.25;
     margin: 0 7px 0 0;
     display: inline-block;
-    background-color: $light-grey;
+    background-color: $light-gray;
     border-radius: 50%;
 
     a {
-      color: $dark-grey;
+      color: $dark-gray;
     }
 
     &.pager__item--first,
@@ -35,7 +35,7 @@ ul.pager__items {
 
       &:hover,
       &:focus {
-        background-color: $dark-grey;
+        background-color: $dark-gray;
       }
     }
   }

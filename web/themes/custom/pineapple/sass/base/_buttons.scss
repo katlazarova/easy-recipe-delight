@@ -1,4 +1,4 @@
-.btn {
+.button {
   cursor: pointer;
   color: $white;
   display: block;
@@ -9,7 +9,7 @@
   transition: 0.5s;
 }
 
-.btn-primary {
+.button--primary {
   background-color: $light-green;
 
   &:hover,
@@ -18,7 +18,7 @@
   }
 }
 
-.btn-secondary {
+.button--secondary {
   background-color: $secondary;
 
   &:hover,
@@ -27,8 +27,8 @@
   }
 }
 
-.btn-tertiary {
-  background-color: $dark-grey;
+.button--tertiary {
+  background-color: $dark-gray;
   color: white;
 
   &:hover,
@@ -37,15 +37,15 @@
   }
 }
 
-.btn-link {
+.button-link {
   background-color: $primary;
   padding: $unit * 2;
   display: inline-block;
 
   &:hover,
   &:focus {
+    background-color: $dark-gray;
     text-decoration: underline;
-    background-color: $dark-grey;
     color: $white;
   }
 }
