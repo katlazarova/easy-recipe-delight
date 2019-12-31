@@ -1,8 +1,8 @@
 .recipe--full {
 
   .row {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: $unit * 2;
+    padding-left: $unit *2;
   }
 
   .node__content {
@@ -60,7 +60,7 @@
     @include breakpoint($desk) {
       width: 25%;
       margin-top: 0;
-      margin-left: 32px;
+      margin-left: $unit * 4;
     }
 
     .recipe-author-container {
@@ -149,7 +149,7 @@
           background-color: $white;
           font-size: $xsmall-font;
           text-align: center;
-          padding: 8px;
+          padding: $unit;
 
           .field__item {
             display: block;
@@ -162,7 +162,7 @@
           font-size: $xsmall-font;
           text-align: center;
           margin-right: 0;
-          padding: 8px;
+          padding: $unit;
         }
       }
     }
