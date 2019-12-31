@@ -1,0 +1,10 @@
+uuid: af4c46eb-7d70-4b54-883c-9f260faebbad
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.recipe_image
+label: 'Recipe Image'
+targetEntityType: media
+cache: true
