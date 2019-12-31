@@ -143,6 +143,9 @@
   flex: 0 0 33.33%;
   background-color: $primary;
   margin-top: $unit * 4;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   @include breakpoint($lap) {
     flex: 0 0 25%;
@@ -194,7 +197,7 @@
         }
 
         .menu-item {
-          color: $light-grey;
+          color: $light-gray;
           text-decoration: none;
           font-size: $xsmall-font;
           padding: $unit;
@@ -214,4 +217,3 @@
     }
   }
 }
-

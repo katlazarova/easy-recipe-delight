@@ -1,35 +1,24 @@
-.btn {
+.button {
   cursor: pointer;
-  color: $white;
+  color: $primary;
   display: block;
   padding: 0.8rem 1rem;
-  border: 0;
   vertical-align: middle;
   border-radius: 3px;
   transition: 0.5s;
-}
-
-.btn-primary {
-  background-color: $light-green;
+  margin-right: 0;
+  margin-left: 0;
 
   &:hover,
   &:focus {
-    background-color: $dark-green;
+    background-color: $primary;
+    color: $white;
   }
 }
 
-.btn-secondary {
-  background-color: $secondary;
-
-  &:hover,
-  &:focus {
-    background-color: $dark-purple;
-  }
-}
-
-.btn-tertiary {
-  background-color: $dark-grey;
-  color: white;
+.button--secondary {
+  background-color: $gray;
+  color: $white;
 
   &:hover,
   &:focus {
@@ -37,15 +26,26 @@
   }
 }
 
-.btn-link {
-  background-color: $primary;
-  padding: $unit * 2;
-  display: inline-block;
+.button--tertiary {
+  background-color: $secondary;
+  color: $white;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
-    background-color: $dark-grey;
+    background-color: $dark-purple;
+  }
+}
+
+a.button-link {
+  background-color: $primary;
+  padding: $unit * 2;
+  display: inline-block;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
     color: $white;
+    text-decoration: underline;
   }
 }
