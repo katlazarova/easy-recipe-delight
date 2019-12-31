@@ -41,7 +41,11 @@ body {
 }
 
 .main {
-  margin-bottom: $unit * 4;
+  margin-bottom: $unit * 21;
+
+  @include breakpoint($lap) {
+    margin-bottom: $unit * 4;
+  }
 }
 
 .row {
