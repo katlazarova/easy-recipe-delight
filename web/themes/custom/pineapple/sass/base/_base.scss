@@ -25,6 +25,7 @@ body {
   padding-right: $unit;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: $unit * 4;
 
   @include breakpoint($palm) {
      max-width: 460px;
