@@ -6,17 +6,23 @@
   vertical-align: middle;
   border-radius: 3px;
   transition: 0.5s;
+  margin-right: 0;
+  margin-left: 0;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    color: $white;
+  }
 }
 
 .button--primary {
   background-color: $gray;
-  color: white;
+  color: $white;
 
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: $primary;
-    color: $white;
   }
 }
 
@@ -39,7 +45,7 @@
   }
 }
 
-.button-link {
+a.button-link {
   background-color: $primary;
   padding: $unit * 2;
   display: inline-block;
@@ -47,7 +53,8 @@
 
   &:hover,
   &:focus {
-    background-color: $dark-gray;
+    background-color: $dark-purple;
+    color: $white;
     text-decoration: underline;
   }
 }
