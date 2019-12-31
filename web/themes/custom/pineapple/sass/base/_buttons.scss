@@ -16,7 +16,7 @@
   }
 }
 
-.button--primary {
+.button--secondary {
   background-color: $gray;
   color: $white;
 
@@ -26,22 +26,13 @@
   }
 }
 
-.button--secondary {
+.button--tertiary {
   background-color: $secondary;
   color: $white;
 
   &:hover,
   &:focus {
     background-color: $dark-purple;
-  }
-}
-
-.button--tertiary {
-  background-color: $accent-green;
-
-  &:hover,
-  &:focus {
-    background-color: $light-green;
   }
 }
 
@@ -53,7 +44,7 @@ a.button-link {
 
   &:hover,
   &:focus {
-    background-color: $dark-purple;
+    background-color: $secondary;
     color: $white;
     text-decoration: underline;
   }
