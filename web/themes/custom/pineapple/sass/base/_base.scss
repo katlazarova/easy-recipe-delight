@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height:100%;
+  position: relative;
+}
+
+.layout-container {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 65px;
+}
+
 .main,
 .container {
   width: 100%;

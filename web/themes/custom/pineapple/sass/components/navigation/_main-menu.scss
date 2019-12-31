@@ -143,6 +143,9 @@
   flex: 0 0 33.33%;
   background-color: $primary;
   margin-top: $unit * 4;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   @include breakpoint($lap) {
     flex: 0 0 25%;
@@ -214,4 +217,3 @@
     }
   }
 }
-
