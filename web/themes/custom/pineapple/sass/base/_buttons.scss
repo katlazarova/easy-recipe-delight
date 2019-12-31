@@ -1,25 +1,28 @@
 .button {
   cursor: pointer;
-  color: $white;
+  color: $primary;
   display: block;
   padding: 0.8rem 1rem;
-  border: 0;
   vertical-align: middle;
   border-radius: 3px;
   transition: 0.5s;
 }
 
 .button--primary {
-  background-color: $light-green;
+  background-color: $gray;
+  color: white;
 
   &:hover,
   &:focus {
-    background-color: $dark-green;
+    cursor: pointer;
+    background-color: $primary;
+    color: $white;
   }
 }
 
 .button--secondary {
   background-color: $secondary;
+  color: $white;
 
   &:hover,
   &:focus {
@@ -28,12 +31,11 @@
 }
 
 .button--tertiary {
-  background-color: $dark-gray;
-  color: white;
+  background-color: $accent-green;
 
   &:hover,
   &:focus {
-    cursor: pointer;
+    background-color: $light-green;
   }
 }
 
@@ -41,11 +43,11 @@
   background-color: $primary;
   padding: $unit * 2;
   display: inline-block;
+  color: $white;
 
   &:hover,
   &:focus {
     background-color: $dark-gray;
     text-decoration: underline;
-    color: $white;
   }
 }
