@@ -17,7 +17,7 @@
           }
         }
         $(window).on('resize', _.debounce(calculateLayout, 150));
-        calculateLayout;
+        calculateLayout();
       }
     }
   }
