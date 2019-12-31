@@ -15,11 +15,7 @@ body {
   overflow: hidden;
   display: block;
   position: relative;
-  padding-bottom: 180px;
-
-  @include breakpoint($lap) {
-    padding-bottom: 65px;
-  }
+  padding-bottom: 65px;
 }
 
 .main,
