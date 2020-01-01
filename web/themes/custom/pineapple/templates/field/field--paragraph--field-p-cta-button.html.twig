@@ -50,6 +50,7 @@
     {% include "@components/_button.twig" with {
       button_text: item.content['#title'],
       button_url: item.content['#url']|raw,
+      button_type: 'button--tertiary',
     } %}
   </div>
 {% endfor %}
