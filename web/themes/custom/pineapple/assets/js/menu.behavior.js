@@ -8,13 +8,18 @@
         $('.region-header .menu .hamburger').click(function () {
           $(menu).toggleClass('responsive');
         });
+
         function calculateLayout() {
+          var footerHeight = $('.footer').height();
+          $('.layout-container').css('padding-bottom', footerHeight);
+
           var win = $(window);
           if (win.width() > 768 && $(menu).hasClass('responsive')) {
             $(menu).removeClass('responsive');
           }
         }
         $(window).on('resize', _.debounce(calculateLayout, 150));
+        calculateLayout();
       }
     }
   }

@@ -40,6 +40,10 @@ body {
   }
 }
 
+.main {
+  margin-bottom: $unit * 4;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
