@@ -49,7 +49,7 @@
   <div{{ attributes.addClass(classes, 'field__item') }}>
     {% include "@components/_button.twig" with {
       button_text: item.content['#title'],
-      button_url: item.content['#url'].getUri(),
+      button_url: item.content['#url']|raw,
     } %}
   </div>
 {% endfor %}
