@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_a_body
     - node.type.article
+    - paragraphs.paragraphs_type.components
   module:
     - entity_reference_revisions
 id: node.article.field_a_body
@@ -21,12 +22,16 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     negate: 0
-    target_bundles: null
+    target_bundles:
+      components: components
     target_bundles_drag_drop:
       components:
+        enabled: true
         weight: 3
-        enabled: false
       rich_text:
         weight: 4
+        enabled: false
+      image_paragraph:
+        weight: 5
         enabled: false
 field_type: entity_reference_revisions
