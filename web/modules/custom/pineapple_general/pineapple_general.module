@@ -78,9 +78,9 @@ function content_author_allowed_values(FieldStorageConfig $definition, ContentEn
 
 function button_color_select_list_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
   $options = [
-    'primary' => 'primary',
-    'secondary' => 'secondary',
-    'tertiary' => 'tertiary',
+    'primary' => 'Primary',
+    'secondary' => 'Secondary',
+    'tertiary' => 'Tertiary',
   ];
 
   return $options;
