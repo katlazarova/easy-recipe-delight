@@ -62,6 +62,8 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  *
  * @see options_allowed_values()
  * This functions is called in the field.storage.node files for the content author fields for the nodes which use it.
+ *
+ * Do drush cim -y after making changes to this file.
  */
 function content_author_allowed_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
   $creator_first_name = $entity->getOwner()->get('field_first_name')->value;
@@ -69,6 +71,16 @@ function content_author_allowed_values(FieldStorageConfig $definition, ContentEn
 
   $options = [
       'content_creator' => "{$creator_first_name} {$creator_surname}"
+  ];
+
+  return $options;
+}
+
+function button_color_select_list_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $options = [
+    'primary' => 'primary',
+    'secondary' => 'secondary',
+    'tertiary' => 'tertiary',
   ];
 
   return $options;

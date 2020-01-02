@@ -16,6 +16,17 @@
   }
 }
 
+.button--primary {
+  color: $primary;
+  border: thin solid $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
 .button--secondary {
   background-color: $gray;
   color: $white;

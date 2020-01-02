@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.call_to_action.field_p_cta_button
+    - field.field.paragraph.call_to_action.field_p_cta_button_color
     - paragraphs.paragraphs_type.call_to_action
   module:
     - link
+    - options
 id: paragraph.call_to_action.default
 targetEntityType: paragraph
 bundle: call_to_action
@@ -23,5 +25,12 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_p_cta_button_color:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden: {  }
