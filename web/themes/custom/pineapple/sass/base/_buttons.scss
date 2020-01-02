@@ -1,13 +1,24 @@
 .button {
   cursor: pointer;
   color: $primary;
-  display: block;
   padding: 0.8rem 1rem;
   vertical-align: middle;
   border-radius: 3px;
   transition: 0.5s;
   margin-right: 0;
   margin-left: 0;
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.button--primary {
+  color: $primary;
+  border: thin solid $primary;
 
   &:hover,
   &:focus {

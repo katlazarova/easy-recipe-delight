@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_p_c_component
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.components
     - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.rich_text
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       image_paragraph: image_paragraph
       rich_text: rich_text
+      call_to_action: call_to_action
     target_bundles_drag_drop:
       components:
         weight: -7
@@ -36,4 +38,7 @@ settings:
       rich_text:
         enabled: true
         weight: -5
+      call_to_action:
+        enabled: true
+        weight: 5
 field_type: entity_reference_revisions

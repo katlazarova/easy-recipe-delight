@@ -1,0 +1,21 @@
+uuid: 3838d837-19b8-4d0d-acd6-09cf244b0c94
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_p_cta_button_color
+field_name: field_p_cta_button_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values: {  }
+  allowed_values_function: button_color_select_list_values
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
