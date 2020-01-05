@@ -1,0 +1,54 @@
+uuid: 10bb075b-5ff4-4360-895a-4dbaac0fdc59
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.slide
+    - field.field.node.recipe.field_r_author_quote
+    - field.field.node.recipe.field_r_body
+    - field.field.node.recipe.field_r_categories
+    - field.field.node.recipe.field_r_content_author
+    - field.field.node.recipe.field_r_cooking_time
+    - field.field.node.recipe.field_r_cost
+    - field.field.node.recipe.field_r_featured
+    - field.field.node.recipe.field_r_hero_image
+    - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_serves
+    - field.field.node.recipe.field_r_summary
+    - field.field.node.recipe.field_r_teaser_image
+    - node.type.recipe
+  module:
+    - user
+id: node.recipe.slide
+targetEntityType: node
+bundle: recipe
+mode: slide
+content:
+  field_r_hero_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_r_summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  field_r_author_quote: true
+  field_r_body: true
+  field_r_categories: true
+  field_r_content_author: true
+  field_r_cooking_time: true
+  field_r_cost: true
+  field_r_featured: true
+  field_r_highlighted: true
+  field_r_serves: true
+  field_r_teaser_image: true
+  links: true

@@ -17,8 +17,22 @@ vue:
   # This allows access to the Vue devtools browser extension.
   js:
     libraries/vue/dist/vue.min.js: {}
+
 lodash:
   # This custom lodash build is generated in a npm postinstall script based on
   # http://simey.me/custom-lodash-builder-with-npm.
   js:
     dist/lodash.min.js: {}
+
+swiper:
+  js:
+    libraries/swiper/js/swiper.min.js: {}
+  css:
+    theme:
+      libraries/swiper/css/swiper.min.css: {}
+
+slideshow:
+  js:
+    assets/js/swiper.behavior.js: {}
+  dependencies:
+    - pineapple/swiper

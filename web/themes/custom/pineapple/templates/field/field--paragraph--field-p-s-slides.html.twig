@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{% for item in items %}
+  {% set node = item.content['#node'] %}
+  {% if node.bundle == 'recipe' %}
+    {% set summary = node.field_r_summary.value %}
+    {% set image_url = bamboo_render_image_style(node.field_r_hero_image.entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
+  {% else %}
+    {% set summary = node.field_a_summary.value %}
+    {% set image_url = bamboo_render_image_style(node.field_a_hero_image.entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
+  {% endif %}
+  <div class="swiper-slide" style="background-image:url({{ image_url }})">
+    <div class="swiper-text">
+        <h2>{{ node.getTitle() }}</h2>
+        <p>{{ summary }}</p>
+      {% include "@components/_button.twig" with {
+        button_url: path('entity.node.canonical', {'node': node.id}),
+        button_text: 'Read More',
+        button_type: 'button--secondary'
+      } %}
+    </div>
+  </div>
+{% endfor %}
