@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.components
     - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.rich_text
+    - paragraphs.paragraphs_type.slideshow
   module:
     - entity_reference_revisions
 id: paragraph.components.field_p_c_component
@@ -28,6 +29,7 @@ settings:
       image_paragraph: image_paragraph
       rich_text: rich_text
       call_to_action: call_to_action
+      slideshow: slideshow
     target_bundles_drag_drop:
       components:
         weight: -7
@@ -41,4 +43,7 @@ settings:
       call_to_action:
         enabled: true
         weight: 5
+      slideshow:
+        enabled: true
+        weight: 10
 field_type: entity_reference_revisions

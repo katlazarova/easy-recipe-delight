@@ -1,0 +1,40 @@
+uuid: bb6a03f4-ec1c-4414-be07-72e656c29892
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.slide
+    - field.field.node.article.field_a_body
+    - field.field.node.article.field_a_content_author
+    - field.field.node.article.field_a_hero_image
+    - field.field.node.article.field_a_summary
+    - field.field.node.article.field_a_teaser_image
+    - node.type.article
+  module:
+    - user
+id: node.article.slide
+targetEntityType: node
+bundle: article
+mode: slide
+content:
+  field_a_hero_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_a_summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  field_a_body: true
+  field_a_content_author: true
+  field_a_teaser_image: true
+  links: true
