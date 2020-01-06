@@ -50,11 +50,13 @@
     <div class="swiper-text">
         <h2>{{ node.getTitle() }}</h2>
         <p>{{ summary }}</p>
-      {% include "@components/_button.twig" with {
-        button_url: path('entity.node.canonical', {'node': node.id}),
-        button_text: 'Read More',
-        button_type: 'button--tertiary'
-      } %}
+        <div class="swiper-button">
+          {% include "@components/_button.twig" with {
+            button_url: path('entity.node.canonical', {'node': node.id}),
+            button_text: 'Read More',
+            button_type: 'button--tertiary'
+          } %}
+        </div>
     </div>
   </div>
 {% endfor %}
