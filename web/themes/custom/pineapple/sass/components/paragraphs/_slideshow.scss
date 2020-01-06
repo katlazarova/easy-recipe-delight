@@ -1,4 +1,6 @@
 .paragraph--type--slideshow .swiper-container {
+  background-color: $primary;
+
   .swiper-slide {
     height: 550px;
     text-align: center;
@@ -17,8 +19,12 @@
       font-weight: 600;
       padding: $unit * 3;
       line-height: 20px;
-      width: 40%;
       align-self: center;
+      width: 90%;
+
+      @include breakpoint($lap) {
+        width: 40%;
+      }
 
       p {
         display: inline;
@@ -34,15 +40,29 @@
       }
 
       .button {
-        width: 30%;
         font-size: $small-font;
         margin: 0 auto;
       }
     }
   }
 
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    background-color: $light-gray;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $secondary;
+  }
+
   .swiper-button-next,
   .swiper-button-prev {
     color: $gray;
+    display: none;
+
+    @include breakpoint($lap) {
+      display: block;
+    }
   }
 }

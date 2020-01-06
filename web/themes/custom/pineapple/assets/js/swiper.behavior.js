@@ -9,6 +9,10 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
+          pagination: {
+            clickable: true,
+            el: '.paragraph--type--slideshow .swiper-pagination',
+          },
         });
       }
     }
