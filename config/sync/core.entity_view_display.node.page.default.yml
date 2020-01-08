@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_bp_body
     - field.field.node.page.field_bp_hero_image
+    - field.field.node.page.field_bp_hide_page_heading
     - field.field.node.page.field_bp_summary
     - field.field.node.page.field_bp_teaser_image
     - node.type.page
@@ -35,6 +36,16 @@ content:
       view_mode: hero_image
       link: false
     third_party_settings: {  }
+    region: content
+  field_bp_hide_page_heading:
+    weight: 10
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_bp_summary:
     weight: 8
