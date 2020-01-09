@@ -32,6 +32,11 @@
             "libraries/{$name}": [
                 "type:npm-asset"
             ]
+        },
+        "patches": {
+            "drupal/paragraphs": {
+                "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
+            }
         }
     }
 }
