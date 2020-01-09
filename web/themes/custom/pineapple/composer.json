@@ -34,6 +34,9 @@
             ]
         },
         "patches": {
+            "drupal/core": {
+                "Media library widget + Paragraphs broken": "https://www.drupal.org/files/issues/2019-05-16/drupal-media-library-paragraphs-3003150-38-8.x.patch"
+            },
             "drupal/paragraphs": {
                 "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
             }
