@@ -27,6 +27,26 @@ function pineapple_general_help($route_name, RouteMatchInterface $route_match) {
 }
 
 /**
+ * Implements hook_field_widget_form_alter().
+ */
+function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  $restrict_access = FALSE;
+  $user_roles = \Drupal::currentUser()->getRoles();
+  if (in_array('content_editor', $user_roles)) {
+    $restrict_access = TRUE;
+  }
+  if (isset($element['#paragraph_type']) && $element['#paragraph_type'] == 'image_paragraph') {
+    if (isset($element['subform']['field_p_ip_hero_image']) && $restrict_access == TRUE) {
+      foreach ($element['#field_parents'] as $parent) {
+        if ($parent == 'field_r_body' || $parent == 'field_a_body') {
+          $element['subform']['field_p_ip_hero_image']['#access'] = FALSE;
+        }
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {

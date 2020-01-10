@@ -1,0 +1,23 @@
+uuid: 5a77a4ee-6365-4bb9-90a1-d2da2e8d56d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_ip_hero_image
+    - paragraphs.paragraphs_type.image_paragraph
+id: paragraph.image_paragraph.field_p_ip_hero_image
+field_name: field_p_ip_hero_image
+entity_type: paragraph
+bundle: image_paragraph
+label: 'Hero Image'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
