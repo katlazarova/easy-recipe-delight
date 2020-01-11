@@ -3,14 +3,14 @@ global-css:
     theme:
       css/pineapple.styles.min.css: {}
 
-global-js:
+menu:
   js:
-    js/pineapple.behavior.min.js: {}
+    assets/js/menu.behavior.js: {}
   dependencies:
     - core/jquery
     - core/drupal
-    - core/jquery.once
     - pineapple/lodash
+
 vue:
   header: true
   # We have a hook that uses the non-minified version on environments where JS processing is turned off.
