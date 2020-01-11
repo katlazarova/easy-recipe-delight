@@ -30,10 +30,9 @@ function pineapple_general_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_field_widget_form_alter().
  */
 function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
-  $user_roles = \Drupal::currentUser()->getRoles();
-  /* If content editor is in the user roles array and if paragraph type exists
-  and its value is equal to image_paragraph. */
+  // If paragraph type exists and its value is equal to image_paragraph.
   if (isset($element['#paragraph_type']) && $element['#paragraph_type'] == 'image_paragraph') {
+    $user_roles = \Drupal::currentUser()->getRoles();
     // If the hero image field exists and if content editor is in the user roles array.
     if (isset($element['subform']['field_p_ip_hero_image']) && in_array('content_editor', $user_roles)) {
       /* For each $parent in the field_parents array, if the parent is in an
@@ -73,8 +72,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
       }
       break;
     /* If the form id user_form, if the content administrator and content editor
-    are not in the user roles array and if the profile image field exists
-    restrict access to the field. */
+    are not in the user roles array restrict access to the field. */
     case 'user_form':
       $user_roles = \Drupal::currentUser()->getRoles();
       if (!in_array('content_administrator', $user_roles) && !in_array('content_editor', $user_roles)) {
