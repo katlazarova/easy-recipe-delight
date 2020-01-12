@@ -14,26 +14,17 @@ npm install
 ```
 NPM install ensures all the dependencies listed in the package.json file are installed into the node_moules folder.
 This is untracked by git, as it's included in the .gitignore file.
-One of the key things to be installed by NPM is Grunt.
 
-After npm install, 'npm-run-all' runs, which triggers the composer install, npm run lodash commands.
+After npm install, 'post install' scripts run, which triggers a number of postinstall scripts one of them being npm run lodash commands.
 
-- Run grunt and grunt serve in your theme directory:
+- Run npm run watch in your theme directory:
 
 ```
-grunt && grunt serve
+npm run watch
 ```
-Grunt runs the following functions:
-- sass
-- sass-globbing
-- concat
-- uglify
-- watch
-
-Grunt watch watches for changes in certain files and runs the appropriate tasks.
-It also ensures all sass files are converted into css, combined into one file and minified.
-This process also runs for js files.
-For more details, see the Gruntfile.js file.
+NPM run watch runs the build and watch scripts. Build scripts run babel which places js files in a new directory.
+They also run grunt, which runs grunt scss, concatenating the scss files. Watch scripts
+watch for changes in the sass and js files and then run the build scripts if changes are detected.
 
 ##Extra Information
 
