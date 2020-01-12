@@ -44,6 +44,18 @@ function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\
       }
     }
   }
+
+  $items = $context['items'];
+  $field = $items->getName();
+  /* If field name is either field_a_summary or field_r_summary, set the
+  maxlength to be 200 characters and the countdown to show. */
+  if ($field == "field_a_summary" || $field == "field_r_summary") {
+    $element['#maxlength_js'] = TRUE;
+    $element['value']['#maxlength_js'] = TRUE;
+    $maxlength_js = 200;
+    $element['value']['#attributes']['maxlength'] = $maxlength_js;
+    $element['#attributes']['maxlength'] = $maxlength_js;
+  }
 }
 
 /**
