@@ -30,6 +30,7 @@
         "drupal/maxlength": "^1.0@beta",
         "drupal/paragraphs": "^1.10",
         "drupal/pathauto": "^1.6",
+        "drupal/recaptcha": "^2.4",
         "drupal/site_settings": "^1.16",
         "drupal/styleguide": "^1.0@alpha",
         "drupal/twig_field_value": "^1.2",
