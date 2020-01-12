@@ -1,0 +1,7 @@
+uuid: 6f2434b2-ac4a-45d5-a484-057a491c00fb
+langcode: en
+status: true
+dependencies: {  }
+formId: user_login_form
+captchaType: default
+label: user_login_form
