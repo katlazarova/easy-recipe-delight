@@ -14,6 +14,7 @@ npm install
 ```
 NPM install ensures all the dependencies listed in the package.json file are installed into the node_moules folder.
 This is untracked by git, as it's included in the .gitignore file.
+One of the things to be installed by NPM is Grunt.
 
 After npm install, 'post install' scripts run, which triggers a number of postinstall scripts one of them being npm run lodash commands.
 
