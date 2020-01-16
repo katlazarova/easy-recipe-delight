@@ -41,7 +41,7 @@ module.exports = function(grunt) {
       sass: {
         // Watches for changes in the following files/folders and runs the appropriate tasks.
         files: ['sass/**/*.scss'],
-        tasks: ['sass_globbing:dist', 'sass', 'concat']
+        tasks: ['sass_globbing:dist', 'sass']
       }
     },
   });
