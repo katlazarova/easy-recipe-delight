@@ -41,6 +41,8 @@ permissions:
   - 'edit site setting entities'
   - 'edit terms in categories'
   - 'edit terms in tags'
+  - 'use content_workflow transition create_new_draft'
+  - 'use content_workflow transition publish'
   - 'view own unpublished content'
   - 'view published site setting entities'
   - 'view the administration theme'
