@@ -1,5 +1,10 @@
 .header {
   display: flex;
+  flex-direction: column;
+
+  @include breakpoint($lap) {
+    flex-direction: row;
+  }
 
   .menu--main {
     flex: auto;
@@ -58,10 +63,20 @@
   }
 
   &.user-account-menu {
-    display: none;
+    justify-content: flex-start;
 
-    @include breakpoint($lap) {
-      display: flex;
+    .menu-content {
+      flex-direction: column;
+
+      @include breakpoint($lap) {
+        flex-direction: row;
+      }
+    }
+
+    &.responsive {
+      .menu-item {
+        display: flex;
+      }
     }
   }
 
