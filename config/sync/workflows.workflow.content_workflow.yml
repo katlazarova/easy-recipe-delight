@@ -23,24 +23,29 @@ type_settings:
       published: true
       default_revision: true
       weight: 1
-  transitions:
-    create_new_draft:
+    unpublished:
+      published: false
+      default_revision: false
       label: Unpublished
-      to: draft
-      weight: 0
-      from:
-        - draft
-        - published
+      weight: 2
+  transitions:
     publish:
       label: Published
       to: published
       weight: 1
       from:
-        - draft
         - published
+        - unpublished
+    unpublished:
+      label: Unpublished
+      from:
+        - published
+        - unpublished
+      to: unpublished
+      weight: 2
   entity_types:
     node:
       - article
       - page
       - recipe
-  default_moderation_state: draft
+  default_moderation_state: unpublished

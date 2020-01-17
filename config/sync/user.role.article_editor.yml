@@ -16,6 +16,6 @@ permissions:
   - 'delete own image media'
   - 'edit own article content'
   - 'edit own image media'
-  - 'use content_workflow transition create_new_draft'
+  - 'use content_workflow transition unpublished'
   - 'view own unpublished content'
   - 'view the administration theme'
