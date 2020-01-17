@@ -1,3 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($lap) {
+    flex-direction: row;
+  }
+
+  .menu--main {
+    flex: auto;
+  }
+}
+
 .menu {
   overflow: hidden;
   background-color: $primary;
@@ -45,6 +58,24 @@
       .menu-item {
         display: block;
         width: 100%;
+      }
+    }
+  }
+
+  &.user-account-menu {
+    justify-content: flex-start;
+
+    .menu-content {
+      flex-direction: column;
+
+      @include breakpoint($lap) {
+        flex-direction: row;
+      }
+    }
+
+    &.responsive {
+      .menu-item {
+        display: flex;
       }
     }
   }
