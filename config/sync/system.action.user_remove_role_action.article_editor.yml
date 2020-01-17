@@ -1,0 +1,14 @@
+uuid: ff8342cd-5d4c-4b47-96e4-0d80aa93a6b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.article_editor
+  module:
+    - user
+id: user_remove_role_action.article_editor
+label: 'Remove the Article Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: article_editor
