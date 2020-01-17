@@ -1,3 +1,11 @@
+.header {
+  display: flex;
+
+  .menu--main {
+    flex: auto;
+  }
+}
+
 .menu {
   overflow: hidden;
   background-color: $primary;
@@ -46,6 +54,14 @@
         display: block;
         width: 100%;
       }
+    }
+  }
+
+  &.user-account-menu {
+    display: none;
+
+    @include breakpoint($lap) {
+      display: flex;
     }
   }
 
