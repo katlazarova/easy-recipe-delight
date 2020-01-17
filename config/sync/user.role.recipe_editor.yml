@@ -1,0 +1,20 @@
+uuid: ff02239f-0821-4cc2-8e34-d8d8d434a8ea
+langcode: en
+status: true
+dependencies: {  }
+id: recipe_editor
+label: 'Recipe Editor'
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'create image media'
+  - 'create recipe content'
+  - 'delete own image media'
+  - 'delete own recipe content'
+  - 'edit own image media'
+  - 'edit own recipe content'
+  - 'view own unpublished content'
+  - 'view the administration theme'

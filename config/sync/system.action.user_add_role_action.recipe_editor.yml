@@ -1,0 +1,14 @@
+uuid: 21dbe5e7-19cf-4d92-ad12-d7e35535e6fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recipe_editor
+  module:
+    - user
+id: user_add_role_action.recipe_editor
+label: 'Add the Recipe Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: recipe_editor
