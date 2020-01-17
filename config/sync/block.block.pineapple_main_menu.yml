@@ -14,7 +14,7 @@ _core:
 id: pineapple_main_menu
 theme: pineapple
 region: header
-weight: -7
+weight: -4
 provider: null
 plugin: 'system_menu_block:main'
 settings:

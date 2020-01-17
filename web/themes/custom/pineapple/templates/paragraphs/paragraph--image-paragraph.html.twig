@@ -48,7 +48,7 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% if content.field_p_ip_hero_image.0['#markup'] == 'On' %}
+    {% if paragraph.field_p_ip_hero_image.value == '1' %}
       {% set image_url = bamboo_render_image_style(content.field_p_ip_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527')%}
       {% include "@components/_hero-image.twig" with {
         image_url: image_url,
@@ -56,8 +56,7 @@
       } %}
     {% else %}
       {% block content %}
-        {{ content.field_p_ip_image}}
-        {{ content.field_p_ip_caption}}
+        {{ content }}
       {% endblock %}
     {% endif %}
   </div>
