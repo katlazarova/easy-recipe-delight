@@ -20,16 +20,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_p_ip_hero_image:
-    weight: 2
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_p_ip_image:
     type: entity_reference_entity_view
     weight: 0
@@ -39,4 +29,5 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_p_ip_hero_image: true
