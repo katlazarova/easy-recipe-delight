@@ -1,0 +1,24 @@
+uuid: 80793709-3d48-498a-ba03-7ef07389ce95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.method.field_p_m_paragraph
+    - paragraphs.paragraphs_type.method
+  module:
+    - entity_reference_revisions
+id: paragraph.method.default
+targetEntityType: paragraph
+bundle: method
+mode: default
+content:
+  field_p_m_paragraph:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }
