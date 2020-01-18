@@ -1,18 +1,19 @@
-uuid: 1076c29f-f7bd-4a24-9231-b20ab1efa946
+uuid: f946f19d-3f5a-48e8-823d-61e9c0c61c69
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_p_i_method
+    - field.storage.paragraph.field_p_i_instruction
+    - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.instructions
-    - paragraphs.paragraphs_type.method
+    - paragraphs.paragraphs_type.rich_text
   module:
     - entity_reference_revisions
-id: paragraph.instructions.field_p_i_method
-field_name: field_p_i_method
+id: paragraph.instructions.field_p_i_instruction
+field_name: field_p_i_instruction
 entity_type: paragraph
 bundle: instructions
-label: Method
+label: Instruction
 description: ''
 required: false
 translatable: false
@@ -23,27 +24,25 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      method: method
+      image_paragraph: image_paragraph
+      rich_text: rich_text
     target_bundles_drag_drop:
       call_to_action:
-        weight: 8
+        weight: 7
         enabled: false
       components:
-        weight: 9
+        weight: 8
         enabled: false
       image_paragraph:
+        enabled: true
+        weight: 9
+      instructions:
         weight: 10
         enabled: false
-      instructions:
-        weight: 11
-        enabled: false
-      method:
-        enabled: true
-        weight: 12
       rich_text:
-        weight: 13
-        enabled: false
+        enabled: true
+        weight: 11
       slideshow:
-        weight: 14
+        weight: 12
         enabled: false
 field_type: entity_reference_revisions

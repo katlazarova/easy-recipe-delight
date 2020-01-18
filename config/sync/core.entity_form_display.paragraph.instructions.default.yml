@@ -1,9 +1,9 @@
-uuid: 048149f9-a613-49e3-aeaa-3d24af9c70da
+uuid: 81174690-ec9d-439b-98bd-fbf45b42a1fc
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.instructions.field_p_i_method
+    - field.field.paragraph.instructions.field_p_i_instruction
     - paragraphs.paragraphs_type.instructions
   module:
     - paragraphs
@@ -12,7 +12,7 @@ targetEntityType: paragraph
 bundle: instructions
 mode: default
 content:
-  field_p_i_method:
+  field_p_i_instruction:
     type: entity_reference_paragraphs
     weight: 0
     settings:

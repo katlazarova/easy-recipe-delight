@@ -1,9 +1,9 @@
-uuid: 80793709-3d48-498a-ba03-7ef07389ce95
+uuid: 766346cb-56a3-486d-b522-728cd22cdb70
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.method.field_p_m_paragraph
+    - field.field.paragraph.method.field_p_m_instructions
     - paragraphs.paragraphs_type.method
   module:
     - entity_reference_revisions
@@ -12,9 +12,9 @@ targetEntityType: paragraph
 bundle: method
 mode: default
 content:
-  field_p_m_paragraph:
+  field_p_m_instructions:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 0
     label: above
     settings:
       view_mode: default

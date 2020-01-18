@@ -1,9 +1,9 @@
-uuid: 91d2aaef-18fe-41a3-936a-fbd7308ee5ec
+uuid: 0bfa8fe1-65ac-461c-b5bc-baec07e4e530
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.method.field_p_m_paragraph
+    - field.field.paragraph.method.field_p_m_instructions
     - paragraphs.paragraphs_type.method
   module:
     - paragraphs
@@ -12,9 +12,9 @@ targetEntityType: paragraph
 bundle: method
 mode: default
 content:
-  field_p_m_paragraph:
+  field_p_m_instructions:
     type: entity_reference_paragraphs
-    weight: 1
+    weight: 0
     settings:
       title: Paragraph
       title_plural: Paragraphs

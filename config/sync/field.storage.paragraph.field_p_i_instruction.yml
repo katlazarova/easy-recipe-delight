@@ -1,12 +1,12 @@
-uuid: e4f47a98-7db6-4bed-a70f-33bbdb4cc48b
+uuid: 61f07d06-2398-4770-9cf3-c2cb9e889217
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-id: paragraph.field_p_i_method
-field_name: field_p_i_method
+id: paragraph.field_p_i_instruction
+field_name: field_p_i_instruction
 entity_type: paragraph
 type: entity_reference_revisions
 settings:

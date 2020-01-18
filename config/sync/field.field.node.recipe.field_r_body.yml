@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_r_body
     - node.type.recipe
     - paragraphs.paragraphs_type.components
-    - paragraphs.paragraphs_type.instructions
+    - paragraphs.paragraphs_type.method
   module:
     - entity_reference_revisions
 id: node.recipe.field_r_body
@@ -25,7 +25,7 @@ settings:
     negate: 0
     target_bundles:
       components: components
-      instructions: instructions
+      method: method
     target_bundles_drag_drop:
       components:
         enabled: true
@@ -40,11 +40,11 @@ settings:
         weight: 8
         enabled: false
       instructions:
-        enabled: true
         weight: 11
-      method:
-        weight: 12
         enabled: false
+      method:
+        enabled: true
+        weight: 12
       slideshow:
         weight: 14
         enabled: false
