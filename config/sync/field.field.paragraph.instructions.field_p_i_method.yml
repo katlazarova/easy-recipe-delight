@@ -1,19 +1,18 @@
-uuid: c56874df-703c-4f9c-b86e-fa152714a091
+uuid: 1076c29f-f7bd-4a24-9231-b20ab1efa946
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_r_body
-    - node.type.recipe
-    - paragraphs.paragraphs_type.components
+    - field.storage.paragraph.field_p_i_method
     - paragraphs.paragraphs_type.instructions
+    - paragraphs.paragraphs_type.method
   module:
     - entity_reference_revisions
-id: node.recipe.field_r_body
-field_name: field_r_body
-entity_type: node
-bundle: recipe
-label: Body
+id: paragraph.instructions.field_p_i_method
+field_name: field_p_i_method
+entity_type: paragraph
+bundle: instructions
+label: Method
 description: ''
 required: false
 translatable: false
@@ -24,26 +23,25 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      components: components
-      instructions: instructions
+      method: method
     target_bundles_drag_drop:
-      components:
-        enabled: true
-        weight: 3
-      rich_text:
-        weight: 4
-        enabled: false
-      image_paragraph:
-        weight: 5
-        enabled: false
       call_to_action:
         weight: 8
         enabled: false
+      components:
+        weight: 9
+        enabled: false
+      image_paragraph:
+        weight: 10
+        enabled: false
       instructions:
-        enabled: true
         weight: 11
+        enabled: false
       method:
+        enabled: true
         weight: 12
+      rich_text:
+        weight: 13
         enabled: false
       slideshow:
         weight: 14
