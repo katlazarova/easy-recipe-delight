@@ -1,3 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($lap) {
+    flex-direction: row;
+  }
+
+  .menu--main {
+    flex: auto;
+  }
+}
+
 .menu {
   overflow: hidden;
   background-color: $primary;
@@ -49,8 +62,26 @@
     }
   }
 
+  &.user-account-menu {
+    justify-content: flex-start;
+
+    .menu-content {
+      flex-direction: column;
+
+      @include breakpoint($lap) {
+        flex-direction: row;
+      }
+    }
+
+    &.responsive {
+      .menu-item {
+        display: flex;
+      }
+    }
+  }
+
   .hamburger-container {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
 
     .hamburger {
@@ -118,7 +149,7 @@
       position: absolute;
       background-color: lighten($primary, 10%);
       min-width: 160px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
       z-index: 1;
       top: 2.5em;
 
@@ -132,6 +163,85 @@
         &:hover,
         &:focus {
           text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex: 0 0 33.33%;
+  background-color: $primary;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  @include breakpoint($lap) {
+    flex: 0 0 25%;
+  }
+
+  .footer-info {
+    font-size: $xsmall-font;
+    color: $white;
+    background-color: $primary;
+    width: 100%;
+    max-width: 33.33333%;
+    padding-left: $unit * 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint($lap) {
+      max-width: 25%;
+    }
+  }
+
+  .region-footer {
+    width: 100%;
+    max-width: 66.66666%;
+
+    @include breakpoint($lap) {
+      max-width: 75%;
+    }
+
+    .menu {
+      overflow: hidden;
+      background-color: $primary;
+      padding: $unit * 2;
+      text-align: center;
+
+      .hamburger {
+        display: none;
+      }
+
+      .menu-content {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        flex-direction: column;
+        text-align: center;
+
+        @include breakpoint($lap) {
+          flex-direction: row;
+        }
+
+        .menu-item {
+          color: $light-gray;
+          text-decoration: none;
+          font-size: $xsmall-font;
+          padding: $unit;
+          display: block;
+
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+          &.is-active {
+            color: $white;
+          }
         }
       }
     }

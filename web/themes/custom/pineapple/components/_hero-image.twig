@@ -1,0 +1,35 @@
+{% set content_url = content_url|default('') %}
+<div class="hero-container breakout">
+  {% if content_url %}
+    <a href="{{ content_url }}">
+  {% endif %}
+  <div class="hero-image" style="background-image: url({{ image_url }})">
+  </div>
+  <div class="hero-image-text container">
+    <div class="hero-image-content u-o-2">
+      {% if pretext %}
+        <div class="hero-pretext">
+          {{ pretext }}
+        </div>
+      {% endif %}
+      <div class="page-title">
+        <h1>{{ title }}</h1>
+      </div>
+      {% if subtext %}
+        <div class="hero-subtext">
+          By {{ subtext }}
+        </div>
+      {% endif %}
+      {% if labels %}
+        <div class="hero-labels">
+          {% for item in labels %}
+            {{ item.value }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% if content_url %}
+   </a>
+  {% endif %}
+</div>

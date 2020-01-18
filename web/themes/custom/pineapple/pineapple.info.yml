@@ -13,3 +13,7 @@ regions:
   content: Content
   social_banner: 'Social banner'
   footer: Footer
+component-libraries:
+  components:
+    paths:
+      - components

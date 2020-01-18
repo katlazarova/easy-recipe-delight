@@ -1,16 +1,16 @@
 .breadcrumb {
   font-size: $small-font;
-  color: $dark-grey;
+  color: $dark-gray;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 0;
 
   a {
-    color: $dark-grey;
+    color: $dark-gray;
 
     &:hover,
     &:focus {
-      color: $black;
+      color: $primary;
       text-decoration: underline;
     }
   }

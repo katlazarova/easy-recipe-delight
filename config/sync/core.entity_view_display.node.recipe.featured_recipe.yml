@@ -1,0 +1,61 @@
+uuid: 45f58435-f39f-42f9-8e5c-cf62160393dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured_recipe
+    - field.field.node.recipe.field_r_body
+    - field.field.node.recipe.field_r_categories
+    - field.field.node.recipe.field_r_content_author
+    - field.field.node.recipe.field_r_cooking_time
+    - field.field.node.recipe.field_r_cost
+    - field.field.node.recipe.field_r_featured
+    - field.field.node.recipe.field_r_hero_image
+    - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_serves
+    - field.field.node.recipe.field_r_summary
+    - field.field.node.recipe.field_r_teaser_image
+    - node.type.recipe
+  module:
+    - user
+id: node.recipe.featured_recipe
+targetEntityType: node
+bundle: recipe
+mode: featured_recipe
+content:
+  field_r_cooking_time:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_r_hero_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: hero_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_r_serves:
+    weight: 2
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  field_r_body: true
+  field_r_categories: true
+  field_r_content_author: true
+  field_r_cost: true
+  field_r_featured: true
+  field_r_highlighted: true
+  field_r_summary: true
+  field_r_teaser_image: true
+  links: true

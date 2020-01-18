@@ -1,0 +1,20 @@
+uuid: 60525bcc-0d2f-4010-abca-d6df4a6a06c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_p_s_slides
+field_name: field_p_s_slides
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 40351eec-883e-4cba-91bc-5fe0ace1e063
+langcode: en
+status: true
+dependencies: {  }
+id: article_editor
+label: 'Article Editor'
+weight: 6
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'create article content'
+  - 'create image media'
+  - 'delete own article content'
+  - 'delete own image media'
+  - 'edit own article content'
+  - 'edit own image media'
+  - 'use content_workflow transition unpublished'
+  - 'view own unpublished content'
+  - 'view the administration theme'

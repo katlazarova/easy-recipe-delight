@@ -22,12 +22,17 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.0",
         "drupal/bamboo_twig": "^4.1",
+        "drupal/components": "^1.1",
+        "drupal/config_ignore": "^2.2",
         "drupal/console": "^1.0.2",
         "drupal/core": "8.7.0",
         "drupal/devel": "^2.1",
         "drupal/easy_breadcrumb": "^1.12",
+        "drupal/maxlength": "^1.0@beta",
         "drupal/paragraphs": "^1.10",
         "drupal/pathauto": "^1.6",
+        "drupal/recaptcha": "^2.4",
+        "drupal/site_settings": "^1.16",
         "drupal/styleguide": "^1.0@alpha",
         "drupal/twig_field_value": "^1.2",
         "drush/drush": "^9.0.0",
@@ -61,7 +66,8 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "(cd ./web/themes/custom/pineapple && composer install) || true"
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"

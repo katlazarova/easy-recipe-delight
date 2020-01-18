@@ -1,0 +1,54 @@
+form {
+  background-color: $white;
+  color: $dark-gray;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  text-transform: capitalize;
+  padding: $unit * 2;
+  font-size: 12px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include breakpoint($lap) {
+    width: 70%;
+  }
+
+  .form-item {
+
+    label {
+      font-size: 20px;
+    }
+
+    .form-text,
+    .form-textarea,
+    .form-select,
+    .form-email {
+      display: block;
+      width: 100%;
+      margin: $unit auto;
+      color: $primary;
+      padding: $unit;
+      background-color: $white;
+      border: 0;
+      border-bottom: thin solid $dark-gray;
+      &:hover,
+      &:focus {
+        background-color: $light-gray;
+      }
+    }
+
+    .form-textarea,
+    .form-select {
+      border: thin solid $dark-gray;
+    }
+
+    .description {
+      text-align: left;
+      margin-top: $unit;
+    }
+  }
+
+  .fieldset-legend {
+    font-size: 20px;
+  }
+}

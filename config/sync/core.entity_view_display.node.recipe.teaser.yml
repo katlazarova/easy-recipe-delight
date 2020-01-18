@@ -4,6 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.recipe.field_r_body
+    - field.field.node.recipe.field_r_categories
+    - field.field.node.recipe.field_r_content_author
+    - field.field.node.recipe.field_r_cooking_time
+    - field.field.node.recipe.field_r_cost
+    - field.field.node.recipe.field_r_featured
+    - field.field.node.recipe.field_r_hero_image
+    - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_serves
+    - field.field.node.recipe.field_r_summary
+    - field.field.node.recipe.field_r_teaser_image
     - node.type.recipe
   module:
     - user
@@ -12,21 +23,62 @@ targetEntityType: node
 bundle: recipe
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_r_cooking_time:
+    type: string
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_r_hero_image:
+    type: entity_reference_entity_view
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      view_mode: recipe_teaser
+      link: false
+    third_party_settings: {  }
+  field_r_highlighted:
+    type: boolean
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_r_serves:
+    type: number_integer
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_r_summary:
+    type: basic_string
+    weight: 0
+    region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_r_teaser_image:
+    type: entity_reference_entity_view
+    weight: 1
     region: content
+    label: hidden
+    settings:
+      view_mode: recipe_teaser
+      link: false
+    third_party_settings: {  }
 hidden:
-  field_r_author_quote: true
   field_r_body: true
   field_r_categories: true
   field_r_content_author: true
-  field_r_cooking_time: true
   field_r_cost: true
   field_r_featured: true
-  field_r_hero_image: true
-  field_r_highlighted: true
-  field_r_serves: true
-  field_r_summary: true
-  field_r_teaser_image: true
+  links: true

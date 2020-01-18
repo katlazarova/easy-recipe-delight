@@ -1,0 +1,45 @@
+{
+    "name": "katarinalazarova/pineapple",
+    "description": "Pineapple theme composer file",
+    "type": "project",
+    "authors": [
+        {
+            "name": "katarinalazarova",
+            "email": "katarinaalazarova@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "composer/installers": "^1.7",
+        "cweagans/composer-patches": "^1.6",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "npm-asset/vue": "^2.6",
+        "npm-asset/swiper": "^5.2"
+    },
+    "extra": {
+        "enable-patching": true,
+        "installer-types": [
+            "npm-asset"
+        ],
+        "installer-paths": {
+            "libraries/{$name}": [
+                "type:npm-asset"
+            ]
+        },
+        "patches": {
+            "drupal/core": {
+                "Media library widget + Paragraphs broken": "https://www.drupal.org/files/issues/2019-05-16/drupal-media-library-paragraphs-3003150-38-8.x.patch"
+            },
+            "drupal/paragraphs": {
+                "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
+            }
+        }
+    }
+}

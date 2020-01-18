@@ -1,0 +1,22 @@
+uuid: d5b4bf7b-42f8-48c7-8b00-91ed7db4a753
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slideshow.field_p_s_slides
+    - paragraphs.paragraphs_type.slideshow
+id: paragraph.slideshow.default
+targetEntityType: paragraph
+bundle: slideshow
+mode: default
+content:
+  field_p_s_slides:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: slide
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

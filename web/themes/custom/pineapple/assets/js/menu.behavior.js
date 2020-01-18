@@ -4,16 +4,22 @@
 
     Drupal.behaviors.menu = {
       attach: function (context, settings) {
-        var menu = $('.navigation .menu');
-        $('.menu .hamburger').click(function () {
+        var menu = $('.header .navigation .menu');
+        $('.navigation .menu .hamburger').click(function () {
           $(menu).toggleClass('responsive');
         });
-        $(window).on('debouncedresize', function () {
+
+        function calculateLayout() {
+          var footerHeight = $('.footer').height();
+          $('.layout-container').css('padding-bottom', footerHeight);
+
           var win = $(window);
           if (win.width() > 768 && $(menu).hasClass('responsive')) {
             $(menu).removeClass('responsive');
           }
-        });
+        }
+        $(window).on('resize', _.debounce(calculateLayout, 150));
+        calculateLayout();
       }
     }
   }

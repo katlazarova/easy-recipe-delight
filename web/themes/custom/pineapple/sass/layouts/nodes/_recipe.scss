@@ -1,11 +1,16 @@
-.node--type-recipe {
+.recipe--full {
+
+  .row {
+    padding-right: $unit * 2;
+    padding-left: $unit *2;
+  }
 
   .node__content {
     margin-right: 0;
     width: 100%;
 
     @include breakpoint($desk) {
-      width: 75%;
+      width: 70%;
     }
 
     .recipe-image {
@@ -13,18 +18,19 @@
       object-fit: cover;
       height: 350px;
       background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
 
     .field--name-field-r-cooking-time,
     .field--name-field-r-serves,
     .field--name-field-r-cost {
-      background-color: $light-grey;
+      background-color: $light-gray;
       color: $primary;
       text-transform: uppercase;
       font-weight: bold;
       padding: $unit;
       display: inline-block;
-      margin-top: $unit;
       margin-right: $unit;
 
       p {
@@ -47,22 +53,18 @@
 
   .recipe-sidebar {
     width: 100%;
-    padding-right: $unit * 2;
-    padding-left: $unit * 2;
     overflow-y: auto;
     height: auto;
     margin-top: $unit * 2;
 
     @include breakpoint($desk) {
-      top: 0;
-      right: 0;
-      position: static;
       width: 25%;
       margin-top: 0;
+      margin-left: $unit * 4;
     }
 
     .recipe-author-container {
-      background-color: $light-grey;
+      background-color: $light-gray;
       padding: $unit;
       margin-bottom: $unit;
 
@@ -95,6 +97,73 @@
         text-align: center;
         margin-top: $unit;
         padding: $unit $unit * 3;
+      }
+    }
+  }
+}
+
+.recipe--teaser {
+  display: flex;
+  flex-direction: column;
+  background-color: $light-gray;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .recipe-card-wrapper {
+
+    .teaser-image-container {
+      position: relative;
+
+      .highlighted-label {
+        background-color: transparentize($dark-purple, 0.2);
+        color: $white;
+        text-transform: uppercase;
+        text-align: left;
+        float: right;
+        position: absolute;
+        right: 0;
+        top: $unit * 3;
+        z-index: 1;
+        padding: 0 $unit;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .node__content {
+      width: 100%;
+      padding: $unit * 3;
+
+      .recipe-labels {
+        display: flex;
+        align-content: center;
+        text-transform: uppercase;
+        color: $primary;
+        justify-content: space-between;
+
+        .field--name-field-r-cooking-time {
+          background-color: $white;
+          font-size: $xsmall-font;
+          text-align: center;
+          padding: $unit;
+
+          .field__item {
+            display: block;
+          }
+        }
+        .field--name-field-r-serves {
+          display: flex;
+          align-items: center;
+          background-color: $white;
+          font-size: $xsmall-font;
+          text-align: center;
+          margin-right: 0;
+          padding: $unit;
+        }
       }
     }
   }

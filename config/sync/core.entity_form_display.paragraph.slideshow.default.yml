@@ -1,0 +1,24 @@
+uuid: ddbf7d6b-6870-43b1-b96d-e46d32c303de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slideshow.field_p_s_slides
+    - paragraphs.paragraphs_type.slideshow
+id: paragraph.slideshow.default
+targetEntityType: paragraph
+bundle: slideshow
+mode: default
+content:
+  field_p_s_slides:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

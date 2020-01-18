@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_p_c_component
+    - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.components
+    - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.rich_text
+    - paragraphs.paragraphs_type.slideshow
   module:
     - entity_reference_revisions
 id: paragraph.components.field_p_c_component
@@ -23,12 +26,24 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      image_paragraph: image_paragraph
       rich_text: rich_text
+      call_to_action: call_to_action
+      slideshow: slideshow
     target_bundles_drag_drop:
       components:
-        weight: 2
+        weight: -7
         enabled: false
+      image_paragraph:
+        enabled: true
+        weight: -6
       rich_text:
         enabled: true
-        weight: 4
+        weight: -5
+      call_to_action:
+        enabled: true
+        weight: 5
+      slideshow:
+        enabled: true
+        weight: 10
 field_type: entity_reference_revisions

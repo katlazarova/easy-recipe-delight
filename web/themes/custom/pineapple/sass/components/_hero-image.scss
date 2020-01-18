@@ -1,6 +1,7 @@
 .hero-container {
   height: 527px;
   overflow: hidden;
+  margin-bottom: $unit * 4;
 
   .hero-image {
     height: 100%;
@@ -25,7 +26,7 @@
 
       .page-title {
         padding: $unit * 2;
-        background-color: transparentize($primary, 0.4);
+        background-color: transparentize($primary, 0.2);
         font-size: $xlarge-font;
         font-weight: 600;
         position: relative;
@@ -37,9 +38,10 @@
         }
       }
 
-      .hero-subtext {
+      .hero-subtext,
+      .hero-pretext {
         padding: $unit;
-        background-color: transparentize($primary, 0.4);
+        background-color: transparentize($primary, 0.2);
         color: $white;
         text-transform: uppercase;
         text-align: left;
@@ -52,6 +54,39 @@
 
         .field {
           display: inline;
+        }
+      }
+
+      .hero-labels {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: $small-font;
+
+        .field--name-field-r-cooking-time,
+        .field--name-field-r-serves {
+          background-color: transparentize($dark-purple, 0.1);
+          font-weight: 600;
+          color: $white;
+          padding: $unit;
+          display: inline-block;
+          margin-right: $unit;
+          margin-top: $unit;
+
+          @include breakpoint($desk) {
+            margin-top: 0;
+          }
+
+          p {
+            display: inline;
+          }
+
+          .field__label {
+            display: inline;
+          }
+
+          .field__item {
+            display: inline;
+          }
         }
       }
     }

@@ -1,0 +1,10 @@
+uuid: 9b2b0695-f6b7-4548-b7de-22e9cf9c864d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_recipe
+label: 'Featured Recipe'
+targetEntityType: node
+cache: true

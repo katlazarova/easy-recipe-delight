@@ -43,19 +43,11 @@
  */
 #}
 <div class="layout-container">
-
-  <header role="banner">
-    {{ page.header }}
+  <header role="banner" class="header">
+    {{ page.header.pineapple_main_menu }}
+    {{ page.header.useraccountmenu }}
   </header>
-
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
+    {{ page.header.pineapple_breadcrumbs }}
 
   <main role="main" class="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
@@ -79,7 +71,12 @@
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer role="contentinfo" class="footer">
+      {% if site_settings.global.footer_information %}
+        <div class="footer-info">
+        <p>{{ site_settings.global.footer_information }}</p>
+        </div>
+      {% endif %}
       {{ page.footer }}
     </footer>
   {% endif %}

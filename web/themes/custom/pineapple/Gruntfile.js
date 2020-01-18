@@ -37,41 +37,22 @@ module.exports = function(grunt) {
         }
       }
     },
-    concat:{
-      js: {
-        // Looks into directories inside js and then looks for files with the .js extensions.
-        src: ['assets/js/**/*.js'],
-        // Combines all files into one file and places into the build folder.
-        dest: 'js/pineapple.behavior.min.js'
-      }
-    },
-    uglify: {
-      build: {
-        files: [{
-          // Minifies script.min.js inside the build folder.
-          src: 'js/pineapple.behavior.min.js',
-          dest: 'js/pineapple.behavior.min.js'
-        }]
-      }
-    },
     watch: {
       sass: {
         // Watches for changes in the following files/folders and runs the appropriate tasks.
-        files: ['sass/**/*.scss', 'assets/js/*.js'],
-        tasks: ['sass_globbing:dist', 'sass', 'concat']
+        files: ['sass/**/*.scss'],
+        tasks: ['sass_globbing:dist', 'sass']
       }
     },
   });
 
   // Load tasks.
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass-globbing');
 
   // Register tasks.
-  grunt.registerTask('default', ['sass_globbing:dist', 'sass', 'concat', 'uglify']);
-  grunt.registerTask('serve', ['watch']);
+  grunt.registerTask('default', ['sass_globbing:dist', 'sass']);
+  grunt.registerTask('scss', ['watch']);
 
 };
