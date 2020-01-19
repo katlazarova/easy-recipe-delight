@@ -2,10 +2,22 @@
   .instructions {
     list-style: none;
     counter-reset: my-awesome-counter;
+    padding-left: 0;
+    margin: $unit;
+
+    @include breakpoint($lap) {
+      margin: 0;
+    }
+
     .instruction {
       counter-increment: my-awesome-counter;
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
+
+      @include breakpoint($lap) {
+        flex-direction: row;
+      }
 
       &:before {
         color: $secondary;
