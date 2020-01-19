@@ -1,8 +1,51 @@
-.paragraph--type--method {
-  .field__label {
-    color: $secondary;
-    font-weight: 600;
-    font-size: $large-font;
-    margin: $unit *3 0;
+.method-heading {
+  color: $secondary;
+}
+
+.instructions {
+  list-style: none;
+  counter-reset: instruction-counter;
+  padding-left: 0;
+  margin: $unit;
+
+  @include breakpoint($lap) {
+    margin: 0;
+  }
+
+  .instruction {
+    counter-increment: instruction-counter;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: $unit *3;
+
+    @include breakpoint($lap) {
+      flex-direction: row;
+    }
+
+    &:before {
+      color: $secondary;
+      font-size: $xlarge-font;
+      content: counter(instruction-counter);
+      align-items: start;
+      display: flex;
+    }
+
+    .field--type-text-long {
+      display: flex;
+      flex: 0 85%;
+
+      p {
+        margin-top: 0;
+      }
+    }
   }
 }
+
+//.field__label {
+//  color: $secondary;
+//  font-weight: 600;
+//  font-size: $large-font;
+//  margin: $unit *3 0;
+//}
+//}

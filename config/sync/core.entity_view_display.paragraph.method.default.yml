@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.method.field_p_m_instructions
+    - field.field.paragraph.method.field_p_m_instruction
     - paragraphs.paragraphs_type.method
   module:
     - entity_reference_revisions
@@ -12,10 +12,10 @@ targetEntityType: paragraph
 bundle: method
 mode: default
 content:
-  field_p_m_instructions:
+  field_p_m_instruction:
     type: entity_reference_revisions_entity_view
     weight: 0
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
