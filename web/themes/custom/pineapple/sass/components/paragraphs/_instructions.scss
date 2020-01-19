@@ -1,0 +1,28 @@
+.paragraph--type--instructions {
+  .instructions {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    .instruction {
+      counter-increment: my-awesome-counter;
+      display: flex;
+      justify-content: space-between;
+
+      &:before {
+        color: $secondary;
+        font-size: $xlarge-font;
+        content: counter(my-awesome-counter);
+        align-items: start;
+        display: flex;
+      }
+
+      .paragraph {
+        display: flex;
+        flex: 0 85%;
+
+        p {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
