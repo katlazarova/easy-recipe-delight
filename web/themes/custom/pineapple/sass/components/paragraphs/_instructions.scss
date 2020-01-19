@@ -1,7 +1,7 @@
 .paragraph--type--instructions {
   .instructions {
     list-style: none;
-    counter-reset: my-awesome-counter;
+    counter-reset: instruction-counter;
     padding-left: 0;
     margin: $unit;
 
@@ -10,7 +10,7 @@
     }
 
     .instruction {
-      counter-increment: my-awesome-counter;
+      counter-increment: instruction-counter;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -22,12 +22,12 @@
       &:before {
         color: $secondary;
         font-size: $xlarge-font;
-        content: counter(my-awesome-counter);
+        content: counter(instruction-counter);
         align-items: start;
         display: flex;
       }
 
-      .paragraph {
+      .field--type-text-long {
         display: flex;
         flex: 0 85%;
 

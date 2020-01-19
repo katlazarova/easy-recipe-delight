@@ -55,7 +55,7 @@
 <div{{ attributes.addClass(classes) }}>
     <ol class="field__items instructions u-o-2">
   {% for item in items %}
-    <li{{ item.attributes.addClass('field__item', 'instruction') }}>{{ item.content }}</li>
+    <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
   {% endfor %}
     </ol>
 </div>
