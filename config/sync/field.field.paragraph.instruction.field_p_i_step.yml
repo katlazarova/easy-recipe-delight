@@ -1,0 +1,51 @@
+uuid: 1124b1be-8d7f-4e26-8310-f81def366c4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_i_step
+    - paragraphs.paragraphs_type.image_paragraph
+    - paragraphs.paragraphs_type.instruction
+    - paragraphs.paragraphs_type.rich_text
+  module:
+    - entity_reference_revisions
+id: paragraph.instruction.field_p_i_step
+field_name: field_p_i_step
+entity_type: paragraph
+bundle: instruction
+label: Step
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_paragraph: image_paragraph
+      rich_text: rich_text
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 8
+        enabled: false
+      components:
+        weight: 9
+        enabled: false
+      image_paragraph:
+        enabled: true
+        weight: 10
+      instruction:
+        weight: 11
+        enabled: false
+      method:
+        weight: 12
+        enabled: false
+      rich_text:
+        enabled: true
+        weight: 13
+      slideshow:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions
