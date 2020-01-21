@@ -45,13 +45,6 @@
     'field--label-' ~ label_display,
   ]
 %}
-{%
-  set title_classes = [
-    'field__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
-
 {% for item in items %}
   <li{{ attributes.addClass(classes, 'field__item', 'instruction') }}>{{ item.content }}</li>
 {% endfor %}
