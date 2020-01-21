@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.method.field_p_m_heading
     - field.field.paragraph.method.field_p_m_instruction
     - paragraphs.paragraphs_type.method
   module:
@@ -12,9 +13,17 @@ targetEntityType: paragraph
 bundle: method
 mode: default
 content:
+  field_p_m_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_p_m_instruction:
     type: paragraphs
-    weight: 0
+    weight: 1
     settings:
       title: Paragraph
       title_plural: Paragraphs
