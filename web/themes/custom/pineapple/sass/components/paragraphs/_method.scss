@@ -13,7 +13,6 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin-top: $unit *3;
 
     @include breakpoint($lap) {
       flex-direction: row;
