@@ -1,0 +1,21 @@
+uuid: d9d52a56-b2a9-446a-8e1c-da684a631460
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_m_heading
+    - paragraphs.paragraphs_type.method
+id: paragraph.method.field_p_m_heading
+field_name: field_p_m_heading
+entity_type: paragraph
+bundle: method
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Method
+default_value_callback: ''
+settings: {  }
+field_type: string
