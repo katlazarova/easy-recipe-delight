@@ -1,0 +1,22 @@
+{% set type = type|default('article') %}
+{% set attributes = attributes.addClass([
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+]) %}
+<div{{ attributes }}>
+  <div class="teaser-image-container">
+    <img src="{{ image_url }}" alt="{{ image_alt_text }}">
+  </div>
+  <div class="teaser-content">
+    <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
+    <div class="node__content u-o-3">
+      <p>{{ date_posted }}</p>
+      {{ card_body }}
+    </div>
+  </div>
+</div>
