@@ -2,8 +2,8 @@ uuid: b4164ce7-93b8-4f7e-a9c9-35ecb5f1bdf6
 langcode: en
 status: true
 dependencies: {  }
-name: recipe_teaser_380_x_250
-label: 'Recipe Teaser'
+name: horizontal_teaser
+label: 'Horizontal Teaser (380 x 250)'
 effects:
   a75493fa-07bf-4082-a32f-8b2089cad857:
     uuid: a75493fa-07bf-4082-a32f-8b2089cad857
