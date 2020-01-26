@@ -1,4 +1,4 @@
-{% set card_type = card_type|default('article') %}
+{% set card_type = card_type|default('vertical') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
 ]) %}
@@ -8,8 +8,11 @@
   </div>
   <div class="card-content u-o-3">
     <h2 class="page-title"><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
-      <p>{{ date_posted }}</p>
-      <p>{{ card_body }}</p>
-    </div>
+    <p>{{ date_posted }}</p>
+    <p>{{ card_body }}</p>
+    {% include "@components/_button.twig" with {
+      button_url: url,
+      button_text: 'Read Article >'
+    } %}
   </div>
 </div>

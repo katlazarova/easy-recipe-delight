@@ -1,0 +1,7 @@
+.view-articles {
+  .card-container {
+    @include breakpoint($desk) {
+      width: 75%;
+    }
+  }
+}
