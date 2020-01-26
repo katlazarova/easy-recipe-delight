@@ -7,12 +7,12 @@
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
   </div>
   <div class="card-content u-o-3">
-    <h2 class="page-title"><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
+    <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
     <p>{{ date_posted }}</p>
     <p>{{ card_body }}</p>
     {% include "@components/_button.twig" with {
       button_url: url,
-      button_text: 'Read Article >'
+      button_text: button_text
     } %}
   </div>
 </div>
