@@ -10,9 +10,13 @@
 
     .views-row {
       display: block;
-      margin-bottom: $unit * 3;
       position: relative;
       width: 100%;
+    }
+  }
+  .card-container {
+    @include breakpoint($desk) {
+      width: 75%;
     }
   }
 }
