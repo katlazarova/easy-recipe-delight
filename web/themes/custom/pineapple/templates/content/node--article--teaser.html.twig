@@ -70,39 +70,19 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-  ]
-%}
 {{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
-    <div class="teaser-image-container">
-      {% if content.field_a_teaser_image|field_value %}
-        {% set teaser_url = bamboo_render_image_style(content.field_a_teaser_image|field_target_entity.field_media_image.entity.uri.value, 'article_teaser_image_300_x_500') %}
-        <img src="{{ teaser_url }}" alt="{{ content.field_a_teaser_image|field_target_entity.field_media_image.alt }}">
-      {% else %}
-        {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'article_teaser_image_300_x_500') %}
-        <img src="{{ hero_url }}" alt="{{ content.field_a_hero_image|field_target_entity.field_media_image.alt }}">
-      {% endif %}
-    </div>
-    <div class="teaser-content">
-      <h2{{ title_attributes.addClass('page-title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-      <div{{ content_attributes.addClass('node__content', 'u-o-3') }}>
-        <p>{{ node.getCreatedTime()|date('jS F Y') }}</p>
-        {{ content.field_a_summary }}
-        {% include "@components/_button.twig" with {
-          button_url: url,
-          button_text: 'Read article >'
-        } %}
-      </div>
-    </div>
-</article>
+  {% if content.field_a_teaser_image|field_value %}
+    {% set image_url = bamboo_render_image_style(content.field_a_teaser_image|field_target_entity.field_media_image.entity.uri.value, 'article_teaser_image_300_x_500') %}
+    {% set image_alt_text = content.field_a_teaser_image|field_target_entity.field_media_image.alt %}
+  {% else %}
+    {% set image_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'article_teaser_image_300_x_500') %}
+    {% set image_alt_text = content.field_a_hero_image|field_target_entity.field_media_image.alt %}
+  {% endif %}
+{% include "@components/_card.twig" with {
+  image_url: image_url,
+  image_alt_text: image_alt_text,
+  url: url,
+  title: label,
+  date_posted: node.getCreatedTime()|date('jS F Y'),
+  card_body: content.field_a_summary
+} %}

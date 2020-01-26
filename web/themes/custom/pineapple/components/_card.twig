@@ -1,0 +1,16 @@
+{% set card_type = card_type|default('article') %}
+{% set attributes = attributes|default(create_attribute()).addClass([
+  'card-container',
+]) %}
+<div {{ attributes }}>
+  <div class="card-image-container">
+    <img src="{{ image_url }}" alt="{{ image_alt_text }}">
+  </div>
+  <div class="card-content">
+    <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
+    <div class="u-o-3">
+      <p>{{ date_posted }}</p>
+      {{ card_body }}
+    </div>
+  </div>
+</div>

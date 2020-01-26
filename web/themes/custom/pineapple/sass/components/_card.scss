@@ -1,4 +1,4 @@
-.article--teaser {
+.card-container {
   display: flex;
   flex-direction: column;
   background-color: $light-gray;
@@ -13,7 +13,7 @@
     flex-direction: row;
   }
 
-  .teaser-content {
+  .card-content {
     padding: $unit * 4;
     padding-top: 0;
     width: 100%;
@@ -24,7 +24,7 @@
     }
   }
 
-  .teaser-image-container {
+  .card-image-container {
     position: relative;
     height: 100%;
     flex-shrink: 0;
