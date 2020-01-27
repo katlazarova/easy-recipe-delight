@@ -27,16 +27,16 @@ body {
   margin-right: auto;
 
   @include breakpoint($palm) {
-     max-width: 460px;
+     max-width: 540px;
   }
   @include breakpoint($lap) {
-    max-width: 615px;
+    max-width: 720px;
   }
   @include breakpoint($desk) {
-    max-width: 810px;
+    max-width: 960px;
   }
   @include breakpoint($desk-wide) {
-    max-width: 996px;
+    max-width: 1160px;
   }
 }
 
