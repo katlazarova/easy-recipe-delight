@@ -78,14 +78,11 @@
   {% set image_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'horizontal_teaser') %}
   {% set image_alt_text = content.field_r_hero_image|field_target_entity.field_media_image.alt %}
 {% endif %}
-{% if "Yes" in content.field_r_highlighted.0 %}
-  {% set tag = content.field_r_highlighted|field_label %}
-{% endif %}
 {% include "@components/_card.twig" with {
   card_type: 'horizontal',
   image_url: image_url,
   image_alt_text: image_alt_text,
-  tag: tag,
+  tag: node.field_r_highlighted.value == "1" ? content.field_r_highlighted|field_label,
   labels: [
     {
       value: content.field_r_cooking_time
