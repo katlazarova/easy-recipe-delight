@@ -1,12 +1,9 @@
 {% set card_type = card_type|default('vertical') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
+  card_type,
 ]) %}
-{% if card_type == 'vertical'%}
-  <div {{ attributes.addClass('vertical') }}>
-{% else %}
-  <div {{ attributes.addClass('horizontal') }}>
-{% endif %}
+<div {{ attributes }}>
   <div class="card-image-container">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
     {% if tag %}
