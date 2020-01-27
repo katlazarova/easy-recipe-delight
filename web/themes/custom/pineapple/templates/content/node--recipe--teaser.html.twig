@@ -70,45 +70,32 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-  ]
-%}
 {{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
-  <div class="recipe-card-wrapper">
-    <div class="teaser-image-container">
-      {% if "Yes" in content.field_r_highlighted.0 %}
-        <div class="highlighted-label">
-          <p>{{ content.field_r_highlighted|field_label }}</p>
-        </div>
-      {% endif %}
-      {% if content.field_r_teaser_image|field_value %}
-        {{ content.field_r_teaser_image }}
-      {% else %}
-        {{ content.field_r_hero_image }}
-      {% endif %}
-    </div>
-    <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
-      <div class="recipe-labels">
-        {{ content.field_r_cooking_time }}
-        {{ content.field_r_serves }}
-      </div>
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-      {{ content.field_r_summary }}
-      {% include "@components/_button.twig" with {
-        button_url: url,
-        button_text: 'See Recipe >'
-      } %}
-    </div>
-  </div>
-</article>
+{% if content.field_r_teaser_image|field_value %}
+  {% set image_url = bamboo_render_image_style(content.field_r_teaser_image|field_target_entity.field_media_image.entity.uri.value, 'horizontal_teaser') %}
+  {% set image_alt_text = content.field_r_teaser_image|field_target_entity.field_media_image.alt %}
+{% else %}
+  {% set image_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'horizontal_teaser') %}
+  {% set image_alt_text = content.field_r_hero_image|field_target_entity.field_media_image.alt %}
+{% endif %}
+{% if "Yes" in content.field_r_highlighted.0 %}
+  {% set tag = content.field_r_highlighted|field_label %}
+{% endif %}
+{% include "@components/_card.twig" with {
+  card_type: 'horizontal',
+  image_url: image_url,
+  image_alt_text: image_alt_text,
+  tag: tag,
+  labels: [
+    {
+      value: content.field_r_cooking_time
+    },
+    {
+      value: content.field_r_serves
+    }
+  ],
+  url: url,
+  title: label,
+  card_body: content.field_r_summary|field_value,
+  button_text: 'See Recipe >'
+} %}
