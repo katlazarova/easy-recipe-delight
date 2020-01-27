@@ -1,0 +1,31 @@
+{% set card_type = card_type|default('vertical') %}
+{% set attributes = attributes|default(create_attribute()).addClass([
+  'card-container',
+  card_type,
+]) %}
+<div {{ attributes }}>
+  <div class="card-image-container">
+    <img src="{{ image_url }}" alt="{{ image_alt_text }}">
+    {% if tag %}
+      <div class="highlighted-label">
+        <p>{{ tag }}</p>
+      </div>
+    {% endif %}
+  </div>
+  <div class="card-content u-o-2">
+    {% if labels %}
+      <div class="card-labels">
+        {{ labels }}
+      </div>
+    {% endif %}
+    <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
+    {% if date_posted %}
+      <p>{{ date_posted }}</p>
+    {% endif %}
+    <p>{{ card_body }}</p>
+    {% include "@components/_button.twig" with {
+      button_url: url,
+      button_text: button_text
+    } %}
+  </div>
+</div>

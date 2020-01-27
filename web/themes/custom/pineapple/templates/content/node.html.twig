@@ -70,29 +70,39 @@
  *   in different view modes.
  */
 #}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
 {{ attach_library('classy/node') }}
-{% if content.field_r_teaser_image|field_value %}
-  {% set image_url = bamboo_render_image_style(content.field_r_teaser_image|field_target_entity.field_media_image.entity.uri.value, 'horizontal_teaser') %}
-  {% set image_alt_text = content.field_r_teaser_image|field_target_entity.field_media_image.alt %}
-{% else %}
-  {% set image_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'horizontal_teaser') %}
-  {% set image_alt_text = content.field_r_hero_image|field_target_entity.field_media_image.alt %}
-{% endif %}
-{% include "@components/_card.twig" with {
-  card_type: 'horizontal',
-  image_url: image_url,
-  image_alt_text: image_alt_text,
-  tag: node.field_r_highlighted.value == "1" ? content.field_r_highlighted|field_label,
-  labels: [
-    {
-      value: content.field_r_cooking_time
-    },
-    {
-      value: content.field_r_serves
-    }
-  ],
-  url: url,
-  title: label,
-  card_body: content.field_r_summary|field_value,
-  button_text: 'See Recipe >'
-} %}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
+  </div>
+
+</article>
