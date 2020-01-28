@@ -137,6 +137,8 @@ function content_author_allowed_values(FieldStorageConfig $definition, ContentEn
 }
 
 function button_color_select_list_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  /* This function sets the options of the select field, in order to create the
+  possibility for more color options to be added in the future.*/
   $options = [
     'primary' => 'Primary',
     'secondary' => 'Secondary',

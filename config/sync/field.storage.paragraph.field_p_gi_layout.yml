@@ -12,10 +12,10 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: wide_teaser
-      label: 'Wide Teaser,'
+      value: 'Wide Teaser'
+      label: 'Wide Teaser'
     -
-      value: default_teaser
+      value: 'Default Teaser'
       label: 'Default Teaser'
   allowed_values_function: ''
 module: options
