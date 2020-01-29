@@ -1,4 +1,4 @@
-uuid: 19ef0b86-ff52-46a9-9453-0e7e2995db59
+uuid: d0f9155c-f58f-4d0e-90a4-a47df6a77c95
 langcode: en
 status: true
 dependencies:
@@ -17,7 +17,7 @@ required: true
 translatable: false
 default_value:
   -
-    value: default_teaser
+    value: 'Default Teaser'
 default_value_callback: ''
 settings: {  }
 field_type: list_string

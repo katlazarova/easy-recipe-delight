@@ -3,7 +3,9 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  .field__item {
+  .grid-image-container {
+    position: relative;
+
     img {
       margin-right: 4px;
 
@@ -12,6 +14,19 @@
           opacity: 0.8;
         }
       }
+    }
+
+    .caption {
+      background-color: transparentize($primary, 0.2);
+      color: $white;
+      text-align: left;
+      float: right;
+      position: absolute;
+      right: 0;
+      top: $unit * 3;
+      z-index: 1;
+      padding: 0 $unit;
+      margin-right: 4px;
     }
   }
 }
