@@ -1,0 +1,17 @@
+.field--name-field-p-ig-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .field__item {
+    img {
+      margin-right: 4px;
+
+      &.linked {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
