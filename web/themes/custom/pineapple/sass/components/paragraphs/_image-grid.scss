@@ -12,15 +12,17 @@
     img {
       width: 100%;
 
-      &.linked {
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-
       @include breakpoint($lap) {
         width: auto;
         margin-right: $unit / 2;
+      }
+    }
+
+    .image-link {
+      img {
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
 
