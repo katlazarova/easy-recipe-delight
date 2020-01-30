@@ -1,18 +1,26 @@
 .field--name-field-p-ig-item {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include breakpoint($lap) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .grid-image-container {
     position: relative;
+    width: 100%;
 
     img {
-      margin-right: 4px;
+      width: 100%;
 
       &.linked {
         &:hover {
           opacity: 0.8;
         }
+      }
+
+      @include breakpoint($lap) {
+        width: auto;
+        margin-right: $unit / 2;
       }
     }
 
@@ -26,7 +34,10 @@
       top: $unit * 3;
       z-index: 1;
       padding: 0 $unit;
-      margin-right: 4px;
+
+      @include breakpoint($lap) {
+        margin-right: $unit / 2;
+      }
     }
   }
 }
