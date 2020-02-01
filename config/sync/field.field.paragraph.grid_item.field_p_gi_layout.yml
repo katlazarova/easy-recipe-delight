@@ -1,0 +1,23 @@
+uuid: d0f9155c-f58f-4d0e-90a4-a47df6a77c95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_gi_layout
+    - paragraphs.paragraphs_type.grid_item
+  module:
+    - options
+id: paragraph.grid_item.field_p_gi_layout
+field_name: field_p_gi_layout
+entity_type: paragraph
+bundle: grid_item
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Default Teaser'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

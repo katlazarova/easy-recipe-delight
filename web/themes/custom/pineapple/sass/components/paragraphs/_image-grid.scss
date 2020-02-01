@@ -1,0 +1,48 @@
+.image-grid-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3px;
+
+  .grid-item {
+    position: relative;
+
+    &.wide {
+      width: 66.66666%;
+    }
+
+    &.default {
+      width: 33.33333%;
+    }
+  }
+
+  .grid-image-container {
+    img {
+      width: 100%;
+      margin-bottom: -3px;
+
+      &.linked {
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .caption {
+      background-color: transparentize($primary, 0.2);
+      color: $white;
+      text-align: left;
+      float: right;
+      position: absolute;
+      right: 0;
+      top: $unit * 3;
+      z-index: 1;
+      padding: 0 $unit;
+      font-size: $xsmall-font;
+
+      @include breakpoint($lap) {
+        font-size: $medium-font;
+      }
+    }
+  }
+}

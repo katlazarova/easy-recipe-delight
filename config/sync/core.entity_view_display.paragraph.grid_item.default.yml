@@ -1,0 +1,47 @@
+uuid: 71a47852-c552-4967-a65f-16ea6f4bddb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grid_item.field_p_gi_image
+    - field.field.paragraph.grid_item.field_p_gi_layout
+    - field.field.paragraph.grid_item.field_p_gi_link
+    - paragraphs.paragraphs_type.grid_item
+  module:
+    - entity_reference_revisions
+    - link
+    - options
+id: paragraph.grid_item.default
+targetEntityType: paragraph
+bundle: grid_item
+mode: default
+content:
+  field_p_gi_image:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_p_gi_layout:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_p_gi_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

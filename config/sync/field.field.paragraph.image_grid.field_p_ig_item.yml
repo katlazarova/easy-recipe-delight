@@ -1,18 +1,18 @@
-uuid: 9ada122a-256a-4a05-a955-68eb6b223b72
+uuid: 63393f74-0f83-44c1-9bb6-e36b04bb7a03
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_p_m_instruction
-    - paragraphs.paragraphs_type.instruction
-    - paragraphs.paragraphs_type.method
+    - field.storage.paragraph.field_p_ig_item
+    - paragraphs.paragraphs_type.grid_item
+    - paragraphs.paragraphs_type.image_grid
   module:
     - entity_reference_revisions
-id: paragraph.method.field_p_m_instruction
-field_name: field_p_m_instruction
+id: paragraph.image_grid.field_p_ig_item
+field_name: field_p_ig_item
 entity_type: paragraph
-bundle: method
-label: Instruction(s)
+bundle: image_grid
+label: Item(s)
 description: ''
 required: false
 translatable: false
@@ -23,33 +23,33 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      instruction: instruction
+      grid_item: grid_item
     target_bundles_drag_drop:
       call_to_action:
-        weight: 8
-        enabled: false
-      components:
-        weight: 9
-        enabled: false
-      image_paragraph:
         weight: 10
         enabled: false
-      instruction:
-        enabled: true
+      components:
         weight: 11
+        enabled: false
       grid_item:
+        enabled: true
         weight: 12
-        enabled: false
-      method:
-        weight: 12
-        enabled: false
       image_grid:
         weight: 13
         enabled: false
+      image_paragraph:
+        weight: 14
+        enabled: false
+      instruction:
+        weight: 15
+        enabled: false
+      method:
+        weight: 16
+        enabled: false
       rich_text:
-        weight: 13
+        weight: 17
         enabled: false
       slideshow:
-        weight: 14
+        weight: 18
         enabled: false
 field_type: entity_reference_revisions

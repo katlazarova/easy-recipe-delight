@@ -1,0 +1,15 @@
+uuid: 7e6da352-681f-4ef1-93b4-c4556a8a6bdc
+langcode: en
+status: true
+dependencies: {  }
+name: default_teaser_330_x_330
+label: 'Default Teaser'
+effects:
+  4163deb9-8d40-4c79-9abc-f7a387cc2533:
+    uuid: 4163deb9-8d40-4c79-9abc-f7a387cc2533
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 330
+      height: 330
+      anchor: center-center

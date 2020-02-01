@@ -124,6 +124,9 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  * This functions is called in the field.storage.node files for the content author fields for the nodes which use it.
  *
  * Do drush cim -y after making changes to the config files (to call one of these functions), in order to import the config changes.
+ *
+ * @see button_color_select_list_values()
+ * This function sets the options of the select field, in order to create the possibility for more color options to be added in the future.
  */
 function content_author_allowed_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
   $creator_first_name = $entity->getOwner()->get('field_first_name')->value;

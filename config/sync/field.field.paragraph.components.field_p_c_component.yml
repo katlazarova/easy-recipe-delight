@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_p_c_component
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.components
+    - paragraphs.paragraphs_type.image_grid
     - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.rich_text
     - paragraphs.paragraphs_type.slideshow
@@ -30,6 +31,7 @@ settings:
       rich_text: rich_text
       call_to_action: call_to_action
       slideshow: slideshow
+      image_grid: image_grid
     target_bundles_drag_drop:
       components:
         weight: -7
@@ -46,4 +48,16 @@ settings:
       slideshow:
         enabled: true
         weight: 10
+      grid_item:
+        weight: 12
+        enabled: false
+      image_grid:
+        enabled: true
+        weight: 13
+      instruction:
+        weight: 15
+        enabled: false
+      method:
+        weight: 16
+        enabled: false
 field_type: entity_reference_revisions
