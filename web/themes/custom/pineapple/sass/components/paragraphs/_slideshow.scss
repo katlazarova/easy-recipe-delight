@@ -61,6 +61,11 @@
     color: $gray;
     display: none;
 
+    &:hover,
+    &:focus {
+      color: $secondary;
+    }
+
     @include breakpoint($lap) {
       display: block;
     }
