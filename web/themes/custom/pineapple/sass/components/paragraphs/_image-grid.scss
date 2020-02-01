@@ -5,14 +5,14 @@
 
   .grid_item {
     position: relative;
-    margin-right: $unit / 2;
+    margin-bottom: -$unit / 2;
 
     &.wide {
-      width: 64%;
+      width: 66.66666%;
     }
 
     &.default {
-      width: 32%;
+      width: 33.33333%;
     }
   }
 
