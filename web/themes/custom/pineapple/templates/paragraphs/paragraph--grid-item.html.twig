@@ -53,16 +53,22 @@
 {% else %}
   {% set grid_image = bamboo_render_image_style(image_paragraph.field_p_ip_image.entity.field_media_image.entity.uri.value, 'default_teaser_330_x_330') %}
 {% endif %}
+
+{% set image_attributes = image_attributes|default(create_attribute()).addClass([
+  content.field_p_gi_link|field_value ? 'linked'
+]).setAttribute('src', grid_image).setAttribute('alt', alt_text) %}
+
 {% if content.field_p_gi_link|field_value %}
   {% set url_prefix %}
     <a href="{{ content.field_p_gi_link|field_value|first['#url'] }}" class="image-link">
   {% endset %}
   {% set url_suffix %}</a>{% endset %}
 {% endif %}
+
 <div{{ attributes.addClass(classes) }}>
   <div class="grid-image-container">
     {{ url_prefix }}
-    <img src="{{ grid_image }}" alt="{{ alt_text }}">
+    <img {{ image_attributes }}>
     {{ url_suffix }}
     {% if image_paragraph.field_p_ip_caption.value %}
       <div class="caption">

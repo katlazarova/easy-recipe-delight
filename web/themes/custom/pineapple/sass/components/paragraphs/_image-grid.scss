@@ -5,21 +5,30 @@
     justify-content: center;
   }
 
-  .grid-image-container {
+  .field__item {
     position: relative;
     width: 100%;
+    margin-right: $unit / 2;
+
+    &.wide {
+      @include breakpoint($lap) {
+        width: 60%;
+      }
+    }
+
+    &.default {
+      @include breakpoint($lap) {
+        width: 30%;
+      }
+    }
+  }
+
+  .grid-image-container {
 
     img {
       width: 100%;
 
-      @include breakpoint($lap) {
-        width: auto;
-        margin-right: $unit / 2;
-      }
-    }
-
-    .image-link {
-      img {
+      &.linked {
         &:hover {
           opacity: 0.8;
         }
@@ -36,10 +45,6 @@
       top: $unit * 3;
       z-index: 1;
       padding: 0 $unit;
-
-      @include breakpoint($lap) {
-        margin-right: $unit / 2;
-      }
     }
   }
 }
