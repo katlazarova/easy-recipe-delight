@@ -43,7 +43,8 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished'
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'grid-image-container'
   ]
 %}
 {% set image_paragraph = content.field_p_gi_image|field_value|first['#paragraph'] %}
@@ -66,14 +67,12 @@
 {% endif %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="grid-image-container">
-    {{ url_prefix }}
-    <img {{ image_attributes }}>
-    {{ url_suffix }}
-    {% if image_paragraph.field_p_ip_caption.value %}
-      <div class="caption">
-        <p>{{ image_paragraph.field_p_ip_caption.value }}</p>
-      </div>
-    {% endif %}
-  </div>
+  {{ url_prefix }}
+  <img {{ image_attributes }}>
+  {{ url_suffix }}
+  {% if image_paragraph.field_p_ip_caption.value %}
+    <div class="caption">
+      <p>{{ image_paragraph.field_p_ip_caption.value }}</p>
+    </div>
+  {% endif %}
 </div>

@@ -39,26 +39,16 @@
 #}
 {%
   set classes = [
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
+    'image-grid-items'
   ]
 %}
-{%
-  set title_classes = [
-    'field__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
-
-<div{{ attributes.addClass(classes, 'field__items') }}>
+<div{{ attributes.addClass(classes) }}>
   {% for item in items %}
     {% if item.content['#paragraph'].field_p_gi_layout.value == 'Wide Teaser'%}
       {% set layout = 'wide' %}
     {% else %}
       {% set layout = 'default' %}
     {% endif %}
-    <div{{ item.attributes.addClass('field__item', layout) }}>{{ item.content }}</div>
+    <div{{ item.attributes.addClass('grid_item', layout) }}>{{ item.content }}</div>
   {% endfor %}
 </div>
