@@ -28,4 +28,31 @@ settings:
       components:
         enabled: true
         weight: 2
+      call_to_action:
+        weight: 11
+        enabled: false
+      content_spotlight:
+        weight: 13
+        enabled: false
+      grid_item:
+        weight: 14
+        enabled: false
+      image_grid:
+        weight: 15
+        enabled: false
+      image_paragraph:
+        weight: 16
+        enabled: false
+      instruction:
+        weight: 17
+        enabled: false
+      method:
+        weight: 18
+        enabled: false
+      rich_text:
+        weight: 19
+        enabled: false
+      slideshow:
+        weight: 20
+        enabled: false
 field_type: entity_reference_revisions
