@@ -85,10 +85,12 @@
   tag: node.field_r_highlighted.value == "1" ? content.field_r_highlighted|field_label,
   labels: [
     {
-      value: content.field_r_cooking_time
+      label: content.field_r_cooking_time|field_label,
+      value: content.field_r_cooking_time|field_value
     },
     {
-      value: content.field_r_serves
+      label: content.field_r_serves|field_label,
+      value: content.field_r_serves|field_value
     }
   ],
   url: url,
