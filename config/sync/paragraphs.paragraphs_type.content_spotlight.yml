@@ -1,0 +1,9 @@
+uuid: 221a4257-ac26-4f53-930a-38ea2932b622
+langcode: en
+status: true
+dependencies: {  }
+id: content_spotlight
+label: 'Content Spotlight'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

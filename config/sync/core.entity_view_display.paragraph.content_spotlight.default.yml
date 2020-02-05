@@ -1,0 +1,31 @@
+uuid: 58b4688a-186e-4bef-8324-d48a31bce528
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_spotlight.field_p_cs_content
+    - field.field.paragraph.content_spotlight.field_p_cs_heading
+    - paragraphs.paragraphs_type.content_spotlight
+id: paragraph.content_spotlight.default
+targetEntityType: paragraph
+bundle: content_spotlight
+mode: default
+content:
+  field_p_cs_content:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_p_cs_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
