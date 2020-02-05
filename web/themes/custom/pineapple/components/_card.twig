@@ -15,10 +15,10 @@
   <div class="card-content u-o-2">
     {% if labels %}
       <div class="card-labels">
-        {% for label in labels %}
+        {% for item in labels %}
           {% include "@components/_field-label.twig" with {
-            label: label.label,
-            value: label.value
+            label: item.label,
+            value: item.value
           } %}
         {% endfor %}
       </div>

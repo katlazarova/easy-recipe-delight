@@ -24,10 +24,10 @@
       {% endif %}
       {% if labels %}
         <div class="hero-labels">
-          {% for label in labels %}
+          {% for item in labels %}
             {% include "@components/_field-label.twig" with {
-              label: label.label,
-              value: label.value
+              label: item.label,
+              value: item.value
             } %}
           {% endfor %}
         </div>

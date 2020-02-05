@@ -71,18 +71,20 @@
  */
 #}
 {{ attach_library('classy/node') }}
-{% if parent == 'content_spotlight' %}
+{% if parent_entity_type == 'content_spotlight' %}
   {% set card_layout = 'horizontal' %}
 {% else %}
   {% set card_layout = 'vertical' %}
 {% endif %}
+
 {% if content.field_a_teaser_image|field_value %}
-  {% set image_url = bamboo_render_image_style(content.field_a_teaser_image|field_target_entity.field_media_image.entity.uri.value, card_layout~'_teaser') %}
+  {% set image_url = bamboo_render_image_style(content.field_a_teaser_image|field_target_entity.field_media_image.entity.uri.value, card_layout~ '_teaser') %}
   {% set image_alt_text = content.field_a_teaser_image|field_target_entity.field_media_image.alt %}
 {% else %}
-  {% set image_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, card_layout~'_teaser') %}
+  {% set image_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, card_layout~ '_teaser') %}
   {% set image_alt_text = content.field_a_hero_image|field_target_entity.field_media_image.alt %}
 {% endif %}
+
 {% include "@components/_card.twig" with {
   card_type: card_layout,
   image_url: image_url,
