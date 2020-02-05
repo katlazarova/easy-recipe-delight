@@ -61,8 +61,11 @@
   }
 
   &.vertical {
+    display: block;
+
     @include breakpoint($palm) {
       flex-direction: row;
+      display: flex;
     }
 
     .card-image-container {
