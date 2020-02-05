@@ -39,7 +39,7 @@
 #}
 {% for item in items %}
   {% include "@components/_field-label.twig" with {
-    field_label: label,
-    field_value: item.content
+    label: label,
+    value: item.content
   }%}
 {% endfor %}

@@ -62,30 +62,22 @@
         font-weight: bold;
         font-size: $small-font;
 
-        .field--name-field-r-cooking-time,
-        .field--name-field-r-serves {
-          background-color: transparentize($dark-purple, 0.1);
-          font-weight: 600;
-          color: $white;
+        .inline-field-label {
+          color: $primary;
+          background-color: transparentize($white, 0.2);
           padding: $unit;
-          display: inline-block;
           margin-right: $unit;
-          margin-top: $unit;
+          display: inline;
 
-          @include breakpoint($desk) {
-            margin-top: 0;
-          }
-
-          p {
+          .field__label,
+          .field__value {
             display: inline;
           }
 
           .field__label {
-            display: inline;
-          }
-
-          .field__item {
-            display: inline;
+            padding-right: 0;
+            text-transform: uppercase;
+            font-weight: bolder;
           }
         }
       }
