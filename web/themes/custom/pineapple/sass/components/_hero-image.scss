@@ -63,22 +63,7 @@
         font-size: $small-font;
 
         .inline-field-label {
-          color: $primary;
           background-color: transparentize($white, 0.2);
-          padding: $unit;
-          margin-right: $unit;
-          display: inline;
-
-          .field__label,
-          .field__value {
-            display: inline;
-          }
-
-          .field__label {
-            padding-right: 0;
-            text-transform: uppercase;
-            font-weight: bolder;
-          }
         }
       }
     }

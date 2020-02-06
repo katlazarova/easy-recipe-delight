@@ -11,26 +11,15 @@
     .card-labels {
 
       .inline-field-label {
-        color: $primary;
         background-color: $white;
-        padding: $unit;
-        margin-right: $unit;
-        display: inline;
 
         .field__label,
         .field__value {
           font-size: 10px;
-          display: inline;
 
           @include breakpoint($desk-wide) {
             font-size: $xsmall-font;
           }
-        }
-
-        .field__label {
-          padding-right: 0;
-          text-transform: uppercase;
-          font-weight: bolder;
         }
       }
     }

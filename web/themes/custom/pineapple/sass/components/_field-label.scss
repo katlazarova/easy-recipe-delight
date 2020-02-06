@@ -1,0 +1,17 @@
+.inline-field-label {
+  color: $primary;
+  padding: $unit;
+  margin-right: $unit;
+  display: inline;
+
+  .field__label,
+  .field__value {
+    display: inline;
+  }
+
+  .field__label {
+    padding-right: 0;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+}
