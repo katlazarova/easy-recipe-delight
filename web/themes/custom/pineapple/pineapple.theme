@@ -56,11 +56,11 @@ function pineapple_preprocess_node(array &$variables) {
     $variables['owner'] = $owner;
   }
 
-  if ($node->getType() == 'article' || 'recipe') {
+  if ($node->getType() == 'article' || $node->getType() == 'recipe') {
 
     if (isset($node->_referringItem)) {
-      $parent = $node->_referringItem->getEntity()->getType();
-      $variables['parent_entity_type'] = $parent;
+      $parent_entity_type = $node->_referringItem->getEntity()->getType();
+      $variables['parent_entity_type'] = $parent_entity_type;
     }
   }
 }
