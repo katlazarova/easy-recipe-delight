@@ -1,5 +1,5 @@
 .paragraph--type--image-paragraph {
-  .field--name-field-p-ip-image {
+  .image-paragraph-image {
     img {
       object-fit: cover;
       width: 100%;
@@ -8,11 +8,7 @@
 
   .field__label {
     font-weight: bold;
-    color: $primary
-  }
-
-  .field--name-field-p-ip-caption {
-    padding: $unit 0;
-    color: $dark-gray;
+    color: $primary;
+    margin-left: -$unit;
   }
 }
