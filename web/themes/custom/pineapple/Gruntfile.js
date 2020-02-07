@@ -30,7 +30,7 @@ module.exports = function(grunt) {
           'sass/base/__base.scss': 'sass/base/**/*.scss',
           'sass/layouts/__layouts.scss': 'sass/layouts/**/*.scss',
           'sass/components/__components.scss': 'sass/components/**/*.scss',
-          'sass/field/__field.scss': 'sass/field/**/*.scss'
+          'sass/components/field/__field.scss': 'sass/field/**/*.scss'
         },
         options: {
           useSingleQuotes: false,
