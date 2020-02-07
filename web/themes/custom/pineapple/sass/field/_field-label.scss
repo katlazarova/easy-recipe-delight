@@ -7,11 +7,11 @@
   .field__label,
   .field__value {
     display: inline;
+    text-transform: uppercase;
   }
 
   .field__label {
     padding-right: 0;
-    text-transform: uppercase;
     font-weight: bolder;
   }
 }

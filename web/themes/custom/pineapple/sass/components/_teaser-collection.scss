@@ -1,10 +1,10 @@
-.horizontal-teaser-container {
+.teaser-collection-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   margin-left: -15px;
 
-  .horizontal-teaser {
+  .collection-row {
     display: block;
     margin-bottom: $unit * 3;
     position: relative;

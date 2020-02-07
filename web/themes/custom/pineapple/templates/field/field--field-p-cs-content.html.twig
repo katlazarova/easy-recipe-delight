@@ -37,8 +37,8 @@
  * @see template_preprocess_field()
  */
 #}
-<div{{ attributes.addClass('horizontal-teaser-container') }}>
+<div{{ attributes.addClass('teaser-collection-container') }}>
   {% for item in items %}
-    <div{{ item.attributes.addClass('horizontal-teaser') }}>{{ item.content }}</div>
+    <div{{ item.attributes.addClass('collection-row') }}>{{ item.content }}</div>
   {% endfor %}
 </div>

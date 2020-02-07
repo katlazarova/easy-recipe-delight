@@ -66,13 +66,15 @@
         font-weight: bold;
         text-align: center;
         padding: $unit $unit * 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
         p {
           display: inline;
-        }
-
-        .content-author {
-          display: inline;
+          padding-right: $unit /2;
+          margin: 0;
         }
       }
 
