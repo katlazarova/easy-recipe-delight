@@ -38,8 +38,5 @@
  */
 #}
 {% for item in items %}
-  {% include "@components/_field-label.twig" with {
-    label: label,
-    value: item.content
-  }%}
+  <div{{ attributes.addClass('image-paragraph-image') }}>{{ item.content }}</div>
 {% endfor %}

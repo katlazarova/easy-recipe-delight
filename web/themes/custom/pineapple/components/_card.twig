@@ -15,7 +15,12 @@
   <div class="card-content u-o-2">
     {% if labels %}
       <div class="card-labels">
-        {{ labels }}
+        {% for item in labels %}
+          {% include "@components/_field-label.twig" with {
+            label: item.label,
+            value: item.value
+          } %}
+        {% endfor %}
       </div>
     {% endif %}
     <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>

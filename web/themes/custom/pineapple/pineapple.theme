@@ -55,6 +55,13 @@ function pineapple_preprocess_node(array &$variables) {
     $owner = $node->getOwner();
     $variables['owner'] = $owner;
   }
+
+  if ($node->getType() == 'article' || $node->getType() == 'recipe') {
+    if (isset($node->_referringItem)) {
+      $parent_entity_type = $node->_referringItem->getEntity()->getType();
+      $variables['parent_entity_type'] = $parent_entity_type;
+    }
+  }
 }
 
 /**

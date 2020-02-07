@@ -22,31 +22,14 @@
       background-position: center;
     }
 
-    .field--name-field-r-cooking-time,
-    .field--name-field-r-serves,
-    .field--name-field-r-cost {
+    .inline-field-label {
       background-color: $light-gray;
-      color: $primary;
       text-transform: uppercase;
       font-weight: bold;
-      padding: $unit;
       display: inline-block;
-      margin-right: $unit;
-
-      p {
-        display: inline;
-      }
-
-      .field__label {
-        display: inline;
-      }
-
-      .field__item {
-        display: inline;
-      }
     }
 
-    .field--name-field-r-summary {
+    .recipe-summary {
       font-size: $medium-font;
     }
   }
@@ -83,13 +66,15 @@
         font-weight: bold;
         text-align: center;
         padding: $unit $unit * 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
         p {
           display: inline;
-        }
-
-        .field--name-field-r-content-author {
-          display: inline;
+          padding-right: $unit /2;
+          margin: 0;
         }
       }
 

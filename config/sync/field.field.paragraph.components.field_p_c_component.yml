@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_p_c_component
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.components
+    - paragraphs.paragraphs_type.content_spotlight
     - paragraphs.paragraphs_type.image_grid
     - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.rich_text
@@ -31,6 +32,7 @@ settings:
       rich_text: rich_text
       call_to_action: call_to_action
       slideshow: slideshow
+      content_spotlight: content_spotlight
       image_grid: image_grid
     target_bundles_drag_drop:
       components:
@@ -51,6 +53,9 @@ settings:
       grid_item:
         weight: 12
         enabled: false
+      content_spotlight:
+        enabled: true
+        weight: 13
       image_grid:
         enabled: true
         weight: 13
