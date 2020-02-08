@@ -1,58 +1,100 @@
 .view-recipes {
-  .form--inline {
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
 
-    @include breakpoint($lap) {
-      display: inline-flex;
-      flex-direction: row;
-    }
+  form {
+    padding: 0;
 
-    .form-item {
-      font-size: $medium-font;
-      margin: 0;
+    .form--inline {
+      width:100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: $unit *3;
 
-      &.form-item-title {
-        width: 100%;
-
-        @include breakpoint($lap) {
-          width: 30%;
-        }
+      @include breakpoint($lap) {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: flex-end;
       }
 
-      &.form-type-select {
-        width: 100%;
+      .form-item,
+      .form-actions {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 12px;
 
         @include breakpoint($lap) {
-          width: 20%;
+          margin-bottom: 0;
         }
 
-        .form-select {
-          padding: 0;
+        &.form-item-title {
+          width: 100%;
 
-          &:hover {
-            background-color: $white;
+          @include breakpoint($lap) {
+            width: 20%;
+          }
+        }
+
+        &.form-type-select {
+          width: 100%;
+
+          @include breakpoint($lap) {
+            width: 40%;
+            display: inline-flex;
           }
 
-          option {
+          .form-select {
+            padding: 0;
+            margin: 0;
+            margin-top: $unit/2;
+
+            @include breakpoint($lap) {
+              margin-top: 0;
+            }
+
             &:hover {
-              background-color: $gray;
+              background-color: $white;
+            }
+
+            option {
+              &:hover {
+                background-color: $gray;
+              }
             }
           }
         }
+
+        &.form-composite {
+          .form-item {
+            display: inline-flex;
+            align-items: center;
+          }
+        }
+
+        input {
+          margin: 0;
+        }
+
+        label {
+          font-size: $small-font;
+          display: flex;
+          align-items: center;
+          margin: 0;
+
+          @include breakpoint($lap) {
+            margin: 0 $unit;
+          }
+        }
       }
-    }
 
-    .button {
-      background-color: $primary;
-      color: white;
-      font-size: $medium-font;
+      .button {
+        background-color: $primary;
+        color: white;
+        padding: $unit;
 
-      &:hover {
-        background-color: $secondary;
+        &:hover {
+          background-color: $secondary;
+        }
       }
     }
   }
