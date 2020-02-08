@@ -85,7 +85,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
         if (isset($field['#paragraph_type']) && $field['#paragraph_type'] == 'method') {
           $i_count = 1;
           foreach ($field['subform']['field_p_m_instruction']['widget'] as $i_key => $instruction) {
-            if ($instruction['#paragraph_type'] == 'instruction') {
+            if (isset($instruction['#paragraph_type']) && $instruction['#paragraph_type'] == 'instruction') {
               /* Set paragraph_label to equal the value of paragraph type, with
               the first letter capitalised and the i_count incrementing by 1. */
               $paragraph_label = ucfirst($instruction['#paragraph_type']). ' ' . $i_count++;

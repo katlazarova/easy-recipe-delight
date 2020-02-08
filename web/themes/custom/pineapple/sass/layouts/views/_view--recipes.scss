@@ -1,0 +1,59 @@
+.view-recipes {
+  .form--inline {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+
+    @include breakpoint($lap) {
+      display: inline-flex;
+      flex-direction: row;
+    }
+
+    .form-item {
+      font-size: $medium-font;
+      margin: 0;
+
+      &.form-item-title {
+        width: 100%;
+
+        @include breakpoint($lap) {
+          width: 30%;
+        }
+      }
+
+      &.form-type-select {
+        width: 100%;
+
+        @include breakpoint($lap) {
+          width: 20%;
+        }
+
+        .form-select {
+          padding: 0;
+
+          &:hover {
+            background-color: $white;
+          }
+
+          option {
+            &:hover {
+              background-color: $gray;
+            }
+          }
+        }
+      }
+    }
+
+    .button {
+      background-color: $primary;
+      color: white;
+      font-size: $medium-font;
+
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+}
