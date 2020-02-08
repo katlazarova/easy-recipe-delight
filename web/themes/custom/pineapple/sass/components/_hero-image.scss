@@ -58,6 +58,9 @@
       }
 
       .hero-labels {
+        display: flex;
+        flex-wrap: wrap;
+
         .inline-field-label {
           background-color: transparentize($white, 0.2);
         }
