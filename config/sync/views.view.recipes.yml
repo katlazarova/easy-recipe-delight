@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.recipe
+    - taxonomy.vocabulary.categories
     - views.view.featured_recipe
   module:
     - node
+    - taxonomy
     - user
 id: recipes
 label: Recipes
@@ -168,6 +170,146 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_administrator: '0'
+              content_editor: '0'
+              recipe_editor: '0'
+              article_editor: '0'
+            placeholder: Search
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+        field_r_categories_target_id:
+          id: field_r_categories_target_id
+          table: node__field_r_categories
+          field: field_r_categories_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_r_categories_target_id_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_r_categories_target_id_op
+            identifier: field_r_categories_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_administrator: '0'
+              content_editor: '0'
+              recipe_editor: '0'
+              article_editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: categories
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_r_featured_value_1:
+          id: field_r_featured_value_1
+          table: node__field_r_featured
+          field: field_r_featured_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Show Only Featured Recipes '
+            description: ''
+            use_operator: false
+            operator: field_r_featured_value_1_op
+            identifier: field_r_featured_value_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_administrator: '0'
+              content_editor: '0'
+              recipe_editor: '0'
+              article_editor: '0'
+          is_grouped: true
+          group_info:
+            label: ''
+            description: ''
+            identifier: field_r_featured_value_1
+            optional: true
+            widget: radios
+            multiple: true
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: 'Featured Recipes'
+                operator: '='
+                value: '1'
+          plugin_id: boolean
       sorts:
         field_r_highlighted_value:
           id: field_r_highlighted_value
@@ -219,6 +361,8 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -235,6 +379,8 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
