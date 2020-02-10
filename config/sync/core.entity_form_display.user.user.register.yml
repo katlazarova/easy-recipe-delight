@@ -4,13 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
-    - field.field.user.user.field_biography
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_profile_image
     - field.field.user.user.field_surname
-    - field.field.user.user.field_tagline
   module:
-    - media_library
     - path
     - user
 _core:
@@ -30,14 +26,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_biography:
-    weight: 4
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
   field_first_name:
     weight: 1
     settings:
@@ -46,23 +34,8 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_profile_image:
-    weight: 5
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_surname:
     weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_tagline:
-    weight: 3
     settings:
       size: 60
       placeholder: ''

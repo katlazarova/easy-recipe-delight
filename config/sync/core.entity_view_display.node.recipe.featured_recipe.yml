@@ -54,6 +54,7 @@ content:
     type: number_integer
     region: content
 hidden:
+  field_author: true
   field_r_body: true
   field_r_categories: true
   field_r_cost: true

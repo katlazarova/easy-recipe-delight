@@ -80,6 +80,7 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
+  field_author: true
   field_r_body: true
   field_r_categories: true
   field_r_cost: true

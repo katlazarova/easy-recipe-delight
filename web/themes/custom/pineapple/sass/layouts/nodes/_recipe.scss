@@ -60,28 +60,34 @@
         }
       }
 
-      .author-name {
-        color: $primary;
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
-        padding: $unit $unit * 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+      .recipe-author-text-container {
 
-        p {
-          display: inline;
-          padding-right: $unit /2;
-          margin: 0;
+        .author-name {
+          color: $primary;
+          text-transform: uppercase;
+          font-weight: bold;
+          text-align: center;
+          padding: $unit $unit * 3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+          p {
+            display: inline;
+            padding-right: $unit /2;
+            margin: 0;
+          }
         }
-      }
 
-      .author-quote {
-        text-align: center;
-        margin-top: $unit;
-        padding: $unit $unit * 3;
+        .author-quote {
+          text-align: center;
+          margin-top: $unit;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+        }
       }
     }
   }

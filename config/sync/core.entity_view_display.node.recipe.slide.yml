@@ -44,6 +44,7 @@ content:
     type: basic_string
     region: content
 hidden:
+  field_author: true
   field_r_body: true
   field_r_categories: true
   field_r_cooking_time: true
