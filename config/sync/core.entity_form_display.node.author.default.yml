@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.author.field_a_biography
     - field.field.node.author.field_a_image
     - node.type.author
+    - workflows.workflow.content_workflow
   module:
+    - content_moderation
     - media_library
     - path
 id: node.author.default
@@ -36,12 +38,10 @@ content:
     third_party_settings: {  }
     region: content
   moderation_state:
-    type: string_textfield
+    type: moderation_state_default
     weight: 7
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
