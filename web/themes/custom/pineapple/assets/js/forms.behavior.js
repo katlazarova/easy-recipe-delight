@@ -1,8 +1,8 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.filters = {
+  Drupal.behaviors.forms = {
     attach: function (context, settings) {
-
+      // Code runs on filter form submit.
       $('.view-recipes #browse-recipes').once('click-once').click(function () {
         var url = window.location.href;
         var elementId = 'browse-recipes';

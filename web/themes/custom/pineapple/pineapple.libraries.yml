@@ -11,9 +11,9 @@ menu:
     - core/drupal
     - pineapple/lodash
 
-filters:
+forms:
   js:
-    assets/js/filters.behavior.js: {}
+    assets/js/forms.behavior.js: {}
   dependencies:
     - core/jquery
     - core/drupal

@@ -30,6 +30,7 @@
  * @see template_preprocess_views_view()
  */
 #}
+{{ attach_library('pineapple/forms') }}
 {% set classes = [
     'view',
     'view-' ~ id|clean_class,
@@ -38,7 +39,6 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{{ attach_library('pineapple/filters') }}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
