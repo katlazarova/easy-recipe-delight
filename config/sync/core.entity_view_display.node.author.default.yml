@@ -1,0 +1,33 @@
+uuid: 998de276-47a7-4262-98b5-f63ce464ae6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.author.field_a_biography
+    - field.field.node.author.field_a_image
+    - node.type.author
+  module:
+    - user
+id: node.author.default
+targetEntityType: node
+bundle: author
+mode: default
+content:
+  field_a_biography:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_a_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true
