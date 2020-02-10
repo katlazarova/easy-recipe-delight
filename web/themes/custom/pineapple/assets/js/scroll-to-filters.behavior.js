@@ -1,6 +1,6 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.page_reload = {
+  Drupal.behaviors.scroll_to_filters = {
     attach: function (context, settings) {
       // Code runs on filter form submit.
       $('.view-recipes #browse-recipes').once('click-once').click(function () {

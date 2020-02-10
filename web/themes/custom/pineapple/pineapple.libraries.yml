@@ -11,9 +11,9 @@ menu:
     - core/drupal
     - pineapple/lodash
 
-page-reload:
+scroll-to-filters:
   js:
-    assets/js/page-reload.behavior.js: {}
+    assets/js/scroll-to-filters.behavior.js: {}
   dependencies:
     - core/jquery
     - core/drupal
