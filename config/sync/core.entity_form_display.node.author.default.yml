@@ -1,0 +1,54 @@
+uuid: 0f1712d5-b377-47a2-9e20-18376f94bdee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.author.field_a_biography
+    - field.field.node.author.field_a_image
+    - field.field.node.author.field_a_name
+    - node.type.author
+  module:
+    - media_library
+id: node.author.default
+targetEntityType: node
+bundle: author
+mode: default
+content:
+  field_a_biography:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_a_image:
+    type: media_library_widget
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_a_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  promote: true
+  sticky: true
+  title: true
+  uid: true
