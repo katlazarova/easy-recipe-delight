@@ -11,6 +11,14 @@ menu:
     - core/drupal
     - pineapple/lodash
 
+scroll-to-filters:
+  js:
+    assets/js/scroll-to-filters.behavior.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+
 vue:
   header: true
   # We have a hook that uses the non-minified version on environments where JS processing is turned off.
