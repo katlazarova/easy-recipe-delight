@@ -11,9 +11,9 @@ menu:
     - core/drupal
     - pineapple/lodash
 
-forms:
+page-reload:
   js:
-    assets/js/forms.behavior.js: {}
+    assets/js/page-reload.behavior.js: {}
   dependencies:
     - core/jquery
     - core/drupal
