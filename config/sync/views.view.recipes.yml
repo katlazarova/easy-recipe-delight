@@ -196,7 +196,7 @@ display:
             description: ''
             use_operator: false
             operator: field_r_categories_target_id_op
-            identifier: field_r_categories_target_id
+            identifier: categories
             required: false
             remember: false
             multiple: false
@@ -261,7 +261,7 @@ display:
           group_info:
             label: ''
             description: ''
-            identifier: field_r_featured_value_1
+            identifier: featured_value
             optional: true
             widget: radios
             multiple: true
