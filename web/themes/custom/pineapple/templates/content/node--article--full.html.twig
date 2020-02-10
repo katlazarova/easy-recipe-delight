@@ -87,7 +87,7 @@
         {% include "@components/_hero-image.twig" with {
           image_url: hero_url,
           title: label,
-          subtext: content.field_a_content_author
+          subtext: content.field_author|field_value|first['#node'].getTitle()
         } %}
         {{ content.field_a_summary }}
         {{ content.field_a_body }}

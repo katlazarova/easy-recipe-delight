@@ -4,39 +4,36 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_a_body
-    - field.field.node.article.field_a_content_author
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
+    - field.field.node.article.field_author
     - node.type.article
   module:
     - entity_reference_revisions
-    - options
     - user
 id: node.article.default
 targetEntityType: node
 bundle: article
 mode: default
 content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_a_body:
     type: entity_reference_revisions_entity_view
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
-  field_a_content_author:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_a_hero_image:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: hero_image
@@ -44,7 +41,7 @@ content:
     third_party_settings: {  }
     region: content
   field_a_summary:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -52,12 +49,21 @@ content:
     region: content
   field_a_teaser_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
+    region: content
+  field_author:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
 hidden:
   links: true

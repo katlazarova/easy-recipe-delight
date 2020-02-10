@@ -76,10 +76,6 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
   switch ($form_id) {
     case 'node_recipe_form':
     case 'node_recipe_edit_form':
-      if (isset($form['field_r_content_author'])) {
-        // Creator value is added from content_author_allowed_values_function.
-        $form['field_r_content_author']['widget']['#default_value'] = 'content_creator';
-      }
       // For each paragraph in the body field, assign key.
       foreach ($form['field_r_body']['widget'] as $field_key => $field) {
         if (isset($field['#paragraph_type']) && $field['#paragraph_type'] == 'method') {
@@ -96,12 +92,6 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
             }
           }
         }
-      }
-      break;
-    case 'node_article_edit_form':
-    case 'node_article_form':
-      if (isset($form['field_a_content_author'])) {
-        $form['field_a_content_author']['widget']['#default_value'] = 'content_creator';
       }
       break;
     /* If the form id is user_register_form and the profile image field exists,
@@ -145,17 +135,6 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  * @see button_color_select_list_values()
  * This function sets the options of the select field, in order to create the possibility for more color options to be added in the future.
  */
-function content_author_allowed_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
-  $creator_first_name = $entity->getOwner()->get('field_first_name')->value;
-  $creator_surname = $entity->getOwner()->get('field_surname')->value;
-
-  $options = [
-      'content_creator' => "{$creator_first_name} {$creator_surname}"
-  ];
-
-  return $options;
-}
-
 function button_color_select_list_values(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
   $options = [
     'primary' => 'Primary',
