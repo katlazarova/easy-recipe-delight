@@ -80,7 +80,6 @@
   node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
 ] %}
 {{ attach_library('classy/node') }}
-{{ kint(content.field_author|field_value|first['#node'].getFields().field_a_image.entity.field_media_image.entity.getFileUri()) }}
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
@@ -102,7 +101,7 @@
     </div>
     <aside class="recipe-sidebar">
       <div class="recipe-author-container">
-        {% set author_image_url = bamboo_render_image(content.field_author|field_value|first['#node'].getFields().field_a_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
+        {% set author_image_url = bamboo_render_image_style(content.field_author|field_value|first['#node'].getFields().field_a_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
         {% set author_image_alt = content.field_author|field_value|first['#node'].getFields().field_a_image.entity.field_media_image.alt %}
         <div class="author-image-container">
           <img src="{{ author_image_url }}" alt="{{ author_image_alt }}">
