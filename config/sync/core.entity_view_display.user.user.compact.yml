@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_biography
     - field.field.user.user.field_first_name
     - field.field.user.user.field_surname
-    - field.field.user.user.field_tagline
   module:
     - user
 _core:
@@ -18,9 +16,6 @@ bundle: user
 mode: compact
 content: {  }
 hidden:
-  field_biography: true
   field_first_name: true
-  field_profile_image: true
   field_surname: true
-  field_tagline: true
   member_for: true
