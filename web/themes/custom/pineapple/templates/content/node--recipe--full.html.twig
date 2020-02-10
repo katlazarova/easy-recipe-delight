@@ -101,17 +101,18 @@
     </div>
     <aside class="recipe-sidebar">
       <div class="recipe-author-container">
-        {% set author_image_url = bamboo_render_image_style(content.field_author|field_value|first['#node'].getFields().field_a_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
-        {% set author_image_alt = content.field_author|field_value|first['#node'].getFields().field_a_image.entity.field_media_image.alt %}
+        {% set author_node = content.field_author|field_value|first['#node'] %}
+        {% set author_image_url = bamboo_render_image_style(author_node.getFields().field_a_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
+        {% set author_image_alt = author_node.getFields().field_a_image.entity.field_media_image.alt %}
         <div class="author-image-container">
           <img src="{{ author_image_url }}" alt="{{ author_image_alt }}">
         </div>
         <div class="recipe-author-text-container">
           <div class="author-name">
-            <p>by {{ content.field_author|field_value|first['#node'].getTitle() }}</p>
+            <p>by {{ author_node.getTitle() }}</p>
           </div>
           <div class="author-quote">
-            {{ content.field_author|field_value|first['#node'].getFields().field_a_biography.value }}
+            {{ author_node.getFields().field_a_biography.value }}
           </div>
         </div>
       </div>
