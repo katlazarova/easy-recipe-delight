@@ -1,17 +1,15 @@
-uuid: d9639f4e-038e-4f4d-9079-992b742ce586
+uuid: 855a63b5-c842-41f2-acf6-cb1ce1652f33
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_r_author_quote
-field_name: field_r_author_quote
+id: node.field_author
+field_name: field_author
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  target_type: node
 module: core
 locked: false
 cardinality: 1

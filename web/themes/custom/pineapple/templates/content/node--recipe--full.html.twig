@@ -81,14 +81,13 @@
 ] %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-
   {{ title_prefix }}
   {% if label %}
     <h1{{ title_attributes.addClass('page-title') }}>{{ label }}</h1>
   {% endif %}
   {{ title_suffix }}
   <div class="row">
-    <div{{ content_attributes.addClass('node__content') }}>
+    <div{{ content_attributes.addClass('recipe-body') }}>
       {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
       <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
       <div class="u-o-2">
@@ -97,25 +96,27 @@
         {{ content.field_r_cost }}
         {{ content.field_r_summary }}
         {{ content.field_r_body }}
-        {{ content.field_r_categories }}
       </div>
     </div>
-    <aside class="recipe-sidebar">
+    {% set author_node = content.field_author|field_value|first['#node'] %}
+    <a href="{{ author_node.url }}" class="recipe-sidebar">
+    <aside>
       <div class="recipe-author-container">
+        {% set author_image_url = bamboo_render_image_style(author_node.field_a_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
+        {% set author_image_alt = author_node.field_a_image.entity.field_media_image.alt %}
         <div class="author-image-container">
-          {% if owner.field_profile_image.value[0].target_id %}
-            {{ bamboo_render_image(owner.field_profile_image.value[0].target_id, 'thumbnail_115_x_115') }}
-          {% endif %}
+          <img src="{{ author_image_url }}" alt="{{ author_image_alt }}">
         </div>
         <div class="recipe-author-text-container">
           <div class="author-name">
-            <p>by {{ content.field_r_content_author }}</p>
+            <p>by {{ author_node.getTitle() }}</p>
           </div>
           <div class="author-quote">
-            {{ content.field_r_author_quote }}
+            {{ author_node.field_a_biography.value }}
           </div>
         </div>
       </div>
     </aside>
+    </a>
   </div>
 </article>

@@ -5,11 +5,11 @@
     padding-left: $unit *2;
   }
 
-  .node__content {
+  .recipe-body {
     margin-right: 0;
     width: 100%;
 
-    @include breakpoint($desk) {
+    @include breakpoint($desk-wide) {
       width: 70%;
     }
 
@@ -27,6 +27,7 @@
       text-transform: uppercase;
       font-weight: bold;
       display: inline-block;
+      margin-top: $unit *2;
     }
 
     .recipe-summary {
@@ -35,53 +36,59 @@
   }
 
   .recipe-sidebar {
+    background-color: $light-gray;
+    max-height: 350px;
     width: 100%;
-    overflow-y: auto;
-    height: auto;
-    margin-top: $unit * 2;
+    display: block;
+    height: fit-content;
+    padding-bottom: $unit *3;
+    margin-top: $unit *2;
 
-    @include breakpoint($desk) {
-      width: 25%;
-      margin-top: 0;
-      margin-left: $unit * 4;
+    &:hover,
+    &:focus {
+      color: $primary;
+      background-color: darken($light-gray, 10%);
     }
 
-    .recipe-author-container {
-      background-color: $light-gray;
-      padding: $unit;
-      margin-bottom: $unit;
+    @include breakpoint($desk-wide) {
+      width: 28%;
+      margin-left: 22px;
+      margin-top: 0;
+    }
 
-      .author-image-container {
-        justify-content: center;
-        display: flex;
+    .author-image-container {
+      display: flex;
+      justify-content: center;
+      padding: $unit *2;
 
-        img {
-          border-radius: 50%;
-        }
+      img {
+        border-radius: 50%;
       }
+    }
+
+    .recipe-author-text-container {
+      display: flex;
+      flex-direction: column;
 
       .author-name {
         color: $primary;
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
-        padding: $unit $unit * 3;
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
 
-        p {
-          display: inline;
-          padding-right: $unit /2;
-          margin: 0;
-        }
       }
 
       .author-quote {
+        padding: $unit *2;
+        line-height: 1.5em;
+        max-height: 8.2em;
         text-align: center;
-        margin-top: $unit;
-        padding: $unit $unit * 3;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
     }
   }

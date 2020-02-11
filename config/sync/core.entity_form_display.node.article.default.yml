@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.article.field_a_body
-    - field.field.node.article.field_a_content_author
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
+    - field.field.node.article.field_author
     - node.type.article
+    - workflows.workflow.content_workflow
   module:
+    - content_moderation
     - media_library
     - paragraphs
     - path
@@ -35,12 +37,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_a_content_author:
-    weight: 3
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   field_a_hero_image:
     weight: 1
@@ -69,6 +65,21 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
+  field_author:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 12
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 10
