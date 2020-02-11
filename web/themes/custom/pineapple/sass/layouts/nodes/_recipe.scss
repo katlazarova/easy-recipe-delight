@@ -27,6 +27,7 @@
       text-transform: uppercase;
       font-weight: bold;
       display: inline-block;
+      margin-top: $unit *2;
     }
 
     .recipe-summary {
@@ -36,8 +37,12 @@
 
   .recipe-sidebar {
     background-color: $light-gray;
-    height: 350px;
+    max-height: 350px;
     width: 100%;
+    display: block;
+    height: fit-content;
+    padding-bottom: $unit *3;
+    margin-top: $unit *2;
 
     &:hover,
     &:focus {
@@ -48,6 +53,7 @@
     @include breakpoint($lap) {
       width: 28%;
       margin-left: 22px;
+      margin-top: 0;
     }
 
     .recipe-author-container {
