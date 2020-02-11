@@ -82,7 +82,7 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-    <div{{ content_attributes.addClass('article-body', 'u-o-2') }}>
+    <div{{ content_attributes.addClass('u-o-2') }}>
         {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
         {% include "@components/_hero-image.twig" with {
           image_url: hero_url,
