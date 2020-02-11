@@ -94,23 +94,6 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
         }
       }
       break;
-    /* If the form id is user_register_form and the profile image field exists,
-    restrict access to the field. */
-    case 'user_register_form':
-      if (isset($form['field_profile_image'])) {
-        $form['field_profile_image']['#access'] = FALSE;
-      }
-      break;
-    /* If the form id user_form, if the content administrator and content editor
-    are not in the user roles array restrict access to the field. */
-    case 'user_form':
-      $user_roles = \Drupal::currentUser()->getRoles();
-      if (!in_array('content_administrator', $user_roles) && !in_array('content_editor', $user_roles)) {
-        if (isset($form['field_profile_image'])) {
-          $form['field_profile_image']['#access'] = FALSE;
-        }
-      }
-      break;
   }
 }
 

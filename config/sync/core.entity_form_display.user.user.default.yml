@@ -34,7 +34,7 @@ content:
     type: string_textfield
     region: content
   field_surname:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
