@@ -9,7 +9,7 @@
     margin-right: 0;
     width: 100%;
 
-    @include breakpoint($desk) {
+    @include breakpoint($desk-wide) {
       width: 70%;
     }
 
@@ -50,7 +50,7 @@
       background-color: darken($light-gray, 10%);
     }
 
-    @include breakpoint($lap) {
+    @include breakpoint($desk-wide) {
       width: 28%;
       margin-left: 22px;
       margin-top: 0;
