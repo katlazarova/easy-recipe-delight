@@ -53,16 +53,17 @@
     }
 
     .card-image-container {
-      @include breakpoint($palm) {
-        width: 33.33333%;
-      }
 
-      img {
+      &.hidden {
         display: none;
 
         @include breakpoint($palm) {
           display: block;
         }
+      }
+
+      @include breakpoint($palm) {
+        width: 33.33333%;
       }
     }
   }

@@ -4,7 +4,7 @@
   card_type,
 ]) %}
 <div {{ attributes }}>
-  <div class="card-image-container">
+  <div class="card-image-container {{ image_hidden ? 'hidden' }}">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
     {% if tag %}
       <div class="highlighted-label">
