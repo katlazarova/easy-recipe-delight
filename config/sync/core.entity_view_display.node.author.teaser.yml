@@ -14,11 +14,30 @@ targetEntityType: node
 bundle: author
 mode: teaser
 content:
-  links:
-    weight: 100
+  content_moderation_control:
+    weight: 2
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_a_biography:
+    type: basic_string
+    weight: 1
     region: content
-hidden:
-  field_a_biography: true
-  field_a_image: true
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_a_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
