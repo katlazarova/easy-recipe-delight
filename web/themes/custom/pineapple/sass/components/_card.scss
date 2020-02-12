@@ -24,14 +24,6 @@
     flex-shrink: 0;
     width: 100%;
 
-    &.hidden {
-      display: none;
-
-      @include breakpoint($palm) {
-        display: block;
-      }
-    }
-
     .highlighted-label {
       background-color: transparentize($dark-purple, 0.2);
       color: $white;
@@ -61,6 +53,14 @@
     }
 
     .card-image-container {
+
+      &.hidden {
+        display: none;
+
+        @include breakpoint($palm) {
+          display: block;
+        }
+      }
 
       @include breakpoint($palm) {
         width: 33.33333%;
