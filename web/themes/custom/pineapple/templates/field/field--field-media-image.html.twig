@@ -37,6 +37,14 @@
  * @see template_preprocess_field()
  */
 #}
-{% for item in items %}
-  <div{{ attributes.addClass('image-paragraph-container') }}>{{ item.content }}</div>
-{% endfor %}
+{% if multiple %}
+  <div{{ attributes.addClass('images-container') }}>
+    {% for item in items %}
+      <div{{ item.attributes.addClass('paragraph-image') }}>{{ item.content }}</div>
+    {% endfor %}
+  </div>
+{% else %}
+  {% for item in items %}
+    <div{{ attributes.addClass(classes, 'paragraph-image') }}>{{ item.content }}</div>
+  {% endfor %}
+{% endif %}

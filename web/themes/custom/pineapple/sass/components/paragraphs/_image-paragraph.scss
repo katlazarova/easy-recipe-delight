@@ -1,8 +1,19 @@
 .paragraph--type--image-paragraph {
-  .image-paragraph-image {
-    img {
-      object-fit: cover;
-      width: 100%;
+  .image-paragraph-container {
+
+    .paragraph-image {
+      width: 680px;
+      height: 350px;
+      display: contents;
+
+      @include breakpoint($palm) {
+        display: block;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
