@@ -30,8 +30,8 @@
  * @see template_preprocess_views_view()
  */
 #}
-{{ attach_library('pineapple/scroll-to-filters') }}
-{% set classes = [
+{%
+  set classes = [
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -50,7 +50,6 @@
       {{ header }}
     </div>
   {% endif %}
-  <h2 class="page-title" id="browse-recipes">Browse Recipes</h2>
   {% if exposed %}
     <div class="view-filters">
       {{ exposed }}
@@ -63,7 +62,7 @@
   {% endif %}
 
   {% if rows %}
-    <div class="row teaser-collection-container vertical">
+    <div class="teaser-collection-container horizontal u-o-3">
       {{ rows }}
     </div>
   {% elseif empty %}

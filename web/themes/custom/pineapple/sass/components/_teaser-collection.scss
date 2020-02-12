@@ -2,24 +2,38 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-left: -15px;
+
+  &.vertical {
+    margin-left: -15px;
+  }
 
   .collection-row {
     display: block;
-    margin-bottom: $unit * 3;
     position: relative;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
 
-    @include breakpoint($lap) {
-      flex: 0 0 50%;
-      max-width: 50%;
+    &.vertical {
+      margin-bottom: $unit * 3;
+      padding-right: 15px;
+      padding-left: 15px;
+
+      @include breakpoint($lap) {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      @include breakpoint($desk) {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+      }
     }
 
-    @include breakpoint($desk) {
-      flex: 0 0 33.33333%;
-      max-width: 33.33333%;
+    &.horizontal {
+      &:nth-of-type(even) {
+        .card-image-container {
+          order: 2;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,20 @@
+uuid: fcece4a6-96a2-40dc-88e4-80970703fa12
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - views
+id: paragraph.field_p_ve_view
+field_name: field_p_ve_view
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

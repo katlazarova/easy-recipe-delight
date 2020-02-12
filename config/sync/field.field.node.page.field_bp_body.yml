@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_bp_body
     - node.type.page
     - paragraphs.paragraphs_type.components
+    - paragraphs.paragraphs_type.view_embed
   module:
     - entity_reference_revisions
 id: node.page.field_bp_body
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       components: components
+      view_embed: view_embed
     target_bundles_drag_drop:
       components:
         enabled: true
@@ -55,4 +57,7 @@ settings:
       slideshow:
         weight: 20
         enabled: false
+      view_embed:
+        enabled: true
+        weight: 22
 field_type: entity_reference_revisions
