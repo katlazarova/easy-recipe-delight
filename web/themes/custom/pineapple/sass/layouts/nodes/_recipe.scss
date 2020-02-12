@@ -37,7 +37,6 @@
 
   .recipe-sidebar {
     background-color: $light-gray;
-    max-height: 350px;
     width: 100%;
     display: block;
     height: fit-content;
@@ -54,6 +53,7 @@
       width: 28%;
       margin-left: 22px;
       margin-top: 0;
+      max-height: 350px;
     }
 
     .author-image-container {
@@ -87,7 +87,7 @@
       }
 
       .author-quote {
-        padding: $unit *2;
+        padding: 0 $unit *4;
         line-height: 1.5em;
         max-height: 8.2em;
         text-align: center;
@@ -95,6 +95,10 @@
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
+
+        @include breakpoint($lap) {
+          padding: $unit *2;
+        }
       }
     }
   }
