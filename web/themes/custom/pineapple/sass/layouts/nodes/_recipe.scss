@@ -58,11 +58,13 @@
 
     .author-image-container {
       display: flex;
-      justify-content: center;
       padding: $unit *2;
+      width: 60%;
+      margin: 0 auto;
 
       img {
         border-radius: 50%;
+        width: 100%;
       }
     }
 
