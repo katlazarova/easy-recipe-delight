@@ -1,20 +1,23 @@
+.paragraph--type--image-paragraph {
+  .inline-field-label {
+
+    .field__label {
+      font-weight: bold;
+      margin-left: -$unit;
+      font-size: $small-font;
+    }
+
+    .field__value {
+      font-size: $small-font;
+    }
+  }
+}
+
 .field--type-image {
   width: 50%;
 
   img {
     width: 100%;
     height: 100%;
-  }
-}
-
-.inline-field-label {
-  .field__label {
-    font-weight: bold;
-    margin-left: -$unit;
-    font-size: $small-font;
-  }
-
-  .field__value {
-    font-size: $small-font;
   }
 }

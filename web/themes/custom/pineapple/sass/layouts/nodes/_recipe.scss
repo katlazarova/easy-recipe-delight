@@ -59,8 +59,12 @@
     .author-image-container {
       display: flex;
       padding: $unit *2;
-      width: 60%;
+      width: 20%;
       margin: 0 auto;
+
+      @include breakpoint($desk-wide) {
+        width: 40%;
+      }
 
       img {
         border-radius: 50%;
