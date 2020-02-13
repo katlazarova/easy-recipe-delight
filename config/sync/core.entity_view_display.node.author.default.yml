@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.author.field_a_author_content
     - field.field.node.author.field_a_biography
+    - field.field.node.author.field_a_cover_image
     - field.field.node.author.field_a_image
     - node.type.author
   module:
@@ -15,12 +16,12 @@ bundle: author
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_a_author_content:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -28,18 +29,27 @@ content:
     type: entity_reference_label
     region: content
   field_a_biography:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_a_image:
+  field_a_cover_image:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
+    region: content
     label: hidden
     settings:
-      view_mode: default
+      view_mode: cover_image
+      link: false
+    third_party_settings: {  }
+  field_a_image:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: profile_image
       link: false
     third_party_settings: {  }
     region: content

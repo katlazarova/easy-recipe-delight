@@ -1,0 +1,32 @@
+.author-body {
+  .cover-image {
+    height: 350px;
+    margin: -$unit -50% 0 -50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  .author-info-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $unit *4;
+    padding: $unit $unit*4;
+    padding-left: 0;
+    background-color: $light-gray;
+
+    .profile-image {
+      width: 100%;
+      margin-top: -15%;
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .author-text {
+      margin-left: $unit *4;
+    }
+  }
+}
