@@ -68,6 +68,10 @@ display:
             offset_label: Offset
       style:
         type: default
+        options:
+          row_class: 'collection-row horizontal'
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
