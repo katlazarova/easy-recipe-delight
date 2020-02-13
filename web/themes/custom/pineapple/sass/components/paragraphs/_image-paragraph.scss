@@ -13,7 +13,11 @@
   }
 
   .field--type-image {
-    width: 50%;
+    width: 100%;
+
+    @include breakpoint($lap) {
+      width: 50%;
+    }
 
     img {
       width: 100%;

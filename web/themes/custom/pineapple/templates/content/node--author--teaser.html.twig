@@ -72,9 +72,9 @@
 #}
 {{ attach_library('classy/node') }}
 
-{% set card_layout = 'vertical' %}
+{% set card_layout = 'horizontal' %}
 
-{% set image_url = bamboo_render_image_style(content.field_a_image|field_target_entity.field_media_image.entity.uri.value, 'horizontal_teaser') %}
+{% set image_url = bamboo_render_image_style(content.field_a_image|field_target_entity.field_media_image.entity.uri.value, 'vertical_teaser') %}
 {% set image_alt_text = content.field_a_image|field_target_entity.field_media_image.alt %}
 
 {% include "@components/_card.twig" with {

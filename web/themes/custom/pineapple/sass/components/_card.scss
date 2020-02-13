@@ -52,7 +52,7 @@
     }
   }
 
-  &.vertical {
+  &.horizontal {
     display: block;
 
     @include breakpoint($palm) {

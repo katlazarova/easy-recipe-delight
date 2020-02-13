@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: -16px;
+    margin-left: -$unit *2;
+    margin-right: -$unit *2;
 
     @include breakpoint($lap) {
       flex-direction: row;

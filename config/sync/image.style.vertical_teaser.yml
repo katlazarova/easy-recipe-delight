@@ -1,15 +1,15 @@
-uuid: 47e26824-60c8-4be2-beae-6f4042d1df43
+uuid: 3d3bea1f-a72e-4782-9a83-2a976b6ccca4
 langcode: en
 status: true
 dependencies: {  }
 name: vertical_teaser
-label: 'Vertical Teaser (300 x 500)'
+label: 'Vertical Teaser'
 effects:
-  4ab9f2bc-34f0-48a7-813d-f466db76a361:
-    uuid: 4ab9f2bc-34f0-48a7-813d-f466db76a361
+  8bb00b6a-665c-4cd3-a237-69baea526ca7:
+    uuid: 8bb00b6a-665c-4cd3-a237-69baea526ca7
     id: image_scale_and_crop
     weight: 1
     data:
-      width: 1000
-      height: 1600
+      width: 1240
+      height: 880
       anchor: center-center
