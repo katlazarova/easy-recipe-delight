@@ -8,10 +8,12 @@
   .field__value {
     display: inline;
     text-transform: uppercase;
+    font-size: $small-font;
   }
 
   .field__label {
     padding-right: 0;
-    font-weight: bolder;
+    font-weight: bold;
+    font-size: $small-font;
   }
 }
