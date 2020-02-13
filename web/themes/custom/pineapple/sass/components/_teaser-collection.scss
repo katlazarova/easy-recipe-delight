@@ -5,6 +5,7 @@
 
   &.vertical {
     margin-left: -15px;
+    margin-right: -15px;
   }
 
   .collection-row {
@@ -13,9 +14,9 @@
     width: 100%;
 
     &.vertical {
-      margin-bottom: $unit * 3;
-      padding-right: 15px;
+      margin-bottom: $unit * 4;
       padding-left: 15px;
+      padding-right: 15px;
 
       @include breakpoint($lap) {
         flex: 0 0 50%;
@@ -25,14 +26,6 @@
       @include breakpoint($desk) {
         flex: 0 0 33.33333%;
         max-width: 33.33333%;
-      }
-    }
-
-    &.horizontal {
-      &:nth-of-type(even) {
-        .card-image-container {
-          order: 2;
-        }
       }
     }
   }

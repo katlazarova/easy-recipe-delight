@@ -1,4 +1,4 @@
-{% set card_type = card_type|default('vertical') %}
+{% set card_type = card_type|default('horizontal') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
   card_type,

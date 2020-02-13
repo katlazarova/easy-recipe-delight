@@ -72,9 +72,9 @@
 #}
 {{ attach_library('classy/node') }}
 {% if parent_entity_type == 'content_spotlight' %}
-  {% set card_layout = 'horizontal' %}
-{% else %}
   {% set card_layout = 'vertical' %}
+{% else %}
+  {% set card_layout = 'horizontal' %}
 {% endif %}
 
 {% if content.field_a_teaser_image|field_value %}
@@ -87,7 +87,7 @@
 
 {% include "@components/_card.twig" with {
   card_type: card_layout,
-  image_hidden: card_layout == 'vertical' ? true,
+  image_hidden: card_layout == 'horizontal' ? true,
   image_url: image_url,
   image_alt_text: image_alt_text,
   url: url,
