@@ -28,13 +28,5 @@
         max-width: 33.33333%;
       }
     }
-
-    &.horizontal {
-      &:nth-of-type(even) {
-        .card-image-container {
-          order: 2;
-        }
-      }
-    }
   }
 }
