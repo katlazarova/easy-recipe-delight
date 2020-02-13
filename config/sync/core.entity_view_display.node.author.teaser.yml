@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.author.field_a_author_content
     - field.field.node.author.field_a_biography
     - field.field.node.author.field_a_image
     - node.type.author
@@ -40,4 +41,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_a_author_content: true

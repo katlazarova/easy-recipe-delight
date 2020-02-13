@@ -1,0 +1,20 @@
+uuid: 93534550-2c16-4baa-b15e-4fbea4addf8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - views
+id: node.field_a_author_content
+field_name: field_a_author_content
+entity_type: node
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

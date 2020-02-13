@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.author.field_a_author_content
     - field.field.node.author.field_a_biography
     - field.field.node.author.field_a_image
     - node.type.author
@@ -22,6 +23,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_a_author_content:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_a_biography:
     weight: 1
     settings:
