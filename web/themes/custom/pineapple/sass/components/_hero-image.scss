@@ -48,6 +48,19 @@
         margin-top: $unit * 3;
         display: inline-block;
 
+        &:hover {
+          background-color: transparentize($white, 0.2);
+          color: $primary;
+
+          a {
+            color: $primary;
+          }
+        }
+
+        a {
+          color: $white;
+        }
+
         p {
           display: inline;
         }

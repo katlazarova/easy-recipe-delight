@@ -7,16 +7,29 @@
   }
 
   .author-info-container {
-    display: flex;
-    flex-direction: row;
     margin-bottom: $unit *4;
     padding: $unit $unit*4;
     padding-left: 0;
     background-color: $light-gray;
 
+    @include breakpoint($lap) {
+      display: flex;
+      flex-direction: row;
+    }
+
     .profile-image {
-      width: 100%;
-      margin-top: -15%;
+      width: 50%;
+      max-width: 290px;
+      margin-top: -30%;
+
+      @include breakpoint($lap) {
+        width: 200%;
+        margin-top: -15%;
+      }
+
+      @include breakpoint($desk) {
+        width: 100%;
+      }
 
       img {
         border-radius: 50%;

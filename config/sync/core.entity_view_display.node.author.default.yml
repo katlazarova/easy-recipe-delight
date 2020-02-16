@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.author.field_a_author_content
     - field.field.node.author.field_a_biography
     - field.field.node.author.field_a_cover_image
     - field.field.node.author.field_a_image
@@ -20,14 +19,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_a_author_content:
-    weight: 4
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_a_biography:
     weight: 3
     label: hidden
