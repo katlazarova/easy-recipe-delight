@@ -9,10 +9,6 @@ form {
   width: 100%;
   margin: 0 auto;
 
-  @include breakpoint($lap) {
-    width: 70%;
-  }
-
   .form-item {
 
     label {

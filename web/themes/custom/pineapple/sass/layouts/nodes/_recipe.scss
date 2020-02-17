@@ -5,11 +5,11 @@
     padding-left: $unit *2;
   }
 
-  .node__content {
+  .recipe-body {
     margin-right: 0;
     width: 100%;
 
-    @include breakpoint($desk) {
+    @include breakpoint($desk-wide) {
       width: 70%;
     }
 
@@ -22,81 +22,78 @@
       background-position: center;
     }
 
-    .field--name-field-r-cooking-time,
-    .field--name-field-r-serves,
-    .field--name-field-r-cost {
+    .inline-field-label {
       background-color: $light-gray;
-      color: $primary;
       text-transform: uppercase;
       font-weight: bold;
-      padding: $unit;
       display: inline-block;
-      margin-right: $unit;
-
-      p {
-        display: inline;
-      }
-
-      .field__label {
-        display: inline;
-      }
-
-      .field__item {
-        display: inline;
-      }
+      margin-top: $unit *2;
     }
 
-    .field--name-field-r-summary {
+    .recipe-summary {
       font-size: $medium-font;
     }
   }
 
   .recipe-sidebar {
+    background-color: $light-gray;
     width: 100%;
-    overflow-y: auto;
-    height: auto;
-    margin-top: $unit * 2;
+    display: block;
+    height: fit-content;
+    padding-bottom: $unit *3;
+    margin-top: $unit *2;
 
-    @include breakpoint($desk) {
-      width: 25%;
-      margin-top: 0;
-      margin-left: $unit * 4;
+    &:hover,
+    &:focus {
+      color: $primary;
+      background-color: darken($light-gray, 10%);
     }
 
-    .recipe-author-container {
-      background-color: $light-gray;
-      padding: $unit;
-      margin-bottom: $unit;
+    @include breakpoint($desk-wide) {
+      width: 28%;
+      margin-left: 22px;
+      margin-top: 0;
+      max-height: 350px;
+    }
 
-      .author-image-container {
-        justify-content: center;
-        display: flex;
+    .author-image-container {
+      display: flex;
+      width: 50%;
+      margin: $unit *2 auto 0 auto;
 
-        img {
-          border-radius: 50%;
-        }
+      @include breakpoint($desk-wide) {
+        width: 40%;
       }
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+      }
+    }
+
+    .recipe-author-text-container {
+      display: flex;
+      flex-direction: column;
 
       .author-name {
         color: $primary;
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
-        padding: $unit $unit * 3;
+        display: flex;
+        justify-content: center;
 
-        p {
-          display: inline;
-        }
-
-        .field--name-field-r-content-author {
-          display: inline;
-        }
       }
 
       .author-quote {
+        padding: 0 $unit *4;
+        line-height: 1.5em;
+        max-height: 8.2em;
         text-align: center;
-        margin-top: $unit;
-        padding: $unit $unit * 3;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
       }
     }
   }

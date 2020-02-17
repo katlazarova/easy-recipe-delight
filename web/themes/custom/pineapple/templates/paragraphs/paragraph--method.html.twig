@@ -49,7 +49,8 @@
 {% block paragraph %}
   <ol{{ attributes.addClass(classes, 'instructions', 'u-o-2') }}>
     {% block content %}
-      {{ content }}
+      <h2 class="method-heading">{{ content.field_p_m_heading|field_value}}</h2>
+      {{ content.field_p_m_instruction }}
     {% endblock %}
   </ol>
 {% endblock paragraph %}

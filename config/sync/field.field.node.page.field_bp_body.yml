@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_bp_body
     - node.type.page
     - paragraphs.paragraphs_type.components
+    - paragraphs.paragraphs_type.view_embed
   module:
     - entity_reference_revisions
 id: node.page.field_bp_body
@@ -24,8 +25,39 @@ settings:
     negate: 0
     target_bundles:
       components: components
+      view_embed: view_embed
     target_bundles_drag_drop:
       components:
         enabled: true
         weight: 2
+      call_to_action:
+        weight: 11
+        enabled: false
+      content_spotlight:
+        weight: 13
+        enabled: false
+      grid_item:
+        weight: 14
+        enabled: false
+      image_grid:
+        weight: 15
+        enabled: false
+      image_paragraph:
+        weight: 16
+        enabled: false
+      instruction:
+        weight: 17
+        enabled: false
+      method:
+        weight: 18
+        enabled: false
+      rich_text:
+        weight: 19
+        enabled: false
+      slideshow:
+        weight: 20
+        enabled: false
+      view_embed:
+        enabled: true
+        weight: 22
 field_type: entity_reference_revisions

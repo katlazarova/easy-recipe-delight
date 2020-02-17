@@ -1,10 +1,10 @@
-{% set card_type = card_type|default('vertical') %}
+{% set card_type = card_type|default('horizontal') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
   card_type,
 ]) %}
 <div {{ attributes }}>
-  <div class="card-image-container">
+  <div class="card-image-container {{ image_hidden ? 'hidden' }}">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
     {% if tag %}
       <div class="highlighted-label">
@@ -15,7 +15,12 @@
   <div class="card-content u-o-2">
     {% if labels %}
       <div class="card-labels">
-        {{ labels }}
+        {% for item in labels %}
+          {% include "@components/_field-label.twig" with {
+            label: item.label,
+            value: item.value
+          } %}
+        {% endfor %}
       </div>
     {% endif %}
     <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>

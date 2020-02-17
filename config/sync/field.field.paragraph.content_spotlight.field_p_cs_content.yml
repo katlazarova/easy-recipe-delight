@@ -1,0 +1,30 @@
+uuid: 240ae0fb-c19a-45d2-b217-2e631795d650
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_cs_content
+    - node.type.article
+    - node.type.recipe
+    - paragraphs.paragraphs_type.content_spotlight
+id: paragraph.content_spotlight.field_p_cs_content
+field_name: field_p_cs_content
+entity_type: paragraph
+bundle: content_spotlight
+label: Content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      recipe: recipe
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

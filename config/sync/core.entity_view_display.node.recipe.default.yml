@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.recipe.field_r_author_quote
+    - field.field.node.recipe.field_author
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
-    - field.field.node.recipe.field_r_content_author
     - field.field.node.recipe.field_r_cooking_time
     - field.field.node.recipe.field_r_cost
     - field.field.node.recipe.field_r_featured
@@ -18,47 +17,37 @@ dependencies:
     - node.type.recipe
   module:
     - entity_reference_revisions
-    - options
     - user
 id: node.recipe.default
 targetEntityType: node
 bundle: recipe
 mode: default
 content:
-  field_r_author_quote:
-    weight: 113
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_author:
+    weight: 7
     label: hidden
     settings:
-      link_to_entity: false
+      view_mode: full
+      link: false
     third_party_settings: {  }
-    type: string
+    type: entity_reference_entity_view
     region: content
   field_r_body:
     type: entity_reference_revisions_entity_view
-    weight: 109
+    weight: 9
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
-  field_r_categories:
-    weight: 112
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_r_content_author:
-    weight: 103
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_r_cooking_time:
-    weight: 105
+    weight: 4
     label: inline
     settings:
       link_to_entity: false
@@ -66,7 +55,7 @@ content:
     type: string
     region: content
   field_r_cost:
-    weight: 107
+    weight: 6
     label: inline
     settings:
       link_to_entity: false
@@ -74,7 +63,7 @@ content:
     type: string
     region: content
   field_r_featured:
-    weight: 110
+    weight: 10
     label: hidden
     settings:
       format: yes-no
@@ -85,7 +74,7 @@ content:
     region: content
   field_r_hero_image:
     type: entity_reference_entity_view
-    weight: 101
+    weight: 2
     label: hidden
     settings:
       view_mode: media_library
@@ -93,7 +82,7 @@ content:
     third_party_settings: {  }
     region: content
   field_r_highlighted:
-    weight: 111
+    weight: 11
     label: hidden
     settings:
       format: yes-no
@@ -103,7 +92,7 @@ content:
     type: boolean
     region: content
   field_r_serves:
-    weight: 106
+    weight: 5
     label: inline
     settings:
       thousand_separator: ''
@@ -112,7 +101,7 @@ content:
     type: number_integer
     region: content
   field_r_summary:
-    weight: 108
+    weight: 8
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -120,7 +109,7 @@ content:
     region: content
   field_r_teaser_image:
     type: entity_reference_entity_view
-    weight: 102
+    weight: 3
     label: hidden
     settings:
       view_mode: default
@@ -128,8 +117,9 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_r_categories: true

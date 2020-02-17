@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.featured_recipe
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
-    - field.field.node.recipe.field_r_content_author
     - field.field.node.recipe.field_r_cooking_time
     - field.field.node.recipe.field_r_cost
     - field.field.node.recipe.field_r_featured
@@ -23,6 +22,11 @@ targetEntityType: node
 bundle: recipe
 mode: featured_recipe
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_r_cooking_time:
     weight: 1
     label: inline
@@ -50,9 +54,9 @@ content:
     type: number_integer
     region: content
 hidden:
+  field_author: true
   field_r_body: true
   field_r_categories: true
-  field_r_content_author: true
   field_r_cost: true
   field_r_featured: true
   field_r_highlighted: true

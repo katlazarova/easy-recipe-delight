@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.recipe.field_r_author_quote
+    - field.field.node.recipe.field_author
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
-    - field.field.node.recipe.field_r_content_author
     - field.field.node.recipe.field_r_cooking_time
     - field.field.node.recipe.field_r_cost
     - field.field.node.recipe.field_r_featured
@@ -16,7 +15,9 @@ dependencies:
     - field.field.node.recipe.field_r_summary
     - field.field.node.recipe.field_r_teaser_image
     - node.type.recipe
+    - workflows.workflow.content_workflow
   module:
+    - content_moderation
     - media_library
     - paragraphs
     - path
@@ -31,17 +32,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_r_author_quote:
-    weight: 10
+  field_author:
+    weight: 12
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   field_r_body:
     type: entity_reference_paragraphs
-    weight: 18
+    weight: 17
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -52,7 +54,7 @@ content:
     third_party_settings: {  }
     region: content
   field_r_categories:
-    weight: 17
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60
@@ -60,14 +62,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_r_content_author:
-    weight: 9
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_r_cooking_time:
-    weight: 11
+    weight: 9
     settings:
       size: 60
       placeholder: ''
@@ -75,7 +71,7 @@ content:
     type: string_textfield
     region: content
   field_r_cost:
-    weight: 13
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -83,7 +79,7 @@ content:
     type: string_textfield
     region: content
   field_r_featured:
-    weight: 15
+    weight: 14
     settings:
       display_label: true
     third_party_settings: {  }
@@ -97,21 +93,21 @@ content:
     type: media_library_widget
     region: content
   field_r_highlighted:
-    weight: 16
+    weight: 15
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_r_serves:
-    weight: 12
+    weight: 10
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_r_summary:
-    weight: 14
+    weight: 13
     settings:
       rows: 5
       placeholder: ''
@@ -130,6 +126,12 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 18
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   path:
     type: path
     weight: 5

@@ -1,0 +1,48 @@
+uuid: 998de276-47a7-4262-98b5-f63ce464ae6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.author.field_a_biography
+    - field.field.node.author.field_a_cover_image
+    - field.field.node.author.field_a_image
+    - node.type.author
+  module:
+    - user
+id: node.author.default
+targetEntityType: node
+bundle: author
+mode: default
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_a_biography:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_a_cover_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: cover_image
+      link: false
+    third_party_settings: {  }
+  field_a_image:
+    type: entity_reference_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: profile_image
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true

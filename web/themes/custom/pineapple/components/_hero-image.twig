@@ -1,35 +1,47 @@
 {% set content_url = content_url|default('') %}
-<div class="hero-container breakout">
-  {% if content_url %}
+{% set hero_attributes = hero_attributes|default(create_attribute()).addClass([
+  'hero-container',
+  'breakout'
+]) %}
+{% if content_url %}
+  {% set url_prefix %}
     <a href="{{ content_url }}">
+  {% endset %}
+  {% set url_suffix %}</a>{% endset %}
+{% endif %}
+<div{{ hero_attributes }}>
+  {{ url_prefix }}
+  <div class="hero-image" style="background-image: url({{ image_url }})"></div>
+  {% if pretext or title or subtext or labels %}
+    <div class="hero-image-text container">
+      <div class="hero-image-content u-o-2">
+        {% if pretext %}
+          <div class="hero-pretext">
+            {{ pretext }}
+          </div>
+        {% endif %}
+        {% if title %}
+          <div class="page-title">
+            <h1>{{ title }}</h1>
+          </div>
+        {% endif %}
+        {% if subtext %}
+          <div class="hero-subtext">
+            By {{ subtext }}
+          </div>
+        {% endif %}
+        {% if labels %}
+          <div class="hero-labels">
+            {% for item in labels %}
+              {% include "@components/_field-label.twig" with {
+                label: item.label,
+                value: item.value
+              } %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div> <!-- End of hero-image-content -->
+    </div> <!-- End of hero-image-text-container -->
   {% endif %}
-  <div class="hero-image" style="background-image: url({{ image_url }})">
-  </div>
-  <div class="hero-image-text container">
-    <div class="hero-image-content u-o-2">
-      {% if pretext %}
-        <div class="hero-pretext">
-          {{ pretext }}
-        </div>
-      {% endif %}
-      <div class="page-title">
-        <h1>{{ title }}</h1>
-      </div>
-      {% if subtext %}
-        <div class="hero-subtext">
-          By {{ subtext }}
-        </div>
-      {% endif %}
-      {% if labels %}
-        <div class="hero-labels">
-          {% for item in labels %}
-            {{ item.value }}
-          {% endfor %}
-        </div>
-      {% endif %}
-    </div>
-  </div>
-  {% if content_url %}
-   </a>
-  {% endif %}
-</div>
+ {{ url_suffix }}
+</div> <!-- End of hero-container -->

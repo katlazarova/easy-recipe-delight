@@ -1,0 +1,60 @@
+.views-exposed-form {
+  .form--inline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: -$unit *2;
+    margin-right: -$unit *2;
+
+    @include breakpoint($lap) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    .form-item {
+      flex-grow: 1;
+      width: 100%;
+
+      &.form-type-select {
+        flex-direction: column;
+        display: flex;
+        align-items: baseline;
+
+        @include breakpoint($lap) {
+          flex-direction: row;
+        }
+      }
+
+      &.form-composite {
+        .form-item {
+
+          @include breakpoint($lap) {
+            padding: $unit;
+          }
+
+          label {
+            margin-left: 0;
+          }
+        }
+      }
+
+      label {
+        font-size: $small-font;
+        margin: 0;
+
+        @include breakpoint($lap) {
+          margin: 0 $unit;
+        }
+      }
+    }
+
+    .button {
+      background-color: $secondary;
+      color: white;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}

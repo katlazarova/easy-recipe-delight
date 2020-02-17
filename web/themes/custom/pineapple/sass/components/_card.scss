@@ -1,6 +1,4 @@
 .card-container {
-  display: flex;
-  flex-direction: column;
   background-color: $light-gray;
   width: 100%;
   height: 100%;
@@ -12,30 +10,12 @@
 
     .card-labels {
       display: flex;
-      align-content: center;
-      text-transform: uppercase;
-      color: $primary;
-      justify-content: space-between;
+      flex-wrap: wrap;
 
-      .field--name-field-r-cooking-time {
+      .inline-field-label {
         background-color: $white;
-        font-size: $xsmall-font;
-        text-align: center;
-        padding: $unit;
-
-        .field__item {
-          display: block;
-        }
-      }
-
-      .field--name-field-r-serves {
-        display: flex;
-        align-items: center;
-        background-color: $white;
-        font-size: $xsmall-font;
-        text-align: center;
-        margin-right: 0;
-        padding: $unit;
+        width: fit-content;
+        margin-bottom: $unit;
       }
     }
   }
@@ -43,6 +23,14 @@
   .card-image-container {
     flex-shrink: 0;
     width: 100%;
+
+    &.hidden {
+      display: none;
+
+      @include breakpoint($palm) {
+        display: block;
+      }
+    }
 
     .highlighted-label {
       background-color: transparentize($dark-purple, 0.2);
@@ -64,22 +52,18 @@
     }
   }
 
-  &.vertical {
+  &.horizontal {
+    display: block;
+
     @include breakpoint($palm) {
       flex-direction: row;
+      display: flex;
     }
 
     .card-image-container {
+
       @include breakpoint($palm) {
         width: 33.33333%;
-      }
-
-      img {
-        display: none;
-
-        @include breakpoint($palm) {
-          display: block;
-        }
       }
     }
   }

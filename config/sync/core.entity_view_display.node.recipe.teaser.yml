@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
-    - field.field.node.recipe.field_r_content_author
     - field.field.node.recipe.field_r_cooking_time
     - field.field.node.recipe.field_r_cost
     - field.field.node.recipe.field_r_featured
@@ -23,6 +22,11 @@ targetEntityType: node
 bundle: recipe
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_r_cooking_time:
     type: string
     weight: 2
@@ -76,9 +80,9 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
+  field_author: true
   field_r_body: true
   field_r_categories: true
-  field_r_content_author: true
   field_r_cost: true
   field_r_featured: true
   links: true

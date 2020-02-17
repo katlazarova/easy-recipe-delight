@@ -1,15 +1,15 @@
-uuid: b4164ce7-93b8-4f7e-a9c9-35ecb5f1bdf6
+uuid: a1346730-9065-4795-a6b1-f81cc09a4850
 langcode: en
 status: true
 dependencies: {  }
 name: horizontal_teaser
-label: 'Horizontal Teaser (380 x 250)'
+label: 'Horizontal Teaser'
 effects:
-  a75493fa-07bf-4082-a32f-8b2089cad857:
-    uuid: a75493fa-07bf-4082-a32f-8b2089cad857
+  91f2995a-c522-4073-a6bc-5a99525abd1a:
+    uuid: 91f2995a-c522-4073-a6bc-5a99525abd1a
     id: image_scale_and_crop
     weight: 1
     data:
-      width: 310
-      height: 220
+      width: 1000
+      height: 1600
       anchor: center-center

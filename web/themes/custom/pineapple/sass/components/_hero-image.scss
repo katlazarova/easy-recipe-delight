@@ -3,6 +3,15 @@
   overflow: hidden;
   margin-bottom: $unit * 4;
 
+  &.cover-image {
+    height: 250px;
+    margin-bottom: 0;
+
+    @include breakpoint($lap) {
+      height: 350px;
+    }
+  }
+
   .hero-image {
     height: 100%;
     width: 100%;
@@ -48,6 +57,20 @@
         margin-top: $unit * 3;
         display: inline-block;
 
+        &:hover {
+          transition: 0.5s;
+          background-color: transparentize($white, 0.2);
+          color: $primary;
+
+          a {
+            color: $primary;
+          }
+        }
+
+        a {
+          color: $white;
+        }
+
         p {
           display: inline;
         }
@@ -58,35 +81,11 @@
       }
 
       .hero-labels {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: $small-font;
+        display: flex;
+        flex-wrap: wrap;
 
-        .field--name-field-r-cooking-time,
-        .field--name-field-r-serves {
-          background-color: transparentize($dark-purple, 0.1);
-          font-weight: 600;
-          color: $white;
-          padding: $unit;
-          display: inline-block;
-          margin-right: $unit;
-          margin-top: $unit;
-
-          @include breakpoint($desk) {
-            margin-top: 0;
-          }
-
-          p {
-            display: inline;
-          }
-
-          .field__label {
-            display: inline;
-          }
-
-          .field__item {
-            display: inline;
-          }
+        .inline-field-label {
+          background-color: transparentize($white, 0.2);
         }
       }
     }

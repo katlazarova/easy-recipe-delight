@@ -12,7 +12,7 @@ id: paragraph.method.field_p_m_instruction
 field_name: field_p_m_instruction
 entity_type: paragraph
 bundle: method
-label: Instruction
+label: Instruction(s)
 description: ''
 required: false
 translatable: false
@@ -37,8 +37,14 @@ settings:
       instruction:
         enabled: true
         weight: 11
+      grid_item:
+        weight: 12
+        enabled: false
       method:
         weight: 12
+        enabled: false
+      image_grid:
+        weight: 13
         enabled: false
       rich_text:
         weight: 13

@@ -1,0 +1,23 @@
+uuid: b4315825-bcaf-4c08-9387-e612d743297f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_gi_link
+    - paragraphs.paragraphs_type.grid_item
+  module:
+    - link
+id: paragraph.grid_item.field_p_gi_link
+field_name: field_p_gi_link
+entity_type: paragraph
+bundle: grid_item
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 0
+field_type: link

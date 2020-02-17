@@ -1,0 +1,52 @@
+.author-container {
+  margin-bottom: $unit *4;
+  padding: $unit $unit*3;
+  background-color: $light-gray;
+
+  @include breakpoint($lap) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .author-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint($lap) {
+      flex-direction: row;
+    }
+
+    .profile-image {
+      width: 75%;
+      max-width: 290px;
+      margin-top: -30%;
+      margin-right: 0;
+      z-index: 1;
+
+      @include breakpoint($lap) {
+        width: 200%;
+        margin-top: -15%;
+        margin-right: 32px;
+      }
+
+      @include breakpoint($desk) {
+        width: 100%;
+      }
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .author-text {
+      text-align: center;
+
+      @include breakpoint($lap) {
+        text-align: left;
+      }
+    }
+  }
+}

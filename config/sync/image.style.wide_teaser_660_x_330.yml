@@ -1,0 +1,15 @@
+uuid: 7eaa92ed-1b28-43f5-8cc3-e21997b9b585
+langcode: en
+status: true
+dependencies: {  }
+name: wide_teaser_660_x_330
+label: 'Wide Teaser'
+effects:
+  34e07854-dbfa-4181-980e-49e1d1461303:
+    uuid: 34e07854-dbfa-4181-980e-49e1d1461303
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1320
+      height: 660
+      anchor: center-center

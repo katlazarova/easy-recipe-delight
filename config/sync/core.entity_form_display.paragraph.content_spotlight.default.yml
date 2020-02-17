@@ -1,0 +1,33 @@
+uuid: ca4aea2f-b63e-4018-bca1-14816dc1531b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_spotlight.field_p_cs_content
+    - field.field.paragraph.content_spotlight.field_p_cs_heading
+    - paragraphs.paragraphs_type.content_spotlight
+id: paragraph.content_spotlight.default
+targetEntityType: paragraph
+bundle: content_spotlight
+mode: default
+content:
+  field_p_cs_content:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_p_cs_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
