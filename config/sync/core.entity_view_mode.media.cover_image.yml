@@ -1,0 +1,10 @@
+uuid: dec519dd-189f-4383-a696-313c2f117b51
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.cover_image
+label: 'Cover Image'
+targetEntityType: media
+cache: true

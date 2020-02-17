@@ -70,17 +70,38 @@
  *   in different view modes.
  */
 #}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
 {{ attach_library('classy/node') }}
-
-{% set image_url = bamboo_render_image_style(content.field_a_image|field_target_entity.field_media_image.entity.uri.value, 'vertical_teaser') %}
-{% set image_alt_text = content.field_a_image|field_target_entity.field_media_image.alt %}
-
-{% include "@components/_card.twig" with {
-  card_type: 'horizontal',
-  image_url: image_url,
-  image_alt_text: image_alt_text,
-  url: url,
-  title: label,
-  card_body: content.field_a_biography|field_value,
-  button_text: 'View My Content'
-} %}
+<article{{ attributes.addClass(classes) }}>
+  <div{{ content_attributes.addClass('author-body') }}>
+    {% set cover_image_url = bamboo_render_image_style(content.field_a_cover_image|field_target_entity.field_media_image.entity.uri.value, 'cover_image') %}
+    {% include "@components/_hero-image.twig" with {
+      image_url: cover_image_url,
+      hero_attributes: create_attribute().addClass('cover-image')
+    } %}
+    <div class="author-container breakout">
+      <div class="author-info-container container">
+        <div class="profile-image">
+          {% set profile_image_url = bamboo_render_image_style(content.field_a_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
+          {% set profile_image_alt = content.field_a_image|field_target_entity.field_media_image.alt %}
+          <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
+        </div>
+        <div class="author-text">
+          <h2 class="author-name">{{ node.getTitle() }}</h2>
+          <p>{{ content.field_a_biography|field_value }}</p>
+        </div> <!-- End of author-text -->
+      </div> <!-- End of author-info-container -->
+    </div> <!-- End of author-container -->
+    <h2>My Content</h2>
+    {{ bamboo_render_views('author_content') }}
+  </div> <!-- End of author-body -->
+</article>

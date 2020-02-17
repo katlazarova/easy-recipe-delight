@@ -3,6 +3,15 @@
   overflow: hidden;
   margin-bottom: $unit * 4;
 
+  &.cover-image {
+    height: 250px;
+    margin-bottom: 0;
+
+    @include breakpoint($lap) {
+      height: 350px;
+    }
+  }
+
   .hero-image {
     height: 100%;
     width: 100%;
@@ -47,6 +56,20 @@
         text-align: left;
         margin-top: $unit * 3;
         display: inline-block;
+
+        &:hover {
+          transition: 0.5s;
+          background-color: transparentize($white, 0.2);
+          color: $primary;
+
+          a {
+            color: $primary;
+          }
+        }
+
+        a {
+          color: $white;
+        }
 
         p {
           display: inline;
