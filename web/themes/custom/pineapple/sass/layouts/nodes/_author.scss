@@ -1,8 +1,12 @@
 .author-body {
   .cover-image {
-    height: 350px;
+    height: 250px;
     background-repeat: no-repeat;
     background-position: 50%;
+
+    @include breakpoint($lap) {
+      height: 350px;
+    }
   }
 
   .author-container {
@@ -19,6 +23,7 @@
     .author-info-container {
       display: flex;
       flex-direction: column;
+      align-items: center;
 
       @include breakpoint($lap) {
         flex-direction: row;
