@@ -12,7 +12,6 @@
   .author-container {
     margin-bottom: $unit *4;
     padding: $unit $unit*3;
-    padding-left: 0;
     background-color: $light-gray;
 
     @include breakpoint($lap) {
@@ -33,11 +32,13 @@
         width: 75%;
         max-width: 290px;
         margin-top: -30%;
+        margin-right: 0;
         z-index: 1;
 
         @include breakpoint($lap) {
           width: 200%;
           margin-top: -15%;
+          margin-right: 16px;
         }
 
         @include breakpoint($desk) {
@@ -52,7 +53,7 @@
       }
 
       .author-text {
-        margin-left: $unit *3;
+        margin-left: 0 $unit *2;
         text-align: center;
 
         @include breakpoint($lap) {
