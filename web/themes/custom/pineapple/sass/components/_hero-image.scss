@@ -49,6 +49,7 @@
         display: inline-block;
 
         &:hover {
+          transition: 0.5s;
           background-color: transparentize($white, 0.2);
           color: $primary;
 

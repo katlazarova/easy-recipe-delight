@@ -1,14 +1,13 @@
 .author-body {
   .cover-image {
     height: 350px;
-    margin: -$unit -50% 0 -50%;
     background-repeat: no-repeat;
     background-position: 50%;
   }
 
-  .author-info-container {
+  .author-container {
     margin-bottom: $unit *4;
-    padding: $unit $unit*4;
+    padding: $unit $unit*3;
     padding-left: 0;
     background-color: $light-gray;
 
@@ -17,29 +16,45 @@
       flex-direction: row;
     }
 
-    .profile-image {
-      width: 50%;
-      max-width: 290px;
-      margin-top: -30%;
+    .author-info-container {
+      display: flex;
+      flex-direction: column;
 
       @include breakpoint($lap) {
-        width: 200%;
-        margin-top: -15%;
+        flex-direction: row;
+
       }
 
-      @include breakpoint($desk) {
-        width: 100%;
+      .profile-image {
+        width: 50%;
+        max-width: 290px;
+        margin-top: -30%;
+        z-index: 1;
+
+        @include breakpoint($lap) {
+          width: 200%;
+          margin-top: -15%;
+        }
+
+        @include breakpoint($desk) {
+          width: 100%;
+        }
+
+        img {
+          border-radius: 50%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
+      .author-text {
+        margin-left: $unit *3;
+        text-align: center;
 
-    .author-text {
-      margin-left: $unit *4;
+        @include breakpoint($lap) {
+          text-align: left;
+        }
+      }
     }
   }
 }

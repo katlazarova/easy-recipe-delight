@@ -83,23 +83,22 @@
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('author-body') }}>
-    {% if content.field_a_cover_image|field_value %}
-      {% set cover_image_url = bamboo_render_image_style(content.field_a_cover_image|field_target_entity.field_media_image.entity.uri.value, 'cover_image') %}
-    {% else %}
-      {% set cover_image_url = 'http://localhost:8888/sites/default/files/2020-02/food-8.jpg' %}
-    {% endif %}
-    <div class="cover-image" style="background-image: url({{ cover_image_url }})"></div>
-    <div class="author-info-container">
-      <div class="profile-image">
-        {% set profile_image_url = bamboo_render_image_style(content.field_a_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
-        {% set profile_image_alt = content.field_a_image|field_target_entity.field_media_image.alt %}
-        <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
+    {% set cover_image_url = bamboo_render_image_style(content.field_a_cover_image|field_target_entity.field_media_image.entity.uri.value, 'cover_image') %}
+    <div class="cover-image breakout" style="background-image: url({{ cover_image_url }})"></div>
+    <div class="author-container breakout">
+      <div class="author-info-container container">
+        <div class="profile-image">
+          {% set profile_image_url = bamboo_render_image_style(content.field_a_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
+          {% set profile_image_alt = content.field_a_image|field_target_entity.field_media_image.alt %}
+          <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
+        </div>
+        <div class="author-text">
+          <h2 class="author-name">{{ node.getTitle() }}</h2>
+          <p class="author-biography">{{ content.field_a_biography }}</p>
+        </div> <!-- End of author-text -->
       </div>
-      <div class="author-text">
-        <h2 class="author-name">{{ node.getTitle() }}</h2>
-        <p class="author-biography">{{ content.field_a_biography }}</p>
-      </div> <!-- End of author-text -->
     </div> <!-- End of author-info-container -->
+    <h2>My Content</h2>
     {{ bamboo_render_views('author_content') }}
   </div> <!-- End of author-body -->
 </article>
