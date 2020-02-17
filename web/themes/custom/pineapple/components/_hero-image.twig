@@ -3,10 +3,14 @@
   'hero-container',
   'breakout'
 ]) %}
-<div{{ hero_attributes }}>
-  {% if content_url %}
+{% if content_url %}
+  {% set url_prefix %}
     <a href="{{ content_url }}">
-  {% endif %}
+  {% endset %}
+  {% set url_suffix %}</a>{% endset %}
+{% endif %}
+<div{{ hero_attributes }}>
+  {{ url_prefix }}
   <div class="hero-image" style="background-image: url({{ image_url }})"></div>
   {% if pretext or title or subtext or labels %}
     <div class="hero-image-text container">
@@ -39,7 +43,5 @@
       </div> <!-- End of hero-image-content -->
     </div> <!-- End of hero-image-text-container -->
   {% endif %}
-  {% if content_url %}
-   </a>
-  {% endif %}
+ {{ url_suffix }}
 </div> <!-- End of hero-container -->
