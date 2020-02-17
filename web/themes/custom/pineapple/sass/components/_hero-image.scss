@@ -3,6 +3,15 @@
   overflow: hidden;
   margin-bottom: $unit * 4;
 
+  &.cover-image {
+    height: 250px;
+    margin-bottom: 0;
+
+    @include breakpoint($lap) {
+      height: 350px;
+    }
+  }
+
   .hero-image {
     height: 100%;
     width: 100%;

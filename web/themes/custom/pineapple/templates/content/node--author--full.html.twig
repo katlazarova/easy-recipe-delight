@@ -84,7 +84,10 @@
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('author-body') }}>
     {% set cover_image_url = bamboo_render_image_style(content.field_a_cover_image|field_target_entity.field_media_image.entity.uri.value, 'cover_image') %}
-    <div class="cover-image breakout" style="background-image: url({{ cover_image_url }})"></div>
+    {% include "@components/_hero-image.twig" with {
+      image_url: cover_image_url,
+      hero_attributes: attributes|default(create_attribute()).addClass('cover-image')
+    } %}
     <div class="author-container breakout">
       <div class="author-info-container container">
         <div class="profile-image">

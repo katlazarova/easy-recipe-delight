@@ -1,14 +1,4 @@
 .author-body {
-  .cover-image {
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-
-    @include breakpoint($lap) {
-      height: 350px;
-    }
-  }
-
   .author-container {
     margin-bottom: $unit *4;
     padding: $unit $unit*3;
