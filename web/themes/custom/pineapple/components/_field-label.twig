@@ -1,4 +1,4 @@
-{% set field_label_attributes = attributes|default(create_attribute()).addClass([
+{% set field_label_attributes = field_label_attributes|default(create_attribute()).addClass([
   'inline-field-label'
 ]) %}
 <div {{ field_label_attributes }}>

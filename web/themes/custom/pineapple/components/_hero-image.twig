@@ -1,9 +1,9 @@
 {% set content_url = content_url|default('') %}
-{% set hero_attributes = attributes|default(create_attribute()).addClass([
+{% set hero_attributes = hero_attributes|default(create_attribute()).addClass([
   'hero-container',
   'breakout'
 ]) %}
-<div{{ attributes }}>
+<div{{ hero_attributes }}>
   {% if content_url %}
     <a href="{{ content_url }}">
   {% endif %}
