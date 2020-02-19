@@ -2,19 +2,32 @@
 
   Drupal.behaviors.clickable_card = {
     attach: function (context, settings) {
-      clickableElement($('.collection-row'));
+      $('[data-card]', context).once('clickable-card')
+      .each(function eachCard() {
+        const $link = $(this).find('a').first();
 
-      function clickableElement($cElement) {
-        // Inside cElement, find clickable class.
-        $cElement.find('.clickable').click(function () {
-          var $item = $('.clickable');
-          // If there is an anchor inside this item, go to new page using URL from first anchor.
-          if ($item.find('a').length) {
-            window.location = $(this).find('a:first').attr('href');
+        if ($link.length === 0 || $(this).data().cardClickable === false) {
+          return;
+        }
+
+        $(this).css('cursor', 'pointer');
+
+        let down;
+        let up;
+
+        $(this).mousedown(() => {
+          down = +new Date();
+        });
+
+        $(this).mouseup(e => {
+          if (e.which !== 1) return;
+
+          up = +new Date();
+          if (up - down < 600) {
+            window.location.href = $link.attr('href');
           }
         });
-      }
-    }
+      });
+    },
   };
-
 }(jQuery, Drupal));

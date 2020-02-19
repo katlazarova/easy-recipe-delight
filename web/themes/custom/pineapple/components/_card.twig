@@ -2,10 +2,9 @@
 {% set card_type = card_type|default('horizontal') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
-  'clickable',
   card_type,
 ]) %}
-<div {{ attributes }}>
+<div {{ attributes.setAttribute('data-card', '') }}>
   <div class="card-image-container {{ image_hidden ? 'hidden' }}">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
     {% if tag %}
