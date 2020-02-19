@@ -1,6 +1,8 @@
+{{ attach_library('pineapple/clickable-card') }}
 {% set card_type = card_type|default('horizontal') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
+  'clickable',
   card_type,
 ]) %}
 <div {{ attributes }}>
