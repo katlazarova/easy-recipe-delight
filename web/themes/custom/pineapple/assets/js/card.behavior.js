@@ -1,8 +1,8 @@
 (function ($, Drupal) {
 
-  Drupal.behaviors.clickable_card = {
+  Drupal.behaviors.card = {
     attach: function (context, settings) {
-      $('[data-card]', context).once('clickable-card')
+      $('[data-card]', context).once('card')
       .each(function eachCard() {
         const $link = $(this).find('a').first();
 

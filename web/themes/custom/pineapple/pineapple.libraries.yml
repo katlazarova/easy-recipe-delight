@@ -19,9 +19,9 @@ scroll-to-filters:
     - core/drupal
     - core/jquery.once
 
-clickable-card:
+card:
   js:
-    assets/js/clickable-card.behavior.js: {}
+    assets/js/card.behavior.js: {}
     dependencies:
       - core/jquery
       - core/drupal

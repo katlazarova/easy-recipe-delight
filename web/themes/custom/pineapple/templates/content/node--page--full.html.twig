@@ -106,7 +106,7 @@
       </div>
     </footer>
   {% endif %}
-  <div{{ content_attributes.addClass('node__content', 'u-o-2') }}>
+  <div{{ content_attributes.addClass('node__content', 'u-o-3') }}>
     {% if content.field_bp_hero_image|field_value %}
       {% set content_creator = node.Owner.get('field_first_name').value ~ " " ~ node.Owner.get('field_surname').value %}
       {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
