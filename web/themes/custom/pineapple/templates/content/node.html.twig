@@ -85,9 +85,13 @@
 
   {{ title_prefix }}
   {% if label and not page %}
-    <h2{{ title_attributes }}>
+    {% set heading %}
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+    {% endset %}
+    {% include "@components/_heading.twig" with {
+      heading_attributes: title_attributes,
+      heading: heading
+    } %}
   {% endif %}
   {{ title_suffix }}
 

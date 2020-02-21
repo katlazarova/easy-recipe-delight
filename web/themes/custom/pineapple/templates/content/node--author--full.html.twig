@@ -96,12 +96,17 @@
           <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
         </div>
         <div class="author-text">
-          <h2 class="author-name">{{ node.getTitle() }}</h2>
+          {% include "@components/_heading.twig" with {
+            heading_attributes: create_attribute().addClass('author-name'),
+            heading: node.getTitle()
+          } %}
           <p>{{ content.field_a_biography|field_value }}</p>
         </div> <!-- End of author-text -->
       </div> <!-- End of author-info-container -->
     </div> <!-- End of author-container -->
-    <h2>My Content</h2>
+    {% include "@components/_heading.twig" with {
+      heading: 'My Content'
+    } %}
     {{ bamboo_render_views('author_content') }}
-  </div> <!-- End of author-body -->
+  </div>
 </article>
