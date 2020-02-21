@@ -32,6 +32,6 @@
             "libraries/{$name}": [
                 "type:npm-asset"
             ]
-        },
+        }
     }
 }
