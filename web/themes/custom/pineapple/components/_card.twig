@@ -3,8 +3,8 @@
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
   card_type,
-]) %}
-<div {{ attributes.setAttribute('data-card', '') }}>
+]).setAttribute('data-card', '') %}
+<div {{ attributes }}>
   <div class="card-image-container {{ image_hidden ? 'hidden' }}">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
     {% if tag %}
