@@ -4,6 +4,16 @@
   height: 100%;
   overflow: hidden;
 
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: darken($light-gray, 5%);
+
+    .card-image-container {
+      opacity: 0.9;
+    }
+  }
+
   .card-content {
     width: 100%;
     padding: $unit * 3;

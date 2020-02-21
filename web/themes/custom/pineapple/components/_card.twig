@@ -1,8 +1,9 @@
+{{ attach_library('pineapple/card') }}
 {% set card_type = card_type|default('horizontal') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
   card_type,
-]) %}
+]).setAttribute('data-card', '') %}
 <div {{ attributes }}>
   <div class="card-image-container {{ image_hidden ? 'hidden' }}">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
