@@ -83,7 +83,11 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <h1{{ title_attributes.addClass('page-title') }}>{{ label }}</h1>
+    {% include "@components/_heading.twig" with {
+      heading_level: '1',
+      heading_attributes: create_attribute().addClass('page-title'),
+      heading: label
+    } %}
   {% endif %}
   {{ title_suffix }}
   <div class="row">

@@ -24,7 +24,13 @@
         {% endfor %}
       </div>
     {% endif %}
-    <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
+    {% set title_link %}
+      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+    {% endset %}
+    {% include "@components/_heading.twig" with {
+      heading_level: '2',
+      heading: title_link
+    } %}
     {% if date_posted %}
       <p>{{ date_posted }}</p>
     {% endif %}
