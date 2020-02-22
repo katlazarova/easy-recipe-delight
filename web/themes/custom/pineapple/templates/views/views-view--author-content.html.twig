@@ -30,9 +30,19 @@
  * @see template_preprocess_views_view()
  */
 #}
-{% include "@components/_view.twig" with {
-  row_attributes: create_attribute().addClass([
-    'teaser-collection-container',
-    'vertical'
-  ])
-}%}
+{% if rows %}
+  {% include "@components/_heading.twig" with {
+    heading_level: '2',
+    heading: 'My Content'
+  } %}
+  {% include "@components/_view.twig" with {
+    row_attributes: create_attribute().addClass([
+      'teaser-collection-container',
+      'vertical'
+    ])
+  }%}
+{% else %}
+  <div class="no-content-text">
+    <p>I don't have any content at the moment. Please come back soon...</p>
+  </div>
+{% endif %}
