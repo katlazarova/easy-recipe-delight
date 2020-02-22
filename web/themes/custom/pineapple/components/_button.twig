@@ -1,6 +1,7 @@
-{% set button_attributes = create_attribute() %}
-{% set button_attributes = button_attributes.addClass([
+{% set button_attributes = button_attributes|default(create_attribute()).addClass([
   'button',
-  button_type|default('button-link'),
+  button_type|default('button--primary'),
 ]) %}
-<a href="{{ button_url }}" {{ button_attributes }}>{{ button_text }}</a>
+<div {{ button_attributes }}>
+  <a class="button-link" href="{{ button_url }}">{{ button_text }}</a>
+</div>
