@@ -84,9 +84,8 @@
   {{ title_prefix }}
   {% if label %}
     {% include "@components/_heading.twig" with {
-      heading_level: '1',
-      heading_attributes: create_attribute().addClass('page-title'),
-      heading: label
+      heading_level: 1,
+      heading_text: label
     } %}
   {% endif %}
   {{ title_suffix }}

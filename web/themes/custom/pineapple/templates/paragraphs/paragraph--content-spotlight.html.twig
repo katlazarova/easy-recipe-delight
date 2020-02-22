@@ -50,7 +50,8 @@
   <div{{ attributes.addClass(classes, 'u-o-2') }}>
     {% block content %}
       {% include "@components/_heading.twig" with {
-        heading: content.field_p_cs_heading|field_value
+        heading_text: content.field_p_cs_heading|field_value,
+        heading_level: 2
       } %}
       {{ content.field_p_cs_content }}
     {% endblock %}

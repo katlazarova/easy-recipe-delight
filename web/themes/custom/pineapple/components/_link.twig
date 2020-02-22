@@ -1,0 +1,2 @@
+{% set link_attributes = link_attributes|default(create_attribute()) %}
+<a {{ link_attributes }} href="{{ link_url }}">{{ link_text }}</a>
