@@ -83,18 +83,26 @@
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
     <div{{ content_attributes.addClass('u-o-4') }}>
-        {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
-        {% set author_link %}
-          <a href="{{ content.field_author|field_value|first['#node'].url }}">
-            {{ content.field_author|field_value|first['#node'].getTitle() }}
-          </a>
-        {% endset %}
-        {% include "@components/_hero-image.twig" with {
-          image_url: hero_url,
-          title: label,
-          subtext: author_link
+      {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
+      {% set author_link %}
+        <a href="{{ content.field_author|field_value|first['#node'].url }}">
+          {{ content.field_author|field_value|first['#node'].getTitle() }}
+        </a>
+      {% endset %}
+      {% include "@components/_hero-image.twig" with {
+        image_url: hero_url,
+        title: label,
+        subtext: author_link
+      } %}
+      {{ content.field_a_summary }}
+      {{ content.field_a_body }}
+      <div class="by-line">
+        <p>Written By: </p>
+        {% include "@components/_link.twig" with {
+          link_attributes: create_attribute().addClass('author-link'),
+          link_url: content.field_author|field_value|first['#node'].url,
+          link_text: content.field_author|field_value|first['#node'].getTitle()
         } %}
-        {{ content.field_a_summary }}
-        {{ content.field_a_body }}
+      </div>
     </div>
 </article>
