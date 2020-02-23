@@ -1,7 +1,8 @@
 {% set content_url = content_url|default('') %}
 {% set hero_attributes = hero_attributes|default(create_attribute()).addClass([
   'hero-container',
-  'breakout'
+  'breakout',
+  content_url ? 'hero-clickable'
 ]) %}
 {% if content_url %}
   {% set url_prefix %}

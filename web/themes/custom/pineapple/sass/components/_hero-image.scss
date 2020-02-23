@@ -12,6 +12,13 @@
     }
   }
 
+  &.hero-clickable {
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+  }
+
   .hero-image {
     height: 100%;
     width: 100%;
