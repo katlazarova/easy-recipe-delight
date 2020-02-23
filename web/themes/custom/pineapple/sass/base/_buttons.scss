@@ -7,6 +7,7 @@
   margin-right: 0;
   margin-left: 0;
   display: inline-block;
+  border: thin solid $primary;
 
   &:hover,
   &:focus {
@@ -23,7 +24,7 @@
 }
 
 .button--primary {
-  border: thin solid $primary;
+  border: none;
 
   &:hover,
   &:focus {
@@ -41,6 +42,7 @@
 
 .button--secondary {
   background-color: $gray;
+  border: none;
 
   &:hover,
   &:focus {
@@ -50,6 +52,7 @@
 
 .button--tertiary {
   background-color: $secondary;
+  border: none;
 
   &:hover,
   &:focus {
@@ -59,6 +62,7 @@
 
 .button--quaternary {
   background-color: $primary;
+  border: none;
 
   &:hover,
   &:focus {
@@ -77,6 +81,7 @@
 
 .button-link-variant {
   background: none;
+  border: none;
   color: $primary;
   font-weight: 800;
   padding: 0;
