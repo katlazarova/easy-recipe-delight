@@ -97,6 +97,12 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
   }
 }
 
+function pineapple_general_preprocess_webform(&$vars) {
+  $wfid = $vars['element']['#webform_id'];
+  $wf = \Drupal\webform\Entity\Webform::load($wfid);
+  $vars['title'] = $wf->label();
+}
+
 /**
  * Set dynamic allowed values for the content author field(s).
  *
