@@ -7,16 +7,6 @@
   margin-right: 0;
   margin-left: 0;
   display: inline-block;
-
-  &:hover,
-  &:focus {
-    background-color: $primary;
-    color: $white;
-  }
-}
-
-.button--primary {
-  color: $primary;
   border: thin solid $primary;
 
   &:hover,
@@ -24,11 +14,35 @@
     background-color: $primary;
     color: $white;
   }
+
+  .button-link {
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.button--primary {
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+
+    .button-link {
+      color: $white;
+    }
+  }
+
+  .button-link {
+    color: $primary;
+  }
 }
 
 .button--secondary {
   background-color: $gray;
-  color: $white;
+  border: none;
 
   &:hover,
   &:focus {
@@ -38,7 +52,7 @@
 
 .button--tertiary {
   background-color: $secondary;
-  color: $white;
+  border: none;
 
   &:hover,
   &:focus {
@@ -46,16 +60,67 @@
   }
 }
 
-a.button-link {
+.button--quaternary {
   background-color: $primary;
-  padding: $unit * 2;
-  display: inline-block;
-  color: $white;
+  border: none;
 
   &:hover,
   &:focus {
     background-color: $secondary;
+  }
+}
+
+.button-link {
+  color: $white;
+
+  &:hover,
+  &:focus {
     color: $white;
-    text-decoration: underline;
+  }
+}
+
+.button-link-variant {
+  background: none;
+  border: none;
+  color: $primary;
+  font-weight: 800;
+  padding: 0;
+  padding-bottom: $unit;
+  margin: 0;
+  margin-top: $unit;
+
+  &:hover,
+  &:focus {
+    background: none;
+
+    .button-link {
+      color: $secondary;
+      text-decoration: none;
+
+      &:after {
+        background-color: $secondary;
+      }
+    }
+  }
+
+  .button-link {
+    padding-bottom: $unit;
+    color: $primary;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 400%;
+      height: 2px;
+      content: "";
+      background-color: $primary;
+      opacity: .75;
+      will-change: transform;
+    }
   }
 }

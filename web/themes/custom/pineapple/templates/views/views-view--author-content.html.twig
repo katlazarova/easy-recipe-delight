@@ -30,6 +30,12 @@
  * @see template_preprocess_views_view()
  */
 #}
+{% if rows %}
+  {% include "@components/_heading.twig" with {
+    heading_level: 2,
+    heading_text: 'My Content'
+  } %}
+{% endif %}
 {% include "@components/_view.twig" with {
   row_attributes: create_attribute().addClass([
     'teaser-collection-container',

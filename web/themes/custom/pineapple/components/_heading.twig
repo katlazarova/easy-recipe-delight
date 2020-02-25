@@ -1,0 +1,10 @@
+{% set heading_level = heading_level|default(3) %}
+{% set heading_attributes = heading_attributes|default(create_attribute()).addClass([
+  heading_level == 1 ? 'page-title'
+]) %}
+
+{% if heading_url %}
+<h{{ heading_level }}>{% include "@components/_link.twig" %}</h{{ heading_level }}>
+{% else %}
+  <h{{ heading_level }} {{ heading_attributes }}>{{ heading_text }}</h{{ heading_level }}>
+{% endif %}

@@ -82,7 +82,10 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  <h1{{ title_attributes.addClass('page-title') }}>Recipes</h1>
+  {% include "@components/_heading.twig" with {
+    heading_level: 1,
+    heading_text: 'Recipes'
+  } %}
   <div{{ content_attributes.addClass('node__content') }}>
     {% set hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
     {% include "@components/_hero-image.twig" with {

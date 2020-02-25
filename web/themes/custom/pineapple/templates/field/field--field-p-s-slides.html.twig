@@ -48,7 +48,10 @@
   {% endif %}
   <div class="swiper-slide" style="background-image:url({{ image_url }})">
     <div class="swiper-text">
-        <h2>{{ node.getTitle() }}</h2>
+      {% include "@components/_heading.twig" with {
+        heading_level: 2,
+        heading_text: node.getTitle()
+      } %}
         <p>{{ summary }}</p>
         <div class="swiper-button">
           {% include "@components/_button.twig" with {
