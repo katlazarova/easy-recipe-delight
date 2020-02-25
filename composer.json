@@ -28,6 +28,7 @@
         "drupal/core": "8.7.0",
         "drupal/devel": "^2.1",
         "drupal/easy_breadcrumb": "^1.12",
+        "drupal/honeypot": "^1.30",
         "drupal/maxlength": "^1.0@beta",
         "drupal/paragraphs": "^1.10",
         "drupal/pathauto": "^1.6",
