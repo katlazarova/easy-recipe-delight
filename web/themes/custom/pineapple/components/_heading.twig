@@ -3,8 +3,10 @@
   heading_level == 1 ? 'page-title'
 ]) %}
 
-{% if heading_url %}
-<h{{ heading_level }}>{% include "@components/_link.twig" %}</h{{ heading_level }}>
-{% else %}
-  <h{{ heading_level }} {{ heading_attributes }}>{{ heading_text }}</h{{ heading_level }}>
-{% endif %}
+<h{{ heading_level }}>
+  {% if heading_url %}
+    {% include "@components/_link.twig" %}
+  {% else %}
+    {{ heading_attributes }}>{{ heading_text }}
+  {% endif %}
+</h{{ heading_level }}>
