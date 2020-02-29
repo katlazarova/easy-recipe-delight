@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% set input_type = input_type|default(attributes.toArray()['type']) %}
+{%
+  set classes = [
+  input_type in ['text', 'password', 'search', 'email', 'date', 'url', 'number', 'time', 'tel'] ? single_line_field_classes|default('form-control'),
+  input_type in ['submit', 'reset'] ? button_classes|default('button button--primary'),
+  input_type in ['file'] ? 'form-control-file',
+  input_type in ['checkbox', 'radio'] ? 'custom-control-input',
+]
+%}
+{% set attributes = attributes.addClass(classes) %}
+
+{% if attributes.toArray()['id'] ends with '__output' %}
+  {# If the input fields id ends with __output we remove the form control form because input is coming from webform and we don't want it styled #}
+  {% set attributes = attributes.removeClass('form-control') %}
+{% endif %}
+
+{% if attributes.hasClass('error') %}
+  {% set attributes = attributes.addClass(['is-invalid']) %}
+{% endif %}
+<input{{ attributes }} />{{ children }}
