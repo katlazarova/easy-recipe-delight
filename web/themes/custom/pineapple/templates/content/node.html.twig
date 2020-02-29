@@ -89,8 +89,8 @@
       heading_attributes: title_attributes,
       heading_url: true,
       heading_text: label,
-      link_attributes: createAttribute().setAttributes('rel', 'bookmark'),
-      link_url: url
+      heading_url: url,
+      link_attributes: createAttribute().setAttributes('rel', 'bookmark')
     } %}
   {% endif %}
   {{ title_suffix }}

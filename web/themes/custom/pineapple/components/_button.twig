@@ -5,11 +5,9 @@
 
 {% if button_url %}
   {% set button_element = 'a' %}
-  {% set anchor_link %}
-    href="{{ button_url }}"
-  {% endset %}
+  {% set button_attributes = button_attributes.setAttribute('href', button_url) %}
 {% else %}
   {% set button_element = 'button' %}
 {% endif %}
 
-<{{ button_element }} {{ button_attributes }} {{ anchor_link }}>{{ button_text }}</{{ button_element }}>
+<{{ button_element }} {{ button_attributes }}>{{ button_text }}</{{ button_element }}>
