@@ -27,9 +27,9 @@
     {% include "@components/_heading.twig" with {
       heading_level: 2,
       heading_url: true,
+      heading_text: title,
       link_attributes: create_attribute().setAttribute('rel', 'bookmark'),
-      link_url: url,
-      link_text: title
+      heading_url: url
     } %}
     {% if date_posted %}
       <p>{{ date_posted }}</p>
@@ -37,7 +37,8 @@
     <p>{{ card_body }}</p>
     {% include "@components/_button.twig" with {
       button_url: url,
-      button_text: button_text
+      button_text: button_text,
+      button_type: button_type
     } %}
   </div>
 </div>
