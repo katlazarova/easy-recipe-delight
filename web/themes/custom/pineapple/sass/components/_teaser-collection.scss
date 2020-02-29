@@ -4,8 +4,8 @@
   flex-direction: row;
 
   &.vertical {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -$unit *2;
+    margin-right: -$unit *2;
   }
 
   .collection-row {
@@ -15,8 +15,8 @@
 
     &.vertical {
       margin-bottom: $unit * 4;
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: $unit *2;
+      padding-right: $unit *2;
 
       @include breakpoint($lap) {
         flex: 0 0 50%;

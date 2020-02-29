@@ -129,6 +129,7 @@ function button_color_select_list_values(FieldStorageConfig $definition, Content
     'primary' => 'Primary',
     'secondary' => 'Secondary',
     'tertiary' => 'Tertiary',
+    'underlined' => 'Underlined'
   ];
 
   return $options;

@@ -1,51 +1,36 @@
 .button {
   cursor: pointer;
-  color: $primary;
   padding: 0.8rem 1rem;
   vertical-align: middle;
   transition: 0.5s;
   margin-right: 0;
   margin-left: 0;
   display: inline-block;
-  border: thin solid $primary;
+  border: 1px solid $primary;
+  color: $white;
 
   &:hover,
   &:focus {
-    background-color: $primary;
     color: $white;
-  }
-
-  .button-link {
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
   }
 }
 
 .button--primary {
+  color: $primary;
 
   &:hover,
   &:focus {
     background-color: $primary;
-
-    .button-link {
-      color: $white;
-    }
-  }
-
-  .button-link {
-    color: $primary;
   }
 }
 
 .button--secondary {
-  background-color: $gray;
+  background-color: $primary;
   border: none;
 
   &:hover,
   &:focus {
-    cursor: pointer;
+    background-color: $secondary;
   }
 }
 
@@ -59,67 +44,33 @@
   }
 }
 
-.button--quaternary {
-  background-color: $primary;
-  border: none;
-
-  &:hover,
-  &:focus {
-    background-color: $secondary;
-  }
-}
-
-.button-link {
-  color: $white;
-
-  &:hover,
-  &:focus {
-    color: $white;
-  }
-}
-
-.button-link-variant {
-  background: none;
+.button--underlined {
   border: none;
   color: $primary;
   font-weight: 800;
+  position: relative;
   padding: 0;
   padding-bottom: $unit;
-  margin: 0;
-  margin-top: $unit;
 
   &:hover,
   &:focus {
-    background: none;
+    color: $secondary;
+    text-decoration: none;
 
-    .button-link {
-      color: $secondary;
-      text-decoration: none;
-
-      &:after {
-        background-color: $secondary;
-      }
+    &:after {
+      background-color: $secondary;
     }
   }
 
-  .button-link {
-    padding-bottom: $unit;
-    color: $primary;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-
-    &:after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 400%;
-      height: 2px;
-      content: "";
-      background-color: $primary;
-      opacity: .75;
-      will-change: transform;
-    }
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    content: "";
+    background-color: $primary;
+    opacity: .75;
+    will-change: transform;
   }
 }
