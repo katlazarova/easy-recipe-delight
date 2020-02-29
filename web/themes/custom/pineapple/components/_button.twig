@@ -2,6 +2,14 @@
   'button',
   button_type|default('button--primary'),
 ]) %}
-<div {{ button_attributes }}>
-  <a class="button-link" href="{{ button_url }}">{{ button_text }}</a>
-</div>
+
+{% if button_url %}
+  {% set button_element = 'a' %}
+  {% set anchor_link %}
+    href="{{ button_url }}"
+  {% endset %}
+{% else %}
+  {% set button_element = 'button' %}
+{% endif %}
+
+<{{ button_element }} {{ button_attributes }} {{ anchor_link }}>{{ button_text }}</{{ button_element }}>

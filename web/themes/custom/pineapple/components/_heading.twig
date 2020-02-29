@@ -5,7 +5,11 @@
 
 <h{{ heading_level }} {{ heading_attributes }}>
   {% if heading_url %}
-    {% include "@components/_link.twig" %}
+    {% include "@components/_link.twig" with {
+      link_text: heading_text,
+      link_attributes: link_attributes,
+      link_url: link_url
+    } %}
   {% else %}
     {{ heading_text }}
   {% endif %}

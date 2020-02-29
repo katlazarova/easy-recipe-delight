@@ -88,9 +88,9 @@
     {% include "@components/_heading.twig" with {
       heading_attributes: title_attributes,
       heading_url: true,
+      heading_text: label,
       link_attributes: createAttribute().setAttributes('rel', 'bookmark'),
-      link_url: url,
-      link_text: label
+      link_url: url
     } %}
   {% endif %}
   {{ title_suffix }}
