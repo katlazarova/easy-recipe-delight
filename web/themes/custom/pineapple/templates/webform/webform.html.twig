@@ -21,12 +21,4 @@
  * @ingroup themeable
  */
 #}
-{% include "@components/_heading.twig" with {
-  heading_text: title,
-  heading_level: 2
-} %}
-<form{{ attributes }}>
-  {{ title_prefix }}
-  {{ children }}
-  {{ title_suffix }}
-</form>
+{% include "@components/_webform.twig" %}

@@ -11,7 +11,6 @@ dependencies:
     - paragraphs.paragraphs_type.image_paragraph
     - paragraphs.paragraphs_type.rich_text
     - paragraphs.paragraphs_type.slideshow
-    - paragraphs.paragraphs_type.webform_embed
   module:
     - entity_reference_revisions
 id: paragraph.components.field_p_c_component
@@ -35,7 +34,6 @@ settings:
       slideshow: slideshow
       content_spotlight: content_spotlight
       image_grid: image_grid
-      webform_embed: webform_embed
     target_bundles_drag_drop:
       components:
         weight: -7
@@ -71,6 +69,6 @@ settings:
         weight: 23
         enabled: false
       webform_embed:
-        enabled: true
         weight: 24
+        enabled: false
 field_type: entity_reference_revisions
