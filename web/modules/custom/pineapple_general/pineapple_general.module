@@ -98,6 +98,15 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
 }
 
 /**
+ * Implements hook_preprocess_webform().
+ */
+function pineapple_general_preprocess_webform(&$variables) {
+  $wfid = $variables['element']['#webform_id'];
+  $wf = \Drupal\webform\Entity\Webform::load($wfid);
+  $variables['title'] = $wf->label();
+}
+
+/**
  * Set dynamic allowed values for the content author field(s).
  *
  * @param \Drupal\field\Entity\FieldStorageConfig $definition
