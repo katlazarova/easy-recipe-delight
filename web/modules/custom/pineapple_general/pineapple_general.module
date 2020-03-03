@@ -93,7 +93,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
           }
         }
       }
-      break;
+    break;
   }
 }
 
