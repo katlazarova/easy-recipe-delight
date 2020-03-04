@@ -1,4 +1,4 @@
-.button {
+.btn {
   cursor: pointer;
   padding: 0.8rem 1rem;
   vertical-align: middle;
@@ -15,7 +15,7 @@
   }
 }
 
-.button--primary {
+.btn--primary {
   color: $primary;
 
   &:hover,
@@ -24,7 +24,7 @@
   }
 }
 
-.button--secondary {
+.btn--secondary {
   background-color: $primary;
   border: none;
 
@@ -34,7 +34,7 @@
   }
 }
 
-.button--tertiary {
+.btn--tertiary {
   background-color: $secondary;
   border: none;
 
@@ -44,7 +44,7 @@
   }
 }
 
-.button--underlined {
+.btn--underlined {
   border: none;
   color: $primary;
   font-weight: 800;

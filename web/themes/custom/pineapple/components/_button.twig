@@ -1,6 +1,6 @@
 {% set button_attributes = button_attributes|default(create_attribute()).addClass([
-  'button',
-  button_type|default('button--primary'),
+  'btn',
+  'btn--' ~ button_type|default('primary')
 ]) %}
 
 {% if button_url %}
