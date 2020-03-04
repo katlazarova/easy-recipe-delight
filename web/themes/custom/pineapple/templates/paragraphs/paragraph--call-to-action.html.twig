@@ -52,7 +52,7 @@
         {% include "@components/_button.twig" with {
           button_text: content.field_p_cta_button|field_value|first['#title'],
           button_url: content.field_p_cta_button|field_value|first['#url']|render,
-          button_type: content.field_p_cta_button_color|field_value ? 'btn--' ~ content.field_p_cta_button_color|field_value|first['#markup']|clean_class,
+          button_type: content.field_p_cta_button_color|field_value ? content.field_p_cta_button_color|field_value|first['#markup']|clean_class
         } %}
     {% endblock %}
   </div>
