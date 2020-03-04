@@ -14,7 +14,7 @@
 {%
   set classes = [
   input_type in ['text', 'password', 'search', 'email', 'date', 'url', 'number', 'time', 'tel'] ? single_line_field_classes|default('form-control'),
-  input_type in ['submit', 'reset'] ? button_classes|default('button button--primary'),
+  input_type in ['submit', 'reset'] ? button_classes|default('btn btn--primary'),
   input_type in ['file'] ? 'form-control-file',
   input_type in ['checkbox', 'radio'] ? 'custom-control-input',
 ]
