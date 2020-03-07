@@ -87,7 +87,6 @@
   {% if label and not page %}
     {% include "@components/_heading.twig" with {
       heading_attributes: title_attributes.addClass('page-title'),
-      heading_url: true,
       heading_text: label,
       heading_url: url,
       link_attributes: createAttribute().setAttributes('rel', 'bookmark')

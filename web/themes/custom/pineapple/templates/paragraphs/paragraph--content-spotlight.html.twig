@@ -51,7 +51,6 @@
     {% block content %}
       {% include "@components/_heading.twig" with {
         heading_text: content.field_p_cs_heading|field_value,
-        heading_attributes: create_attribute().addClass('subheading'),
         heading_level: 2
       } %}
       {{ content.field_p_cs_content }}
