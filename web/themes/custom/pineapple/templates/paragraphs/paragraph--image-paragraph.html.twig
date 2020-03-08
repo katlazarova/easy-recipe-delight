@@ -52,7 +52,6 @@
       {% set image_url = bamboo_render_image_style(content.field_p_ip_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527')%}
       {% include "@components/_hero-image.twig" with {
         image_url: image_url,
-        is_page_title: true,
         title: content.field_p_ip_caption|field_value
       } %}
     {% else %}
