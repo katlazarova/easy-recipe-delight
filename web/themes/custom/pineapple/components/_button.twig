@@ -1,6 +1,13 @@
-{% set button_attributes = create_attribute() %}
-{% set button_attributes = button_attributes.addClass([
-  'button',
-  button_type|default('button-link'),
+{% set button_attributes = button_attributes|default(create_attribute()).addClass([
+  'btn',
+  'btn--' ~ button_type|default('primary')
 ]) %}
-<a href="{{ button_url }}" {{ button_attributes }}>{{ button_text }}</a>
+
+{% if button_url %}
+  {% set button_element = 'a' %}
+  {% set button_attributes = button_attributes.setAttribute('href', button_url) %}
+{% else %}
+  {% set button_element = 'button' %}
+{% endif %}
+
+<{{ button_element }} {{ button_attributes }}>{{ button_text }}</{{ button_element }}>

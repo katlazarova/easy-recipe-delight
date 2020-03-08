@@ -1,8 +1,9 @@
+{{ attach_library('pineapple/card') }}
 {% set card_type = card_type|default('horizontal') %}
 {% set attributes = attributes|default(create_attribute()).addClass([
   'card-container',
   card_type,
-]) %}
+]).setAttribute('data-card', '') %}
 <div {{ attributes }}>
   <div class="card-image-container {{ image_hidden ? 'hidden' }}">
     <img src="{{ image_url }}" alt="{{ image_alt_text }}">
@@ -23,14 +24,21 @@
         {% endfor %}
       </div>
     {% endif %}
-    <h2><a href="{{ url }}" rel="bookmark">{{ title }}</a></h2>
+    {% include "@components/_heading.twig" with {
+      heading_level: heading_level,
+      heading_text: title,
+      heading_attributes: heading_level == 3 ? create_attribute().addClass('subheading'),
+      link_attributes: create_attribute().setAttribute('rel', 'bookmark'),
+      heading_url: url
+    } %}
     {% if date_posted %}
       <p>{{ date_posted }}</p>
     {% endif %}
     <p>{{ card_body }}</p>
     {% include "@components/_button.twig" with {
       button_url: url,
-      button_text: button_text
+      button_text: button_text,
+      button_type: button_type
     } %}
   </div>
 </div>

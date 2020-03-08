@@ -65,4 +65,10 @@ settings:
       method:
         weight: 16
         enabled: false
+      view_embed:
+        weight: 23
+        enabled: false
+      webform_embed:
+        weight: 24
+        enabled: false
 field_type: entity_reference_revisions

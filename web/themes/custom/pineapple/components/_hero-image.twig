@@ -1,7 +1,12 @@
 {% set content_url = content_url|default('') %}
 {% set hero_attributes = hero_attributes|default(create_attribute()).addClass([
   'hero-container',
-  'breakout'
+  'breakout',
+  content_url ? 'hero-clickable'
+]) %}
+{% set heading_level = heading_level|default(2) %}
+{% set heading_attributes = heading_attributes|default(create_attribute()).addClass([
+  heading_level == 2 ? 'page-title'
 ]) %}
 {% if content_url %}
   {% set url_prefix %}
@@ -21,8 +26,13 @@
           </div>
         {% endif %}
         {% if title %}
-          <div class="page-title">
-            <h1>{{ title }}</h1>
+          <div class="hero-title">
+            {% include "@components/_heading.twig" with {
+              heading_level: heading_level,
+              heading_text: title,
+              heading_attributes: heading_attributes,
+              is_page_title: true
+            } %}
           </div>
         {% endif %}
         {% if subtext %}

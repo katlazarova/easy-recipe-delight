@@ -1,4 +1,6 @@
 .views-exposed-form {
+  padding-top: 0;
+
   .form--inline {
     display: flex;
     flex-direction: column;
@@ -48,7 +50,12 @@
       }
     }
 
-    .button {
+    .form-item-featured-value {
+      padding-bottom: $unit;
+      padding-left: $unit;
+    }
+
+    .btn {
       background-color: $secondary;
       color: white;
 

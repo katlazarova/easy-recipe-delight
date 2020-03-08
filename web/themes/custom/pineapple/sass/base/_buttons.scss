@@ -1,44 +1,42 @@
-.button {
+.btn {
   cursor: pointer;
-  color: $primary;
   padding: 0.8rem 1rem;
   vertical-align: middle;
   transition: 0.5s;
   margin-right: 0;
   margin-left: 0;
   display: inline-block;
+  border: 1px solid $primary;
+  color: $white;
 
   &:hover,
   &:focus {
-    background-color: $primary;
     color: $white;
   }
 }
 
-.button--primary {
+.btn--primary {
   color: $primary;
-  border: thin solid $primary;
 
   &:hover,
   &:focus {
     background-color: $primary;
-    color: $white;
   }
 }
 
-.button--secondary {
-  background-color: $gray;
-  color: $white;
+.btn--secondary {
+  background-color: $primary;
+  border: none;
 
   &:hover,
   &:focus {
-    cursor: pointer;
+    background-color: $secondary;
   }
 }
 
-.button--tertiary {
+.btn--tertiary {
   background-color: $secondary;
-  color: $white;
+  border: none;
 
   &:hover,
   &:focus {
@@ -46,16 +44,33 @@
   }
 }
 
-a.button-link {
-  background-color: $primary;
-  padding: $unit * 2;
-  display: inline-block;
-  color: $white;
+.btn--underlined {
+  border: none;
+  color: $primary;
+  font-weight: 800;
+  position: relative;
+  padding: 0;
+  padding-bottom: $unit;
 
   &:hover,
   &:focus {
-    background-color: $secondary;
-    color: $white;
-    text-decoration: underline;
+    color: $secondary;
+    text-decoration: none;
+
+    &:after {
+      background-color: $secondary;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    content: "";
+    background-color: $primary;
+    opacity: .75;
+    will-change: transform;
   }
 }

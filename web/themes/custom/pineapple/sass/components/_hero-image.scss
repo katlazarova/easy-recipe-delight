@@ -12,6 +12,13 @@
     }
   }
 
+  &.hero-clickable {
+    &:hover,
+    &:focus {
+      opacity: 0.9;
+    }
+  }
+
   .hero-image {
     height: 100%;
     width: 100%;
@@ -33,7 +40,7 @@
 
     .hero-image-content {
 
-      .page-title {
+      .hero-title {
         padding: $unit * 2;
         background-color: transparentize($primary, 0.2);
         font-size: $xlarge-font;
@@ -42,8 +49,9 @@
         text-align: left;
         color: $white;
 
-        h1 {
+        .page-title {
           margin: 0;
+          color: $white;
         }
       }
 

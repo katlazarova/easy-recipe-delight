@@ -197,7 +197,20 @@ display:
           granularity: second
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'I don''t have any content at the moment. Please come back soon...'
+            format: basic_html
+          plugin_id: text
       relationships: {  }
       arguments:
         field_author_target_id:

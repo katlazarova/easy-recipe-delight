@@ -73,8 +73,10 @@
 {{ attach_library('classy/node') }}
 {% if parent_entity_type == 'content_spotlight' or view.element['#name'] == 'author_content'  %}
   {% set card_layout = 'vertical' %}
+  {% set heading_level = 3 %}
 {% else %}
   {% set card_layout = 'horizontal' %}
+  {% set heading_level = 2 %}
 {% endif %}
 
 {% if content.field_a_teaser_image|field_value %}
@@ -92,7 +94,9 @@
   image_alt_text: image_alt_text,
   url: url,
   title: label,
+  heading_level: heading_level,
   date_posted: node.getCreatedTime()|date('jS F Y'),
   card_body: content.field_a_summary|field_value,
+  button_type: 'secondary',
   button_text: 'Read Article >'
 } %}
