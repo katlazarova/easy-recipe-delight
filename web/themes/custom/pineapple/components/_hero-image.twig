@@ -4,6 +4,10 @@
   'breakout',
   content_url ? 'hero-clickable'
 ]) %}
+{% set heading_level = heading_level|default(2) %}
+{% set heading_attributes = heading_attributes|default(create_attribute()).addClass([
+  heading_level == 2 ? 'page-title'
+]) %}
 {% if content_url %}
   {% set url_prefix %}
     <a href="{{ content_url }}">
