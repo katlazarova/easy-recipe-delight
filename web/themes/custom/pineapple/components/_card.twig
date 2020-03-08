@@ -25,9 +25,9 @@
       </div>
     {% endif %}
     {% include "@components/_heading.twig" with {
-      heading_level: 2,
-      heading_url: true,
+      heading_level: heading_level,
       heading_text: title,
+      heading_attributes: heading_level == 3 ? create_attribute().addClass('subheading'),
       link_attributes: create_attribute().setAttribute('rel', 'bookmark'),
       heading_url: url
     } %}

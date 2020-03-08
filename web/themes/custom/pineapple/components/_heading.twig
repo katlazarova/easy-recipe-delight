@@ -1,6 +1,8 @@
 {% set heading_level = heading_level|default(3) %}
+{% set is_page_title =  is_page_title|default(heading_level == 1 ? true) %}
 {% set heading_attributes = heading_attributes|default(create_attribute()).addClass([
-  heading_level == 1 ? 'page-title'
+  heading_level == 1 ? 'page-title',
+  heading_level == 2 and not is_page_title ? 'subheading'
 ]) %}
 
 <h{{ heading_level }} {{ heading_attributes }}>
