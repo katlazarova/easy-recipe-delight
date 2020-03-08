@@ -7,5 +7,5 @@ logo:
   use_default: 1
 favicon:
   use_default: 0
-  path: 'public://Screenshot 2020-03-08 at 13.05.19.png'
+  path: 'public://easy-recipe-delight-favicon.png'
   mimetype: image/png
