@@ -1,0 +1,11 @@
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 0
+  path: 'public://Screenshot 2020-03-08 at 13.05.19.png'
+  mimetype: image/png
