@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.view_embed.field_p_ve_view
     - paragraphs.paragraphs_type.view_embed
+  module:
+    - viewsreference
 id: paragraph.view_embed.default
 targetEntityType: paragraph
 bundle: view_embed
@@ -14,10 +16,10 @@ content:
     weight: 0
     settings:
       match_operator: CONTAINS
-      size: 60
+      size: '60'
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: viewsreference_autocomplete
     region: content
 hidden:
   created: true
