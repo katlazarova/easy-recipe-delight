@@ -1,13 +1,15 @@
-uuid: bf302bd9-f2cf-4832-af91-1c9eaf9561bc
+uuid: dd4d3b0d-c87c-4a43-95be-83fdbbb4a36e
 langcode: en
 status: false
 dependencies: {  }
-id: field_ui_split
-label: 'Field UI split'
+id: development
+label: Development
 description: ''
 folder: ../config/splits/development
 module:
+  devel: 0
   field_ui: 0
+  views_ui: 0
 theme: {  }
 blacklist: {  }
 graylist: {  }
