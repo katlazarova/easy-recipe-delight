@@ -32,8 +32,6 @@ visibility:
       anonymous: anonymous
       authenticated: authenticated
       administrator: administrator
-      content_administrator: content_administrator
-      content_editor: content_editor
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
