@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.view_embed.field_p_ve_view
     - paragraphs.paragraphs_type.view_embed
+  module:
+    - viewsreference
 id: paragraph.view_embed.default
 targetEntityType: paragraph
 bundle: view_embed
@@ -14,8 +16,9 @@ content:
     weight: 0
     label: hidden
     settings:
-      link: true
+      plugin_types:
+        - block
     third_party_settings: {  }
-    type: entity_reference_label
+    type: viewsreference_formatter
     region: content
 hidden: {  }
