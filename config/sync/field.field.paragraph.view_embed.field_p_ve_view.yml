@@ -1,10 +1,12 @@
-uuid: efe69103-c27a-4080-a068-0f594c02a27f
+uuid: d017aafc-e94e-4799-a7ea-8991588bec37
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_p_ve_view
     - paragraphs.paragraphs_type.view_embed
+  module:
+    - viewsreference
 id: paragraph.view_embed.field_p_ve_view
 field_name: field_p_ve_view
 entity_type: paragraph
@@ -19,5 +21,32 @@ settings:
   handler: 'default:view'
   handler_settings:
     target_bundles: null
-    auto_create: false
-field_type: entity_reference
+    auto_create: 0
+  plugin_types:
+    embed: embed
+    default: 0
+    page: 0
+    block: 0
+    feed: 0
+  preselect_views:
+    articles: 0
+    authors: 0
+    author_content: 0
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    featured_recipe: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_library: 0
+    moderated_content: 0
+    recipes: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference

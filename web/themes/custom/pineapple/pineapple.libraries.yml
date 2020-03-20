@@ -8,6 +8,7 @@ menu:
     assets/js/menu.behavior.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
     - core/drupal
     - pineapple/lodash
 
@@ -22,10 +23,10 @@ scroll-to-filters:
 card:
   js:
     assets/js/card.behavior.js: {}
-    dependencies:
-      - core/jquery
-      - core/drupal
-      - core/jquery.once
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
 
 vue:
   header: true
