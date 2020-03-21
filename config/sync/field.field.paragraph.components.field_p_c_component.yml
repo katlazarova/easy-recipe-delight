@@ -28,47 +28,47 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      image_paragraph: image_paragraph
       rich_text: rich_text
+      image_paragraph: image_paragraph
       call_to_action: call_to_action
       slideshow: slideshow
       content_spotlight: content_spotlight
       image_grid: image_grid
     target_bundles_drag_drop:
       components:
-        weight: -7
+        weight: -25
         enabled: false
-      image_paragraph:
-        enabled: true
-        weight: -6
       rich_text:
         enabled: true
-        weight: -5
+        weight: -24
+      image_paragraph:
+        enabled: true
+        weight: -23
       call_to_action:
         enabled: true
-        weight: 5
+        weight: -22
       slideshow:
         enabled: true
-        weight: 10
+        weight: -21
       grid_item:
-        weight: 12
+        weight: -20
         enabled: false
       content_spotlight:
         enabled: true
-        weight: 13
+        weight: -19
       image_grid:
         enabled: true
-        weight: 13
+        weight: -18
       instruction:
-        weight: 15
+        weight: -17
         enabled: false
       method:
-        weight: 16
+        weight: -16
         enabled: false
       view_embed:
-        weight: 23
+        weight: -15
         enabled: false
       webform_embed:
-        weight: 24
+        weight: -14
         enabled: false
 field_type: entity_reference_revisions
