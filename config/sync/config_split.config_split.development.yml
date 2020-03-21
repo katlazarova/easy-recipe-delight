@@ -9,7 +9,6 @@ folder: ../config/splits/development
 module:
   devel: 0
   field_ui: 0
-  production_checklist: 0
   views_ui: 0
 theme: {  }
 blacklist: {  }

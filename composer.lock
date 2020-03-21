@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d9ef7db67a183e1ed04ebedd1489e49",
+    "content-hash": "9e56403a48223356474e9f110a0ade0b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2324,53 +2324,6 @@
             }
         },
         {
-            "name": "drupal/checklistapi",
-            "version": "1.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/checklistapi.git",
-                "reference": "8.x-1.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/checklistapi-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "9f9e39613e50f649b0a0e06b7ec5d056c795c27b"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1553692687",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TravisCarden",
-                    "homepage": "https://www.drupal.org/user/236758"
-                }
-            ],
-            "description": "Provides an API for creating fillable, persistent checklists.",
-            "homepage": "https://www.drupal.org/project/checklistapi",
-            "support": {
-                "source": "https://git.drupalcode.org/project/checklistapi"
-            }
-        },
-        {
             "name": "drupal/components",
             "version": "1.1.0",
             "source": {
@@ -3771,58 +3724,6 @@
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
                 "source": "https://git.drupalcode.org/project/pathauto"
-            }
-        },
-        {
-            "name": "drupal/production_checklist",
-            "version": "1.0.0-alpha3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/production_checklist.git",
-                "reference": "8.x-1.0-alpha3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/production_checklist-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
-                "shasum": "a59c05756da31fb986f6fc111054ed8fb5d30cde"
-            },
-            "require": {
-                "drupal/checklistapi": "~1.7",
-                "drupal/core": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-alpha3",
-                    "datestamp": "1549636422",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "colorfield",
-                    "homepage": "https://www.drupal.org/user/2295486"
-                }
-            ],
-            "description": "A checklist for site launch and maintenance based on the active configuration.",
-            "homepage": "https://www.drupal.org/project/production_checklist",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/production_checklist",
-                "issues": "https://www.drupal.org/project/issues/production_checklist"
             }
         },
         {
@@ -10318,7 +10219,6 @@
     "stability-flags": {
         "drupal/better_exposed_filters": 15,
         "drupal/maxlength": 10,
-        "drupal/production_checklist": 15,
         "drupal/styleguide": 15
     },
     "prefer-stable": true,
