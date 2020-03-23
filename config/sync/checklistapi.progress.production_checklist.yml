@@ -1,0 +1,20 @@
+progress:
+  '#changed': 1584969473
+  '#changed_by': '1'
+  '#completed_items': 5
+  '#items':
+    site_information:
+      '#completed': 1584969473
+      '#uid': '1'
+    content_permissions:
+      '#completed': 1584969473
+      '#uid': '1'
+    comment_permissions:
+      '#completed': 1584969473
+      '#uid': '1'
+    antispam:
+      '#completed': 1584969473
+      '#uid': '1'
+    permission:
+      '#completed': 1584969473
+      '#uid': '1'
