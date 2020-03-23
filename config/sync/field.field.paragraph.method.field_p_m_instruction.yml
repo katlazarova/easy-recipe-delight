@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: method
 label: Instruction(s)
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -51,5 +51,14 @@ settings:
         enabled: false
       slideshow:
         weight: 14
+        enabled: false
+      content_spotlight:
+        weight: 15
+        enabled: false
+      view_embed:
+        weight: 23
+        enabled: false
+      webform_embed:
+        weight: 24
         enabled: false
 field_type: entity_reference_revisions
