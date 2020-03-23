@@ -11,7 +11,7 @@ field_name: field_r_categories
 entity_type: node
 bundle: recipe
 label: Categories
-description: 'Categorise your recipe to make it easier for other users to find. You can categorise it based on its main protein, the meal type, or create your own category. '
+description: 'If you can''t find your desired category, create your own. '
 required: true
 translatable: false
 default_value: {  }
