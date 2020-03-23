@@ -1,5 +1,5 @@
 domains: ''
-usernames: "*admin*\r\nroot\r\n*master*"
+usernames: "*admin*\r\n*root*\r\n*master*"
 domains_message: 'The e-mail domain %domain has been blacklisted from registering. Please enter a different e-mail address.'
 usernames_message: 'The username %username is unavailable. '
 validation_counter: 8
