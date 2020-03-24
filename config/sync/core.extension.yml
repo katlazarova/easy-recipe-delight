@@ -47,6 +47,7 @@ module:
   pineapple_general: 0
   quickedit: 0
   rdf: 0
+  registration_validation: 0
   shortcut: 0
   site_settings: 0
   styleguide: 0
