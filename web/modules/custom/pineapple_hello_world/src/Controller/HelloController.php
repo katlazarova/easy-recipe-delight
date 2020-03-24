@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\test_module\Controller;
+namespace Drupal\pineapple_hello_world\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 

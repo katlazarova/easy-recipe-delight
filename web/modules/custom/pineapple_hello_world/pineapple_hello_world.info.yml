@@ -1,4 +1,4 @@
-name: Test Module
+name: Pineapple Hello World
 description: Creates a page showing "Hello World".
 package: Custom
 
@@ -14,7 +14,7 @@ dependencies:
 test_dependencies:
   - drupal:image
 
-configure: test_module.settings
+configure: pineapple_hello_world.settings
 
 php: 5.6
 
@@ -23,4 +23,4 @@ hidden: true
 # Note: do not add the 'version' or 'project' properties yourself.
 # They will be added automatically by the packager on drupal.org.
 # version: 1.0
-# project: 'test_module'
+# project: 'pineapple_hello_world'

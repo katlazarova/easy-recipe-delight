@@ -1,8 +1,0 @@
-test_module.content:
-  path: '/hello'
-  defaults:
-    _controller: '\Drupal\test_module\Controller\HelloController::content'
-    _title: 'Hello World'
-  requirements:
-    _permission: 'access content'
-
