@@ -5,11 +5,6 @@
  * Contains pineapple_general.module.
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\node\Entity\Node;
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\field\Entity\FieldStorageConfig;
-
 /**
  * Implements pineapple_hello_world_theme().
  * Variables must be defined here.
