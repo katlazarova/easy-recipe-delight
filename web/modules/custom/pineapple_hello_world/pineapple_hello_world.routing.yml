@@ -1,7 +1,7 @@
-pineapple_hello_world.content:
+pineapple_hello_world.build:
   path: '/hello'
   defaults:
-    _controller: '\Drupal\pineapple_hello_world\Controller\HelloController::content'
+    _controller: '\Drupal\pineapple_hello_world\Controller\HelloController::build'
     _title: 'Hello World'
   requirements:
     _permission: 'access content'
