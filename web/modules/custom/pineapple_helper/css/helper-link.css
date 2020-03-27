@@ -1,0 +1,12 @@
+.block-page-title-block {
+  display: flex;
+  align-items: center;
+}
+
+.pineapple-helper-link__button {
+  margin: 0 !important;
+}
+
+.pineapple-helper__spacer {
+  flex: 1;
+}

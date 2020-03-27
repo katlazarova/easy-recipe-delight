@@ -4,5 +4,5 @@ pineapple_hello_world.build:
     _controller: '\Drupal\pineapple_hello_world\Controller\HelloController::build'
     _title: 'Hello World'
   requirements:
-    _permission: 'access content'
+    _permission: 'access administration pages'
 

@@ -1,0 +1,13 @@
+{
+    "name": "pineapple_helper",
+    "type": "drupal-module",
+    "description": "A module allowing site users to report any site issues to the site administrator.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/pineapple_helper",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/pineapple_helper",
+        "source": "http://cgit.drupalcode.org/pineapple_helper"
+    }
+}
