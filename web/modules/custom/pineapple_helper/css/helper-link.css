@@ -10,3 +10,14 @@
 .pineapple-helper__spacer {
   flex: 1;
 }
+
+.toolbar .toolbar-icon-pineapple-helper-main.toolbar-icon:before {
+  content: '!';
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px 2px;
+}
+
+.toolbar .toolbar-icon-pineapple-helper-main.toolbar-icon.is-active:before {
+  color: black;
+}

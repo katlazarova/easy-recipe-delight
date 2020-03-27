@@ -1,0 +1,6 @@
+pineapple_helper.main:
+  title: Report an Issue
+  description: 'Report an issue'
+  route_name: pineapple_helper.main
+  weight: 10
+  parent: system.admin

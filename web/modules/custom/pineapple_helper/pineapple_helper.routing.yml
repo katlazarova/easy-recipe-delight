@@ -5,3 +5,11 @@ pineapple_helper.raise_issue_dialog:
     _title: 'Raise an issue'
   requirements:
     _permission: 'access administration pages'
+
+pineapple_helper.main:
+  path: '/admin/pineapple-helper/raise-issue'
+  defaults:
+    _controller: '\Drupal\pineapple_helper\Controller\RaiseIssueDialogController::build'
+    _title: 'Raise an Issue'
+  requirements:
+    _permission: 'access administration pages'
