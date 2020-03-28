@@ -1,0 +1,5 @@
+name: 'pineapple_helper'
+type: module
+description: 'A module allowing site users to report any site issues to the site administrator.'
+core: 8.x
+package: 'Custom'

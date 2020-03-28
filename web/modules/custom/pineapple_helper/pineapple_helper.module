@@ -1,0 +1,123 @@
+<?php
+
+/**
+ * @file
+ * Contains pineapple_helper.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use \Drupal\Component\Serialization\Json;
+use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function pineapple_helper_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the pineapple_helper module.
+    case 'help.page.pineapple_helper':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module allowing site users to report any site issues to the site administrator.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements pineapple_helper_page_title_preprocessor().
+ */
+function pineapple_helper_preprocess_page_title(&$variables) {
+    $login_routes = array (
+      'user.login',
+      'user.register',
+      'user.pass',
+      'user.cancel_confirm',
+      'user.reset',
+      'user.reset.login',
+      'user.reset.form'
+    );
+
+    $route = \Drupal::routeMatch()->getRouteName();
+
+    // If the login_routes array contains the current route, return.
+    if (in_array($route, $login_routes)) {
+      return;
+    }
+
+    // If this is an admin page, or is an exception, return.
+    if (!\Drupal::service('router.admin_context')->isAdminRoute() || Drupal::request()->attributes->has('exception')) {
+      return;
+    }
+
+    // Create a form element of type container, which is a title suffix.
+    $variables['title_suffix']['helper_spacer'] = array(
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => [
+          'pineapple-helper__spacer'
+        ],
+      ),
+      '#cache' => [
+        'contexts' => [
+          'route.name',
+        ],
+      ],
+    );
+
+    // Create a form element of type link, which is a title suffix.
+    $variables['title_suffix']['helper_button'] = array(
+      '#type' => 'link',
+      '#title' => t('Have an issue? Drop us a message'),
+      '#url' => Url::fromRoute('pineapple_helper.raise_issue_dialog'),
+      '#attributes' => array(
+        'class' => [
+          'pineapple-helper-link__button',
+          'button',
+          'button--action',
+          'button--small',
+          'use-ajax'
+        ],
+        'data-dialog-type' => 'modal',
+        'data-dialog-options' => Json::encode([
+          'width' => '700'
+        ]),
+        'data-progress-type' =>'fullscreen'
+      ),
+      '#attached' => [
+        'library' => [
+          'core/drupal.dialog.ajax',
+          'pineapple_helper/pineapple_helper'
+        ],
+      ],
+      /*Defines the context by which something is cached. The caching here
+      happens on a "per route name" basis. */
+      '#cache' => [
+        'contexts' => [
+          'route.name',
+        ],
+      ],
+    );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function pineapple_helper_theme() {
+  // Returns the content of the raise_issue_dialog template.
+  return [
+    'raise_issue_dialog' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function pineapple_helper_toolbar_alter(&$items) {
+  // Attaches the pineapple_helper library to the admin toolbar.
+  $items["admin_toolbar_tools"]['#attached']['library'][] = 'pineapple_helper/pineapple_helper';
+}

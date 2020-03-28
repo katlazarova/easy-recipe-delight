@@ -1,0 +1,6 @@
+pineapple_helper:
+  css:
+    theme:
+      css/helper-link.css: {}
+  dependencies:
+    - core/drupal.dialog.ajax
