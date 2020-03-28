@@ -45,7 +45,6 @@ module:
   page_cache: 0
   path: 0
   pineapple_general: 0
-  pineapple_hello_world: 0
   pineapple_helper: 0
   quickedit: 0
   rdf: 0

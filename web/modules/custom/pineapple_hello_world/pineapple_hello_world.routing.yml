@@ -1,8 +1,0 @@
-pineapple_hello_world.build:
-  path: '/hello'
-  defaults:
-    _controller: '\Drupal\pineapple_hello_world\Controller\HelloController::build'
-    _title: 'Hello World'
-  requirements:
-    _permission: 'access administration pages'
-

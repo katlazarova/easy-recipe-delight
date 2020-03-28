@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use \Drupal\Component\Serialization\Json;
 use Drupal\Core\Routing\RouteMatchInterface;
 use \Drupal\Core\Url;
 
@@ -52,7 +53,7 @@ function pineapple_helper_preprocess_page_title(&$variables) {
     }
 
     // Create a form element of type container, which is a title suffix.
-    $variables['title_suffix']['help_form_spacer'] = array(
+    $variables['title_suffix']['helper_spacer'] = array(
       '#type' => 'container',
       '#attributes' => array(
         'class' => [
@@ -67,7 +68,7 @@ function pineapple_helper_preprocess_page_title(&$variables) {
     );
 
     // Create a form element of type link, which is a title suffix.
-    $variables['title_suffix']['help_form'] = array(
+    $variables['title_suffix']['helper_button'] = array(
       '#type' => 'link',
       '#title' => t('Have an issue? Drop us a message'),
       '#url' => Url::fromRoute('pineapple_helper.raise_issue_dialog'),
@@ -80,7 +81,7 @@ function pineapple_helper_preprocess_page_title(&$variables) {
           'use-ajax'
         ],
         'data-dialog-type' => 'modal',
-        'data-dialog-options' => json_encode([
+        'data-dialog-options' => Json::encode([
           'width' => '700'
         ]),
         'data-progress-type' =>'fullscreen'
@@ -91,6 +92,8 @@ function pineapple_helper_preprocess_page_title(&$variables) {
           'pineapple_helper/pineapple_helper'
         ],
       ],
+      /*Defines the context by which something is cached. The caching here
+      happens on a "per route name" basis. */
       '#cache' => [
         'contexts' => [
           'route.name',
