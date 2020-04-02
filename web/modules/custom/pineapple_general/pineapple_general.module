@@ -94,6 +94,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
         }
       }
       $user_roles = \Drupal::currentUser()->getRoles();
+      // If the user roles array contains "recipe editor", restrict access to fields.
       if (in_array('recipe_editor', $user_roles)) {
         $form['field_r_featured']['#access'] = FALSE;
         $form['field_r_highlighted']['#access'] = FALSE;
