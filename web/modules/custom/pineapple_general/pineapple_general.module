@@ -93,12 +93,10 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
           }
         }
       }
-      if (key_exists('form_id', $form_state->getBuildInfo())) {
-        $user_roles = \Drupal::currentUser()->getRoles();
-        if (in_array('recipe_editor', $user_roles)) {
-          $form['field_r_featured']['#access'] = FALSE;
-          $form['field_r_highlighted']['#access'] = FALSE;
-        }
+      $user_roles = \Drupal::currentUser()->getRoles();
+      if (in_array('recipe_editor', $user_roles)) {
+        $form['field_r_featured']['#access'] = FALSE;
+        $form['field_r_highlighted']['#access'] = FALSE;
       }
     break;
   }
