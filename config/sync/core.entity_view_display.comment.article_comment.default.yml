@@ -1,0 +1,25 @@
+uuid: 12febead-bc7f-4458-ad33-b1738d2905f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.article_comment
+    - field.field.comment.article_comment.field_c_ac_comment_body
+id: comment.article_comment.default
+targetEntityType: comment
+bundle: article_comment
+mode: default
+content:
+  field_c_ac_comment_body:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

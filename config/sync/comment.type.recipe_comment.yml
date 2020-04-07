@@ -1,0 +1,8 @@
+uuid: 3d3ed6bd-9110-4333-836a-5589145d1ef3
+langcode: en
+status: true
+dependencies: {  }
+id: recipe_comment
+label: 'Recipe Comment'
+target_entity_type_id: node
+description: ''

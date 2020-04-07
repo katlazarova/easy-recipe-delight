@@ -11,12 +11,14 @@ dependencies:
     - field.field.node.recipe.field_r_featured
     - field.field.node.recipe.field_r_hero_image
     - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_recipe_comments
     - field.field.node.recipe.field_r_serves
     - field.field.node.recipe.field_r_summary
     - field.field.node.recipe.field_r_teaser_image
     - node.type.recipe
     - workflows.workflow.content_workflow
   module:
+    - comment
     - content_moderation
     - media_library
     - paragraphs
@@ -98,6 +100,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_r_recipe_comments:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
     region: content
   field_r_serves:
     weight: 10
