@@ -103,6 +103,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
     case 'comment_article_comment_form':
     case 'comment_recipe_comment_form':
       $form['actions']['submit']['#value'] = t('Post');
+      $form['actions']['submit']['#attributes']['class'][] = t('btn--form-submit');
     break;
   }
 }
