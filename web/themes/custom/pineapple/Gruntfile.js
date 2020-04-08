@@ -29,7 +29,8 @@ module.exports = function(grunt) {
           'sass/core/__core.scss': 'sass/core/**/*.scss',
           'sass/base/__base.scss': 'sass/base/**/*.scss',
           'sass/layouts/__layouts.scss': 'sass/layouts/**/*.scss',
-          'sass/components/__components.scss': 'sass/components/**/*.scss'
+          'sass/components/__components.scss': 'sass/components/**/*.scss',
+          'sass/content/__content.scss': 'sass/content/**/*.scss'
         },
         options: {
           useSingleQuotes: false,

@@ -1,0 +1,82 @@
+.comments-container {
+  margin-top: $unit * 4;
+
+  .subheading {
+    margin-top: $unit * 3;
+
+    &.comments-title {
+      padding-bottom: $unit * 3;
+      border-bottom: thin solid $primary;
+    }
+  }
+}
+
+.comment {
+  border-bottom: thin solid $primary;
+  position: relative;
+
+  .new-label {
+    text-transform: uppercase;
+    color: $white;
+    background-color: transparentize($dark-purple, 0.2);
+    position: absolute;
+    left: 0;
+    top: - $unit * 4;
+    padding: $unit / 2;
+  }
+
+  .comment-submitted {
+    margin: 0;
+
+    &.admin-comment {
+      color: $light-purple;
+    }
+  }
+
+  .links.inline {
+    display: inline-flex;
+    margin-top: $unit * 4;
+
+    .comment-delete,
+    .comment-edit,
+    .comment-reply {
+      padding: 0;
+      margin-right: $unit;
+
+      a {
+        padding: $unit;
+        transition: 0.5s;
+        display: inline-block;
+        color: $white;
+        background-color: $dark-gray;
+        border: none;
+
+        &:hover,
+        &:focus {
+          color: $white;
+          background-color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+.comment-form {
+  padding: 0;
+
+  .form-submit {
+    padding: $unit;
+    transition: 0.5s;
+    display: inline-block;
+    color: $white;
+    background-color: $dark-gray;
+    border: none;
+    font-size: $unit *2;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $secondary;
+    }
+  }
+}
