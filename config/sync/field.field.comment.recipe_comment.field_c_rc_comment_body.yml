@@ -9,7 +9,7 @@ id: comment.recipe_comment.field_c_rc_comment_body
 field_name: field_c_rc_comment_body
 entity_type: comment
 bundle: recipe_comment
-label: 'Comment Body'
+label: Comment
 description: ''
 required: true
 translatable: false
