@@ -5,6 +5,8 @@ dependencies:
   config:
     - comment.type.recipe_comment
     - field.field.comment.recipe_comment.field_c_rc_comment_body
+  module:
+    - text
 id: comment.recipe_comment.default
 targetEntityType: comment
 bundle: recipe_comment
@@ -15,7 +17,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   links:
     weight: 1

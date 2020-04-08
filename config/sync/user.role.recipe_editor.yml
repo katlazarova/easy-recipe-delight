@@ -20,5 +20,6 @@ permissions:
   - 'edit own image media'
   - 'edit own recipe content'
   - 'use content_workflow transition unpublished'
+  - 'use text format restricted_html'
   - 'view own unpublished content'
   - 'view the administration theme'

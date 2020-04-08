@@ -74,7 +74,7 @@
   status != 'published' ? status,
   comment.owner.anonymous ? 'by-anonymous',
   author_id and author_id == commented_entity.getOwnerId() ? 'by-' ~ commented_entity.getEntityTypeId() ~ '-author',
-  'u-o-4',
+  'u-o-3',
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
@@ -95,7 +95,7 @@
 
     {% set author_name = comment.getAuthorName() %}
     <p{{ submitted_attributes }}>{{ author_name }} says</p>
-    <a href="{{ comment.url() }}">{{ created }}</a>
+    <a class="created" href="{{ comment.url() }}">{{ created }}</a>
 
     {#
       Indicate the semantic relationship between parent and child comments for

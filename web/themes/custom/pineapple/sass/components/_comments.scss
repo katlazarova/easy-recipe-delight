@@ -21,8 +21,9 @@
     background-color: transparentize($dark-purple, 0.2);
     position: absolute;
     left: 0;
-    top: - $unit * 4;
+    top: - $unit * 3;
     padding: $unit / 2;
+    font-size: 12px;
   }
 
   .comment-submitted {
@@ -30,6 +31,15 @@
 
     &.admin-comment {
       color: $light-purple;
+    }
+  }
+
+  .created {
+    color: $dark-gray;
+    font-size: smaller;
+
+    &:hover {
+      color: $secondary;
     }
   }
 

@@ -5,6 +5,8 @@ dependencies:
   config:
     - comment.type.article_comment
     - field.field.comment.article_comment.field_c_ac_comment_body
+  module:
+    - text
 id: comment.article_comment.default
 targetEntityType: comment
 bundle: article_comment
@@ -15,7 +17,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   links:
     weight: 1

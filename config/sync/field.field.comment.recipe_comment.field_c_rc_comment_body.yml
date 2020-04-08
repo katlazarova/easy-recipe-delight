@@ -1,10 +1,12 @@
-uuid: df400139-be77-43b0-8bd1-bc96f2a307be
+uuid: 5c45511d-682a-410c-bc4f-6a2246a0a168
 langcode: en
 status: true
 dependencies:
   config:
     - comment.type.recipe_comment
     - field.storage.comment.field_c_rc_comment_body
+  module:
+    - text
 id: comment.recipe_comment.field_c_rc_comment_body
 field_name: field_c_rc_comment_body
 entity_type: comment
@@ -16,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long
