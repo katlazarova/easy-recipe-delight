@@ -25,15 +25,6 @@
  * @see comment_preprocess_field()
  */
 #}
-{%
-  set classes = [
-  'field',
-  'field--name-' ~ field_name|clean_class,
-  'field--type-' ~ field_type|clean_class,
-  'field--label-' ~ label_display,
-  'comments-container',
-]
-%}
 <section{{ attributes.addClass(classes) }}>
   {% if comment_form %}
     <div class="comment-form">
