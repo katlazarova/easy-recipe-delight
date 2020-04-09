@@ -13,64 +13,70 @@
 
 .comment {
   border-bottom: thin solid $primary;
-  position: relative;
 
   .new-label {
     text-transform: uppercase;
     color: $white;
     background-color: transparentize($dark-purple, 0.2);
-    position: absolute;
-    left: 0;
-    top: - $unit * 3;
     padding: $unit / 2;
-    font-size: 12px;
+    padding-top: 0;
+    font-size: $unit *2;
+    width: 30%;
   }
 
-  .comment-submitted {
-    margin: 0;
+  .comment-meta {
+    margin-top: $unit *2;
 
-    &.admin-comment {
-      color: $light-purple;
+    .comment-submitted {
+      margin: 0;
+
+      &.admin-comment {
+        color: $light-purple;
+      }
     }
-  }
 
-  .created {
-    color: $dark-gray;
-    font-size: smaller;
+    .created {
+      color: $dark-gray;
+      font-size: smaller;
 
-    &:hover {
-      color: $secondary;
+      &:hover {
+        color: $secondary;
+      }
     }
   }
 
   .links.inline {
     display: inline-flex;
-    margin-top: $unit * 4;
+    margin-bottom: $unit *2;
+    margin-top: 0;
 
     .comment-delete,
     .comment-edit,
     .comment-reply {
       padding: 0;
       margin-right: $unit;
+    }
+
+    .comment-forbidden {
+      padding: 0;
+      color: $light-purple;
+      font-size: 12px;
 
       a {
-        padding: $unit;
-        transition: 0.5s;
-        display: inline-block;
-        color: $white;
-        background-color: $dark-gray;
-        border: none;
-
-        &:hover,
-        &:focus {
-          color: $white;
-          background-color: $secondary;
-        }
+        color: $light-purple;
       }
     }
   }
 }
 
-.comment-form {
-  padding: 0;
+.comment-form-container {
+  margin: $unit * 5 0;
+
+  .subheading {
+    margin-bottom: 0;
+  }
+
+  .comment-form {
+    padding: 0;
+  }
 }

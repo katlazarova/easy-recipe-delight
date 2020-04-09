@@ -74,7 +74,6 @@
   status != 'published' ? status,
   comment.owner.anonymous ? 'by-anonymous',
   author_id and author_id == commented_entity.getOwnerId() ? 'by-' ~ commented_entity.getEntityTypeId() ~ '-author',
-  'u-o-3',
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
@@ -90,7 +89,7 @@
     author_id == 1 ? 'admin-comment',
   ]) %}
 
-  <footer class="comment__meta">
+  <footer class="comment-meta">
     {{ user_picture }}
 
     {% set author_name = comment.getAuthorName() %}

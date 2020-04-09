@@ -29,7 +29,7 @@ function pineapple_theme_suggestions_node_alter(array &$suggestions, array $vari
 function pineapple_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   $element = $variables['element'];
   if ($element['#label_display'] == 'inline') {
-    $suggestions[] = 'field__' .$element['#label_display'] .'_label';
+    $suggestions[] = 'field__' . $element['#label_display'] .'_label';
   }
 }
 
