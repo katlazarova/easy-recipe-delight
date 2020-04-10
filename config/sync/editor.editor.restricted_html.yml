@@ -27,10 +27,6 @@ settings:
           items:
             - BulletedList
             - NumberedList
-        -
-          name: Tools
-          items:
-            - Source
   plugins:
     stylescombo:
       styles: ''

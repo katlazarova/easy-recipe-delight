@@ -25,7 +25,7 @@
  * @see comment_preprocess_field()
  */
 #}
-<section{{ attributes.addClass(classes) }}>
+<section class="comments-wrapper">
   {% if comment_form %}
     <div class="comment-form-container">
       <h2 class="subheading">{{ 'Leave a Comment'|t }}</h2>
@@ -35,7 +35,11 @@
 
   {% if comments and not label_hidden %}
     <h2 class="subheading comments-title">Comments</h2>
+    {% if not comment_form %}
+      <div class="forbidden-comments">
+        <a href="/user/login">Log In</a><p> or</p><a href="/user/register"> register</a><p> to post comments.</p>
+      </div>
+    {% endif %}
   {% endif %}
-
   {{ comments }}
 </section>

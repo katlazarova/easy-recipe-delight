@@ -1,82 +1,90 @@
-.comments-container {
-  margin-top: $unit * 4;
-
-  .subheading {
-    margin-top: $unit * 3;
-
-    &.comments-title {
-      padding-bottom: $unit * 3;
-      border-bottom: thin solid $primary;
-    }
-  }
-}
-
-.comment {
-  border-bottom: thin solid $primary;
-
-  .new-label {
-    text-transform: uppercase;
-    color: $white;
-    background-color: transparentize($dark-purple, 0.2);
-    padding: $unit / 2;
-    padding-top: 0;
-    font-size: $unit *2;
-    width: 30%;
-  }
-
-  .comment-meta {
-    margin-top: $unit *2;
-
-    .comment-submitted {
-      margin: 0;
-
-      &.admin-comment {
-        color: $light-purple;
-      }
-    }
-
-    .created {
-      color: $dark-gray;
-      font-size: smaller;
-
-      &:hover {
-        color: $secondary;
-      }
-    }
-  }
-
-  .links.inline {
-    display: inline-flex;
-    margin-bottom: $unit *2;
-    margin-top: 0;
-
-    .comment-delete,
-    .comment-edit,
-    .comment-reply {
-      padding: 0;
-      margin-right: $unit;
-    }
-
-    .comment-forbidden {
-      padding: 0;
-      color: $light-purple;
-      font-size: 12px;
-
-      a {
-        color: $light-purple;
-      }
-    }
-  }
-}
-
-.comment-form-container {
+.comments-wrapper {
   margin: $unit * 5 0;
 
-  .subheading {
-    margin-bottom: 0;
+  .comment {
+    border-bottom: thin solid $primary;
+
+    .new-label {
+      text-transform: uppercase;
+      color: $white;
+      background-color: transparentize($dark-purple, 0.2);
+      padding: $unit / 2;
+      padding-top: 0;
+      font-size: $unit *2;
+      width: 30%;
+    }
+
+    .comment-meta {
+      margin-top: $unit *2;
+
+      .comment-submitted {
+        margin: 0;
+
+        &.admin-comment {
+          color: $light-purple;
+        }
+      }
+
+      .created {
+        color: $dark-gray;
+        font-size: smaller;
+        margin: 0;
+      }
+    }
+
+    .links.inline {
+      display: inline-flex;
+      margin-bottom: $unit *2;
+      margin-top: 0;
+
+      .comment-delete,
+      .comment-edit,
+      .comment-reply {
+        padding: 0;
+        margin-right: $unit;
+      }
+
+      .comment-forbidden {
+        display: none;
+      }
+    }
   }
 
-  .comment-form {
-    padding: 0;
+
+  .comment-form-container {
+    .subheading {
+      margin-bottom: 0;
+    }
+
+    .comment-form {
+      padding: 0;
+    }
+  }
+
+  .subheading {
+    margin-bottom: $unit *2;
+    margin-top: $unit *5;
+  }
+
+  .forbidden-comments {
+    margin-top: 0;
+  }
+}
+
+.forbidden-comments {
+  margin-top: $unit;
+  padding: 0;
+  color: $light-purple;
+  font-size: 14px;
+  display: flex;
+
+  a {
+    color: $light-purple;
+    padding-right: $unit /2;
+  }
+
+  p {
+    margin: 0;
+    padding-right: $unit /2;
   }
 }
