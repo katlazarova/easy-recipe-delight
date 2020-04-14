@@ -39,24 +39,26 @@
       <h2{{ heading.attributes }}>{{ heading.text }}</h2>
     {%- endif -%}
   {%- endif -%}
-  <ul{{ attributes }}>
-    {%- for item in links -%}
-      <li{{ item.attributes }}>
-        {%- if item.link -%}
-          {% set link_url = item.link['#url'].getInternalPath() %}
-          {% set link_attributes = link_attributes|default(create_attribute()).addClass('btn', 'btn--form-submit') %}
-          {% set link_text = item.link['#title'].getUntranslatedString() %}
-          {% include "@components/_link.twig" with {
-            link_text: link_text,
-            link_attributes: link_attributes,
-            link_url: '/' ~ link_url
-          } %}
-        {%- elseif item.text_attributes -%}
-          <span{{ item.text_attributes }}>{{ item.text }}</span>
-        {%- else -%}
-          {{ item.text }}
-        {%- endif -%}
-      </li>
-    {%- endfor -%}
-  </ul>
+  {% if logged_in %}
+    <ul{{ attributes }}>
+      {%- for item in links -%}
+        <li{{ item.attributes }}>
+          {%- if item.link -%}
+            {% set link_url = item.link['#url'].getInternalPath() %}
+            {% set link_attributes = link_attributes|default(create_attribute()).addClass('btn', 'btn--form-submit') %}
+            {% set link_text = item.link['#title'].getUntranslatedString() %}
+            {% include "@components/_link.twig" with {
+              link_text: link_text,
+              link_attributes: link_attributes,
+              link_url: '/' ~ link_url
+            } %}
+          {%- elseif item.text_attributes -%}
+            <span{{ item.text_attributes }}>{{ item.text }}</span>
+          {%- else -%}
+            {{ item.text }}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  {% endif %}
 {%- endif %}
