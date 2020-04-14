@@ -46,6 +46,18 @@
   }
 }
 
+.btn--form-submit {
+  background-color: $dark-gray;
+  border: none;
+  font-size: $unit *2;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+  }
+}
+
 .btn--underlined {
   border: none;
   color: $primary;

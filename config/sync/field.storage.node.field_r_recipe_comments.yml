@@ -1,0 +1,20 @@
+uuid: 90cedf06-9a70-45ae-983f-ebfdf6dade18
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+id: node.field_r_recipe_comments
+field_name: field_r_recipe_comments
+entity_type: node
+type: comment
+settings:
+  comment_type: recipe_comment
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

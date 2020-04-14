@@ -1,0 +1,29 @@
+uuid: c0e9c214-fb29-474b-828c-b240f5324127
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.recipe_comment
+    - field.field.comment.recipe_comment.field_c_rc_comment_body
+  module:
+    - text
+id: comment.recipe_comment.default
+targetEntityType: comment
+bundle: recipe_comment
+mode: default
+content:
+  author:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_c_rc_comment_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  subject: true

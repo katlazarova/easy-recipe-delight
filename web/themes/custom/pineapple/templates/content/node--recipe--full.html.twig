@@ -128,4 +128,20 @@
       </div> <!-- End of recipe-author-container -->
     </aside> <!-- End of recipe-sidebar -->
   </div> <!-- End of row -->
+  {{ content.field_r_recipe_comments }}
+  {% set comment_count = node.field_r_recipe_comments.comment_count %}
+  {% if comment_count > 10 and not logged_in %}
+    <div class="forbidden-comments">
+      {% include "@components/_link.twig" with {
+        link_text: 'Log in',
+        link_url: '/user/login'
+      } %}
+      <p>or</p>
+      {% include "@components/_link.twig" with {
+        link_text: 'register',
+        link_url: '/user/register'
+      } %}
+      <p>to post comments.</p>
+    </div>
+  {% endif %}
 </article>
