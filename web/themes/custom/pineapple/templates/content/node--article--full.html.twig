@@ -110,7 +110,16 @@
   {% set comment_count = node.field_a_article_comments.comment_count %}
   {% if comment_count > 10 and not logged_in %}
     <div class="forbidden-comments">
-      <a href="/user/login">Log In</a><p> or</p><a href="/user/register"> register</a><p> to post comments.</p>
+      {% include "@components/_link.twig" with {
+        link_text: 'Log in',
+        link_url: '/user/login'
+      } %}
+      <p> or</p>
+      {% include "@components/_link.twig" with {
+        link_text: ' register',
+        link_url: '/user/register'
+      } %}
+      <p> to post comments.</p>
     </div>
   {% endif %}
 </article>

@@ -46,7 +46,11 @@
           {% set link_url = item.link['#url'].getInternalPath() %}
           {% set link_attributes = link_attributes|default(create_attribute()).addClass('btn', 'btn--form-submit') %}
           {% set link_text = item.link['#title'].getUntranslatedString() %}
-          <a href="{{ '/' ~ link_url }}" {{ link_attributes }}>{{ link_text }}</a>
+          {% include "@components/_link.twig" with {
+            link_text: link_text,
+            link_attributes: link_attributes,
+            link_url: '/' ~ link_url
+          } %}
         {%- elseif item.text_attributes -%}
           <span{{ item.text_attributes }}>{{ item.text }}</span>
         {%- else -%}

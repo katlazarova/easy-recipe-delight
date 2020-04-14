@@ -25,21 +25,54 @@
  * @see comment_preprocess_field()
  */
 #}
-<section class="comments-wrapper">
-  {% if comment_form %}
-    <div class="comment-form-container">
-      <h2 class="subheading">{{ 'Leave a Comment'|t }}</h2>
-      {{ comment_form }}
+{% if not comments %}
+  <p>There are no comments on this content yet.</p>
+  {% if not comment_form %}
+    <div class="forbidden-comments">
+      {% include "@components/_link.twig" with {
+        link_text: 'Log in',
+        link_url: '/user/login'
+      } %}
+      <p> or</p>
+      {% include "@components/_link.twig" with {
+        link_text: ' register',
+        link_url: '/user/register'
+      } %}
+      <p> to post comments.</p>
     </div>
   {% endif %}
-
-  {% if comments and not label_hidden %}
-    <h2 class="subheading comments-title">Comments</h2>
-    {% if not comment_form %}
-      <div class="forbidden-comments">
-        <a href="/user/login">Log In</a><p> or</p><a href="/user/register"> register</a><p> to post comments.</p>
+{% else %}
+  <section class="comments-wrapper">
+    {% if comment_form %}
+      <div class="comment-form-container">
+        {% include "@components/_heading.twig" with {
+          heading_level: 2,
+          heading_text: 'Leave a Comment'
+        } %}
+        {{ comment_form }}
       </div>
     {% endif %}
-  {% endif %}
-  {{ comments }}
-</section>
+    {% if not label_hidden %}
+      {% include "@components/_heading.twig" with {
+        heading_level: 2,
+        heading_text: 'Comments',
+        heading_attributes: create_attribute().addClass('comments-title')
+      } %}
+    {% endif %}
+    {% if not comment_form %}
+      <div class="forbidden-comments">
+        {% include "@components/_link.twig" with {
+          link_text: 'Log in',
+          link_url: '/user/login'
+        } %}
+        <p> or</p>
+        {% include "@components/_link.twig" with {
+          link_text: ' register',
+          link_url: '/user/register'
+        } %}
+        <p> to post comments.</p>
+      </div>
+    {% endif %}
+    {{ comments }}
+  </section>
+{% endif %}
