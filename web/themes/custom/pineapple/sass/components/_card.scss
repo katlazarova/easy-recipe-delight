@@ -55,7 +55,7 @@
       text-align: left;
       float: right;
       position: absolute;
-      right: 0;
+      right: $unit * 2;
       top: $unit * 3;
       z-index: 1;
       padding: 0 $unit;
