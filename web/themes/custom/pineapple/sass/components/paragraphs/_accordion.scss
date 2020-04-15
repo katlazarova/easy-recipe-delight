@@ -1,0 +1,47 @@
+.accordion-title {
+  background-color: $primary;
+  color: $white;
+  width: 100%;
+  text-align: left;
+  padding: $unit *2;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+  }
+
+  .accordion-icon {
+    font-size: $unit *3;
+
+    &.minus {
+      display: none;
+    }
+  }
+
+  &.is-open {
+    .plus {
+      display: none;
+    }
+    .minus {
+      display: flex;
+    }
+  }
+}
+
+.accordion-content {
+  display: none;
+  background-color: $light-gray;
+  padding: $unit *2;
+
+  img {
+    margin: $unit 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}

@@ -41,9 +41,7 @@
 {{ attach_library('pineapple/accordion') }}
 {% set accordion_title = content.field_p_ai_heading|field_value|first['#context'].value %}
 {% set accordion_content = content.field_p_ai_accordion_content %}
-<div class="accordion-item">
-  {% include "@components/_accordion-item.twig" with {
-    accordion_title: accordion_title,
-    accordion_content: accordion_content
-  } %}
-</div>
+{% include "@components/_accordion-item.twig" with {
+  accordion_title: accordion_title,
+  accordion_content: accordion_content
+} %}
