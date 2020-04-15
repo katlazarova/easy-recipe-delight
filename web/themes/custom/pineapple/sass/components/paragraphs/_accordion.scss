@@ -13,6 +13,7 @@
   &:focus {
     color: $white;
     background-color: $dark-gray;
+    border: 1px solid $dark-gray;
   }
 
   .accordion-icon {
