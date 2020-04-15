@@ -2,7 +2,7 @@
 
   Drupal.behaviors.accordion = {
     attach: function (context, settings) {
-      $('.paragraph--type--accordion .accordion-title').once('click-once').each(function () {
+      $('.accordion-item .accordion-title').once('click-once').each(function () {
         $(this).click(function () {
           // Toggle the panel content on click.
           $(this).next('.accordion-content').slideToggle();
