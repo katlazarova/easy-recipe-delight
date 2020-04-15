@@ -38,7 +38,6 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('pineapple/accordion') }}
 {% set accordion_title = content.field_p_ai_heading|field_value|first['#context'].value %}
 {% set accordion_content = content.field_p_ai_accordion_content %}
 <div {{ attributes.addClass('accordion-item') }}>
