@@ -1,6 +1,6 @@
 .accordion-title {
-  background-color: $primary;
-  color: $white;
+  background-color: $light-gray;
+  color: $primary;
   width: 100%;
   text-align: left;
   padding: $unit *2;
@@ -11,7 +11,8 @@
 
   &:hover,
   &:focus {
-    background-color: $secondary;
+    color: $white;
+    background-color: $gray;
   }
 
   .accordion-icon {
