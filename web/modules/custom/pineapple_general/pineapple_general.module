@@ -33,8 +33,8 @@ function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\
   // If paragraph type exists and its value is equal to image_paragraph.
   if (isset($element['#paragraph_type']) && $element['#paragraph_type'] == 'image_paragraph') {
     $user_roles = \Drupal::currentUser()->getRoles();
-    // If the hero image field exists and if content editor is in the user roles array.
-    if (isset($element['subform']['field_p_ip_hero_image']) && in_array('content_editor', $user_roles)) {
+    // If the hero image field exists and if content admin is not in the user roles array.
+    if (isset($element['subform']['field_p_ip_hero_image']) && !in_array('admin', $user_roles)) {
       /* For each $parent in the field_parents array, if the parent is in an
       article or recipe content type, restrict access to the hero image field. */
       foreach ($element['#field_parents'] as $parent) {
