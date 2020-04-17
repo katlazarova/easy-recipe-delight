@@ -33,8 +33,8 @@ function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\
   // If paragraph type exists and its value is equal to image_paragraph.
   if (isset($element['#paragraph_type']) && $element['#paragraph_type'] == 'image_paragraph') {
     $user_roles = \Drupal::currentUser()->getRoles();
-    // If the hero image field exists and if content editor is in the user roles array.
-    if (isset($element['subform']['field_p_ip_hero_image']) && in_array('content_editor', $user_roles)) {
+    // If the hero image field exists and if administrator is not in the user roles array.
+    if (isset($element['subform']['field_p_ip_hero_image']) && !in_array('administrator', $user_roles)) {
       /* For each $parent in the field_parents array, if the parent is in an
       article or recipe content type, restrict access to the hero image field. */
       foreach ($element['#field_parents'] as $parent) {
@@ -45,27 +45,40 @@ function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\
     }
   }
 
-  if (key_exists('form_id', $form_state->getBuildInfo())) {
-    $build_info = $form_state->getBuildInfo();
-    // If the field is on the article or recipe create or edit form, run code.
-    switch ($build_info['form_id']) {
-      case 'node_article_form':
-      case 'node_recipe_form':
-      case 'node_article_edit_form':
-      case 'node_recipe_edit_form':
-        $items = $context['items'];
-        $field = $items->getName();
-        /* If field name is either field_a_summary or field_r_summary, set the
-        maxlength to be 200 characters and the countdown to show. */
-        if ($field == 'field_a_summary' || $field == 'field_r_summary') {
-          $element['#maxlength_js'] = TRUE;
-          $element['value']['#maxlength_js'] = TRUE;
-          $maxlength_js = 200;
-          $element['value']['#attributes']['maxlength'] = $maxlength_js;
-          $element['#attributes']['maxlength'] = $maxlength_js;
+  if (isset($element['#paragraph_type']) && $element['#paragraph_type'] == 'grid_item') {
+    $user_roles = \Drupal::currentUser()->getRoles();
+    if (isset($element['subform']['field_p_gi_link']) && !in_array('administrator', $user_roles)) {
+      /* For each $parent in the field_parents array, if the parent is in an
+      article or recipe content type, restrict access to the grid item link field. */
+      foreach ($element['#field_parents'] as $parent) {
+        if ($parent == 'field_r_body' || $parent == 'field_a_body') {
+          $element['subform']['field_p_gi_link']['#access'] = FALSE;
         }
-      break;
+      }
     }
+  }
+
+  if (key_exists('form_id', $form_state->getBuildInfo())) {
+  $build_info = $form_state->getBuildInfo();
+  // If the field is on the article or recipe create or edit form, run code.
+  switch ($build_info['form_id']) {
+    case 'node_article_form':
+    case 'node_recipe_form':
+    case 'node_article_edit_form':
+    case 'node_recipe_edit_form':
+      $items = $context['items'];
+      $field = $items->getName();
+      /* If field name is either field_a_summary or field_r_summary, set the
+      maxlength to be 200 characters and the countdown to show. */
+      if ($field == 'field_a_summary' || $field == 'field_r_summary') {
+        $element['#maxlength_js'] = TRUE;
+        $element['value']['#maxlength_js'] = TRUE;
+        $maxlength_js = 200;
+        $element['value']['#attributes']['maxlength'] = $maxlength_js;
+        $element['#attributes']['maxlength'] = $maxlength_js;
+      }
+    break;
+  }
   }
 }
 
