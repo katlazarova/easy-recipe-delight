@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.recipe_comment.default
     - field.field.node.recipe.field_author
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
