@@ -98,14 +98,15 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
  */
 function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
   $user_roles = \Drupal::currentUser()->getRoles();
-  // If the field_p_c_component exists and if the user is not the administrator.
+  /* If the field_p_c_component exists and if the user does not have the administrator
+  role. */
   if (isset($element['subform']['field_p_c_component']) && !in_array('administrator', $user_roles)) {
     /* For each item in the widget array, if the paragraph type variable exists,
-    and is equal to image paragraph, or image_grid, run code */
+    and is equal to image paragraph, or image_grid. */
     foreach ($element['subform']['field_p_c_component']['widget'] as &$paragraph) {
       if (isset($paragraph['#paragraph_type'])) {
         if ($paragraph['#paragraph_type'] == 'image_paragraph' || $paragraph['#paragraph_type'] == 'image_grid') {
-          // If the hero image or the image grid item fields exist, run code.
+          // If the hero image or the image grid item fields exist.
           if (isset($paragraph['subform']['field_p_ip_hero_image']) || isset($paragraph['subform']['field_p_ig_item'])) {
             $paragraph['subform']['field_p_ip_hero_image']['#access'] = FALSE;
 
@@ -115,7 +116,7 @@ function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&
               if (isset($paragraph_field['subform']['field_p_gi_link'])) {
                 $paragraph_field['subform']['field_p_gi_link']['#access'] = FALSE;
                 /* For each item in the widget array, if the hero image field exists,
-                restrict access to it */
+                restrict access to it. */
                 foreach ($paragraph_field['subform']['field_p_gi_image']['widget'] as &$image_paragraph_item) {
                   if (isset($image_paragraph_item['subform']['field_p_ip_hero_image'])) {
                     $image_paragraph_item['subform']['field_p_ip_hero_image']['#access'] = FALSE;
@@ -136,8 +137,8 @@ function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&
       'add_more_button_content_spotlight'
     ];
     $add_more_links = &$element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links'];
-    /* If add_more_links exists, and the user is not the administrator, if an
-    add_more variable is in the links_to_remove array, remove it. */
+    /* If add_more_links exists, and the user does not have the administrator role,
+    if an add_more variable is in the links_to_remove array, remove it. */
     if (isset($add_more_links) && !in_array('administrator', $user_roles)) {
       foreach ($add_more_links as $key => $add_more) {
         if (in_array($key, $links_to_remove)) {
