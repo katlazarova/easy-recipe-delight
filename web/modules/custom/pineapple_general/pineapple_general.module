@@ -30,21 +30,6 @@ function pineapple_general_help($route_name, RouteMatchInterface $route_match) {
  * Implements hook_field_widget_form_alter().
  */
 function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
-  // If paragraph type exists and its value is equal to image_paragraph.
-  if (isset($element['#paragraph_type']) && $element['#paragraph_type'] == 'image_paragraph') {
-    $user_roles = \Drupal::currentUser()->getRoles();
-    // If the hero image field exists and if admin is not in the user roles array.
-    if (isset($element['subform']['field_p_ip_hero_image']) && !in_array('administrator', $user_roles)) {
-      /* For each $parent in the field_parents array, if the parent is in an
-      article or recipe content type, restrict access to the hero image field. */
-      foreach ($element['#field_parents'] as $parent) {
-        if ($parent == 'field_r_body' || $parent == 'field_a_body') {
-          $element['subform']['field_p_ip_hero_image']['#access'] = FALSE;
-        }
-      }
-    }
-  }
-
   if (key_exists('form_id', $form_state->getBuildInfo())) {
     $build_info = $form_state->getBuildInfo();
     // If the field is on the article or recipe create or edit form, run code.
@@ -105,6 +90,62 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
     case 'comment_recipe_comment_form':
       $form['actions']['submit']['#value'] = t('Post');
     break;
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  $user_roles = \Drupal::currentUser()->getRoles();
+  /* If the field_p_c_component exists and if the user does not have the administrator
+  role. */
+  if (isset($element['subform']['field_p_c_component']) && !in_array('administrator', $user_roles)) {
+    /* For each item in the widget array, if the paragraph type variable exists,
+    and is equal to image paragraph, or image_grid. */
+    foreach ($element['subform']['field_p_c_component']['widget'] as &$paragraph) {
+      if (isset($paragraph['#paragraph_type'])) {
+        if ($paragraph['#paragraph_type'] == 'image_paragraph' || $paragraph['#paragraph_type'] == 'image_grid') {
+          // If the hero image or the image grid item fields exist.
+          if (isset($paragraph['subform']['field_p_ip_hero_image']) || isset($paragraph['subform']['field_p_ig_item'])) {
+            $paragraph['subform']['field_p_ip_hero_image']['#access'] = FALSE;
+
+            /* For each item in the widget array, if the grid item link field exists
+            restrict access to the link field. */
+            foreach ($paragraph['subform']['field_p_ig_item']['widget'] as &$paragraph_field) {
+              if (isset($paragraph_field['subform']['field_p_gi_link'])) {
+                $paragraph_field['subform']['field_p_gi_link']['#access'] = FALSE;
+                /* For each item in the widget array, if the hero image field exists,
+                restrict access to it. */
+                foreach ($paragraph_field['subform']['field_p_gi_image']['widget'] as &$image_paragraph_item) {
+                  if (isset($image_paragraph_item['subform']['field_p_ip_hero_image'])) {
+                    $image_paragraph_item['subform']['field_p_ip_hero_image']['#access'] = FALSE;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if ($element['#paragraph_type'] == 'components') {
+    $links_to_remove = [
+      'add_more_button_call_to_action',
+      'add_more_button_slideshow',
+      'add_more_button_content_spotlight'
+    ];
+    $add_more_links = &$element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links'];
+    /* If add_more_links exists, and the user does not have the administrator role,
+    if an add_more variable is in the links_to_remove array, remove it. */
+    if (isset($add_more_links) && !in_array('administrator', $user_roles)) {
+      foreach ($add_more_links as $key => $add_more) {
+        if (in_array($key, $links_to_remove)) {
+          unset($add_more_links[$key]);
+        }
+      }
+    }
   }
 }
 
