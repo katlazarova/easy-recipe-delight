@@ -1,0 +1,20 @@
+uuid: 932f4ab1-16b8-4d43-8a89-0654b58369ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - user
+id: user.field_u_profile_image
+field_name: field_u_profile_image
+entity_type: user
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
