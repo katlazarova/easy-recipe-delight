@@ -105,18 +105,14 @@ function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&
      if (isset($paragraph['#paragraph_type'])) {
        if ($paragraph['#paragraph_type'] == 'image_paragraph' || $paragraph['#paragraph_type'] == 'image_grid') {
          if (isset($paragraph['subform']['field_p_ip_hero_image']) || isset($paragraph['subform']['field_p_ig_item'])) {
-           /* For each $parent in the field_parents array, if the parent is in an
-           article or recipe content type, restrict access to the hero image field. */
            $paragraph['subform']['field_p_ip_hero_image']['#access'] = FALSE;
 
            foreach($paragraph['subform']['field_p_ig_item']['widget'] as &$paragraph_field) {
              if (isset($paragraph_field['subform']['field_p_gi_link'])) {
-               /* For each $parent in the field_parents array, if the parent is in an
-               article or recipe content type, restrict access to the hero image field. */
                $paragraph_field['subform']['field_p_gi_link']['#access'] = FALSE;
-               foreach ($paragraph_field['subform']['field_p_gi_image']['widget'] as &$image_paragraph_items) {
+               foreach ($paragraph_field['subform']['field_p_gi_image']['widget'] as &$image_paragraph_item) {
                  if (isset($image_paragraph_items['subform']['field_p_ip_hero_image'])) {
-                   $image_paragraph_items['subform']['field_p_ip_hero_image']['#access'] = FALSE;
+                   $image_paragraph_item['subform']['field_p_ip_hero_image']['#access'] = FALSE;
                  }
                }
              }
@@ -128,14 +124,15 @@ function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&
  }
 
   if ($element['#paragraph_type'] == 'components') {
-    $removed_links = [
+    $links_to_remove = [
       'add_more_button_call_to_action',
       'add_more_button_slideshow',
       'add_more_button_content_spotlight'
     ];
-    if (isset($element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links']) && !in_array('administrator', $user_roles)) {
-      foreach ($element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links'] as $key => $add_more) {
-        if (in_array($key, $removed_links)) {
+    $add_more_links = $element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links'];
+    if (isset($add_more_links) && !in_array('administrator', $user_roles)) {
+      foreach ($add_more_links as $key => $add_more) {
+        if (in_array($key, $links_to_remove)) {
           unset($element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links'][$key]);
         }
       }
