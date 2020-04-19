@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.components
+    - paragraphs.paragraphs_type.content_authors_component
     - paragraphs.paragraphs_type.content_spotlight
     - paragraphs.paragraphs_type.image_grid
     - paragraphs.paragraphs_type.image_paragraph
@@ -36,6 +37,7 @@ settings:
       content_spotlight: content_spotlight
       image_grid: image_grid
       accordion: accordion
+      content_authors_component: content_authors_component
     target_bundles_drag_drop:
       components:
         weight: -25
@@ -67,9 +69,6 @@ settings:
       method:
         weight: -16
         enabled: false
-      view_embed:
-        weight: -15
-        enabled: false
       webform_embed:
         weight: -14
         enabled: false
@@ -79,4 +78,7 @@ settings:
       accordion_item:
         weight: 16
         enabled: false
+      content_authors_component:
+        enabled: true
+        weight: 19
 field_type: entity_reference_revisions

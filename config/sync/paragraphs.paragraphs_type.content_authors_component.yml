@@ -1,0 +1,9 @@
+uuid: 69262d1c-1bb4-406e-9573-e9b23c552816
+langcode: en
+status: true
+dependencies: {  }
+id: content_authors_component
+label: 'Content authors component'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
