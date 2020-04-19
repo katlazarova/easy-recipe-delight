@@ -143,7 +143,8 @@ function pineapple_general_field_widget_entity_reference_paragraphs_form_alter(&
     $links_to_remove = [
       'add_more_button_call_to_action',
       'add_more_button_slideshow',
-      'add_more_button_content_spotlight'
+      'add_more_button_content_spotlight',
+      'add_more_button_content_authors_component'
     ];
     $add_more_links = &$element['subform']['field_p_c_component']['widget']['add_more']['operations']['#links'];
     /* If add_more_links exists, and the user does not have the administrator role,
