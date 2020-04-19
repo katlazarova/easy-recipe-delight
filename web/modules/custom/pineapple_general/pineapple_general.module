@@ -96,6 +96,7 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
       if (!in_array('administrator', $user_roles) && !in_array('recipe_editor', $user_roles) && !in_array('article_editor', $user_roles)) {
         $form['field_u_cover_image']['#access'] = FALSE;
         $form['field_u_profile_image']['#access'] = FALSE;
+        $form['field_u_biography']['#access'] = FALSE;
       }
     break;
   }
