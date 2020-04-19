@@ -4,9 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - user.role.administrator
-    - user.role.article_editor
-    - user.role.recipe_editor
   module:
     - user
 id: content_authors
@@ -144,11 +141,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: 'not empty'
           value:
-            administrator: administrator
-            recipe_editor: recipe_editor
-            article_editor: article_editor
+            all: all
           group: 1
           exposed: false
           expose:
@@ -176,7 +171,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
+          reduce_duplicates: true
           entity_type: user
           entity_field: roles
           plugin_id: user_roles
@@ -199,6 +194,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:
