@@ -14,10 +14,6 @@
       opacity: 0.9;
       transition: 0.5s;
     }
-
-    .btn--underlined {
-      background-color: darken($light-gray, 5%);
-    }
   }
 
   .card-content {
@@ -61,7 +57,7 @@
       text-align: left;
       float: right;
       position: absolute;
-      right: $unit * 2;
+      right: 0;
       top: $unit * 3;
       z-index: 1;
       padding: 0 $unit;

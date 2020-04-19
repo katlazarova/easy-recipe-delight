@@ -48,10 +48,6 @@
     &:focus {
       color: $primary;
       background-color: darken($light-gray, 10%);
-
-      .btn--underlined {
-        background-color: darken($light-gray, 10%);
-      }
     }
 
     @include breakpoint($desk-wide) {
