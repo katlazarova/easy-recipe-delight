@@ -54,9 +54,8 @@ function pineapple_theme_suggestions_input_alter(array &$suggestions, array $var
  */
 function pineapple_theme_suggestions_user_alter(array &$suggestions, array $variables) {
   $elements = $variables['elements'];
-  if (isset($elements['#entity_type'])) {
-    $suggestions[] = $elements['#entity_type'] . '__' . 'account' . '__' . $elements['#view_mode'];
-  }
+  $user = $elements['#user']->bundle();
+  $suggestions[] = $user . '__account' . '__' . $elements['#view_mode'];
 }
 
 /**

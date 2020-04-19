@@ -36,6 +36,7 @@ module:
   image: 0
   kint: 0
   link: 0
+  masquerade: 0
   maxlength: 0
   media: 0
   media_library: 0
@@ -61,7 +62,6 @@ module:
   twig_field_value: 0
   update: 0
   user: 0
-  viewsreference: 0
   webform: 0
   webform_ui: 0
   workflows: 0
