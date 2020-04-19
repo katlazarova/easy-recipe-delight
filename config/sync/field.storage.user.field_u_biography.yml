@@ -1,16 +1,14 @@
-uuid: 8deb0c68-9f31-462e-a24c-0c56c8556502
+uuid: 42b0349b-5eb4-4bd5-a774-c8d0503e1f3f
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.field_surname
-field_name: field_surname
+id: user.field_u_biography
+field_name: field_u_biography
 entity_type: user
-type: string
+type: string_long
 settings:
-  max_length: 255
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

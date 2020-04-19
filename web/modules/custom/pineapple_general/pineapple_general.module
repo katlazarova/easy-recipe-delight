@@ -90,6 +90,15 @@ function pineapple_general_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
     case 'comment_recipe_comment_form':
       $form['actions']['submit']['#value'] = t('Post');
     break;
+
+    case 'user_form':
+      $user_roles = \Drupal::currentUser()->getRoles();
+      if (!in_array('administrator', $user_roles) && !in_array('recipe_editor', $user_roles) && !in_array('article_editor', $user_roles)) {
+        $form['field_u_cover_image']['#access'] = FALSE;
+        $form['field_u_profile_image']['#access'] = FALSE;
+        $form['field_u_biography']['#access'] = FALSE;
+      }
+    break;
   }
 }
 
