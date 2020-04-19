@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_u_biography
+    - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
+    - field.field.user.user.field_u_profile_image
   module:
     - path
     - user
@@ -16,7 +19,7 @@ bundle: user
 mode: register
 content:
   account:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -25,21 +28,31 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_u_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   language:
-    weight: 6
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 7
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_u_name: true
+  field_u_biography: true
+  field_u_cover_image: true
+  field_u_profile_image: true
