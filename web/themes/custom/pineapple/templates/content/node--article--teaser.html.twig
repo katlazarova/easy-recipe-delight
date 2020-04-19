@@ -71,7 +71,7 @@
  */
 #}
 {{ attach_library('classy/node') }}
-{% if parent_entity_type == 'content_spotlight' or view.element['#name'] == 'author_content'  %}
+{% if parent_entity_type == 'content_spotlight' or view.element['#name'] == 'user_content'  %}
   {% set card_layout = 'vertical' %}
   {% set heading_level = 3 %}
 {% else %}
