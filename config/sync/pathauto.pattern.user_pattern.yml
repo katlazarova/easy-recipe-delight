@@ -1,0 +1,14 @@
+uuid: 223b3313-9735-4b69-9437-8fdabc2a4491
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user_pattern
+label: 'User Pattern'
+type: 'canonical_entities:user'
+pattern: 'user/[user:field_u_name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }
