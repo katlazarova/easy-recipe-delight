@@ -83,10 +83,9 @@
     indicator here would break the render cache.
   #}
   <mark class="hidden new-label" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-
   {% set submitted_attributes = submitted_attributes|default(create_attribute()).addClass([
     'comment-submitted',
-    author_id == 1 ? 'admin-comment',
+    author_id == 1 or author_id == commented_entity.getOwnerId() ? 'highlighted-comment'
   ]) %}
 
   <footer class="comment-meta">
