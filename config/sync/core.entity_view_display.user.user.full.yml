@@ -1,9 +1,9 @@
-uuid: 1cb06b01-38af-4f23-8889-84bd88bc0096
+uuid: fecbcfa9-3a7d-4acc-ae4a-1f8c6b36a227
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - core.entity_view_mode.user.compact
+    - core.entity_view_mode.user.full
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
@@ -11,24 +11,37 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
-id: user.user.compact
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.full
 targetEntityType: user
 bundle: user
-mode: compact
+mode: full
 content:
+  field_u_biography:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_u_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_u_profile_image:
     type: entity_reference_entity_view
     weight: 0
-    region: content
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: false
     third_party_settings: {  }
+    region: content
 hidden:
-  field_u_biography: true
   field_u_cover_image: true
-  field_u_name: true
   masquerade: true
   member_for: true
