@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.recipe.field_author
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
     - field.field.node.recipe.field_r_cooking_time
@@ -34,15 +33,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_author:
-    weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_r_body:
     type: entity_reference_paragraphs
     weight: 17

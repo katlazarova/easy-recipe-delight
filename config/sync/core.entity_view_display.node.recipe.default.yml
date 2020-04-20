@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_display.comment.recipe_comment.default
-    - field.field.node.recipe.field_author
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
     - field.field.node.recipe.field_r_cooking_time
@@ -31,15 +30,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_author:
-    weight: 7
-    label: hidden
-    settings:
-      view_mode: full
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: content
   field_r_body:
     type: entity_reference_revisions_entity_view
     weight: 9

@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
-    - field.field.node.article.field_author
     - node.type.article
     - workflows.workflow.content_workflow
   module:
@@ -72,15 +71,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
-    region: content
-  field_author:
-    weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default
