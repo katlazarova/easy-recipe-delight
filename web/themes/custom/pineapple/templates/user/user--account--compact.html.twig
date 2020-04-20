@@ -16,10 +16,8 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes }}>
-  <div class="profile-image">
-    {% set profile_image_url = bamboo_render_image_style(content.field_u_profile_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
-    {% set profile_image_alt = content.field_u_profile_image|field_target_entity.field_media_image.alt %}
-    <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
-  </div>
+<article{{ attributes.addClass('profile-image') }}>
+  {% set profile_image_url = bamboo_render_image_style(content.field_u_profile_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
+  {% set profile_image_alt = content.field_u_profile_image|field_target_entity.field_media_image.alt %}
+  <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
 </article>

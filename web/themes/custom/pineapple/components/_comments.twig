@@ -89,21 +89,23 @@
     author_id == 1 ? 'admin-comment',
   ]) %}
 
-  {{ user_picture }}
-  <footer class="comment-meta">
-    {% set author_name = comment.getAuthorName() %}
-    <p{{ submitted_attributes }}>{{ author_name }} says</p>
-    <p class="created">{{ created }}</p>
+  <div class="comment-info">
+    {{ user_picture }}
+    <footer class="comment-meta">
+      {% set author_name = comment.getAuthorName() %}
+      <p{{ submitted_attributes }}>{{ author_name }} says</p>
+      <p class="created">{{ created }}</p>
 
-    {#
-      Indicate the semantic relationship between parent and child comments for
-      accessibility. The list is difficult to navigate in a screen reader
-      without this information.
-    #}
-    {% if parent %}
-      <p class="parent visually-hidden">{{ parent }}</p>
-    {% endif %}
+      {#
+        Indicate the semantic relationship between parent and child comments for
+        accessibility. The list is difficult to navigate in a screen reader
+        without this information.
+      #}
+      {% if parent %}
+        <p class="parent visually-hidden">{{ parent }}</p>
+      {% endif %}
 
-  </footer>
+    </footer>
+  </div>
   {{ content }}
 </article>
