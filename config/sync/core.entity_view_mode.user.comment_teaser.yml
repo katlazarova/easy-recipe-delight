@@ -1,10 +1,10 @@
-uuid: e131451b-55e1-41ac-8253-42673b1ed409
+uuid: cb35e395-95cd-43e4-965c-ddd7b1e5ea83
 langcode: en
 status: true
 dependencies:
   module:
     - user
-id: user.teaser
-label: Teaser
+id: user.comment_teaser
+label: 'Comment Teaser'
 targetEntityType: user
 cache: true
