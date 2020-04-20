@@ -89,23 +89,23 @@
     administrator or author_id == commented_entity.getOwnerId() ? 'highlighted-comment'
   ]) %}
 
-  <footer class="comment-meta">
-    {# User picture will be added in a later task.  #}
-{#    {{ user_picture }}#}
+  <div class="comment-info">
+    {{ user_picture }}
+    <footer class="comment-meta">
+      {% set author_name = comment.getAuthorName() %}
+      <p{{ submitted_attributes }}>{{ author_name }} says</p>
+      <p class="created">{{ created }}</p>
 
-    {% set author_name = comment.getAuthorName() %}
-    <p{{ submitted_attributes }}>{{ author_name }} says</p>
-    <p class="created">{{ created }}</p>
+      {#
+        Indicate the semantic relationship between parent and child comments for
+        accessibility. The list is difficult to navigate in a screen reader
+        without this information.
+      #}
+      {% if parent %}
+        <p class="parent visually-hidden">{{ parent }}</p>
+      {% endif %}
 
-    {#
-      Indicate the semantic relationship between parent and child comments for
-      accessibility. The list is difficult to navigate in a screen reader
-      without this information.
-    #}
-    {% if parent %}
-      <p class="parent visually-hidden">{{ parent }}</p>
-    {% endif %}
-
-  </footer>
+    </footer>
+  </div>
   {{ content }}
 </article>
