@@ -83,10 +83,10 @@
     indicator here would break the render cache.
   #}
   <mark class="hidden new-label" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-
+  {% set administrator = bamboo_has_role('administrator', author_id) %}
   {% set submitted_attributes = submitted_attributes|default(create_attribute()).addClass([
     'comment-submitted',
-    author_id == 1 ? 'admin-comment',
+    administrator or author_id == commented_entity.getOwnerId() ? 'highlighted-comment'
   ]) %}
 
   <div class="comment-info">

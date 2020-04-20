@@ -57,10 +57,10 @@
     .comment-submitted {
       margin: 0;
 
-      &.admin-comment {
-        color: $light-purple;
+        &.highlighted-comment {
+          color: $light-purple;
+        }
       }
-    }
 
     .created {
       color: $dark-gray;
