@@ -1,0 +1,10 @@
+uuid: cb35e395-95cd-43e4-965c-ddd7b1e5ea83
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.comment_teaser
+label: 'Comment Teaser'
+targetEntityType: user
+cache: true

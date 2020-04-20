@@ -1,8 +1,9 @@
-uuid: 237a2495-8f8c-4fca-acbc-6c97f95a61a8
+uuid: ed6cc600-a96f-4eca-8686-f8484dc37236
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.user.comment_teaser
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
@@ -11,29 +12,20 @@ dependencies:
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
-id: user.user.default
+id: user.user.comment_teaser
 targetEntityType: user
 bundle: user
-mode: default
+mode: comment_teaser
 content:
   field_u_biography:
-    weight: 3
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_u_cover_image:
-    type: entity_reference_entity_view
-    weight: 0
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
   field_u_name:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
@@ -42,7 +34,7 @@ content:
     region: content
   field_u_profile_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -50,5 +42,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_u_cover_image: true
   masquerade: true
   member_for: true
