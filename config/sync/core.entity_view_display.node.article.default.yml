@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.article_comment.default
     - field.field.node.article.field_a_article_comments
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
-    - field.field.node.article.field_author
     - node.type.article
   module:
     - comment
@@ -66,15 +66,6 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    region: content
-  field_author:
-    weight: 3
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
     region: content
 hidden:
   links: true
