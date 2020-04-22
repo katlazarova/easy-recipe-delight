@@ -1,4 +1,4 @@
-uuid: 1cb06b01-38af-4f23-8889-84bd88bc0096
+uuid: bc17ae76-78c4-48ba-98ea-c668ae03bf41
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.compact
 targetEntityType: user
 bundle: user
@@ -20,12 +20,12 @@ content:
   field_u_profile_image:
     type: entity_reference_entity_view
     weight: 0
-    region: content
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: false
     third_party_settings: {  }
+    region: content
 hidden:
   field_u_biography: true
   field_u_cover_image: true
