@@ -1,9 +1,9 @@
-uuid: ed6cc600-a96f-4eca-8686-f8484dc37236
+uuid: 879823df-b690-4d0a-aaf3-db4113576cf8
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.user.comment_teaser
+    - core.entity_view_mode.user.teaser
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
@@ -12,10 +12,10 @@ dependencies:
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
-id: user.user.comment_teaser
+id: user.user.teaser
 targetEntityType: user
 bundle: user
-mode: comment_teaser
+mode: teaser
 content:
   field_u_biography:
     weight: 2
