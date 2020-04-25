@@ -199,3 +199,22 @@ function button_color_select_list_values(FieldStorageConfig $definition, Content
 
   return $options;
 }
+
+/**
+ * Implements hook_query_TAG_alter().
+ */
+function pineapple_general_query_comment_filter_alter(Drupal\Core\Database\Query\AlterableInterface $query) {
+  $fieldName = $query->getMetaData('field_name');
+  if ($fieldName == 'field_r_recipe_comments' || $fieldName == 'field_a_article_comments') {
+    $order_by = &$query->getOrderBy();
+    $expressions = &$query->getExpressions();
+    // Sorting for threaded comments.
+    if (isset($order_by['torder']) && $order_by['torder'] == 'ASC') {
+      // Get rid of the expressions that prepare the threads for ASC ordering.
+      unset($expressions['torder']);
+      unset($order_by['torder']);
+      // Order by the thread field.
+      $order_by['c.thread'] = 'DESC';
+    }
+  }
+}
