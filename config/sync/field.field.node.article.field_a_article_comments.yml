@@ -7,6 +7,11 @@ dependencies:
     - node.type.article
   module:
     - comment
+    - comments_order
+third_party_settings:
+  comments_order:
+    order: DESC
+    children_natural_order: 1
 id: node.article.field_a_article_comments
 field_name: field_a_article_comments
 entity_type: node
