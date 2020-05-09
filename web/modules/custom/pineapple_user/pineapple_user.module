@@ -24,5 +24,6 @@ function pineapple_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface 
         unset($form['account']['roles']['#options']['administrator']);
       }
     }
+    $form['account']['current_pass']['#weight'] = t('-10');
   }
 }
