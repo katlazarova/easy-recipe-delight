@@ -14,6 +14,7 @@ module:
   ckeditor: 0
   color: 0
   comment: 0
+  comments_order: 0
   components: 0
   config: 0
   config_filter: 0
@@ -48,6 +49,7 @@ module:
   path: 0
   pineapple_general: 0
   pineapple_helper: 0
+  pineapple_user: 0
   quickedit: 0
   rdf: 0
   registration_validation: 0
