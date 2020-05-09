@@ -18,27 +18,27 @@
 #}
 <article{{ attributes }}>
   <div class="author-body">
-    {% set cover_image_url = bamboo_render_image_style(content.field_u_cover_image|field_target_entity.field_media_image.entity.uri.value, 'cover_image') %}
-    {% include "@components/_hero-image.twig" with {
-      image_url: cover_image_url,
-      hero_attributes: create_attribute().addClass('cover-image')
-    } %}
-    <div class="author-container breakout">
+    <div class="author-container">
+      <div class="cover-image-container">
+        {% set cover_image_url = bamboo_render_image_style(content.field_u_cover_image|field_target_entity.field_media_image.entity.uri.value, 'vertical_teaser') %}
+        {% set cover_image_alt = content.field_u_cover_image|field_target_entity.field_media_image.alt %}
+        <img src="{{ cover_image_url }}" alt="{{ cover_image_alt }}">
+      </div>
       <div class="author-info-container container">
         <div class="profile-image">
           {% set profile_image_url = bamboo_render_image_style(content.field_u_profile_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
           {% set profile_image_alt = content.field_u_profile_image|field_target_entity.field_media_image.alt %}
           <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
         </div>
-        <div class="author-text">
-          {% include "@components/_heading.twig" with {
-            heading_level: 1,
-            heading_attributes: create_attribute().addClass('author-name'),
-            heading_text: content.field_u_name|field_value|first['#context'].value
-          } %}
-          <p>{{ content.field_u_biography|field_value }}</p>
-        </div> <!-- End of author-text -->
+        {% include "@components/_heading.twig" with {
+          heading_level: 1,
+          heading_attributes: create_attribute().addClass('author-name', 'subheading'),
+          heading_text: content.field_u_name|field_value|first['#context'].value
+        } %}
       </div> <!-- End of author-info-container -->
+      <div class="author-text">
+        <p>{{ content.field_u_biography|field_value }}</p>
+      </div> <!-- End of author-text -->
     </div> <!-- End of author-container -->
     {{ bamboo_render_views('user_content', 'embed_1', user.id) }}
   </div>
