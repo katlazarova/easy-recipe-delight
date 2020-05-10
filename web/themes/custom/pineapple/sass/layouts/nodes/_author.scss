@@ -11,12 +11,10 @@
     margin-top: $unit *4;
   }
 
-  .author-container {
-    background-color: $light-gray;
+  .sidebar-container {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    margin-bottom: $unit *4;
     width: 100%;
 
     @include breakpoint($lap) {
@@ -24,39 +22,82 @@
       max-width: 30%;
     }
 
-    .cover-image-container {
-      width: 100%;
+    .author-container {
+      background-color: $light-gray;
 
-      img {
+      .cover-image-container {
         width: 100%;
-        object-fit: cover;
-        height: 100%;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+
+      .author-name {
+        padding: 0 $unit*3;
+
+        .profile-image {
+          width: 30%;
+          max-width: 290px;
+          margin-top: -15%;
+          z-index: 1;
+
+          @include breakpoint($lap) {
+            width: 100%;
+            margin-top: -30%;
+          }
+
+          @include breakpoint($desk) {
+            width: 50%;
+          }
+
+          img {
+            border-radius: 50%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .author-info {
+        display: flex;
+        justify-content: space-between;
+        margin: $unit $unit*3;
+
+        .member-since,
+        .roles {
+          p {
+            margin: 0;
+          }
+        }
+      }
+
+      p {
+        margin: $unit *2 $unit *3;
+      }
+
+      .sidebar-buttons {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .btn {
+          margin-top: $unit;
+        }
       }
     }
 
-    .author-info-container {
-      padding: $unit $unit*3;
+    .sidebar-links {
+      padding: $unit *2 $unit *3;
+      background-color: $light-gray;
+      margin-top: $unit *2;
+      display: flex;
+      flex-direction: column;
 
-      .profile-image {
-        width: 30%;
-        max-width: 290px;
-        margin-top: -15%;
-        z-index: 1;
-
-        @include breakpoint($lap) {
-          width: 100%;
-          margin-top: -30%;
-        }
-
-        @include breakpoint($desk) {
-          width: 50%;
-        }
-
-        img {
-          border-radius: 50%;
-          width: 100%;
-          object-fit: cover;
-        }
+      a {
+        margin: $unit /4;
       }
     }
   }
