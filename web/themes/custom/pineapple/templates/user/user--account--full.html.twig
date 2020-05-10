@@ -37,8 +37,44 @@
         } %}
       </div> <!-- End of author-info-container -->
       <div class="author-text">
+        {% set current_user = bamboo_load_currentuser().uid.value %}
+        {% set user_roles = user.getRoles() %}
+        {% set member_since = user.getCreatedTime()|date("m/d/Y") %}
+        <strong>Member since</strong>
+        <p>{{ member_since }}</p>
+        {% if 'recipe_editor' in user_roles %}
+          <strong>Recipe Editor</strong>
+        {% endif %}
+        {% if 'article_editor' in user_roles %}
+          <strong>Article Editor</strong>
+        {% endif %}
         <p>{{ content.field_u_biography|field_value }}</p>
       </div> <!-- End of author-text -->
+      <div class="sidebar-links">
+        {% if current_user == user.id %}
+          {% set edit_link = '/user/' ~ user.id ~ '/edit'  %}
+          {% include "@components/_link.twig" with {
+            link_text: 'Edit Profile',
+            link_url: edit_link
+          } %}
+        {% endif %}
+        {% if 'recipe_editor' in user_roles %}
+          {% include "@components/_link.twig" with {
+            link_text: 'Create a Recipe',
+            link_url: '/node/add/recipe',
+          } %}
+        {% endif %}
+        {% if 'article_editor' in user_roles %}
+          {% include "@components/_link.twig" with {
+            link_text: 'Create an Article',
+            link_url: '/node/add/article',
+          } %}
+        {% endif %}
+        {% include "@components/_link.twig" with {
+          link_text: 'How To Create Content',
+          link_url: '/help',
+        } %}
+      </div>
     </div> <!-- End of author-container -->
     {{ bamboo_render_views('user_content', 'embed_1', user.id) }}
   </div>
