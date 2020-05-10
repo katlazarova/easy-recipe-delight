@@ -44,39 +44,41 @@
             <strong>Member since</strong>
             <p>{{ member_since }}</p>
           </div>
-          <div class="roles">
-            {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
-              <strong>Role(s)</strong>
-            {% endif %}
-            {% if 'recipe_editor' in user_roles %}
-              <p>Recipe Editor</p>
-            {% endif %}
-            {% if 'article_editor' in user_roles %}
-              <p>Article Editor</p>
-            {% endif %}
-          </div> <!-- End of roles -->
+          {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
+            <div class="roles">
+                <strong>Role(s)</strong>
+              {% if 'recipe_editor' in user_roles %}
+                <p>Recipe Editor</p>
+              {% endif %}
+              {% if 'article_editor' in user_roles %}
+                <p>Article Editor</p>
+              {% endif %}
+            </div> <!-- End of roles -->
+          {% endif %}
         </div> <!-- End of author-info -->
         {% if content.field_u_biography|field_value %}
           <p>{{ content.field_u_biography|field_value }}</p>
         {% endif %}
-        <div class="sidebar-buttons">
-          {% set current_user_id = bamboo_load_currentuser().id %}
-          {% if current_user_id == user.id %}
-            {% set edit_link = '/user/' ~ user.id ~ '/edit'  %}
-            {% include "@components/_link.twig" with {
-              link_text: 'Edit Profile',
-              link_url: edit_link,
-              link_attributes: create_attribute().addClass('btn', 'btn--primary')
-            } %}
-          {% endif %}
-          {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
-            {% include "@components/_link.twig" with {
-              link_text: 'Create Content',
-              link_url: '/node/add',
-              link_attributes: create_attribute().addClass('btn', 'btn--tertiary')
-            } %}
-          {% endif %}
-        </div>
+        {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
+          <div class="sidebar-buttons">
+            {% set current_user_id = bamboo_load_currentuser().id %}
+            {% if current_user_id == user.id %}
+              {% set edit_link = '/user/' ~ user.id ~ '/edit'  %}
+              {% include "@components/_link.twig" with {
+                link_text: 'Edit Profile',
+                link_url: edit_link,
+                link_attributes: create_attribute().addClass('btn', 'btn--primary')
+              } %}
+            {% endif %}
+            {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
+              {% include "@components/_link.twig" with {
+                link_text: 'Create Content',
+                link_url: '/node/add',
+                link_attributes: create_attribute().addClass('btn', 'btn--tertiary')
+              } %}
+            {% endif %}
+          </div>
+        {% endif %}
       </div> <!-- End of author-container -->
       <div class="sidebar-links">
         {% include "@components/_link.twig" with {
