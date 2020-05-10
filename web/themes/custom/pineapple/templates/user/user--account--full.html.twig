@@ -46,7 +46,9 @@
             <p>{{ member_since }}</p>
           </div>
           <div class="roles">
-            <strong>Role(s)</strong>
+            {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
+              <strong>Role(s)</strong>
+            {% endif %}
             {% if 'recipe_editor' in user_roles %}
               <p>Recipe Editor</p>
             {% endif %}
