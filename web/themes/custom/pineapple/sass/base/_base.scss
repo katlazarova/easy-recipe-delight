@@ -78,6 +78,10 @@ hr {
   margin-bottom: 0;
 }
 
+.u-o-1 > * + * {
+  margin-top: $unit;
+}
+
 .u-o-2 > * + * {
     margin-top: $unit * 2;
 }

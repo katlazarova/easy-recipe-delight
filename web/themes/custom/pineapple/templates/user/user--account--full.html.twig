@@ -60,7 +60,7 @@
           <p>{{ content.field_u_biography|field_value }}</p>
         {% endif %}
         {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
-          <div class="sidebar-buttons">
+          <div class="sidebar-buttons u-o-1">
             {% set current_user_id = bamboo_load_currentuser().id %}
             {% if current_user_id == user.id %}
               {% set edit_link = '/user/' ~ user.id ~ '/edit'  %}
@@ -69,13 +69,13 @@
                 link_url: edit_link,
                 link_attributes: create_attribute().addClass('btn', 'btn--primary')
               } %}
-            {% endif %}
-            {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
-              {% include "@components/_link.twig" with {
-                link_text: 'Create Content',
-                link_url: '/node/add',
-                link_attributes: create_attribute().addClass('btn', 'btn--tertiary')
-              } %}
+              {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
+                {% include "@components/_link.twig" with {
+                  link_text: 'Create Content',
+                  link_url: '/node/add',
+                  link_attributes: create_attribute().addClass('btn', 'btn--tertiary')
+                } %}
+              {% endif %}
             {% endif %}
           </div>
         {% endif %}
