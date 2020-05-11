@@ -69,6 +69,22 @@
           display: flex;
           justify-content: space-between;
 
+          @include breakpoint($lap) {
+            flex-direction: column;
+
+            .roles {
+              margin-top: $unit;
+            }
+          }
+
+          @include breakpoint($desk) {
+            flex-direction: row;
+
+            .roles {
+              margin-top: 0;
+            }
+          }
+
           p {
             margin: 0;
           }
