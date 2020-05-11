@@ -208,8 +208,8 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<h2>I don''t have any content at the moment. Please come back soon...</h2>'
-            format: basic_html
+            value: '<h2 class="subheading">I don''t have any content at the moment. Please come back soon...</h2>'
+            format: full_html
           plugin_id: text
       relationships: {  }
       arguments:
