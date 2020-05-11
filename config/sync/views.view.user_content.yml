@@ -208,7 +208,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<h3>I don''t have any content at the moment. Please come back soon...</h3>'
+            value: '<h2>I don''t have any content at the moment. Please come back soon...</h2>'
             format: basic_html
           plugin_id: text
       relationships: {  }
