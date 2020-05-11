@@ -7,6 +7,7 @@ dependencies:
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
+    - field.field.user.user.field_u_policy_agreement
     - field.field.user.user.field_u_profile_image
   module:
     - path
@@ -35,6 +36,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_u_policy_agreement:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   language:
     weight: 2

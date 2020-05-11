@@ -6,6 +6,7 @@ dependencies:
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
+    - field.field.user.user.field_u_policy_agreement
     - field.field.user.user.field_u_profile_image
   module:
     - media_library
@@ -74,4 +75,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_u_policy_agreement: true
