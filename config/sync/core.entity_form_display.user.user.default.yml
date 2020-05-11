@@ -11,7 +11,6 @@ dependencies:
     - field.field.user.user.field_u_policy_agreement
     - field.field.user.user.field_u_profile_image
   module:
-    - datetime
     - media_library
     - path
     - user
@@ -32,19 +31,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_last_password_reset:
-    type: datetime_default
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_password_expiration:
-    type: boolean_checkbox
-    weight: 3
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    region: content
   field_u_biography:
     weight: 3
     settings:
@@ -92,4 +78,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_last_password_reset: true
+  field_password_expiration: true
   field_u_policy_agreement: true
