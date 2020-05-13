@@ -34,7 +34,6 @@ function pineapple_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface 
  * Implements hook_element_info_alter().
  */
 function pineapple_user_element_info_alter(&$info) {
-  $v = 0;
   if (isset($info['password_confirm'])) {
     $info['password_confirm']['#process'][] = '_pineapple_user_change_title';
   }
@@ -42,5 +41,6 @@ function pineapple_user_element_info_alter(&$info) {
 
 function _pineapple_user_change_title(&$element) {
   $element['pass1']['#title'] = t('New Password');
+  $element['pass2']['#title'] = t('Confirm New Password');
   return $element;
 }
