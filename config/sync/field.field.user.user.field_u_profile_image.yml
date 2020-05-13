@@ -14,7 +14,7 @@ field_name: field_u_profile_image
 entity_type: user
 bundle: user
 label: 'Profile Image'
-description: ''
+description: 'Please do not upload any offensive or graphic images. '
 required: true
 translatable: false
 default_value:
