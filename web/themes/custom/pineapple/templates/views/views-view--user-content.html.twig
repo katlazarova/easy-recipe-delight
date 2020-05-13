@@ -42,3 +42,8 @@
     'vertical'
   ])
 }%}
+{% if view_is_empty %}
+  <div class="help-link">
+    <p>Click</p><a href="/creating-content-easy-recipe-delight">here</a><p>for help on how to add content.</p>
+  </div>
+{% endif %}
