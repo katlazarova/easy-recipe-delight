@@ -1,6 +1,4 @@
 table {
-  border: $white 1px solid;
-  border-radius: 3px;
   caption {
     font-size: 22px;
     line-height: 39px;
@@ -12,7 +10,8 @@ table {
     color: $primary;
   }
   thead {
-    background-color: $primary;
+    background-color: $dark-gray;
+    color: $white;
     font-weight: inherit;
     font-style: inherit;
     font-size: 100%;
@@ -33,14 +32,9 @@ table {
     tr {
       text-align: center;
       padding-left: 20px;
-
-      &.even {
-        background-color: $primary;
-      }
-
-      &.odd {
-        background-color: $light-purple;
-      }
+      background-color: $light-gray;
+      color: $primary;
+      border-bottom: 2px solid $dark-gray;
 
       td {
         padding: 18px;
