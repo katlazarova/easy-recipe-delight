@@ -23,6 +23,7 @@
         "drupal/admin_toolbar": "^2.0",
         "drupal/bamboo_twig": "^4.1",
         "drupal/better_exposed_filters": "^4.0@alpha",
+        "drupal/comments_order": "^1.1",
         "drupal/components": "^1.1",
         "drupal/config_ignore": "^2.2",
         "drupal/config_split": "^1.4",
