@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "1f80b7fcd586b44e6a13c291238f6b9e",
-  
+    "content-hash": "bb334dce9a1d9159b8ff0deccd18651b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3815,6 +3813,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Prevent password validation when password unchanged": "https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

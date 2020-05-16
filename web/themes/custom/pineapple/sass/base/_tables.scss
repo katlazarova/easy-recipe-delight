@@ -1,4 +1,6 @@
 table {
+  border: $white 1px solid;
+  border-radius: 3px;
   caption {
     font-size: 22px;
     line-height: 39px;
@@ -10,8 +12,7 @@ table {
     color: $primary;
   }
   thead {
-    background-color: $dark-gray;
-    color: $white;
+    background-color: $primary;
     font-weight: inherit;
     font-style: inherit;
     font-size: 100%;
@@ -30,10 +31,16 @@ table {
     vertical-align: baseline;
 
     tr {
+      text-align: center;
       padding-left: 20px;
-      background-color: $light-gray;
-      color: $primary;
-      border-bottom: 2px solid $dark-gray;
+
+      &.even {
+        background-color: $primary;
+      }
+
+      &.odd {
+        background-color: $light-purple;
+      }
 
       td {
         padding: 18px;
@@ -41,8 +48,4 @@ table {
       }
     }
   }
-}
-
-.table-responsive {
-  overflow-y: hidden;
 }

@@ -18,28 +18,96 @@
 #}
 <article{{ attributes }}>
   <div class="author-body">
-    {% set cover_image_url = bamboo_render_image_style(content.field_u_cover_image|field_target_entity.field_media_image.entity.uri.value, 'cover_image') %}
-    {% include "@components/_hero-image.twig" with {
-      image_url: cover_image_url,
-      hero_attributes: create_attribute().addClass('cover-image')
-    } %}
-    <div class="author-container breakout">
-      <div class="author-info-container container">
-        <div class="profile-image">
-          {% set profile_image_url = bamboo_render_image_style(content.field_u_profile_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
-          {% set profile_image_alt = content.field_u_profile_image|field_target_entity.field_media_image.alt %}
-          <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
-        </div>
-        <div class="author-text">
+    <div class="sidebar-container">
+      <div class="author-container u-o-1">
+        <div class="cover-image-container">
+          {% set cover_image_url = bamboo_render_image_style(content.field_u_cover_image|field_target_entity.field_media_image.entity.uri.value, 'vertical_teaser') %}
+          {% set cover_image_alt = content.field_u_cover_image|field_target_entity.field_media_image.alt %}
+          <img src="{{ cover_image_url }}" alt="{{ cover_image_alt }}">
+        </div> <!-- End of cover-image-container -->
+
+        <div class="author-name container">
+          <div class="profile-image">
+            {% set profile_image_url = bamboo_render_image_style(content.field_u_profile_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
+            {% set profile_image_alt = content.field_u_profile_image|field_target_entity.field_media_image.alt %}
+            <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
+          </div> <!-- End of profile-image -->
+
           {% include "@components/_heading.twig" with {
             heading_level: 1,
-            heading_attributes: create_attribute().addClass('author-name'),
+            heading_attributes: create_attribute().addClass('subheading'),
             heading_text: content.field_u_name|field_value|first['#context'].value
           } %}
-          <p>{{ content.field_u_biography|field_value }}</p>
+        </div> <!-- End of author-name-container -->
+
+        <div class="author-text u-o-1">
+          <div class="author-info">
+            {% set user_roles = user.getRoles() %}
+            {% set member_since = user.getCreatedTime()|date("d/m/Y") %}
+
+            <div class="member-since">
+              <strong>Member since</strong>
+              <p>{{ member_since }}</p>
+            </div>
+
+            {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles %}
+              <div class="roles">
+                  <strong>Role(s)</strong>
+                {% if 'recipe_editor' in user_roles %}
+                  <p>Recipe Editor</p>
+                {% endif %}
+                {% if 'article_editor' in user_roles %}
+                  <p>Article Editor</p>
+                {% endif %}
+              </div> <!-- End of roles -->
+            {% endif %}
+          </div> <!-- End of author-info -->
+          {% if not node.field_u_biography.isEmpty() %}
+            <p>{{ content.field_u_biography|field_value }}</p>
+          {% endif %}
         </div> <!-- End of author-text -->
-      </div> <!-- End of author-info-container -->
-    </div> <!-- End of author-container -->
+
+        {% if 'recipe_editor' in user_roles or 'article_editor' in user_roles or 'administrator' in user_roles %}
+          <div class="sidebar-buttons u-o-1">
+            {% set current_user_id = bamboo_load_currentuser().id %}
+            {% if current_user_id == user.id %}
+              {% set edit_link = '/user/' ~ user.id ~ '/edit'  %}
+              {% include "@components/_link.twig" with {
+                link_text: 'Edit Profile',
+                link_url: edit_link,
+                link_attributes: create_attribute().addClass('btn', 'btn--primary')
+              } %}
+              {% include "@components/_link.twig" with {
+                link_text: 'Create Content',
+                link_url: '/node/add',
+                link_attributes: create_attribute().addClass('btn', 'btn--tertiary')
+              } %}
+            {% endif %}
+          </div> <!-- End of sidebar-buttons -->
+        {% endif %}
+      </div> <!-- End of author-container -->
+
+      <div class="sidebar-links u-o-1">
+        {% include "@components/_heading.twig" with {
+          heading_level: 2,
+          heading_text: 'Useful Links',
+          heading_attributes: create_attribute().addClass('h3'),
+          omit_base_class: true
+        } %}
+        {% include "@components/_link.twig" with {
+          link_text: 'How To Create Content',
+          link_url: '/help'
+        } %}
+        {% include "@components/_link.twig" with {
+          link_text: 'Contact Us',
+          link_url: '/contact-us'
+        } %}
+        {% include "@components/_link.twig" with {
+          link_text: 'Privacy Policy',
+          link_url: '/privacy-policy'
+        } %}
+      </div> <!-- End of sidebar-links -->
+    </div> <!-- End of sidebar-container -->
     {{ bamboo_render_views('user_content', 'embed_1', user.id) }}
-  </div>
+  </div> <!-- End of author-body -->
 </article>

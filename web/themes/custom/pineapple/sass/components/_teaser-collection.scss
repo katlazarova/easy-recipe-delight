@@ -30,3 +30,14 @@
     }
   }
 }
+
+.author-body {
+  .collection-row {
+    &.vertical {
+      @include breakpoint($desk) {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+  }
+}
