@@ -9,7 +9,7 @@
  * Implements hook_form_alter().
  */
 function pineapple_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if ($form_id == "user_form") {
+  if ($form_id == 'user_form') {
     $user_roles = \Drupal::currentUser()->getRoles();
     if (!in_array('administrator', $user_roles) && !in_array('recipe_editor', $user_roles) && !in_array('article_editor', $user_roles)) {
       $form['field_u_cover_image']['#access'] = FALSE;
