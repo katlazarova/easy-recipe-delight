@@ -1,10 +1,10 @@
 smtp_on: true
-smtp_host: mail.gmail.com
+smtp_host: smtp.gmail.com
 smtp_hostbackup: ''
 smtp_port: '465'
 smtp_protocol: ssl
-smtp_username: ''
-smtp_password: ''
+smtp_username: test
+smtp_password: test
 smtp_from: easyrecipedelight@gmail.com
 smtp_fromname: 'Easy Recipe Delight Team'
 smtp_client_hostname: ''
