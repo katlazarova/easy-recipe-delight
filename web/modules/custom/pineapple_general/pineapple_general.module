@@ -31,6 +31,7 @@ function pineapple_general_help($route_name, RouteMatchInterface $route_match) {
  */
 function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
   if (key_exists('form_id', $form_state->getBuildInfo())) {
+    $user_roles = \Drupal::currentUser()->getRoles();
     $build_info = $form_state->getBuildInfo();
     // If the field is on the article or recipe create or edit form, run code.
     switch ($build_info['form_id']) {
@@ -49,6 +50,12 @@ function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\
           $element['value']['#attributes']['maxlength'] = $maxlength_js;
           $element['#attributes']['maxlength'] = $maxlength_js;
         }
+
+      if (!in_array('administrator', $user_roles)) {
+        if($field == 'moderation_state') {
+          $element['state']['#description'] = 'Your changes will be reviewed and be published when approved by an administrator.';
+        }
+      }
       break;
     }
   }
