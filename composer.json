@@ -34,6 +34,7 @@
         "drupal/masquerade": "^2.0@beta",
         "drupal/maxlength": "^1.0@beta",
         "drupal/paragraphs": "^1.10",
+        "drupal/password_policy": "^3.0@beta",
         "drupal/pathauto": "^1.6",
         "drupal/production_checklist": "^1.0@alpha",
         "drupal/registration_validation": "^1.2",
@@ -97,6 +98,9 @@
             },
             "drupal/paragraphs": {
                 "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
+            },
+            "drupal/password_policy": {
+                "Prevent password validation when password unchanged": "https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch"
             }
         },
         "drupal-scaffold": {

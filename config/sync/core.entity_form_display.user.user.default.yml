@@ -3,9 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
+    - field.field.user.user.field_u_policy_agreement
     - field.field.user.user.field_u_profile_image
   module:
     - media_library
@@ -74,4 +77,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_last_password_reset: true
+  field_password_expiration: true
+  field_u_policy_agreement: true
