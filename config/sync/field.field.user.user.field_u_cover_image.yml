@@ -15,7 +15,7 @@ entity_type: user
 bundle: user
 label: 'Cover Image'
 description: 'Please do not upload any offensive or graphic images. '
-required: false
+required: true
 translatable: false
 default_value:
   -
