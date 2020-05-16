@@ -1,0 +1,5 @@
+name: 'pineapple_user'
+type: module
+description: 'Module for user-related functions'
+core: 8.x
+package: 'Custom'

@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains pineapple_user.module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function pineapple_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == "user_form") {
+    $user_roles = \Drupal::currentUser()->getRoles();
+    if (!in_array('administrator', $user_roles) && !in_array('recipe_editor', $user_roles) && !in_array('article_editor', $user_roles)) {
+      $form['field_u_cover_image']['#access'] = FALSE;
+      $form['field_u_profile_image']['#access'] = FALSE;
+      $form['field_u_biography']['#access'] = FALSE;
+    }
+
+    if (in_array('authenticated', $user_roles)) {
+      $form['account']['roles']['#access'] = TRUE;
+      $form['account']['roles']['#description'] = t('Choose a role. Article Editors can create articles and Recipe Editors can create recipes.');
+      if (!in_array('administrator', $user_roles)) {
+        unset($form['account']['roles']['#options']['administrator']);
+      }
+    }
+    $form['account']['current_pass']['#weight'] = 1;
+    $form['account']['name']['#weight'] = 1;
+    $form['account']['roles']['#weight'] = 5;
+  }
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function pineapple_user_element_info_alter(&$info) {
+  if (isset($info['password_confirm'])) {
+    $info['password_confirm']['#process'][] = '_pineapple_user_change_title';
+  }
+}
+
+function _pineapple_user_change_title(&$element) {
+  $element['pass1']['#title'] = t('New Password');
+  $element['pass2']['#title'] = t('Confirm New Password');
+  return $element;
+}

@@ -51,11 +51,13 @@ module:
   path: 0
   pineapple_general: 0
   pineapple_helper: 0
+  pineapple_user: 0
   quickedit: 0
   rdf: 0
   registration_validation: 0
   shortcut: 0
   site_settings: 0
+  smtp: 0
   styleguide: 0
   system: 0
   taxonomy: 0
