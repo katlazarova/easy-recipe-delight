@@ -97,6 +97,9 @@
             },
             "drupal/paragraphs": {
                 "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
+            },
+            "drupal/password_policy": {
+                "Prevent password validation when password unchanged": "https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch"
             }
         },
         "drupal-scaffold": {
