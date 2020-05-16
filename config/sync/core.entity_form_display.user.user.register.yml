@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
     - field.field.user.user.field_u_biography
     - field.field.user.user.field_u_cover_image
     - field.field.user.user.field_u_name
@@ -42,7 +44,7 @@ content:
     weight: 5
     region: content
     settings:
-      display_label: true
+      display_label: false
     third_party_settings: {  }
   language:
     weight: 2
