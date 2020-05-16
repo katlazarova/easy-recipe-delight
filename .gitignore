@@ -49,3 +49,6 @@
 
 .DS_Store
 **/.DS_Store
+
+# Config files
+/config/sync/smtp.settings.yml
