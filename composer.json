@@ -38,6 +38,7 @@
         "drupal/production_checklist": "^1.0@alpha",
         "drupal/registration_validation": "^1.2",
         "drupal/site_settings": "^1.16",
+        "drupal/smtp": "1.0-beta7",
         "drupal/styleguide": "^1.0@alpha",
         "drupal/twig_field_value": "^1.2",
         "drupal/webform": "^5.8",
