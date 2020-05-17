@@ -19,6 +19,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: 'I agree to the <a href="/terms">terms</a> and <a href="/privacy-policy">privacy policy</a> of Easy Recipe Delight '
+  on_label: 'I agree to the <a href="/terms">terms</a> and <a href="/privacy-policy">privacy policy</a> of Easy Recipe Delight'
   off_label: 'Off'
 field_type: boolean
