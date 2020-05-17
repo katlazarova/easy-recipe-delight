@@ -5,37 +5,43 @@ form {
   font-family: "Lato", sans-serif;
   text-transform: capitalize;
   padding: $unit * 2;
-  font-size: 12px;
   width: 100%;
   margin: 0 auto;
+  letter-spacing: 0.4px;
 
   .form-item {
 
     label {
-      font-size: 20px;
+      color: $primary;
     }
 
     .form-text,
     .form-textarea,
     .form-select,
-    .form-email {
+    .form-email,
+    .form-date {
       display: block;
       width: 100%;
       margin: $unit auto;
-      color: $primary;
-      padding: $unit;
-      background-color: $white;
+      color: $dark-gray;
+      padding: 12px;
+      background-color: $light-gray;
       border: 0;
-      border-bottom: thin solid $dark-gray;
-      &:hover,
+      border-bottom: 2px solid $dark-gray;
+      letter-spacing: 0.4px;
+
+      &:hover {
+        background-color: darken($light-gray, 3);
+      }
       &:focus {
-        background-color: $light-gray;
+        border-bottom: 2px solid $secondary;
+        color: $secondary;
       }
     }
 
-    .form-textarea,
-    .form-select {
-      border: thin solid $dark-gray;
+    .form-file {
+      display: flex;
+      flex-direction: column;
     }
 
     .description {
@@ -44,7 +50,18 @@ form {
     }
   }
 
+  .form-item-date,
+  .form-item-password {
+    max-width: 33em;
+  }
+
+  .form-radio,
+  .form-checkbox {
+    margin-right: $unit;
+  }
+
   .fieldset-legend {
     font-size: 20px;
+    color: $primary;
   }
 }

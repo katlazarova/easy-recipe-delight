@@ -1,0 +1,27 @@
+.block-page-title-block {
+  display: flex;
+  align-items: center;
+}
+
+.pineapple-helper-link__button {
+  margin: 0 !important;
+}
+
+.pineapple-helper__spacer {
+  flex: 1;
+}
+
+.toolbar .toolbar-icon-pineapple-helper-raise-issue-dialog.toolbar-icon:before {
+  content: '!';
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px 2px;
+}
+
+.toolbar .toolbar-icon-pineapple-helper-raise-issue-dialog.toolbar-icon.is-active:before {
+  color: black;
+}
+
+.button.raise-an-issue {
+  margin: 0;
+}

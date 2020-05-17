@@ -8,7 +8,6 @@ weight: 6
 is_admin: null
 permissions:
   - 'access content overview'
-  - 'access files overview'
   - 'access toolbar'
   - 'create article content'
   - 'create author content'
@@ -20,5 +19,6 @@ permissions:
   - 'edit own author content'
   - 'edit own image media'
   - 'use content_workflow transition unpublished'
+  - 'use text format restricted_html'
   - 'view own unpublished content'
   - 'view the administration theme'

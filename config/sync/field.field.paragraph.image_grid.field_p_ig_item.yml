@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: image_grid
 label: Item(s)
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -40,6 +40,9 @@ settings:
       image_paragraph:
         weight: 14
         enabled: false
+      content_spotlight:
+        weight: 15
+        enabled: false
       instruction:
         weight: 15
         enabled: false
@@ -51,5 +54,11 @@ settings:
         enabled: false
       slideshow:
         weight: 18
+        enabled: false
+      view_embed:
+        weight: 23
+        enabled: false
+      webform_embed:
+        weight: 24
         enabled: false
 field_type: entity_reference_revisions

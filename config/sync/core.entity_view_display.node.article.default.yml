@@ -3,13 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.article_comment.default
+    - field.field.node.article.field_a_article_comments
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
-    - field.field.node.article.field_author
     - node.type.article
   module:
+    - comment
     - entity_reference_revisions
     - user
 id: node.article.default
@@ -22,6 +24,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_a_article_comments:
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
   field_a_body:
     type: entity_reference_revisions_entity_view
     weight: 5
@@ -55,15 +66,6 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    region: content
-  field_author:
-    weight: 3
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
     region: content
 hidden:
   links: true

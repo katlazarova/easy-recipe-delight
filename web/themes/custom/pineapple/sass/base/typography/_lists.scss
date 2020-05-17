@@ -26,6 +26,10 @@ ul.pager__items {
       }
     }
 
+    &.pager__item--previous {
+      background-color: initial;
+    }
+
     &.is-active {
       background-color: $primary;
       color: $white;

@@ -42,6 +42,7 @@
     height: fit-content;
     padding-bottom: $unit *3;
     margin-top: $unit *2;
+    transition: 0.5s;
 
     &:hover,
     &:focus {

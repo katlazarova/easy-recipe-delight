@@ -17,6 +17,20 @@
       flex-grow: 1;
       width: 100%;
 
+      .form-checkbox {
+        margin-right: 0;
+      }
+
+      .form-text,
+      .form-select {
+        background-color: $white;
+
+        &:hover {
+          border-bottom: 2px solid $secondary;
+          color: $secondary;
+        }
+      }
+
       &.form-type-select {
         flex-direction: column;
         display: flex;

@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_bp_body
     - node.type.page
     - paragraphs.paragraphs_type.components
-    - paragraphs.paragraphs_type.view_embed
     - paragraphs.paragraphs_type.webform_embed
   module:
     - entity_reference_revisions
@@ -16,7 +15,7 @@ entity_type: node
 bundle: page
 label: Body
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -26,7 +25,6 @@ settings:
     negate: 0
     target_bundles:
       components: components
-      view_embed: view_embed
       webform_embed: webform_embed
     target_bundles_drag_drop:
       components:
@@ -41,8 +39,14 @@ settings:
       grid_item:
         weight: 14
         enabled: false
+      accordion:
+        weight: 15
+        enabled: false
       image_grid:
         weight: 15
+        enabled: false
+      accordion_item:
+        weight: 16
         enabled: false
       image_paragraph:
         weight: 16
@@ -53,15 +57,15 @@ settings:
       method:
         weight: 18
         enabled: false
+      content_authors_component:
+        weight: 19
+        enabled: false
       rich_text:
         weight: 19
         enabled: false
       slideshow:
         weight: 20
         enabled: false
-      view_embed:
-        enabled: true
-        weight: 22
       webform_embed:
         enabled: true
         weight: 24

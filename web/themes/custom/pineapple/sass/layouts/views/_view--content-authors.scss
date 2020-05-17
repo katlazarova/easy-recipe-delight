@@ -1,0 +1,11 @@
+.view-content-authors {
+  .collection-row {
+    &.horizontal {
+      &:nth-of-type(even) {
+        .card-image-container {
+          order: 2;
+        }
+      }
+    }
+  }
+}

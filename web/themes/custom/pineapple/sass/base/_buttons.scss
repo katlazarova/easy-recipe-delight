@@ -8,6 +8,7 @@
   display: inline-block;
   border: 1px solid $primary;
   color: $white;
+  text-decoration: none;
 
   &:hover,
   &:focus {
@@ -17,6 +18,7 @@
 
 .btn--primary {
   color: $primary;
+  background-color: $white;
 
   &:hover,
   &:focus {
@@ -41,6 +43,18 @@
   &:hover,
   &:focus {
     background-color: $dark-purple;
+  }
+}
+
+.btn--form-submit {
+  background-color: $dark-gray;
+  border: none;
+  font-size: $unit *2;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
   }
 }
 

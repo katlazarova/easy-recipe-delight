@@ -15,7 +15,7 @@ entity_type: paragraph
 bundle: instruction
 label: Step
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -47,5 +47,20 @@ settings:
         weight: 13
       slideshow:
         weight: 14
+        enabled: false
+      content_spotlight:
+        weight: 15
+        enabled: false
+      grid_item:
+        weight: 16
+        enabled: false
+      image_grid:
+        weight: 17
+        enabled: false
+      view_embed:
+        weight: 23
+        enabled: false
+      webform_embed:
+        weight: 24
         enabled: false
 field_type: entity_reference_revisions

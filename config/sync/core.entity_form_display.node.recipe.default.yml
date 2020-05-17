@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.recipe.field_author
     - field.field.node.recipe.field_r_body
     - field.field.node.recipe.field_r_categories
     - field.field.node.recipe.field_r_cooking_time
@@ -11,12 +10,14 @@ dependencies:
     - field.field.node.recipe.field_r_featured
     - field.field.node.recipe.field_r_hero_image
     - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_recipe_comments
     - field.field.node.recipe.field_r_serves
     - field.field.node.recipe.field_r_summary
     - field.field.node.recipe.field_r_teaser_image
     - node.type.recipe
     - workflows.workflow.content_workflow
   module:
+    - comment
     - content_moderation
     - media_library
     - paragraphs
@@ -32,15 +33,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_author:
-    weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_r_body:
     type: entity_reference_paragraphs
     weight: 17
@@ -48,9 +40,9 @@ content:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_r_categories:
@@ -98,6 +90,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_r_recipe_comments:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
     region: content
   field_r_serves:
     weight: 10

@@ -102,25 +102,24 @@
         {{ content.field_r_body }}
       </div>
     </div> <!-- End of recipe-body -->
-    {% set author_node = content.field_author|field_value|first['#node'] %}
     <aside class="recipe-sidebar" data-card>
       <div class="recipe-author-container">
-        {% set author_image_url = bamboo_render_image_style(author_node.field_a_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
-        {% set author_image_alt = author_node.field_a_image.entity.field_media_image.alt %}
+        {% set author_image_url = bamboo_render_image_style(node.Owner.field_u_profile_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
+        {% set author_image_alt = node.Owner.field_u_profile_image.entity.field_media_image.alt %}
         <div class="author-image-container">
           <img src="{{ author_image_url }}" alt="{{ author_image_alt }}">
         </div>
         <div class="recipe-author-text-container">
           <div class="author-name">
-            <p>by {{ author_node.getTitle() }}</p>
+            <p>by {{ node.Owner.field_u_name.value }}</p>
           </div>
           <div class="author-quote">
-            {{ author_node.field_a_biography.value }}
+            {{ node.Owner.field_u_biography.value }}
           </div>
         </div> <!-- End of recipe-author-text-container -->
         <div class="view-content-button">
           {% include "@components/_button.twig" with {
-            button_url: author_node.url,
+            button_url: node.Owner.url(),
             button_type: 'underlined',
             button_text: 'View My Content'
           } %}
@@ -128,4 +127,20 @@
       </div> <!-- End of recipe-author-container -->
     </aside> <!-- End of recipe-sidebar -->
   </div> <!-- End of row -->
+  {{ content.field_r_recipe_comments }}
+  {% set comment_count = node.field_r_recipe_comments.comment_count %}
+  {% if comment_count > 10 and not logged_in %}
+    <div class="forbidden-comments">
+      {% include "@components/_link.twig" with {
+        link_text: 'Log in',
+        link_url: '/user/login'
+      } %}
+      <p>or</p>
+      {% include "@components/_link.twig" with {
+        link_text: 'register',
+        link_url: '/user/register'
+      } %}
+      <p>to post comments.</p>
+    </div>
+  {% endif %}
 </article>

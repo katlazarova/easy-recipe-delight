@@ -25,15 +25,21 @@
         "drupal/better_exposed_filters": "^4.0@alpha",
         "drupal/components": "^1.1",
         "drupal/config_ignore": "^2.2",
-        "drupal/console": "^1.0.2",
+        "drupal/config_split": "^1.4",
+        "drupal/console": "~1.0",
         "drupal/core": "8.7.0",
         "drupal/devel": "^2.1",
         "drupal/easy_breadcrumb": "^1.12",
         "drupal/honeypot": "^1.30",
+        "drupal/masquerade": "^2.0@beta",
         "drupal/maxlength": "^1.0@beta",
         "drupal/paragraphs": "^1.10",
+        "drupal/password_policy": "^3.0@beta",
         "drupal/pathauto": "^1.6",
+        "drupal/production_checklist": "^1.0@alpha",
+        "drupal/registration_validation": "^1.2",
         "drupal/site_settings": "^1.16",
+        "drupal/smtp": "1.0-beta7",
         "drupal/styleguide": "^1.0@alpha",
         "drupal/twig_field_value": "^1.2",
         "drupal/webform": "^5.8",
@@ -92,6 +98,9 @@
             },
             "drupal/paragraphs": {
                 "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
+            },
+            "drupal/password_policy": {
+                "Prevent password validation when password unchanged": "https://www.drupal.org/files/issues/2020-03-19/password_policy-empty-password-skip-validation-2971079-37.patch"
             }
         },
         "drupal-scaffold": {

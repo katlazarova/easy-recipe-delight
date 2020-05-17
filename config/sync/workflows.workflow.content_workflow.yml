@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - node.type.article
-    - node.type.author
     - node.type.page
     - node.type.recipe
   module:
@@ -47,7 +46,6 @@ type_settings:
   entity_types:
     node:
       - article
-      - author
       - page
       - recipe
   default_moderation_state: unpublished

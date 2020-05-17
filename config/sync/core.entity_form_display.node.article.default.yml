@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.article.field_a_article_comments
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
-    - field.field.node.article.field_author
     - node.type.article
     - workflows.workflow.content_workflow
   module:
+    - comment
     - content_moderation
     - media_library
     - paragraphs
@@ -26,6 +27,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_a_article_comments:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+    region: content
   field_a_body:
     type: entity_reference_paragraphs
     weight: 5
@@ -64,15 +71,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     type: media_library_widget
-    region: content
-  field_author:
-    weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   moderation_state:
     type: moderation_state_default

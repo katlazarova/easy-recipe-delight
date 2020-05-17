@@ -1,0 +1,13 @@
+pineapple_helper.raise_issue_dialog:
+  title: Raise an Issue
+  description: 'Raise an issue'
+  route_name: pineapple_helper.raise_issue_dialog
+  weight: 10
+  parent: system.admin
+  options:
+    attributes:
+      class:
+        - use-ajax
+      data-dialog-type: modal
+      data-progress-type: fullscreen
+      data-dialog-options: '{"width":700}'

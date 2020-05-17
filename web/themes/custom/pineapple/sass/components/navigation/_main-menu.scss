@@ -220,7 +220,7 @@
         justify-content: flex-end;
         position: relative;
         flex-direction: column;
-        text-align: center;
+        text-align: right;
 
         @include breakpoint($lap) {
           flex-direction: row;

@@ -1,0 +1,29 @@
+progress:
+  '#changed': 1589137981
+  '#changed_by': '1'
+  '#completed_items': 8
+  '#items':
+    site_information:
+      '#completed': 1584969473
+      '#uid': '1'
+    development_modules:
+      '#completed': 1589137981
+      '#uid': '1'
+    content_permissions:
+      '#completed': 1584969473
+      '#uid': '1'
+    comment_permissions:
+      '#completed': 1584969473
+      '#uid': '1'
+    antispam:
+      '#completed': 1584969473
+      '#uid': '1'
+    permission:
+      '#completed': 1584969473
+      '#uid': '1'
+    input_format:
+      '#completed': 1589137981
+      '#uid': '1'
+    url_rewriting:
+      '#completed': 1589137981
+      '#uid': '1'
