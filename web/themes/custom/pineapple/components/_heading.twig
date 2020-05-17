@@ -1,5 +1,5 @@
 {% set heading_level = heading_level|default(3) %}
-{% set is_page_title =  is_page_title|default(heading_level == 1 ? true) %}
+{% set is_page_title = is_page_title|default(heading_level == 1 ? true) %}
 {% set omit_base_class = omit_base_class|default(false) %}
 {% if not omit_base_class %}
   {% set heading_attributes = heading_attributes|default(create_attribute()).addClass([

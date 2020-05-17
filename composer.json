@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=7.0.8",
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.7",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^2.0",
@@ -27,7 +27,7 @@
         "drupal/config_ignore": "^2.2",
         "drupal/config_split": "^1.4",
         "drupal/console": "~1.0",
-        "drupal/core": "8.7.0",
+        "drupal/core-recommended": "^8.8",
         "drupal/devel": "^2.1",
         "drupal/easy_breadcrumb": "^1.12",
         "drupal/honeypot": "^1.30",
@@ -44,13 +44,17 @@
         "drupal/twig_field_value": "^1.2",
         "drupal/webform": "^5.8",
         "drush/drush": "^9.0.0",
+        "laminas/laminas-diactoros": "^1.8",
+        "laminas/laminas-escaper": "^2.6",
+        "laminas/laminas-feed": "^2.12",
+        "laminas/laminas-stdlib": "^3.2",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "^8.7.0"
+        "drupal/core-dev": "^8.8"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -93,9 +97,6 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-            "drupal/core": {
-                "Media library widget + Paragraphs broken": "https://www.drupal.org/files/issues/2019-05-16/drupal-media-library-paragraphs-3003150-38-8.x.patch"
-            },
             "drupal/paragraphs": {
                 "Declare the EXPERIMENTAL Widget as stable": "https://www.drupal.org/files/issues/2019-09-17/paragraphs-3080556-3.patch"
             },

@@ -1,5 +1,6 @@
 module:
   admin_toolbar: 0
+  admin_toolbar_search: 0
   admin_toolbar_tools: 0
   automated_cron: 0
   bamboo_twig: 0
@@ -49,6 +50,7 @@ module:
   password_policy_character_types: 0
   password_policy_length: 0
   path: 0
+  path_alias: 0
   pineapple_general: 0
   pineapple_helper: 0
   pineapple_user: 0
