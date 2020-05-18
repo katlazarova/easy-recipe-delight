@@ -86,7 +86,7 @@
       {% set hero_url = bamboo_render_image_style(content.field_a_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
       {% set author_link %}
         {% include "@components/_link.twig" with {
-          link_url: node.Owner.url(),
+          link_url: '/user/' ~ node.Owner.id(),
           link_text: node.Owner.field_u_name.value
         } %}
       {% endset %}
@@ -102,7 +102,7 @@
         <p>Written By: </p>
         {% include "@components/_link.twig" with {
           link_attributes: create_attribute().addClass('author-link'),
-          link_url: node.Owner.url(),
+          link_url: '/user/' ~ node.Owner.id(),
           link_text: node.Owner.field_u_name.value
         } %}
       </div>

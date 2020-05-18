@@ -119,7 +119,7 @@
         </div> <!-- End of recipe-author-text-container -->
         <div class="view-content-button">
           {% include "@components/_button.twig" with {
-            button_url: node.Owner.url(),
+            button_url: '/user/' ~ node.Owner.id(),
             button_type: 'underlined',
             button_text: 'View My Content'
           } %}
