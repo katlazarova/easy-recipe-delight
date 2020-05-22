@@ -119,7 +119,7 @@
         </div> <!-- End of recipe-author-text-container -->
         <div class="view-content-button">
           {% include "@components/_button.twig" with {
-            button_url: '/user/' ~ node.Owner.id(),
+            button_url: path('entity.user.canonical', {'user': node.Owner.id}),
             button_type: 'underlined',
             button_text: 'View My Content'
           } %}
@@ -133,12 +133,12 @@
     <div class="forbidden-comments">
       {% include "@components/_link.twig" with {
         link_text: 'Log in',
-        link_url: '/user/login'
+        link_url: path('user.login')
       } %}
       <p>or</p>
       {% include "@components/_link.twig" with {
         link_text: 'register',
-        link_url: '/user/register'
+        link_url: path('user.register')
       } %}
       <p>to post comments.</p>
     </div>
