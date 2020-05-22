@@ -109,12 +109,12 @@
     <div class="forbidden-comments">
       {% include "@components/_link.twig" with {
         link_text: 'Log in',
-        link_url: '/user/login'
+        link_url: path('user.login')
       } %}
       <p>or</p>
       {% include "@components/_link.twig" with {
         link_text: 'register',
-        link_url: '/user/register'
+        link_url: path('user.register')
       } %}
       <p>to post comments.</p>
     </div>
