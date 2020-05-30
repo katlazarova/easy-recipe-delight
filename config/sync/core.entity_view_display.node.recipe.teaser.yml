@@ -85,4 +85,5 @@ hidden:
   field_r_categories: true
   field_r_cost: true
   field_r_featured: true
+  field_r_recipe_comments: true
   links: true

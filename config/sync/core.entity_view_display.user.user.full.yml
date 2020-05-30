@@ -42,6 +42,9 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_last_password_reset: true
+  field_password_expiration: true
   field_u_cover_image: true
+  field_u_policy_agreement: true
   masquerade: true
   member_for: true

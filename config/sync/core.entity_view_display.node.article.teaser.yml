@@ -47,6 +47,7 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
+  field_a_article_comments: true
   field_a_body: true
   field_author: true
   links: true
