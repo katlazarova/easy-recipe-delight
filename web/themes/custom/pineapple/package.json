@@ -6,9 +6,8 @@
   "author": "katarina lazarova",
   "main": "index.js",
   "scripts": {
-    "afterinstall": "run-s afterinstall:**",
+    "afterinstall": "composer install && run-s afterinstall:**",
     "afterinstall:build": "npm run build",
-    "afterinstall:composerinstall": "composer install",
     "afterinstall:format": "npm run format",
     "afterinstall:lodash": "npm run lodash",
     "babel": "babel './assets/js/' --source-maps --out-dir dist",
