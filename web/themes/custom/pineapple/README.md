@@ -33,7 +33,7 @@ watch for changes in the sass and js files and then run the build scripts if cha
 
 Run the following command:
 ```
-composer require npm-assets/[name-of-library]
+composer require npm-asset/[name-of-library]
 ```
 
 The downloaded library will appear in the libraries directory.

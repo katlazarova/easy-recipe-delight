@@ -23,14 +23,20 @@
         <div class="cover-image-container">
           {% set cover_image_url = bamboo_render_image_style(content.field_u_cover_image|field_target_entity.field_media_image.entity.uri.value, 'vertical_teaser') %}
           {% set cover_image_alt = content.field_u_cover_image|field_target_entity.field_media_image.alt %}
-          <img src="{{ cover_image_url }}" alt="{{ cover_image_alt }}">
+          {% include "@components/_image.twig" with {
+            image_src: cover_image_url,
+            image_alt: cover_image_alt
+          } %}
         </div> <!-- End of cover-image-container -->
 
         <div class="author-name container">
           <div class="profile-image">
             {% set profile_image_url = bamboo_render_image_style(content.field_u_profile_image|field_target_entity.field_media_image.entity.uri.value, 'thumbnail_115_x_115') %}
             {% set profile_image_alt = content.field_u_profile_image|field_target_entity.field_media_image.alt %}
-            <img src="{{ profile_image_url }}" alt="{{ profile_image_alt }}">
+            {% include "@components/_image.twig" with {
+              image_src: profile_image_url,
+              image_alt: profile_image_alt
+            } %}
           </div> <!-- End of profile-image -->
 
           {% include "@components/_heading.twig" with {

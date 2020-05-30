@@ -36,6 +36,11 @@ accordion:
     - core/drupal
     - core/jquery.once
 
+lazysizes:
+  js:
+    libraries/lazysizes/lazysizes.min.js: {}
+    libraries/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js: {}
+
 vue:
   header: true
   # We have a hook that uses the non-minified version on environments where JS processing is turned off.

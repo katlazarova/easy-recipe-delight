@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8498ea1d1453cbc213c87ff2abcc15d",
+    "content-hash": "f23115f2b7ebc7ac31d2c1d7913eaa1d",
     "packages": [
         {
             "name": "composer/installers",
@@ -181,6 +181,18 @@
             },
             "require": {
                 "npm-asset/ssr-window": ">=1.0.1,<2.0.0"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/lazysizes",
+            "version": "5.2.2",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/lazysizes/-/lazysizes-5.2.2.tgz"
             },
             "type": "npm-asset",
             "license": [
