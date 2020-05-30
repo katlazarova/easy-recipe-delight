@@ -6,12 +6,16 @@
   "author": "katarina lazarova",
   "main": "index.js",
   "scripts": {
-    "afterinstall": "run-s afterinstall:**",
+    "afterinstall": "composer install && run-s afterinstall:**",
     "afterinstall:build": "npm run build",
-    "afterinstall:composerinstall": "composer install",
     "afterinstall:format": "npm run format",
     "afterinstall:lodash": "npm run lodash",
     "babel": "babel './assets/js/' --source-maps --out-dir dist",
+    "browser-sync": "npm run browsersync",
+    "browsersync": "browser-sync start --config browsersync.config.js",
+    "browsersync:reload": "browser-sync reload --url https://localhost:3005",
+    "browsersync:reload-css": "browser-sync reload --url https://localhost:3005 --files=\"*.css\"",
+    "browsersync:reload-js": "browser-sync reload --url https://localhost:3005 --files=\"*.js\"",
     "build": "run-p build:**",
     "build:css": "run-s grunt",
     "build:js": "run-s babel",
@@ -21,7 +25,7 @@
     "grunt:scss": "grunt scss",
     "install": "npm run afterinstall",
     "lodash": "npx lodash-cli strict -o ./dist/lodash.js include=$( grep -roh \"_\\.[[:alpha:]]*\" ./assets/js ../../../core/assets/vendor/backbone/backbone.js --include=*.js | sort | uniq | cut -b 3- | tr \"\n\" \",\" )",
-    "watch": "npm run build && run-p watch:**",
+    "watch": "npm run build && run-p browsersync watch:**",
     "watch:js": "onchange -k './assets/js/**/*.js' -- run-s build:js",
     "watch:sass": "run-s build:css && run-s grunt:scss"
   },
@@ -34,6 +38,7 @@
     "onchange": "^6.1.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "grunt": "^1.0.4",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.0.2",

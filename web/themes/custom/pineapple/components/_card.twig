@@ -6,7 +6,10 @@
 ]).setAttribute('data-card', '') %}
 <div {{ attributes }}>
   <div class="card-image-container {{ image_hidden ? 'hidden' }}">
-    <img src="{{ image_url }}" alt="{{ image_alt_text }}">
+    {% include "@components/_image.twig" with {
+      image_src: image_url,
+      image_alt: image_alt_text
+    } %}
     {% if tag %}
       <div class="highlighted-label">
         <p>{{ tag }}</p>

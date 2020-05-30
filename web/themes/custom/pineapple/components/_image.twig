@@ -1,0 +1,13 @@
+{{ attach_library('pineapple/lazysizes') }}
+{% set attributes = attributes|default(create_attribute())%}
+{% set attributes = attributes.addClass([
+    'lazyload'
+]) %}
+{% if image_src is not empty %}
+  {% set attributes = attributes.setAttribute('data-src', image_src) %}
+  {% set attributes = attributes.setAttribute('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==') %}
+{% endif %}
+{% if image_alt is defined %}
+  {% set attributes = attributes.setAttribute('alt', image_alt) %}
+{% endif %}
+<img {{ attributes }}>

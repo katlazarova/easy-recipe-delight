@@ -37,6 +37,7 @@
  * @see template_preprocess_field()
  */
 #}
+{{ attach_library('pineapple/lazysizes') }}
 {% for item in items %}
   {% set node = item.content['#node'] %}
   {% if node.bundle == 'recipe' %}
@@ -46,7 +47,7 @@
     {% set summary = node.field_a_summary.value %}
     {% set image_url = bamboo_render_image_style(node.field_a_hero_image.entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
   {% endif %}
-  <div class="swiper-slide" style="background-image:url({{ image_url }})">
+  <div class="swiper-slide lazyload" data-bg="{{ image_url }}">
     <div class="swiper-text">
       {% include "@components/_heading.twig" with {
         heading_level: 2,

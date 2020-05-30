@@ -38,6 +38,7 @@ content:
     type: basic_string
     region: content
 hidden:
+  field_a_article_comments: true
   field_a_body: true
   field_a_teaser_image: true
   field_author: true

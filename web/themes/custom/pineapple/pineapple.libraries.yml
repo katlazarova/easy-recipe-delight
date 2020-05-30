@@ -27,6 +27,7 @@ card:
     - core/jquery
     - core/drupal
     - core/jquery.once
+    - pineapple/lazysizes
 
 accordion:
   js:
@@ -35,6 +36,11 @@ accordion:
     - core/jquery
     - core/drupal
     - core/jquery.once
+
+lazysizes:
+  js:
+    libraries/lazysizes/lazysizes.min.js: {}
+    libraries/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js: {}
 
 vue:
   header: true
