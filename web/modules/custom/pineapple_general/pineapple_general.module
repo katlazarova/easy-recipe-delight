@@ -207,3 +207,14 @@ function pineapple_general_node_view(array &$build, \Drupal\Core\Entity\EntityIn
     unset($build['#cache']['keys']);
   }
 }
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function pineapple_general_toolbar_alter(&$items) {
+  /* If user doesn't have access to administration search, remove the admin search
+  toolbar tab. */
+  if ($items['administration_search']['#access'] == false) {
+    unset($items['administration_search']);
+  }
+}
