@@ -1,3 +1,4 @@
+{{ attach_library('pineapple/lazysizes') }}
 {% set content_url = content_url|default('') %}
 {% set hero_attributes = hero_attributes|default(create_attribute()).addClass([
   'hero-container',
@@ -16,7 +17,7 @@
 {% endif %}
 <div{{ hero_attributes }}>
   {{ url_prefix }}
-  <div class="hero-image" style="background-image: url({{ image_url }})"></div>
+  <div class="hero-image lazyload" data-bg="{{ image_url }}"></div>
   {% if pretext or title or subtext or labels %}
     <div class="hero-image-text container">
       <div class="hero-image-content u-o-2">
