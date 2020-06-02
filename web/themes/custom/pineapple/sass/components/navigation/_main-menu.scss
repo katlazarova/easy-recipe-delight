@@ -82,16 +82,22 @@
 
   .hamburger-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 100%;
 
     .hamburger {
       color: $white;
       display: block;
       font-size: $large-font;
+    }
 
-      @include breakpoint($lap) {
-        display: none;
-      }
+    p {
+      color: white;
+      padding-left: $unit;
+    }
+
+    @include breakpoint($lap) {
+      display: none;
     }
   }
 
@@ -211,7 +217,7 @@
       padding: $unit * 2;
       text-align: center;
 
-      .hamburger {
+      .hamburger-container {
         display: none;
       }
 
