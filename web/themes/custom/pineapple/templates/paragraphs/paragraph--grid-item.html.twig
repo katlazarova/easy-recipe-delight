@@ -54,8 +54,7 @@
 {% else %}
   {% set grid_image = bamboo_render_image_style(image_paragraph.field_p_ip_image.entity.field_media_image.entity.uri.value, 'default_teaser_330_x_330') %}
 {% endif %}
-
-{% if content.field_p_gi_link|field_value %}
+{% if not paragraph.field_p_gi_link.isEmpty() %}
   {% set url_prefix %}
     <a href="{{ content.field_p_gi_link|field_value|first['#url'] }}" class="image-link">
   {% endset %}

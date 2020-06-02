@@ -79,7 +79,7 @@
   {% set heading_level = 2 %}
 {% endif %}
 
-{% if content.field_a_teaser_image|field_value %}
+{% if not node.field_a_teaser_image.isEmpty() %}
   {% set image_url = bamboo_render_image_style(content.field_a_teaser_image|field_target_entity.field_media_image.entity.uri.value, card_layout~ '_teaser') %}
   {% set image_alt_text = content.field_a_teaser_image|field_target_entity.field_media_image.alt %}
 {% else %}
