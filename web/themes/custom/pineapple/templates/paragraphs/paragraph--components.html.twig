@@ -47,9 +47,14 @@
   ]
 %}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes, 'u-o-2') }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if not paragraph.field_p_c_heading.isEmpty() %}
+      {% include "@components/_heading.twig" with {
+        heading_level: 2,
+        heading_text: content.field_p_c_heading|field_value|first['#context'].value,
+        heading_attributes: create_attribute().addClass(paragraph.field_p_c_visually_hide_heading.value == 1 ? 'visually-hidden')
+      } %}
+    {% endif %}
+    {{ content.field_p_c_component }}
   </div>
 {% endblock paragraph %}

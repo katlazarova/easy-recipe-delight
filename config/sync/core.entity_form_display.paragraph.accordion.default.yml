@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.accordion.field_p_a_accordion_heading
     - field.field.paragraph.accordion.field_p_a_accordion_item
     - paragraphs.paragraphs_type.accordion
   module:
@@ -13,14 +12,6 @@ targetEntityType: paragraph
 bundle: accordion
 mode: default
 content:
-  field_p_a_accordion_heading:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_p_a_accordion_item:
     type: paragraphs
     weight: 1

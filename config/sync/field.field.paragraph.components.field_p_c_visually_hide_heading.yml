@@ -1,0 +1,23 @@
+uuid: 6c7d07e0-ac74-44db-8578-966c5afcf218
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_c_visually_hide_heading
+    - paragraphs.paragraphs_type.components
+id: paragraph.components.field_p_c_visually_hide_heading
+field_name: field_p_c_visually_hide_heading
+entity_type: paragraph
+bundle: components
+label: 'Visually hide heading from display'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

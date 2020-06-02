@@ -71,7 +71,7 @@
  */
 #}
 {{ attach_library('classy/node') }}
-{% if content.field_r_teaser_image|field_value %}
+{% if not node.field_r_teaser_image.isEmpty() %}
   {% set image_url = bamboo_render_image_style(content.field_r_teaser_image|field_target_entity.field_media_image.entity.uri.value, 'vertical_teaser') %}
   {% set image_alt_text = content.field_r_teaser_image|field_target_entity.field_media_image.alt %}
 {% else %}
