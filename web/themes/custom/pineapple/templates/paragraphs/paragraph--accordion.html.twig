@@ -40,9 +40,5 @@
 #}
 {{ attach_library('pineapple/accordion') }}
 <div{{ attributes.addClass(classes) }}>
-  {% include "@components/_heading.twig" with {
-    heading_level: 2,
-    heading_text: content.field_p_a_accordion_heading|field_value|first['#context'].value
-  } %}
-  {{ content.field_p_a_accordion_item }}
+  {{ content }}
 </div>
