@@ -49,10 +49,6 @@
   ]
 %}
 {% block paragraph %}
-  {% include "@components/_heading.twig" with {
-    heading_level: 2,
-    heading_text: content.field_p_s_heading|field_value
-  } %}
   <div{{ attributes.addClass(classes) }}>
     <div class="swiper-container">
       <div class="swiper-wrapper">
