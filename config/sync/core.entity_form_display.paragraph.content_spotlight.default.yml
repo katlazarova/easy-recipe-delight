@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.content_spotlight.field_p_cs_content
-    - field.field.paragraph.content_spotlight.field_p_cs_heading
     - paragraphs.paragraphs_type.content_spotlight
 id: paragraph.content_spotlight.default
 targetEntityType: paragraph
@@ -20,14 +19,6 @@ content:
       match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_p_cs_heading:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
 hidden:
   created: true

@@ -83,20 +83,18 @@
 {%
   set title_classes = [
   'page-title',
-  content.field_bp_hide_page_heading|field_value|first['#markup'] == 'Hide' ? 'visually-hidden',
+  node.field_bp_hide_page_heading.value == 1 ? 'visually-hidden',
 ]
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  {% if not content.field_bp_hero_image|field_value %}
-    {{ title_prefix }}
-    {% if label %}
-     <h1{{ title_attributes.addClass(title_classes) }}>
-      {{ label }}
-      </h1>
-    {% endif %}
-    {{ title_suffix }}
+  {{ title_prefix }}
+  {% if label %}
+   <h1{{ title_attributes.addClass(title_classes) }}>
+    {{ label }}
+    </h1>
   {% endif %}
+  {{ title_suffix }}
   {% if display_submitted %}
     <footer class="node__meta">
       {{ author_picture }}
@@ -107,15 +105,6 @@
     </footer>
   {% endif %}
   <div{{ content_attributes.addClass('u-o-4') }}>
-    {% if content.field_bp_hero_image|field_value %}
-      {% set content_creator = node.Owner.get('field_first_name').value ~ " " ~ node.Owner.get('field_surname').value %}
-      {% set hero_url = bamboo_render_image_style(content.field_bp_hero_image|field_target_entity.field_media_image.entity.uri.value, 'hero_image_1265_x_527') %}
-      {% include "@components/_hero-image.twig" with {
-        image_url: hero_url,
-        title: label,
-        subtext: content_creator
-      } %}
-    {% endif %}
       {{ content.field_bp_summary }}
       {{ content.field_bp_body }}
   </div>

@@ -1,11 +1,11 @@
-uuid: 991430fa-3024-4070-a49f-843b4fc77cf0
+uuid: db3c8dc8-50b4-4862-8642-f4306b999e46
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_p_a_accordion_heading
-field_name: field_p_a_accordion_heading
+id: paragraph.field_p_c_heading
+field_name: field_p_c_heading
 entity_type: paragraph
 type: string
 settings:

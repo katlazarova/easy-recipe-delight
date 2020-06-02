@@ -23,7 +23,6 @@
     "format:package-json": "npx sort-package-json",
     "grunt": "grunt",
     "grunt:scss": "grunt scss",
-    "install": "npm run afterinstall",
     "lodash": "npx lodash-cli strict -o ./dist/lodash.js include=$( grep -roh \"_\\.[[:alpha:]]*\" ./assets/js ../../../core/assets/vendor/backbone/backbone.js --include=*.js | sort | uniq | cut -b 3- | tr \"\n\" \",\" )",
     "watch": "npm run build && run-p browsersync watch:**",
     "watch:js": "onchange -k './assets/js/**/*.js' -- run-s build:js",
