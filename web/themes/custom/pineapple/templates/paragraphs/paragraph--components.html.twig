@@ -50,7 +50,8 @@
   <div{{ attributes.addClass(classes) }}>
     {% include "@components/_heading.twig" with {
       heading_level: 2,
-      heading_text: content.field_p_c_heading|field_value|first['#context'].value
+      heading_text: content.field_p_c_heading|field_value|first['#context'].value,
+      heading_attributes: create_attribute().addClass(content.field_p_c_visually_hide_heading|field_value|first['#markup'] == 'On' ? 'visually-hidden')
     } %}
     {{ content.field_p_c_component }}
   </div>
