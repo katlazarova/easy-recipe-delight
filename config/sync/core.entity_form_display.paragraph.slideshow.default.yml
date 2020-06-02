@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.slideshow.field_p_s_heading
     - field.field.paragraph.slideshow.field_p_s_slides
     - paragraphs.paragraphs_type.slideshow
 id: paragraph.slideshow.default
@@ -10,8 +11,16 @@ targetEntityType: paragraph
 bundle: slideshow
 mode: default
 content:
-  field_p_s_slides:
+  field_p_s_heading:
     weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_p_s_slides:
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
