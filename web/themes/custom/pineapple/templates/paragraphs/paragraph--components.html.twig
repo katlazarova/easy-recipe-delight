@@ -48,7 +48,7 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% if content.field_p_c_heading|field_value %}
+    {% if not paragraph.field_p_c_heading.isEmpty() %}
       {% include "@components/_heading.twig" with {
         heading_level: 2,
         heading_text: content.field_p_c_heading|field_value|first['#context'].value,
