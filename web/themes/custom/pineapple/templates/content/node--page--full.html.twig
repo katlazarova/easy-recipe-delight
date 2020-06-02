@@ -83,7 +83,7 @@
 {%
   set title_classes = [
   'page-title',
-  content.field_bp_hide_page_heading|field_value|first['#markup'] == 'Hide' ? 'visually-hidden',
+  node.field_bp_hide_page_heading.value == 1 ? 'visually-hidden',
 ]
 %}
 {{ attach_library('classy/node') }}
