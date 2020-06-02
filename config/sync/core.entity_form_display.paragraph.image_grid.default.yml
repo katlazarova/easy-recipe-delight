@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_grid.field_p_ig_heading
     - field.field.paragraph.image_grid.field_p_ig_item
     - paragraphs.paragraphs_type.image_grid
   module:
@@ -13,14 +12,6 @@ targetEntityType: paragraph
 bundle: image_grid
 mode: default
 content:
-  field_p_ig_heading:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_p_ig_item:
     type: paragraphs
     weight: 1
