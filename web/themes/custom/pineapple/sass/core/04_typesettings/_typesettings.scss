@@ -162,10 +162,12 @@ dl dl {
 
 ul {
   list-style: disc;
+  margin-bottom: $unit;
 }
 
 ol {
   list-style: decimal;
+  margin-bottom: $unit;
 }
 
 // [1] https://developer.mozilla.org/en-US/docs/CSS/font-variant
