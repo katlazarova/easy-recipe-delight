@@ -1,9 +1,9 @@
-initial_question: 'Was this helpful?'
+initial_question: 'Saw a bug on this page?'
 yes_button: 'Yes'
-yes_response: 'Great! Thank you for the feedback.'
+yes_response: 'Let us know how we can improve!'
 no_button: 'No'
 no_response: 'Thank you for the feedback.'
-feedback_prompt: 'If you''d like, give us more feedback.'
+feedback_prompt: 'Please post your comments below.'
 submit_text: 'Send feedback'
 final_response: 'Thank you!'
 feedback_prompt_on_yes: true
@@ -16,3 +16,6 @@ feedback_predefined_answers:
   - 'Translation is bad'
 _core:
   default_config_hash: tMVdaroEbdZAzXBfKMQQEMldVJH95diRlxwa74Ltchg
+custom_text_response_on_no:
+  value: ''
+  format: restricted_html

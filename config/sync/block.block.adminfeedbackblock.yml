@@ -17,7 +17,7 @@ settings:
   id: admin_feedback_block
   label: 'Admin Feedback Block'
   provider: admin_feedback
-  label_display: visible
+  label_display: '0'
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
