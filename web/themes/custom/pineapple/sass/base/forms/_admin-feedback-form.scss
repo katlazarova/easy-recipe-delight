@@ -1,13 +1,12 @@
 .block-admin-feedback {
-  #feedback-message {
-    margin-top: $unit *3;
+  margin-top: $unit *3;
 
-    .admin-feedback-form {
-      padding: 0;
-    }
+  .admin-feedback-form {
+    padding: 0;
   }
 
   h2 {
+    @extend .subheading;
     margin-top: $unit *3;
   }
 }
