@@ -1,13 +1,13 @@
 initial_question: 'Saw a bug on this page?'
 yes_button: 'Yes'
-yes_response: 'Let us know how we can improve!'
+yes_response: 'Thank you!'
 no_button: 'No'
 no_response: 'Thank you for the feedback.'
-feedback_prompt: 'Please post your comments below.'
+feedback_prompt: 'Please let us know how we can improve.'
 submit_text: 'Send feedback'
 final_response: 'Thank you!'
 feedback_prompt_on_yes: true
-feedback_prompt_on_no: true
+feedback_prompt_on_no: false
 feedback_enable_predefined_answers: false
 feedback_predefined_answers:
   - 'Not helpful'
