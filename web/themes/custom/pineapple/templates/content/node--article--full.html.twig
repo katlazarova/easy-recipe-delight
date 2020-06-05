@@ -96,8 +96,10 @@
         title: label,
         subtext: author_link
       } %}
-      {{ content.field_a_summary }}
-      {{ content.field_a_body }}
+      <div class="article-content">
+        {{ content.field_a_summary }}
+        {{ content.field_a_body }}
+      </div>
       <div class="by-line">
         <p>Written By: </p>
         {{ author_link }}
