@@ -1,9 +1,9 @@
 initial_question: 'Saw a bug on this page?'
 yes_button: 'Yes'
-yes_response: 'Thank you!'
+yes_response: 'Let us know how we can improve!'
 no_button: 'No'
 no_response: 'Thank you for the feedback.'
-feedback_prompt: 'Please let us know how we can improve.'
+feedback_prompt: 'Please describe the issue below.'
 submit_text: 'Send feedback'
 final_response: 'Thank you!'
 feedback_prompt_on_yes: true
