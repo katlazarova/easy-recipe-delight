@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - admin_feedback
-    - ctools
   theme:
     - pineapple
 id: adminfeedbackblock
@@ -18,13 +17,4 @@ settings:
   label: 'Admin Feedback Block'
   provider: admin_feedback
   label_display: '0'
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      article: article
-      page: page
-      recipe: recipe
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }
