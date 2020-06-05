@@ -1,0 +1,30 @@
+uuid: d6ea7a6c-909a-4214-9a64-69e3cc967662
+langcode: en
+status: true
+dependencies:
+  module:
+    - admin_feedback
+    - ctools
+  theme:
+    - pineapple
+id: adminfeedbackblock
+theme: pineapple
+region: content
+weight: 0
+provider: null
+plugin: admin_feedback_block
+settings:
+  id: admin_feedback_block
+  label: 'Admin Feedback Block'
+  provider: admin_feedback
+  label_display: visible
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      page: page
+      recipe: recipe
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
