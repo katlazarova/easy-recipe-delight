@@ -1,4 +1,5 @@
 .view-articles {
+  margin-bottom: $unit *3;
   .card-container {
      @include breakpoint($desk) {
        width: 75%;

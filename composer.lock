@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "630eeb56be87ec6a747ce3ce81bfb790",
+    "content-hash": "69d9f7223de99c5ec7bfb83ab68a6436",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1815,6 +1815,58 @@
             "time": "2019-03-30T10:41:38+00:00"
         },
         {
+            "name": "drupal/admin_feedback",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/admin_feedback.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/admin_feedback-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "16af8b639a470ffe32e7cb02b5606cb283e89166"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1587685662",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ainarend",
+                    "homepage": "https://www.drupal.org/user/3547591"
+                },
+                {
+                    "name": "bserem",
+                    "homepage": "https://www.drupal.org/user/388753"
+                },
+                {
+                    "name": "zerps",
+                    "homepage": "https://www.drupal.org/user/3577723"
+                }
+            ],
+            "description": "Admin Feedback makes it very easy to analyze, create statics and gather user information about the contents of the site.",
+            "homepage": "https://www.drupal.org/project/admin_feedback",
+            "support": {
+                "source": "https://git.drupalcode.org/project/admin_feedback"
+            }
+        },
+        {
             "name": "drupal/admin_toolbar",
             "version": "2.2.0",
             "source": {
@@ -1926,6 +1978,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Bamboo_render_image_style and stage file proxy compatibility": "https://www.drupal.org/files/issues/2019-08-30/bamboo-render-image-style-is-incompatible-with-the-stage-file-proxy-module-3045798-11.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
