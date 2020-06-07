@@ -51,6 +51,7 @@
   border: none;
   font-size: $unit *2;
   color: $white;
+  -webkit-border-radius:0;
 
   &:hover,
   &:focus {

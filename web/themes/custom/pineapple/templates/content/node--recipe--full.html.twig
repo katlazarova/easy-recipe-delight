@@ -81,6 +81,7 @@
 ] %}
 {{ attach_library('classy/node') }}
 {{ attach_library('pineapple/card') }}
+{{ attach_library('pineapple/lazysizes') }}
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
@@ -93,7 +94,7 @@
   <div class="row">
     <div{{ content_attributes.addClass('recipe-body') }}>
       {% set recipe_hero_url = bamboo_render_image_style(content.field_r_hero_image|field_target_entity.field_media_image.entity.uri.value, 'recipe_image_680_x_350') %}
-      <div class="recipe-image" style="background-image: url({{ recipe_hero_url }})"></div>
+      <div class="recipe-image lazyload" data-bg="{{ recipe_hero_url }}"></div>
       <div class="u-o-4">
         {{ content.field_r_cooking_time }}
         {{ content.field_r_serves }}
@@ -107,7 +108,10 @@
         {% set author_image_url = bamboo_render_image_style(node.Owner.field_u_profile_image.entity.field_media_image.entity.getFileUri(), 'thumbnail_115_x_115') %}
         {% set author_image_alt = node.Owner.field_u_profile_image.entity.field_media_image.alt %}
         <div class="author-image-container">
-          <img src="{{ author_image_url }}" alt="{{ author_image_alt }}">
+          {% include "@components/_image.twig" with {
+            image_src: author_image_url,
+            image_alt: author_image_alt
+          } %}
         </div>
         <div class="recipe-author-text-container">
           <div class="author-name">
@@ -119,7 +123,7 @@
         </div> <!-- End of recipe-author-text-container -->
         <div class="view-content-button">
           {% include "@components/_button.twig" with {
-            button_url: node.Owner.url(),
+            button_url: path('entity.user.canonical', {'user': node.Owner.id}),
             button_type: 'underlined',
             button_text: 'View My Content'
           } %}
@@ -133,12 +137,12 @@
     <div class="forbidden-comments">
       {% include "@components/_link.twig" with {
         link_text: 'Log in',
-        link_url: '/user/login'
+        link_url: path('user.login')
       } %}
       <p>or</p>
       {% include "@components/_link.twig" with {
         link_text: 'register',
-        link_url: '/user/register'
+        link_url: path('user.register')
       } %}
       <p>to post comments.</p>
     </div>

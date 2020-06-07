@@ -197,3 +197,24 @@ function button_color_select_list_values(FieldStorageConfig $definition, Content
 
   return $options;
 }
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function pineapple_general_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  // Disable caching for article teaser view mode.
+  if ($entity->bundle() == 'article' && $view_mode == 'teaser') {
+    unset($build['#cache']['keys']);
+  }
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function pineapple_general_toolbar_alter(&$items) {
+  /* If user doesn't have access to administration search, remove the admin search
+  toolbar tab. */
+  if ($items['administration_search']['#access'] == false) {
+    unset($items['administration_search']);
+  }
+}

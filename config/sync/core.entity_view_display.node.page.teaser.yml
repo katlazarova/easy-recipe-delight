@@ -14,11 +14,17 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 101
     region: content
 hidden:
   field_bp_body: true
   field_bp_hero_image: true
+  field_bp_hide_page_heading: true
   field_bp_summary: true
   field_bp_teaser_image: true

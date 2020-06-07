@@ -5,5 +5,6 @@ dependencies: {  }
 id: webform_embed
 label: 'Webform Embed'
 icon_uuid: null
+icon_default: null
 description: ''
 behavior_plugins: {  }

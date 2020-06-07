@@ -3,7 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: components
-label: Components
+label: Component
 icon_uuid: null
+icon_default: null
 description: ''
 behavior_plugins: {  }
