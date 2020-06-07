@@ -1,14 +1,14 @@
 .paragraph--type--image-paragraph {
-  .field--type-image {
+  &.in-component {
     width: 100%;
 
     @include breakpoint($lap) {
       width: 50%;
     }
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  img {
+    width: 100%;
+    height: 100%;
   }
 }
