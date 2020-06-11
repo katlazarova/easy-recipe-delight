@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.recipe.field_r_featured
     - field.field.node.recipe.field_r_hero_image
     - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_ready_to_review
     - field.field.node.recipe.field_r_recipe_comments
     - field.field.node.recipe.field_r_serves
     - field.field.node.recipe.field_r_summary
@@ -19,9 +20,27 @@ dependencies:
   module:
     - comment
     - content_moderation
+    - field_group
     - media_library
     - paragraphs
     - path
+third_party_settings:
+  field_group:
+    group_ready_to_review:
+      children:
+        - field_r_ready_to_review
+      parent_name: ''
+      weight: 19
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+        weight: 0
+      label: 'Ready to Review'
 id: node.recipe.default
 targetEntityType: node
 bundle: recipe
@@ -35,7 +54,7 @@ content:
     third_party_settings: {  }
   field_r_body:
     type: entity_reference_paragraphs
-    weight: 17
+    weight: 16
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -46,7 +65,7 @@ content:
     third_party_settings: {  }
     region: content
   field_r_categories:
-    weight: 16
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -72,7 +91,7 @@ content:
     type: string_textfield
     region: content
   field_r_featured:
-    weight: 14
+    weight: 13
     settings:
       display_label: true
     third_party_settings: {  }
@@ -86,14 +105,21 @@ content:
     type: media_library_widget
     region: content
   field_r_highlighted:
-    weight: 15
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_r_ready_to_review:
+    weight: 20
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_r_recipe_comments:
-    weight: 26
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -106,7 +132,7 @@ content:
     type: number
     region: content
   field_r_summary:
-    weight: 13
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -127,7 +153,7 @@ content:
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 18
+    weight: 17
     settings: {  }
     region: content
     third_party_settings: {  }

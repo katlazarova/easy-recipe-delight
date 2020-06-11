@@ -1,0 +1,18 @@
+uuid: d84c2220-3c08-49ad-9b12-fb041108f5dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_a_ready_to_review
+field_name: field_a_ready_to_review
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

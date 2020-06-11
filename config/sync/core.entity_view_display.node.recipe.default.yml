@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.recipe.field_r_featured
     - field.field.node.recipe.field_r_hero_image
     - field.field.node.recipe.field_r_highlighted
+    - field.field.node.recipe.field_r_ready_to_review
     - field.field.node.recipe.field_r_recipe_comments
     - field.field.node.recipe.field_r_serves
     - field.field.node.recipe.field_r_summary
@@ -32,7 +33,7 @@ content:
     third_party_settings: {  }
   field_r_body:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 8
     label: hidden
     settings:
       view_mode: default
@@ -56,7 +57,7 @@ content:
     type: string
     region: content
   field_r_featured:
-    weight: 10
+    weight: 9
     label: hidden
     settings:
       format: yes-no
@@ -75,7 +76,7 @@ content:
     third_party_settings: {  }
     region: content
   field_r_highlighted:
-    weight: 11
+    weight: 10
     label: hidden
     settings:
       format: yes-no
@@ -85,7 +86,7 @@ content:
     type: boolean
     region: content
   field_r_recipe_comments:
-    weight: 12
+    weight: 11
     label: above
     settings:
       view_mode: default
@@ -103,7 +104,7 @@ content:
     type: number_integer
     region: content
   field_r_summary:
-    weight: 8
+    weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -125,3 +126,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_r_categories: true
+  field_r_ready_to_review: true

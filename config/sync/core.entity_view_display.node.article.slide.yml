@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.slide
+    - field.field.node.article.field_a_article_comments
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_hero_image
+    - field.field.node.article.field_a_ready_to_review
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
     - node.type.article
@@ -40,6 +42,7 @@ content:
 hidden:
   field_a_article_comments: true
   field_a_body: true
+  field_a_ready_to_review: true
   field_a_teaser_image: true
   field_author: true
   links: true

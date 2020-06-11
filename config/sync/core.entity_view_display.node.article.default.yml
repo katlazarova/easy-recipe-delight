@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_a_article_comments
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_hero_image
+    - field.field.node.article.field_a_ready_to_review
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
     - node.type.article
@@ -25,7 +26,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_a_article_comments:
-    weight: 6
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -35,7 +36,7 @@ content:
     region: content
   field_a_body:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -52,7 +53,7 @@ content:
     third_party_settings: {  }
     region: content
   field_a_summary:
-    weight: 4
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -68,4 +69,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_a_ready_to_review: true
   links: true

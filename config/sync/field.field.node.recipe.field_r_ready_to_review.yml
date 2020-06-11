@@ -1,0 +1,23 @@
+uuid: d3eb4c4b-6f65-42cc-a2e1-9b06230ed5fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_r_ready_to_review
+    - node.type.recipe
+id: node.recipe.field_r_ready_to_review
+field_name: field_r_ready_to_review
+entity_type: node
+bundle: recipe
+label: 'Ready to Review'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
