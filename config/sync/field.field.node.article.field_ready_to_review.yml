@@ -1,18 +1,18 @@
-uuid: 4ec4dc70-67e9-4e2d-827d-c5eb0b7977cc
+uuid: c92ac71d-23db-4609-9400-2ecfa5b13718
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_a_ready_to_review
+    - field.storage.node.field_ready_to_review
     - node.type.article
-id: node.article.field_a_ready_to_review
-field_name: field_a_ready_to_review
+id: node.article.field_ready_to_review
+field_name: field_ready_to_review
 entity_type: node
 bundle: article
 label: 'Ready to Review'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

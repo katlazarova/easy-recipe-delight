@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.recipe.field_r_featured
     - field.field.node.recipe.field_r_hero_image
     - field.field.node.recipe.field_r_highlighted
-    - field.field.node.recipe.field_r_ready_to_review
     - field.field.node.recipe.field_r_recipe_comments
     - field.field.node.recipe.field_r_serves
     - field.field.node.recipe.field_r_summary
     - field.field.node.recipe.field_r_teaser_image
+    - field.field.node.recipe.field_ready_to_review
     - node.type.recipe
   module:
     - user
@@ -53,8 +53,8 @@ hidden:
   field_r_cost: true
   field_r_featured: true
   field_r_highlighted: true
-  field_r_ready_to_review: true
   field_r_recipe_comments: true
   field_r_serves: true
   field_r_teaser_image: true
+  field_ready_to_review: true
   links: true

@@ -1,11 +1,11 @@
-uuid: 23a9f0b4-1d96-4f1f-8469-71cb8db52279
+uuid: aa317de2-567c-41aa-a66b-8b3ea8bb9ba3
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_r_ready_to_review
-field_name: field_r_ready_to_review
+id: node.field_ready_to_review
+field_name: field_ready_to_review
 entity_type: node
 type: boolean
 settings: {  }
