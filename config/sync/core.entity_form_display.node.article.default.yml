@@ -28,12 +28,12 @@ third_party_settings:
       format_type: details_sidebar
       region: content
       format_settings:
+        description: 'Check this box if you are ready for the administrator to review and publish your page. '
+        open: true
+        weight: 0
+        required_fields: true
         id: ''
         classes: ''
-        description: ''
-        open: false
-        required_fields: true
-        weight: 0
       label: 'Ready to Review'
 id: node.article.default
 targetEntityType: node
