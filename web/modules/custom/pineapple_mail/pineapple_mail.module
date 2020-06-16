@@ -52,14 +52,17 @@ function pineapple_mail_send_mail(Drupal\Core\Entity\EntityInterface $entity) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function pineapple_mail_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  // Get the value of the ready to review field.
-  $ready_to_review = $entity->get('field_ready_to_review')->getString();
+  $entity_type = $entity->getType();
+  if ($entity_type == 'article' || $entity_type == 'recipe') {
+    // Get the value of the ready to review field.
+    $ready_to_review = $entity->get('field_ready_to_review')->getString();
 
-  // If the ready to review field is checked, and the node is unpublished.
-  if ($ready_to_review == '1' && !$entity->isPublished()) {
-    pineapple_mail_send_mail($entity);
+    // If the ready to review field is checked, and the node is unpublished.
+    if ($ready_to_review == '1' && !$entity->isPublished()) {
+      pineapple_mail_send_mail($entity);
+    }
+
+    // After email is sent, uncheck the ready to review field.
+    $entity->set('field_ready_to_review', '0');
   }
-
-  // After email is sent, uncheck the ready to review field.
-  $entity->set('field_ready_to_review', '0');
 }
