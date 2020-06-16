@@ -55,6 +55,7 @@ module:
   path_alias: 0
   pineapple_general: 0
   pineapple_helper: 0
+  pineapple_mail: 0
   pineapple_user: 0
   quickedit: 0
   rdf: 0
