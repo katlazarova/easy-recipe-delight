@@ -53,6 +53,7 @@ function pineapple_mail_send_mail(Drupal\Core\Entity\EntityInterface $entity) {
  * Implements hook_ENTITY_TYPE_presave().
  */
 function pineapple_mail_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  // Get the value of the ready to review field.
   $ready_to_review = $entity->get('field_ready_to_review')->getString();
 
   // If the ready to review field is checked, and the node is unpublished.
