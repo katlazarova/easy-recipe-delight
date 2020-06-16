@@ -53,7 +53,7 @@ function pineapple_general_field_widget_form_alter(&$element, \Drupal\Core\Form\
 
       if (!in_array('administrator', $user_roles)) {
         if($field == 'moderation_state') {
-          $element['state']['#description'] = 'Your changes will be reviewed and be published when approved by an administrator.';
+          $element['state']['#description'] = 'Please check the "Ready to Review" box on the right when ready to have your content reviewed and published by the administrator.';
         }
       }
       break;
