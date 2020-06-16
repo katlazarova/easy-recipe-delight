@@ -38,7 +38,7 @@ function pineapple_mail_send_mail(Drupal\Core\Entity\EntityInterface $entity) {
   $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
   if ($result['result'] !== true) {
     $message = 'There was a problem sending your message and it was not sent. If this issue persists, contact the site administrator.';
-    \Drupal::messenger()->addMessage($message);
+    \Drupal::messenger()->addError($message);
     \Drupal::logger('mail-log')->error($message);
   }
   else {
