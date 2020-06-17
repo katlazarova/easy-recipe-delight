@@ -23,14 +23,14 @@ function pineapple_mail_mail($key, &$message, $params) {
   }
 }
 
-function pineapple_mail_send_mail(Drupal\Core\Entity\EntityInterface $entity) {
+function pineapple_mail_send_mail($entity) {
   $mailManager = \Drupal::service('plugin.manager.mail');
   $module = 'pineapple_mail';
   $key = 'node_insert';
   $to = \Drupal::config('system.site')->get('mail');
-  $entity_link = \Drupal::request()->getSchemeAndHttpHost() . $entity->toUrl()->toString();
+  $entity_link = $entity->toUrl()->setAbsolute()->toString();
   $entity_title = $entity->label();
-  $params['message'] = 'The user ' .\Drupal::currentUser()->getAccountName(). ' indicated that ' .$entity_title. ' is ready for review. View it here: ' .$entity_link;
+  $params['message'] = 'The user ' . \Drupal::currentUser()->getAccountName() . ' indicated that ' . $entity_title . ' is ready for review. View it here: ' . $entity_link;
   $params['title'] = $entity_title . ' is ready to review';
   $langcode = \Drupal::currentUser()->getPreferredLangcode();
   $send = true;
@@ -49,9 +49,11 @@ function pineapple_mail_send_mail(Drupal\Core\Entity\EntityInterface $entity) {
 }
 
 /**
- * Implements hook_ENTITY_TYPE_presave().
+ * Implements hook_node_presave().
+ *
+ * @param /Drupal\Core\Entity\EntityInterface
  */
-function pineapple_mail_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+function pineapple_mail_node_presave($entity) {
   $entity_type = $entity->getType();
   if ($entity_type == 'article' || $entity_type == 'recipe') {
     // Get the value of the ready to review field.
@@ -63,6 +65,6 @@ function pineapple_mail_node_presave(Drupal\Core\Entity\EntityInterface $entity)
     }
 
     // After email is sent, uncheck the ready to review field.
-    $entity->set('field_ready_to_review', '0');
+    $entity->set('field_ready_to_review', 0);
   }
 }
