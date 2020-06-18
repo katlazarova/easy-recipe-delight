@@ -14,14 +14,33 @@ dependencies:
     - field.field.node.recipe.field_r_serves
     - field.field.node.recipe.field_r_summary
     - field.field.node.recipe.field_r_teaser_image
+    - field.field.node.recipe.field_ready_to_review
     - node.type.recipe
     - workflows.workflow.content_workflow
   module:
     - comment
     - content_moderation
+    - field_group
     - media_library
     - paragraphs
     - path
+third_party_settings:
+  field_group:
+    group_ready_to_review:
+      children:
+        - field_ready_to_review
+      parent_name: ''
+      weight: 19
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        description: 'Check this box if you are ready for the administrator to review and publish your content. '
+        open: true
+        weight: 0
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Ready to Review'
 id: node.recipe.default
 targetEntityType: node
 bundle: recipe
@@ -35,7 +54,7 @@ content:
     third_party_settings: {  }
   field_r_body:
     type: entity_reference_paragraphs
-    weight: 17
+    weight: 16
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -46,7 +65,7 @@ content:
     third_party_settings: {  }
     region: content
   field_r_categories:
-    weight: 16
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -72,7 +91,7 @@ content:
     type: string_textfield
     region: content
   field_r_featured:
-    weight: 14
+    weight: 13
     settings:
       display_label: true
     third_party_settings: {  }
@@ -86,14 +105,14 @@ content:
     type: media_library_widget
     region: content
   field_r_highlighted:
-    weight: 15
+    weight: 14
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_r_recipe_comments:
-    weight: 26
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -106,7 +125,7 @@ content:
     type: number
     region: content
   field_r_summary:
-    weight: 13
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -125,9 +144,16 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
+  field_ready_to_review:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   moderation_state:
     type: moderation_state_default
-    weight: 18
+    weight: 17
     settings: {  }
     region: content
     third_party_settings: {  }

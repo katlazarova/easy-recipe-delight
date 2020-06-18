@@ -1,0 +1,23 @@
+uuid: cfda1a8c-ef24-4ecd-bc4e-b15494be1fe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ready_to_review
+    - node.type.recipe
+id: node.recipe.field_ready_to_review
+field_name: field_ready_to_review
+entity_type: node
+bundle: recipe
+label: 'Ready to Review'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

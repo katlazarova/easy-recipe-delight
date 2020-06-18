@@ -32,6 +32,7 @@ module:
   entity_reference_revisions: 0
   environment_indicator: 0
   field: 0
+  field_group: 0
   file: 0
   filter: 0
   help: 0
@@ -55,6 +56,7 @@ module:
   path_alias: 0
   pineapple_general: 0
   pineapple_helper: 0
+  pineapple_mail: 0
   pineapple_user: 0
   quickedit: 0
   rdf: 0

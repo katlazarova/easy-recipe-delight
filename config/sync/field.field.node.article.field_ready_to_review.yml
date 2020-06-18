@@ -1,0 +1,23 @@
+uuid: c92ac71d-23db-4609-9400-2ecfa5b13718
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ready_to_review
+    - node.type.article
+id: node.article.field_ready_to_review
+field_name: field_ready_to_review
+entity_type: node
+bundle: article
+label: 'Ready to Review'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

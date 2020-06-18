@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.slide
+    - field.field.node.article.field_a_article_comments
     - field.field.node.article.field_a_body
     - field.field.node.article.field_a_hero_image
     - field.field.node.article.field_a_summary
     - field.field.node.article.field_a_teaser_image
+    - field.field.node.article.field_ready_to_review
     - node.type.article
   module:
     - user
@@ -42,4 +44,5 @@ hidden:
   field_a_body: true
   field_a_teaser_image: true
   field_author: true
+  field_ready_to_review: true
   links: true
