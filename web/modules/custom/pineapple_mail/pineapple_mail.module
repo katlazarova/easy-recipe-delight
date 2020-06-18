@@ -15,7 +15,7 @@ function pineapple_mail_mail($key, &$message, $params) {
     'langcode' => $message['langcode'],
   );
   switch ($key) {
-    case 'node_insert':
+    case 'review_content':
       $message['from'] = \Drupal::config('system.site')->get('mail');
       $message['subject'] = t('Subject: @title', array('@title' => $params['title']), $options);
       $message['body'][] = Html::escape($params['message']);
@@ -26,7 +26,7 @@ function pineapple_mail_mail($key, &$message, $params) {
 function pineapple_mail_send_mail($entity) {
   $mailManager = \Drupal::service('plugin.manager.mail');
   $module = 'pineapple_mail';
-  $key = 'node_insert';
+  $key = 'review_content';
   $to = \Drupal::config('system.site')->get('mail');
   $entity_link = $entity->toUrl()->setAbsolute()->toString();
   $entity_title = $entity->label();
