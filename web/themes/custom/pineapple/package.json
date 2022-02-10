@@ -43,7 +43,7 @@
     "grunt-sass": "^3.0.2",
     "grunt-sass-globbing": "^1.5.1",
     "load-grunt-tasks": "^5.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "sort-package-json": "^1.39.1"
   }
 }
